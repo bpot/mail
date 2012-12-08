@@ -157,8 +157,10 @@ module Mail
     end
     
     # Equivalent in RFC but modified in rfc2822 treetop
+    # Using version from rfc2822
     rule FWS    # Folding white space
-      ((WSP* CRLF)? WSP+) / obs_FWS
+      #((WSP* CRLF)? WSP+) / obs_FWS
+      (WSP* CRLF WSP+) / (CRLF WSP+) / obs_FWS
     end
 
     rule dot_atom_text
