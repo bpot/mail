@@ -1,10 +1,10 @@
 module Mail
   grammar DateTime
 
-    include RFC2822
+    include RFC5322
 
     rule primary
-      ( day_of_week ",")? date FWS time CFWS?
+      ( day_of_week ",")? date time CFWS?
     end
     
   end
