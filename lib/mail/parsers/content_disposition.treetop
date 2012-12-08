@@ -1,11 +1,11 @@
 module Mail
   grammar ContentDisposition
 
-    include RFC2822
+    include RFC5322
     include RFC2045
     
     rule content_disposition
-      disposition_type param_hashes:(CFWS ";" parameter CFWS)* {
+      disposition_type param_hashes:(CFWS? ";" parameter CFWS?)* {
         def parameters
           param_hashes.elements.map do |param|
             param.parameter.param_hash

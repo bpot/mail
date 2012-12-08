@@ -1,11 +1,11 @@
 module Mail
   grammar ContentLocation
 
-    include RFC2822
+    include RFC5322
     include RFC2045
 
     rule primary
-      CFWS location CFWS
+      CFWS? location CFWS?
     end
     
     rule location
