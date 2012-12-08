@@ -1,0 +1,100 @@
+module Mail
+  grammar RFC5322Obsolete
+    # Removed: obs_text, obs_char, obs_month
+
+    #Equivalent RFC
+    rule obs_hour
+       CFWS? (DIGIT DIGIT) CFWS?
+    end
+
+    rule obs_minute
+      CFWS? (DIGIT DIGIT) CFWS?
+    end
+
+    rule obs_second
+      CFWS? (DIGIT DIGIT) CFWS?
+    end
+    
+    rule obs_local_part
+      word ("." word)*
+    end
+
+    rule obs_domain
+      atom ("." atom)*
+    end
+
+    # Original: word *(word / "." / CFWS)
+    rule obs_phrase
+      (word / "." / "@")+
+    end
+
+    rule obs_day
+      CFWS? (DIGIT / (DIGIT DIGIT))  CFWS?
+    end
+
+    rule obs_day_of_week
+      CFWS? day_name CFWS?
+    end
+
+    rule obs_zone
+      "UT" / "GMT" /          # Universal Time
+                              # North American UT
+                              # offsets
+      "EST" / "EDT" /         # Eastern:  - 5/ - 4
+      "CST" / "CDT" /         # Central:  - 6/ - 5
+      "MST" / "MDT" /         # Mountain: - 7/ - 6
+      "PST" / "PDT" /         # Pacific:  - 8/ - 7
+                              #
+      [\x41-\x49] /           # Military zones - "A"
+      [\x4B-\x5A] /           # through "I" and "K"
+      [\x61-\x69] /           # through "Z", both
+      [\x6B-\x7A]             # upper and lower case
+    end
+
+    # [CFWS] 2*DIGIT [CFWS]
+    rule obs_year
+      # Modified definition from rfc2822_obsolete.treetop to support
+      # 2+ digits
+      CFWS? (DIGIT DIGIT DIGIT*) CFWS?
+    end
+
+    # Modified  
+    rule obs_qp
+      "\\" ([\x00] / obs_NO_WS_CTL / LF / CR)
+    end
+
+    rule obs_utext
+      [\x00] / obs_NO_WS_CTL / VCHAR
+    end
+
+    rule obs_phrase_list
+      (phrase / CFWS)? / ("," (phrase / CFWS))*
+    end
+
+    # Modified in 5322 Errata
+    rule obs_FWS
+      (CRLF? WSP)+
+    end
+
+    rule obs_angle_addr
+      CFWS? "<" obs_route? addr_spec ">" CFWS?
+    end
+
+    rule obs_route
+      obs_domain_list ":"
+    end
+
+    rule obs_mbox_list
+      (CFWS? ",")* mailbox ("," (mailbox / CFWS)?)*
+    end
+
+    rule obs_addr_list
+      (CFWS? ",")* address ("," (address / CFWS)?)*
+    end
+
+    #Modified in rfc2822.treetop also
+    rule obs_domain_list
+      (CFWS / ",")* "@" domain ("," CFWS? ("@" domain)?)* 
+    end
+  end
+end
