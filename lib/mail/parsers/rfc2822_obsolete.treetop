@@ -19,6 +19,7 @@ module Mail
       obs_text
     end
 
+    # Original: word *(word / "." / CFWS)
     rule obs_phrase
       (word / "." / "@")+
     end
@@ -82,6 +83,7 @@ module Mail
       CFWS? obs_domain_list ":" CFWS?
     end
 
+    # Original: "@" domain *(*(CFWS / "," ) [CFWS] "@" domain)
     rule obs_domain_list
       "@" domain (("," )* CFWS? "@" domain)*
     end

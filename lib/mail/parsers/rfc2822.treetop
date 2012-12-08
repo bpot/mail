@@ -31,10 +31,12 @@ module Mail
       [\x09\x20]
     end
   
+    # Original: ([*WSP CRLF] 1*WSP) / obs-FWS
     rule FWS    # Folding white space
       (WSP* CRLF WSP+) / (CRLF WSP+) / obs_FWS
     end
 
+    # Original: *([FWS] comment) (([FWS] comment) / FWS)
     rule CFWS
       (FWS* comment)* FWS?
     end
@@ -85,6 +87,7 @@ module Mail
       "~"
     end
     
+    # ???
     rule mtext
       (atext / ".")+
     end
@@ -97,30 +100,37 @@ module Mail
       CFWS? dot_atom_text CFWS?
     end
   
+    # ???
     rule local_dot_atom
       CFWS? local_dot_atom_text CFWS?
     end
     
+    # ???
     rule message_id_text
       mtext+
     end
     
+    # ???
     rule dot_atom_text
       (domain_text "."?)+
     end
     
+    # ???
     rule local_dot_atom_text
       ("."* domain_text "."*)+
     end
     
+    # ???
     rule domain_text
       (DQUOTE (FWS? quoted_domain)+ FWS? DQUOTE) / atext+
     end
     
+    # ???
     rule quoted_domain
       qdcontent / "\\" text
     end
     
+    # ???
     rule qdcontent
       NO_WS_CTL /     # Non white space controls
       [\x21] /        # The rest of the US-ASCII
@@ -129,6 +139,7 @@ module Mail
       [\x5d-\x7e]     # double quote character
     end
 
+    # Original: word+ / obs_phrase
     rule phrase
       obs_phrase / word+
     end
@@ -137,6 +148,7 @@ module Mail
       atom / quoted_string
     end
     
+    # ???
     rule phrase_list
       first_phrase:phrase other_phrases:("," FWS* phrase_value:phrase)*
     end
@@ -159,10 +171,12 @@ module Mail
       CFWS? "<" addr_spec ">" CFWS? / obs_angle_addr
     end
 
+    # Original: local-part "@" domain
     rule addr_spec
       (local_part "@" domain) / local_part
     end
 
+    # Original: dot-atom / quoted-string / obs-local-part
     rule local_part
       local_dot_atom / quoted_string / obs_local_part
     end
@@ -171,10 +185,12 @@ module Mail
       dot_atom / domain_literal / obs_domain
     end
   
+    # ???
     rule group
       group_name:display_name ":" group_list:(mailbox_list_group / CFWS)? ";" CFWS?
     end
 
+    # ???
     rule mailbox_list_group
       mailbox_list {
         def addresses
@@ -183,6 +199,10 @@ module Mail
       }
     end
 
+    # Original: 
+    # quoted-string   =       [CFWS]
+    #                         DQUOTE *([FWS] qcontent) [FWS] DQUOTE
+    #                         [CFWS]
     rule quoted_string
       CFWS? DQUOTE quoted_content:(FWS? qcontent)+ FWS? DQUOTE CFWS?
     end
@@ -213,10 +233,12 @@ module Mail
       phrase
     end
     
+    # Original: [display-name] angle-addr
     rule name_addr
       display_name angle_addr / angle_addr
     end
     
+    # Original: (mailbox *("," mailbox)) / obs-mbox-list
     rule mailbox_list
       (first_addr:mailbox other_addr:(("," / ";") addr_value:mailbox)*) / obs_mbox_list
     end
@@ -225,6 +247,7 @@ module Mail
       name_addr / addr_spec
     end
 
+    # Original: mailbox / group
     rule address
       group {
     
@@ -264,6 +287,7 @@ module Mail
       }
     end
   
+    # Original: (address *("," address)) / obs-addr-list
     rule address_list
       first_addr:address? other_addr:(FWS* ("," / ";") FWS* addr_value:address?)*
     end
@@ -355,6 +379,7 @@ module Mail
       (angle_addr)+ / addr_spec / atom / domain / msg_id
     end
 
+    # ???
     rule message_ids
       first_msg_id:msg_id other_msg_ids:( CFWS msg_id_value:msg_id )*
     end
@@ -367,10 +392,12 @@ module Mail
       id_left "@" id_right
     end
     
+    # Original: dot-atom-text / no-fold-quote / obs-id-left
     rule id_left
       message_id_text / no_fold_quote / obs_id_left
     end
     
+    # Original: dot-atom-text / no-fold-literal / obs-id-right
     rule id_right
       msg_id_dot_atom_text / no_fold_literal / obs_id_right
     end
@@ -397,14 +424,14 @@ module Mail
       "~" / "@"
     end
 
+    # Original: DQUOTE *(qtext / quoted-pair) DQUOTE
     rule no_fold_quote
       DQUOTE (qtext / quoted_pair)+ DQUOTE
     end
 
+    # Original: "[" *(dtext / quoted-pair) "]"
     rule no_fold_literal
       "[" (dtext / quoted_pair)+ "]"
     end
-    
-    
   end
 end
