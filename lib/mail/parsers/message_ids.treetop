@@ -1,7 +1,7 @@
 module Mail
   grammar MessageIds
 
-    include RFC2822
+    include RFC5322
 
     rule primary
       message_ids {
