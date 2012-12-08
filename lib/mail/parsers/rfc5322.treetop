@@ -283,6 +283,7 @@ module Mail
 
     # Modified in-between RFCs and in rfc2822 treetop
     rule CFWS
+      # (1*([FWS] comment) [FWS]) / FWS
       ((FWS? comment)+ FWS?) / FWS
     end
 
