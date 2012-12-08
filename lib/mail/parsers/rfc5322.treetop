@@ -85,8 +85,7 @@ module Mail
     end
 
     rule phrase
-      word+ / obs_phrase
-      # XXX obs_phrase / word+
+      obs_phrase / word+
     end
 
     rule day_of_week
@@ -323,6 +322,10 @@ module Mail
     # Helpers not part of grammar?
     rule message_ids
       first_msg_id:msg_id other_msg_ids:( CFWS msg_id_value:msg_id )*
+    end
+
+    rule phrase_list
+      first_phrase:phrase other_phrases:("," FWS* phrase_value:phrase)*
     end
   end
 end

@@ -1,7 +1,7 @@
 module Mail
   grammar PhraseLists
 
-    include RFC2822
+    include RFC5322
 
     rule primary_phrase
       phrase_list {

@@ -102,6 +102,10 @@ module Mail
       obs_NO_WS_CTL
     end
 
+    rule obs_qtext
+      obs_NO_WS_CTL
+    end
+
     rule obs_NO_WS_CTL
       [\x01-\x08] /
       [\x0b] /
