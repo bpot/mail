@@ -141,7 +141,7 @@ module Mail
     end
 
     rule local_part
-      local_dot_atom / quoted_string / obs_local_part
+      dot_atom / quoted_string / obs_local_part
     end
   
     rule domain
@@ -256,8 +256,10 @@ module Mail
       time_of_day zone
     end
 
+    # Modified to accept (FWS obs_zone) 
     rule zone
-      (FWS ( "+" / "-" ) DIGIT DIGIT DIGIT DIGIT) / obs_zone
+      #(FWS ( "+" / "-" ) DIGIT DIGIT DIGIT DIGIT) / obs_zone
+      FWS ((( "+" / "-" ) DIGIT DIGIT DIGIT DIGIT) / obs_zone)
     end
   
     rule text
@@ -275,7 +277,7 @@ module Mail
     end
 
     rule received
-      received_token* ";" date_time CRLF
+      received_tokens:received_token* ";" date_time CRLF
     end
 
     # Modified in-between RFCs and in rfc2822 treetop
@@ -313,7 +315,7 @@ module Mail
     end
 
     rule received_token
-      word / angle_addr / addr_spec / domain
+      domain / word / angle_addr / addr_spec# / domain
     end
 
     #############################

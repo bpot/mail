@@ -9,17 +9,7 @@ module Mail
       @root ||= :primary
     end
 
-    include RFC2822
-
-    module Primary0
-      def name_val_list
-        elements[0]
-      end
-
-      def date_time
-        elements[2]
-      end
-    end
+    include RFC5322
 
     def _nt_primary
       start_index = index
@@ -32,30 +22,7 @@ module Mail
         return cached
       end
 
-      i0, s0 = index, []
-      r1 = _nt_name_val_list
-      s0 << r1
-      if r1
-        if has_terminal?(";", false, index)
-          r2 = instantiate_node(SyntaxNode,input, index...(index + 1))
-          @index += 1
-        else
-          terminal_parse_failure(";")
-          r2 = nil
-        end
-        s0 << r2
-        if r2
-          r3 = _nt_date_time
-          s0 << r3
-        end
-      end
-      if s0.last
-        r0 = instantiate_node(SyntaxNode,input, i0...index, s0)
-        r0.extend(Primary0)
-      else
-        @index = i0
-        r0 = nil
-      end
+      r0 = _nt_received
 
       node_cache[:primary][start_index] = r0
 

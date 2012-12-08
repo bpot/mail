@@ -1,10 +1,10 @@
 module Mail
   grammar Received
 
-    include RFC2822
+    include RFC5322
 
     rule primary
-      name_val_list ";" date_time
+      received_tokens:received_token* ";" date_time
     end
     
   end

@@ -96,5 +96,22 @@ module Mail
     rule obs_domain_list
       (CFWS / ",")* "@" domain ("," CFWS? ("@" domain)?)* 
     end
+
+    #New
+    rule obs_ctext
+      obs_NO_WS_CTL
+    end
+
+    rule obs_NO_WS_CTL
+      [\x01-\x08] /
+      [\x0b] /
+      [\x0c] /
+      [\x0e-\x1f] /
+      [\x7f]
+    end
+
+    rule obs_dtext
+      obs_NO_WS_CTL / quoted_pair
+    end
   end
 end

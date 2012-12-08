@@ -8,7 +8,7 @@ module Mail
       parser = Mail::ReceivedParser.new
       if tree = parser.parse(string)
         @date_time = ::DateTime.parse("#{tree.date_time.date.text_value} #{tree.date_time.time.text_value}")
-        @info = tree.name_val_list.text_value
+        @info = tree.received_tokens.text_value
       else
         raise Mail::Field::ParseError.new(ReceivedElement, string, parser.failure_reason)
       end
