@@ -117,5 +117,9 @@ module Mail
     rule obs_dtext
       obs_NO_WS_CTL / quoted_pair
     end
+
+    rule obs_group_list
+      (CFWS? ",")+ CFWS?
+    end
   end
 end

@@ -140,9 +140,17 @@ module Mail
     end
 
     rule local_part
-      dot_atom / quoted_string / obs_local_part
+      local_dot_atom / quoted_string / obs_local_part
     end
-  
+
+    rule local_dot_atom
+      CFWS? local_dot_atom_text CFWS?
+    end
+
+    rule local_dot_atom_text
+      dot_atom
+    end
+
     rule domain
       dot_atom / domain_literal / obs_domain
     end
@@ -210,14 +218,16 @@ module Mail
       }
     end
 
+    # Retained rfc2822 modification
     rule name_addr
-      display_name? angle_addr
+      display_name angle_addr / angle_addr
     end
 
     rule mailbox_list
       (first_addr:mailbox other_addr:(("," / ";") addr_value:mailbox)*) / obs_mbox_list
     end
 
+    # Maintained rfc2822.treetop version
     rule address_list
       first_addr:address? other_addr:(FWS* ("," / ";") FWS* addr_value:address?)*
     end
@@ -295,6 +305,16 @@ module Mail
       group_name:display_name ":" group_list:group_list? ";" CFWS?
     end
 
+    rule group_list
+      mailbox_list {
+        def addresses
+          [first_addr] + other_addr.elements.map { |o| o.addr_value }
+        end } / 
+      CFWS 
+      / 
+      obs_group_list
+    end
+
     rule dtext
       [\x21-\x5a]  /  # The rest of the US-ASCII characters
       [\x5e-\x7e] /    #  not including "[", "]", or "\"
@@ -310,6 +330,10 @@ module Mail
     end
 
     # New
+    rule VCHAR
+      [\x21-\x7e]
+    end
+
     rule utext
       NO_WS_CTL /
       [\x21-\x7e] /
