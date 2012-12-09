@@ -53,11 +53,7 @@ module Mail
   
     # Returns a hash of group name => address strings for the address list
     def groups
-      @groups = Hash.new
-      tree.group_recipients.each do |group|
-        @groups[group.group_name.text_value.to_str] = get_group_addresses(group.group_list)
-      end
-      @groups
+      tree.addresses_grouped_by_group
     end
   
     # Returns the addresses that are part of groups
