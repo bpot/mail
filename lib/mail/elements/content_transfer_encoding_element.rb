@@ -4,20 +4,12 @@ module Mail
     
     include Mail::Utilities
     
-    def initialize( string )
-      parser = Mail::ContentTransferEncodingParser.new
-      case
-      when string.blank?
-        @encoding = ''
-      when tree = parser.parse(string.to_s.downcase)
-        @encoding = tree.encoding.text_value
-      else
-        raise Mail::Field::ParseError.new(ContentTransferEncodingElement, string, parser.failure_reason)
-      end
+    def initialize(string)
+      @content_transfer_encoding = Mail::Parsers::ContentTransferEncodingParser.new.parse(string)
     end
     
     def encoding
-      @encoding
+      @content_transfer_encoding.encoding
     end
     
   end

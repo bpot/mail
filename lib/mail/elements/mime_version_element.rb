@@ -5,21 +5,15 @@ module Mail
     include Mail::Utilities
     
     def initialize( string )
-      parser = Mail::MimeVersionParser.new
-      if tree = parser.parse(string)
-        @major = tree.major.text_value
-        @minor = tree.minor.text_value
-      else
-        raise Mail::Field::ParseError.new(MimeVersionElement, string, parser.failure_reason)
-      end
+      @mime_version = Mail::Parsers::MimeVersionParser.new.parse(string)
     end
     
     def major
-      @major
+      @mime_version.major
     end
     
     def minor
-      @minor
+      @mime_version.minor
     end
     
   end

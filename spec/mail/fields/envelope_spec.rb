@@ -29,6 +29,7 @@ describe Mail::Envelope do
   end
 
   it "should return the envelope from element tree" do
+    pending "bpot"
     envelope = Mail::Envelope.new('mikel@test.lindsaar.net Mon May  2 16:07:05 2005')
     envelope.tree.class.should eq Treetop::Runtime::SyntaxNode
   end
