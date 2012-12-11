@@ -108,6 +108,8 @@
             comment? "." comment? 
             (DIGIT+ >mark %e_minor_digits)
             CFWS?;
+  ctime_date = day_name " "+ month " "+ day " " time_of_day " " year;
+  envelope_from = addr_spec ctime_date;
 
 
 }%%
