@@ -66,20 +66,20 @@
   composite_type = [mM] [eE] [sS] [sS] [aA] [gG] [eE] | [mM] [uU] [lL] [tT] [iI] [pP] [aA] [rR] [tT] | extension_token;
   iana_token = token+;
   attribute = token+;
-  value = quoted_string | (token | 0x3d)+;
+  value = quoted_string | (token -- '"' | 0x3d)+;
   id_left = dot_atom_text | obs_id_left;
   id_right = dot_atom_text | no_fold_literal | obs_id_right;
   address = group | mailbox;
   main_type = discrete_type | composite_type;
   sub_type = extension_token | iana_token;
-  parameter = CFWS? attribute "=" value CFWS?;
+  parameter = CFWS? (attribute >mark %e_parameter_attribute) "=" (value >mark %e_parameter_value) CFWS?;
   msg_id = (CFWS)? 
            (("<" id_left "@" id_right ">") >mark %e_msg_id)
            (CFWS)?;
   address_list = address? (FWS* ("," | ";") FWS* address?)*;
   obs_addr_list = (CFWS? ",")* address ("," (address | CFWS)?)*;
   location = quoted_string | ((token | 0x3d)+ >mark %e_token_string);
-  content_type = main_type "/" sub_type (CFWS? ";"? parameter CFWS?)*;
+  content_type = (main_type >mark %e_main_type) "/" (sub_type >mark_sub_type %e_sub_type) (CFWS? ";" parameter CFWS?)*;
   message_ids = msg_id (CFWS? msg_id)*;
   phrase_list = phrase ("," FWS* phrase)*;
   received_token = word | angle_addr | addr_spec | domain;

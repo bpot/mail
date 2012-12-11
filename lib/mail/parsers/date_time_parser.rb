@@ -3,6 +3,14 @@ module Mail::Parsers
     include Mail::Utilities
 
     def parse(string)
+      ragel(string)
+    end
+
+    def ragel(string)
+      Ragel::DateTimeParser.new.parse(string)
+    end
+
+    def treetop(string)
       date_time = Data::DateTimeData.new
 
       parser = Treetops::DateTimeParser.new

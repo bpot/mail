@@ -3,6 +3,18 @@ module Mail::Parsers
     include Mail::Utilities
 
     def parse(string)
+      t = treetop(string)
+#      puts "TREETOP: #{t.inspect}"
+
+      r = ragel(string)
+#      puts "RAGEL: #{r.inspect}"
+    end
+
+    def ragel(string)
+      Ragel::ContentTypeParser.new.parse(string)
+    end
+
+    def treetop(string)
       content_type = Data::ContentTypeData.new(nil,nil,[])
 
       parser = Treetops::ContentTypeParser.new

@@ -1,7 +1,7 @@
 
-# line 1 "ragel/message_ids.rl"
+# line 1 "lib/mail/parsers/ragel/message_ids.rl"
 
-# line 18 "ragel/message_ids.rl"
+# line 18 "lib/mail/parsers/ragel/message_ids.rl"
 
 
 module Mail
@@ -10,7 +10,7 @@ module Mail
       class MessageIdsParser
         def initialize
           
-# line 14 "ragel/message_ids.rb"
+# line 14 "lib/mail/parsers/ragel/message_ids.rb"
 class << self
 	attr_accessor :_message_ids_actions
 	private :_message_ids_actions, :_message_ids_actions=
@@ -43,7 +43,7 @@ end
 self._message_ids_trans_keys = [
 	9, 13, 32, 40, 60, 10, 9, 32, 
 	13, 41, 92, 1, 9, 11, 39, 42, 
-	127, 10, 9, 32, -128, -1, 9, 13, 
+	127, 10, 9, 32, 0, 127, 9, 13, 
 	32, 34, 40, 45, 61, 63, 33, 39, 
 	42, 43, 47, 57, 65, 90, 94, 126, 
 	10, 9, 32, 9, 13, 32, 33, 40, 
@@ -51,7 +51,7 @@ self._message_ids_trans_keys = [
 	57, 63, 90, 94, 126, 9, 13, 32, 
 	40, 46, 64, 10, 9, 32, 13, 41, 
 	92, 1, 9, 11, 39, 42, 127, 10, 
-	9, 32, -128, -1, 9, 13, 32, 33, 
+	9, 32, 0, 127, 9, 13, 32, 33, 
 	40, 45, 61, 63, 91, 35, 39, 42, 
 	43, 47, 57, 65, 90, 94, 126, 10, 
 	9, 32, 9, 13, 32, 33, 40, 46, 
@@ -59,26 +59,26 @@ self._message_ids_trans_keys = [
 	63, 65, 90, 94, 126, 9, 13, 32, 
 	40, 46, 62, 10, 9, 32, 13, 41, 
 	92, 1, 9, 11, 39, 42, 127, 10, 
-	9, 32, -128, -1, 9, 13, 32, 33, 
+	9, 32, 0, 127, 9, 13, 32, 33, 
 	40, 45, 61, 63, 35, 39, 42, 43, 
 	47, 57, 65, 90, 94, 126, 10, 9, 
 	32, 13, 41, 92, 1, 9, 11, 39, 
-	42, 127, 10, 9, 32, -128, -1, 10, 
+	42, 127, 10, 9, 32, 0, 127, 10, 
 	9, 32, 13, 41, 92, 1, 9, 11, 
-	39, 42, 127, 10, 9, 32, -128, -1, 
+	39, 42, 127, 10, 9, 32, 0, 127, 
 	13, 41, 92, 1, 9, 11, 39, 42, 
-	127, 10, 9, 32, -128, -1, 13, 92, 
+	127, 10, 9, 32, 0, 127, 13, 92, 
 	93, 1, 9, 11, 90, 94, 127, 10, 
-	9, 32, -128, -1, 9, 13, 32, 40, 
+	9, 32, 0, 127, 9, 13, 32, 40, 
 	62, 10, 9, 32, 13, 41, 92, 1, 
 	9, 11, 39, 42, 127, 10, 9, 32, 
 	-128, -1, 9, 13, 32, 92, 1, 8, 
 	11, 33, 35, 127, 13, 34, 92, 1, 
-	9, 11, 127, 10, 9, 32, -128, -1, 
+	9, 11, 127, 10, 9, 32, 0, 127, 
 	9, 13, 32, 92, 1, 8, 11, 33, 
 	35, 127, 10, 9, 32, 13, 41, 92, 
 	1, 9, 11, 39, 42, 127, 10, 9, 
-	32, -128, -1, 9, 13, 32, 40, 60, 
+	32, 0, 127, 9, 13, 32, 40, 60, 
 	9, 13, 32, 40, 60, 0
 ]
 
@@ -137,42 +137,42 @@ end
 self._message_ids_indicies = [
 	0, 2, 0, 3, 4, 1, 5, 1, 
 	0, 0, 1, 6, 0, 7, 3, 3, 
-	3, 1, 8, 1, 3, 3, 1, 1, 
-	3, 9, 10, 9, 12, 13, 11, 11, 
+	3, 1, 8, 1, 3, 3, 1, 3, 
+	1, 9, 10, 9, 12, 13, 11, 11, 
 	11, 11, 11, 11, 11, 11, 1, 14, 
 	1, 9, 9, 1, 15, 16, 15, 11, 
 	17, 9, 11, 18, 11, 11, 11, 11, 
 	11, 1, 15, 16, 15, 17, 9, 18, 
 	1, 19, 1, 15, 15, 1, 20, 15, 
 	21, 17, 17, 17, 1, 22, 1, 17, 
-	17, 1, 1, 17, 18, 23, 18, 24, 
+	17, 1, 17, 1, 18, 23, 18, 24, 
 	25, 24, 24, 24, 26, 24, 24, 24, 
 	24, 24, 1, 27, 1, 18, 18, 1, 
 	28, 29, 28, 24, 30, 31, 32, 24, 
 	24, 24, 24, 24, 24, 1, 28, 29, 
 	28, 30, 31, 32, 1, 33, 1, 28, 
 	28, 1, 34, 28, 35, 30, 30, 30, 
-	1, 36, 1, 30, 30, 1, 1, 30, 
+	1, 36, 1, 30, 30, 1, 30, 1, 
 	31, 37, 31, 24, 38, 24, 24, 24, 
 	24, 24, 24, 24, 24, 1, 39, 1, 
 	31, 31, 1, 40, 31, 41, 38, 38, 
-	38, 1, 42, 1, 38, 38, 1, 1, 
-	38, 43, 1, 44, 44, 1, 46, 44, 
+	38, 1, 42, 1, 38, 38, 1, 38, 
+	1, 43, 1, 44, 44, 1, 46, 44, 
 	47, 45, 45, 45, 1, 48, 1, 45, 
-	45, 1, 1, 45, 49, 18, 50, 25, 
+	45, 1, 45, 1, 49, 18, 50, 25, 
 	25, 25, 1, 51, 1, 25, 25, 1, 
-	1, 25, 52, 53, 54, 26, 26, 26, 
-	1, 55, 1, 26, 26, 1, 1, 26, 
+	25, 1, 52, 53, 54, 26, 26, 26, 
+	1, 55, 1, 26, 26, 1, 26, 1, 
 	54, 56, 54, 57, 32, 1, 58, 1, 
 	54, 54, 1, 59, 54, 60, 57, 57, 
 	57, 1, 61, 1, 57, 57, 1, 1, 
 	57, 63, 64, 63, 65, 62, 62, 62, 
 	1, 67, 68, 69, 66, 66, 1, 70, 
-	1, 66, 66, 1, 1, 66, 71, 72, 
+	1, 66, 66, 1, 66, 1, 71, 72, 
 	71, 69, 66, 66, 66, 1, 73, 1, 
 	71, 71, 1, 74, 9, 75, 13, 13, 
-	13, 1, 76, 1, 13, 13, 1, 1, 
-	13, 77, 78, 77, 79, 80, 1, 44, 
+	13, 1, 76, 1, 13, 13, 1, 13, 
+	1, 77, 78, 77, 79, 80, 1, 44, 
 	81, 44, 45, 4, 1, 0
 ]
 
@@ -247,7 +247,7 @@ end
 self.message_ids_en_main = 1;
 
 
-# line 26 "ragel/message_ids.rl"
+# line 26 "lib/mail/parsers/ragel/message_ids.rl"
         end
         
         def parse(data)
@@ -257,16 +257,16 @@ self.message_ids_en_main = 1;
           eof = data.length
 
           
-# line 261 "ragel/message_ids.rb"
+# line 261 "lib/mail/parsers/ragel/message_ids.rb"
 begin
 	p ||= 0
 	pe ||= data.length
 	cs = message_ids_start
 end
 
-# line 35 "ragel/message_ids.rl"
+# line 35 "lib/mail/parsers/ragel/message_ids.rl"
           
-# line 270 "ragel/message_ids.rb"
+# line 270 "lib/mail/parsers/ragel/message_ids.rb"
 begin
 	_klen, _trans, _keys, _acts, _nacts = nil
 	_goto_level = 0
@@ -348,18 +348,18 @@ begin
 			_acts += 1
 			case _message_ids_actions[_acts - 1]
 when 0 then
-# line 7 "ragel/message_ids.rl"
+# line 7 "lib/mail/parsers/ragel/message_ids.rl"
 		begin
  		end
 when 1 then
-# line 13 "ragel/message_ids.rl"
+# line 13 "lib/mail/parsers/ragel/message_ids.rl"
 		begin
  mark = p 		end
 when 2 then
-# line 14 "ragel/message_ids.rl"
+# line 14 "lib/mail/parsers/ragel/message_ids.rl"
 		begin
  message_ids.message_ids << data[mark..(p-1)] 		end
-# line 363 "ragel/message_ids.rb"
+# line 363 "lib/mail/parsers/ragel/message_ids.rb"
 			end # action switch
 		end
 	end
@@ -388,10 +388,10 @@ when 2 then
 		__acts += 1
 		case _message_ids_actions[__acts - 1]
 when 2 then
-# line 14 "ragel/message_ids.rl"
+# line 14 "lib/mail/parsers/ragel/message_ids.rl"
 		begin
  message_ids.message_ids << data[mark..(p-1)] 		end
-# line 395 "ragel/message_ids.rb"
+# line 395 "lib/mail/parsers/ragel/message_ids.rb"
 		end # eof action switch
 	end
 	if _trigger_goto
@@ -405,12 +405,12 @@ end
 	end
 	end
 
-# line 36 "ragel/message_ids.rl"
+# line 36 "lib/mail/parsers/ragel/message_ids.rl"
 
           if p != eof
-            puts "FAILURE"
-            p data
-            p data[0..p]
+          #  puts "FAILURE"
+          #  p data
+          #  p data[0..p]
             raise "FAILED TO PARSE" 
           end
 
