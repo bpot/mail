@@ -9,6 +9,7 @@ module Mail
     end
 
     require 'mail/parsers/ragel/content_location'
+    require 'mail/parsers/ragel/message_ids'
     require 'mail/parsers/ragel/mime_version'
     require 'mail/parsers/ragel/phrase_lists'
     require 'mail/parsers/ragel/received'

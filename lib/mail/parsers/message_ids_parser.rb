@@ -8,6 +8,18 @@ module Mail::Parsers
         return message_ids
       end
 
+      ragel(string)
+    end
+
+    def ragel(string)
+      begin
+        Ragel::MessageIdsParser.new.parse(string)
+      rescue
+        raise Mail::Field::ParseError.new(Mail::MessageIdsElement, string, "failed")
+      end
+    end
+
+    def treetop(string)
       parser = Treetops::MessageIdsParser.new
       if tree = parser.parse(string)
         message_ids.message_ids = tree.message_ids

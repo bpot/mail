@@ -73,7 +73,9 @@
   main_type = discrete_type | composite_type;
   sub_type = extension_token | iana_token;
   parameter = CFWS? attribute "=" value CFWS?;
-  msg_id = (CFWS)? "<" id_left "@" id_right ">" (CFWS)?;
+  msg_id = (CFWS)? 
+           (("<" id_left "@" id_right ">") >mark %e_msg_id)
+           (CFWS)?;
   address_list = address? (FWS* ("," | ";") FWS* address?)*;
   obs_addr_list = (CFWS? ",")* address ("," (address | CFWS)?)*;
   location = quoted_string | ((token | 0x3d)+ >mark %e_token_string);
