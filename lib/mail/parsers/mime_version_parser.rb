@@ -3,6 +3,17 @@ module Mail::Parsers
     include Mail::Utilities
 
     def parse(string)
+      ragel(string)
+    end
+
+    private
+
+    def ragel(string)
+      parser = Ragel::MimeVersionParser.new
+      parser.parse(string)
+    end
+
+    def treetop(string)
       mime_version = Data::MimeVersionData.new("", nil)
       if string.blank?
         return mime_version

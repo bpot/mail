@@ -8,6 +8,11 @@ module Mail
       require "mail/parsers/#{field_parser}_parser"
     end
 
+    require 'mail/parsers/ragel/content_location'
+    require 'mail/parsers/ragel/mime_version'
+    require 'mail/parsers/ragel/phrase_lists'
+    require 'mail/parsers/ragel/received'
+
     module Data
       AddressListData = Struct.new(:addresses, :group_names)
       AddressData = Struct.new(:raw, :domain, :comments, :local,
