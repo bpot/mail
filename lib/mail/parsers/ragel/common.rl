@@ -110,6 +110,8 @@
             CFWS?;
   ctime_date = day_name " "+ month " "+ day " " time_of_day " " year;
   envelope_from = addr_spec ctime_date;
+  encoding = ietf_token "s"? | custom_x_token;
+  content_transfer_encoding = CFWS? (encoding >mark %e_encoding) CFWS? ";"? CFWS?;
 
 
 }%%

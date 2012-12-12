@@ -7,6 +7,15 @@ module Mail::Parsers
       if string.blank?
         return content_transfer_encoding
       end
+      
+      ragel(string.downcase)
+    end
+
+    def ragel(string)
+      Ragel::ContentTransferEncodingParser.new.parse(string)
+    end
+
+    def treetop(string)
 
       parser = Treetops::ContentTransferEncodingParser.new
       if tree = parser.parse(string.downcase)
