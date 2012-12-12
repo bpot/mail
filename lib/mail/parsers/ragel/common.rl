@@ -113,5 +113,8 @@
   encoding = ietf_token "s"? | custom_x_token;
   content_transfer_encoding = CFWS? (encoding >mark %e_encoding) CFWS? ";"? CFWS?;
 
+  disposition_type = 'inline'i | 'attachment'i | extension_token | '';
+  content_disposition = (disposition_type >mark %e_disposition_type) (CFWS? ";" parameter CFWS?)*;
+
 
 }%%
