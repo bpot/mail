@@ -8,6 +8,8 @@ module Mail
       require "mail/parsers/#{field_parser}_parser"
     end
 
+    require 'mail/parsers/ragel/address_lists'
+    require 'mail/parsers/ragel/content_disposition'
     require 'mail/parsers/ragel/content_location'
     require 'mail/parsers/ragel/content_transfer_encoding'
     require 'mail/parsers/ragel/content_type'

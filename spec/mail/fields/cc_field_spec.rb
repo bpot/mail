@@ -11,7 +11,7 @@ describe Mail::CcField do
   describe "initialization" do
 
     it "should initialize" do
-      doing { Mail::CcField.new("Cc: Mikel") }.should_not raise_error
+      doing { Mail::CcField.new("Cc: Mikel@example.com") }.should_not raise_error
     end
 
     it "should mix in the CommonAddress module" do

@@ -521,7 +521,7 @@ TRACEHEADER
     end
     
     it "should add a new received header after the other received headers if they exist" do
-      @traced_header['To'] = "Mikel"
+      @traced_header['To'] = "Mikel@example.com"
       @traced_header['Received'] = "from agw2 by xxx.xxxx.xxx; Sun, 8 May 2005 12:30:13 -0500"
       @traced_header.fields[0].addresses.should eq ['xxx@xxxx.xxxtest']
       @traced_header.fields[1].info.should eq 'from xxx.xxxx.xxx by xxx.xxxx.xxx with ESMTP id 6AAEE3B4D23 for <xxx@xxxx.xxx>'

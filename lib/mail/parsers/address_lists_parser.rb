@@ -9,6 +9,22 @@ module Mail::Parsers
         return address_list
       end
 
+      #puts "TREETOP-------------------------"
+      #pp treetop(string)
+      #puts "RAGEL-------------------------"
+      r = ragel(string)
+      #pp r
+      #puts "-----------------------------"
+      r
+    end
+
+    def ragel(string)
+      @@ragel ||= Ragel::AddressListsParser.new
+      @@ragel.parse(string)
+    end
+
+    def treetop(string)
+      address_list = Data::AddressListData.new([],[])
       parser = Mail::Parsers::Treetops::AddressListsParser.new
       if tree = parser.parse(string)
         address_nodes = tree.addresses

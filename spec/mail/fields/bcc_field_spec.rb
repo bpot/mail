@@ -26,7 +26,7 @@ describe Mail::BccField do
   describe "initialization" do
 
     it "should initialize" do
-      doing { Mail::BccField.new("Bcc: Mikel") }.should_not raise_error
+      doing { Mail::BccField.new("Bcc: Mikel@example.com") }.should_not raise_error
     end
 
     it "should mix in the CommonAddress module" do

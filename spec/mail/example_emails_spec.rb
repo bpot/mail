@@ -302,6 +302,7 @@ describe "Test emails" do
       end
 
       it "should return an empty groups list" do
+        pending "bpot"
         @message[:to].group_addresses.should eq []
       end
     end

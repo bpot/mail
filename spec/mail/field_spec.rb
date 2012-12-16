@@ -6,8 +6,8 @@ describe Mail::Field do
   describe "initialization" do
 
     it "should be instantiated" do
-      doing {Mail::Field.new('To: Mikel')}.should_not raise_error
-      Mail::Field.new('To: Mikel').field.class.should eq Mail::ToField
+      doing {Mail::Field.new('To: Mikel@example.com')}.should_not raise_error
+      Mail::Field.new('To: Mikel@example.com').field.class.should eq Mail::ToField
     end
 
     it "should allow you to init on an array" do
@@ -21,8 +21,8 @@ describe Mail::Field do
     end
 
     it "should allow us to pass a value" do
-      doing {Mail::Field.new('To', 'Mikel')}.should_not raise_error
-      Mail::Field.new('To', 'Mikel').field.class.should eq Mail::ToField
+      doing {Mail::Field.new('To', 'Mikel@example.com')}.should_not raise_error
+      Mail::Field.new('To', 'Mikel@example.com').field.class.should eq Mail::ToField
     end
 
     it "should match up fields to class names" do

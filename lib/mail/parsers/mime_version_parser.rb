@@ -9,8 +9,8 @@ module Mail::Parsers
     private
 
     def ragel(string)
-      parser = Ragel::MimeVersionParser.new
-      parser.parse(string)
+      @@parser ||= Ragel::MimeVersionParser.new
+      @@parser.parse(string)
     end
 
     def treetop(string)

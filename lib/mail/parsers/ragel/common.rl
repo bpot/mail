@@ -18,12 +18,15 @@
   ALPHA = [a-zA-Z];
   DIGIT = [0-9];
   obs_qtext = obs_NO_WS_CTL;
-  comment = "(" (FWS? ccontent)* FWS? ")";
+  comment = "(" ((FWS? ccontent)* >s_ccontent %e_ccontent) FWS? ")" %e_comment;
   atext = ALPHA | DIGIT | "!" | "#" | "$" | "%" | "&" | "'" | "*" | "+" | "-" | "/" | "=" | "?" | "^" | "_" | "`" | "{" | "|" | "}" | "~";
   qtext = 0x21 | 0x23..0x5b | 0x5d..0x7e | obs_qtext;
   obs_dtext = obs_NO_WS_CTL | quoted_pair;
   CFWS = ((FWS? comment)+ FWS?) | FWS;
-  dot_atom_text = atext+ ("." atext+)*;
+  # modified from:
+  #   dot_atom_text = atext+ ("." atext+)*;
+  # to support consecutive dots in local part
+  dot_atom_text = atext+ ("."+ atext)*;
   DQUOTE = '"';
   qcontent = qtext | quoted_pair;
   dtext = 0x21..0x5a | 0x5e..0x7e | obs_dtext;
@@ -40,16 +43,19 @@
   local_dot_atom = CFWS? local_dot_atom_text CFWS?;
   obs_local_part = word ("." word)*;
   obs_domain_list = (CFWS | ",")* "@" domain ("," CFWS? ("@" domain)?)*;
-  local_part = local_dot_atom | quoted_string | obs_local_part;
+  local_part = (local_dot_atom | quoted_string | obs_local_part) >mark_local;
   obs_phrase = (word | "." | "@")+;
   obs_route = obs_domain_list ":";
-  addr_spec = (local_part "@" domain) | local_part;
+  addr_spec = local_part >mark %e_local_part "@" (domain >mark %e_domain);
   phrase = (obs_phrase | word+) >mark %e_phrase;
   obs_angle_addr = CFWS? "<" obs_route? addr_spec ">" CFWS?;
   display_name = phrase;
-  angle_addr = CFWS? "<" addr_spec ">" CFWS? | obs_angle_addr;
-  name_addr = display_name angle_addr | angle_addr;
-  mailbox = name_addr | addr_spec;
+  angle_addr = CFWS? ("<" >s_angle_addr) addr_spec ">" CFWS? | obs_angle_addr;
+  # the end_addr priority solves uncertainty when whitespace
+  # after an addr_spec could cause it to be interpreted as a 
+  # display name "bar@example.com ,..."
+  name_addr = display_name? %e_name_addr_display_name %(end_addr,0) angle_addr;
+  mailbox = (name_addr | addr_spec %(end_addr,1)) >s_address %e_address;
   obs_mbox_list = (CFWS? ",")* mailbox ("," (mailbox | CFWS)?)*;
   token = 0x21..0x27 | 0x2a..0x2b | 0x2c..0x2e | 0x30..0x39 | 0x41..0x5a | 0x5e..0x7e;
   mailbox_list = (mailbox (("," | ";") mailbox)*) | obs_mbox_list;
@@ -61,7 +67,7 @@
   obs_id_left = local_part;
   no_fold_literal = "[" (dtext)* "]";
   obs_id_right = domain;
-  group = display_name ":" group_list? ";" CFWS?;
+  group = (display_name %e_group_name) ":" (group_list? >start_group_list) ";" CFWS?;
   discrete_type = [tT] [eE] [xX] [tT] | [iI] [mM] [aA] [gG] [eE] | [aA] [uU] [dD] [iI] [oO] | [vV] [iI] [dD] [eE] [oO] | [aA] [pP] [pP] [lL] [iI] [cC] [aA] [tT] [iI] [oO] [nN] | extension_token;
   composite_type = [mM] [eE] [sS] [sS] [aA] [gG] [eE] | [mM] [uU] [lL] [tT] [iI] [pP] [aA] [rR] [tT] | extension_token;
   iana_token = token+;

@@ -11,7 +11,8 @@ module Mail::Parsers
     end
 
     def ragel(string)
-      Ragel::ContentTypeParser.new.parse(string)
+      @@parser = Ragel::ContentTypeParser.new
+      @@parser.parse(string)
     end
 
     def treetop(string)
