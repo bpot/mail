@@ -68,8 +68,9 @@
   no_fold_literal = "[" (dtext)* "]";
   obs_id_right = domain;
   group = (display_name %e_group_name) ":" (group_list? >start_group_list) ";" CFWS?;
-  discrete_type = [tT] [eE] [xX] [tT] | [iI] [mM] [aA] [gG] [eE] | [aA] [uU] [dD] [iI] [oO] | [vV] [iI] [dD] [eE] [oO] | [aA] [pP] [pP] [lL] [iI] [cC] [aA] [tT] [iI] [oO] [nN] | extension_token;
-  composite_type = [mM] [eE] [sS] [sS] [aA] [gG] [eE] | [mM] [uU] [lL] [tT] [iI] [pP] [aA] [rR] [tT] | extension_token;
+  discrete_type = 'text'i | 'image'i | 'audio'i | 'video'i | 
+                  'application'i | extension_token;
+  composite_type = 'message'i | 'multipart'i | extension_token;
   iana_token = token+;
   attribute = token+;
   value = quoted_string | (token -- '"' | 0x3d)+;
