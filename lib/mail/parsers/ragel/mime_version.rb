@@ -1,7 +1,7 @@
 
-# line 1 "ragel/mime_version.rl"
+# line 1 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 
-# line 17 "ragel/mime_version.rl"
+# line 37 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 
 
 module Mail
@@ -10,152 +10,196 @@ module Mail
       class MimeVersionParser
         def initialize
           
-# line 14 "ragel/mime_version.rb"
+# line 14 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
 class << self
-	attr_accessor :_phrase_lists_actions
-	private :_phrase_lists_actions, :_phrase_lists_actions=
+	attr_accessor :_mime_version_actions
+	private :_mime_version_actions, :_mime_version_actions=
 end
-self._phrase_lists_actions = [
-	0, 1, 0, 1, 1, 1, 2
+self._mime_version_actions = [
+	0, 1, 0, 1, 1, 1, 2, 1, 
+	3, 1, 4, 1, 5, 2, 0, 1, 
+	2, 2, 3
 ]
 
 class << self
-	attr_accessor :_phrase_lists_key_offsets
-	private :_phrase_lists_key_offsets, :_phrase_lists_key_offsets=
+	attr_accessor :_mime_version_key_offsets
+	private :_mime_version_key_offsets, :_mime_version_key_offsets=
 end
-self._phrase_lists_key_offsets = [
-	0, 0, 6, 7, 9, 18, 19, 21, 
-	23, 27, 36, 37, 39, 40, 43, 52, 
-	53, 55, 57, 58, 60, 69, 70, 72, 
-	74, 76, 78, 84
+self._mime_version_key_offsets = [
+	0, 0, 6, 7, 9, 20, 31, 42, 
+	43, 45, 51, 55, 66, 77, 88, 89, 
+	91, 92, 95, 106, 117, 128, 129, 131, 
+	133, 134, 136, 147, 158, 169, 170, 172, 
+	174, 176, 178, 180, 186, 190
 ]
 
 class << self
-	attr_accessor :_phrase_lists_trans_keys
-	private :_phrase_lists_trans_keys, :_phrase_lists_trans_keys=
+	attr_accessor :_mime_version_trans_keys
+	private :_mime_version_trans_keys, :_mime_version_trans_keys=
 end
-self._phrase_lists_trans_keys = [
+self._mime_version_trans_keys = [
 	9, 13, 32, 40, 48, 57, 10, 9, 
-	32, 13, 41, 92, 1, 9, 11, 39, 
-	42, 127, 10, 9, 32, -128, -1, 40, 
-	46, 48, 57, 13, 41, 92, 1, 9, 
-	11, 39, 42, 127, 10, 9, 32, 46, 
-	40, 48, 57, 13, 41, 92, 1, 9, 
-	11, 39, 42, 127, 10, 9, 32, 48, 
-	57, 10, 9, 32, 13, 41, 92, 1, 
-	9, 11, 39, 42, 127, 10, 9, 32, 
-	0, 127, -128, -1, 0, 127, 9, 13, 
-	32, 40, 48, 57, 9, 13, 32, 40, 
-	0
+	32, 9, 13, 32, 41, 92, 1, 8, 
+	11, 39, 42, 127, 9, 13, 32, 41, 
+	92, 1, 8, 11, 39, 42, 127, 9, 
+	13, 32, 41, 92, 1, 8, 11, 39, 
+	42, 127, 10, 9, 32, 9, 13, 32, 
+	40, 48, 57, 40, 46, 48, 57, 9, 
+	13, 32, 41, 92, 1, 8, 11, 39, 
+	42, 127, 9, 13, 32, 41, 92, 1, 
+	8, 11, 39, 42, 127, 9, 13, 32, 
+	41, 92, 1, 8, 11, 39, 42, 127, 
+	10, 9, 32, 46, 40, 48, 57, 9, 
+	13, 32, 41, 92, 1, 8, 11, 39, 
+	42, 127, 9, 13, 32, 41, 92, 1, 
+	8, 11, 39, 42, 127, 9, 13, 32, 
+	41, 92, 1, 8, 11, 39, 42, 127, 
+	10, 9, 32, 48, 57, 10, 9, 32, 
+	9, 13, 32, 41, 92, 1, 8, 11, 
+	39, 42, 127, 9, 13, 32, 41, 92, 
+	1, 8, 11, 39, 42, 127, 9, 13, 
+	32, 41, 92, 1, 8, 11, 39, 42, 
+	127, 10, 9, 32, 0, 127, 0, 127, 
+	0, 127, -128, -1, 9, 13, 32, 40, 
+	48, 57, 9, 13, 32, 40, 9, 13, 
+	32, 40, 0
 ]
 
 class << self
-	attr_accessor :_phrase_lists_single_lengths
-	private :_phrase_lists_single_lengths, :_phrase_lists_single_lengths=
+	attr_accessor :_mime_version_single_lengths
+	private :_mime_version_single_lengths, :_mime_version_single_lengths=
 end
-self._phrase_lists_single_lengths = [
-	0, 4, 1, 2, 3, 1, 2, 0, 
-	2, 3, 1, 2, 1, 1, 3, 1, 
-	2, 0, 1, 2, 3, 1, 2, 0, 
-	0, 0, 4, 4
+self._mime_version_single_lengths = [
+	0, 4, 1, 2, 5, 5, 5, 1, 
+	2, 4, 2, 5, 5, 5, 1, 2, 
+	1, 1, 5, 5, 5, 1, 2, 0, 
+	1, 2, 5, 5, 5, 1, 2, 0, 
+	0, 0, 0, 4, 4, 4
 ]
 
 class << self
-	attr_accessor :_phrase_lists_range_lengths
-	private :_phrase_lists_range_lengths, :_phrase_lists_range_lengths=
+	attr_accessor :_mime_version_range_lengths
+	private :_mime_version_range_lengths, :_mime_version_range_lengths=
 end
-self._phrase_lists_range_lengths = [
-	0, 1, 0, 0, 3, 0, 0, 1, 
-	1, 3, 0, 0, 0, 1, 3, 0, 
-	0, 1, 0, 0, 3, 0, 0, 1, 
-	1, 1, 1, 0
+self._mime_version_range_lengths = [
+	0, 1, 0, 0, 3, 3, 3, 0, 
+	0, 1, 1, 3, 3, 3, 0, 0, 
+	0, 1, 3, 3, 3, 0, 0, 1, 
+	0, 0, 3, 3, 3, 0, 0, 1, 
+	1, 1, 1, 1, 0, 0
 ]
 
 class << self
-	attr_accessor :_phrase_lists_index_offsets
-	private :_phrase_lists_index_offsets, :_phrase_lists_index_offsets=
+	attr_accessor :_mime_version_index_offsets
+	private :_mime_version_index_offsets, :_mime_version_index_offsets=
 end
-self._phrase_lists_index_offsets = [
-	0, 0, 6, 8, 11, 18, 20, 23, 
-	25, 29, 36, 38, 41, 43, 46, 53, 
-	55, 58, 60, 62, 65, 72, 74, 77, 
-	79, 81, 83, 89
+self._mime_version_index_offsets = [
+	0, 0, 6, 8, 11, 20, 29, 38, 
+	40, 43, 49, 53, 62, 71, 80, 82, 
+	85, 87, 90, 99, 108, 117, 119, 122, 
+	124, 126, 129, 138, 147, 156, 158, 161, 
+	163, 165, 167, 169, 175, 180
 ]
 
 class << self
-	attr_accessor :_phrase_lists_indicies
-	private :_phrase_lists_indicies, :_phrase_lists_indicies=
+	attr_accessor :_mime_version_indicies
+	private :_mime_version_indicies, :_mime_version_indicies=
 end
-self._phrase_lists_indicies = [
+self._mime_version_indicies = [
 	0, 2, 0, 3, 4, 1, 5, 1, 
-	0, 0, 1, 6, 0, 7, 3, 3, 
-	3, 1, 8, 1, 3, 3, 1, 1, 
-	3, 9, 10, 11, 1, 13, 14, 15, 
-	12, 12, 12, 1, 16, 1, 12, 12, 
-	1, 17, 1, 18, 19, 1, 20, 21, 
-	22, 18, 18, 18, 1, 23, 1, 18, 
-	18, 1, 19, 1, 24, 1, 25, 25, 
-	1, 27, 25, 28, 26, 26, 26, 1, 
-	29, 1, 26, 26, 1, 26, 1, 1, 
-	18, 12, 1, 30, 31, 30, 32, 33, 
-	1, 25, 34, 25, 26, 1, 0
+	0, 0, 1, 7, 8, 7, 9, 10, 
+	6, 6, 6, 1, 12, 13, 12, 14, 
+	15, 11, 11, 11, 1, 16, 17, 16, 
+	18, 15, 11, 11, 11, 1, 19, 1, 
+	16, 16, 1, 20, 21, 20, 22, 23, 
+	1, 24, 25, 26, 1, 28, 29, 28, 
+	30, 31, 27, 27, 27, 1, 33, 34, 
+	33, 35, 36, 32, 32, 32, 1, 37, 
+	38, 37, 39, 36, 32, 32, 32, 1, 
+	40, 1, 37, 37, 1, 41, 1, 42, 
+	43, 1, 45, 46, 45, 47, 48, 44, 
+	44, 44, 1, 50, 51, 50, 52, 53, 
+	49, 49, 49, 1, 54, 55, 54, 56, 
+	53, 49, 49, 49, 1, 57, 1, 54, 
+	54, 1, 58, 1, 59, 1, 60, 60, 
+	1, 62, 63, 62, 64, 65, 61, 61, 
+	61, 1, 67, 68, 67, 69, 70, 66, 
+	66, 66, 1, 71, 72, 71, 73, 70, 
+	66, 66, 66, 1, 74, 1, 71, 71, 
+	1, 66, 1, 49, 1, 32, 1, 1, 
+	11, 75, 76, 75, 77, 78, 1, 60, 
+	79, 60, 80, 1, 81, 82, 81, 83, 
+	1, 0
 ]
 
 class << self
-	attr_accessor :_phrase_lists_trans_targs
-	private :_phrase_lists_trans_targs, :_phrase_lists_trans_targs=
+	attr_accessor :_mime_version_trans_targs
+	private :_mime_version_trans_targs, :_mime_version_trans_targs=
 end
-self._phrase_lists_trans_targs = [
-	1, 0, 2, 4, 8, 3, 5, 7, 
-	6, 9, 13, 8, 9, 10, 12, 25, 
-	11, 13, 14, 26, 15, 17, 24, 16, 
-	19, 27, 20, 21, 23, 22, 27, 18, 
-	20, 26, 18
+self._mime_version_trans_targs = [
+	1, 0, 2, 4, 10, 3, 5, 6, 
+	7, 9, 34, 5, 6, 7, 9, 34, 
+	6, 7, 9, 8, 1, 2, 4, 10, 
+	11, 17, 10, 12, 13, 14, 16, 33, 
+	12, 13, 14, 16, 33, 13, 14, 16, 
+	15, 17, 18, 35, 19, 20, 21, 23, 
+	32, 19, 20, 21, 23, 32, 20, 21, 
+	23, 22, 35, 25, 36, 27, 28, 29, 
+	37, 31, 27, 28, 29, 37, 31, 28, 
+	29, 37, 30, 36, 24, 26, 35, 24, 
+	26, 36, 24, 26
 ]
 
 class << self
-	attr_accessor :_phrase_lists_trans_actions
-	private :_phrase_lists_trans_actions, :_phrase_lists_trans_actions=
+	attr_accessor :_mime_version_trans_actions
+	private :_mime_version_trans_actions, :_mime_version_trans_actions=
 end
-self._phrase_lists_trans_actions = [
-	0, 0, 0, 0, 1, 0, 0, 0, 
-	0, 3, 3, 0, 0, 0, 0, 0, 
-	0, 0, 0, 1, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 0, 5, 5, 
-	5, 0, 0
+self._mime_version_trans_actions = [
+	0, 0, 0, 0, 7, 0, 1, 13, 
+	13, 13, 1, 0, 3, 3, 3, 0, 
+	0, 0, 0, 0, 5, 5, 5, 16, 
+	9, 9, 0, 1, 13, 13, 13, 1, 
+	0, 3, 3, 3, 0, 0, 0, 0, 
+	0, 5, 0, 7, 1, 13, 13, 13, 
+	1, 0, 3, 3, 3, 0, 0, 0, 
+	0, 0, 16, 0, 0, 1, 13, 13, 
+	13, 1, 0, 3, 3, 3, 0, 0, 
+	0, 0, 0, 11, 11, 11, 0, 0, 
+	0, 5, 5, 5
 ]
 
 class << self
-	attr_accessor :_phrase_lists_eof_actions
-	private :_phrase_lists_eof_actions, :_phrase_lists_eof_actions=
+	attr_accessor :_mime_version_eof_actions
+	private :_mime_version_eof_actions, :_mime_version_eof_actions=
 end
-self._phrase_lists_eof_actions = [
+self._mime_version_eof_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 5, 0
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 11, 0, 5
 ]
 
 class << self
-	attr_accessor :phrase_lists_start
+	attr_accessor :mime_version_start
 end
-self.phrase_lists_start = 1;
+self.mime_version_start = 1;
 class << self
-	attr_accessor :phrase_lists_first_final
+	attr_accessor :mime_version_first_final
 end
-self.phrase_lists_first_final = 26;
+self.mime_version_first_final = 35;
 class << self
-	attr_accessor :phrase_lists_error
+	attr_accessor :mime_version_error
 end
-self.phrase_lists_error = 0;
+self.mime_version_error = 0;
 
 class << self
-	attr_accessor :phrase_lists_en_main
+	attr_accessor :mime_version_en_main
 end
-self.phrase_lists_en_main = 1;
+self.mime_version_en_main = 1;
 
 
-# line 25 "ragel/mime_version.rl"
+# line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
         end
         
         def parse(data)
@@ -165,16 +209,16 @@ self.phrase_lists_en_main = 1;
           eof = data.length
 
           
-# line 169 "ragel/mime_version.rb"
+# line 213 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
 begin
 	p ||= 0
 	pe ||= data.length
-	cs = phrase_lists_start
+	cs = mime_version_start
 end
 
-# line 34 "ragel/mime_version.rl"
+# line 54 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
           
-# line 178 "ragel/mime_version.rb"
+# line 222 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
 begin
 	_klen, _trans, _keys, _acts, _nacts = nil
 	_goto_level = 0
@@ -196,9 +240,9 @@ begin
 	end
 	end
 	if _goto_level <= _resume
-	_keys = _phrase_lists_key_offsets[cs]
-	_trans = _phrase_lists_index_offsets[cs]
-	_klen = _phrase_lists_single_lengths[cs]
+	_keys = _mime_version_key_offsets[cs]
+	_trans = _mime_version_index_offsets[cs]
+	_klen = _mime_version_single_lengths[cs]
 	_break_match = false
 	
 	begin
@@ -210,9 +254,9 @@ begin
 	        break if _upper < _lower
 	        _mid = _lower + ( (_upper - _lower) >> 1 )
 
-	        if data[p].ord < _phrase_lists_trans_keys[_mid]
+	        if data[p].ord < _mime_version_trans_keys[_mid]
 	           _upper = _mid - 1
-	        elsif data[p].ord > _phrase_lists_trans_keys[_mid]
+	        elsif data[p].ord > _mime_version_trans_keys[_mid]
 	           _lower = _mid + 1
 	        else
 	           _trans += (_mid - _keys)
@@ -224,16 +268,16 @@ begin
 	     _keys += _klen
 	     _trans += _klen
 	  end
-	  _klen = _phrase_lists_range_lengths[cs]
+	  _klen = _mime_version_range_lengths[cs]
 	  if _klen > 0
 	     _lower = _keys
 	     _upper = _keys + (_klen << 1) - 2
 	     loop do
 	        break if _upper < _lower
 	        _mid = _lower + (((_upper-_lower) >> 1) & ~1)
-	        if data[p].ord < _phrase_lists_trans_keys[_mid]
+	        if data[p].ord < _mime_version_trans_keys[_mid]
 	          _upper = _mid - 2
-	        elsif data[p].ord > _phrase_lists_trans_keys[_mid+1]
+	        elsif data[p].ord > _mime_version_trans_keys[_mid+1]
 	          _lower = _mid + 2
 	        else
 	          _trans += ((_mid - _keys) >> 1)
@@ -245,29 +289,41 @@ begin
 	     _trans += _klen
 	  end
 	end while false
-	_trans = _phrase_lists_indicies[_trans]
-	cs = _phrase_lists_trans_targs[_trans]
-	if _phrase_lists_trans_actions[_trans] != 0
-		_acts = _phrase_lists_trans_actions[_trans]
-		_nacts = _phrase_lists_actions[_acts]
+	_trans = _mime_version_indicies[_trans]
+	cs = _mime_version_trans_targs[_trans]
+	if _mime_version_trans_actions[_trans] != 0
+		_acts = _mime_version_trans_actions[_trans]
+		_nacts = _mime_version_actions[_acts]
 		_acts += 1
 		while _nacts > 0
 			_nacts -= 1
 			_acts += 1
-			case _phrase_lists_actions[_acts - 1]
+			case _mime_version_actions[_acts - 1]
 when 0 then
-# line 11 "ragel/mime_version.rl"
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+		begin
+		end
+when 1 then
+# line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+		begin
+		end
+when 2 then
+# line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+		begin
+		end
+when 3 then
+# line 31 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 		begin
  mark = p 		end
-when 1 then
-# line 12 "ragel/mime_version.rl"
+when 4 then
+# line 32 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 		begin
  mime_version.major = data[mark..(p-1)] 		end
-when 2 then
-# line 13 "ragel/mime_version.rl"
+when 5 then
+# line 33 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 		begin
  mime_version.minor = data[mark..(p-1)] 		end
-# line 271 "ragel/mime_version.rb"
+# line 327 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
 			end # action switch
 		end
 	end
@@ -288,18 +344,22 @@ when 2 then
 	end
 	if _goto_level <= _test_eof
 	if p == eof
-	__acts = _phrase_lists_eof_actions[cs]
-	__nacts =  _phrase_lists_actions[__acts]
+	__acts = _mime_version_eof_actions[cs]
+	__nacts =  _mime_version_actions[__acts]
 	__acts += 1
 	while __nacts > 0
 		__nacts -= 1
 		__acts += 1
-		case _phrase_lists_actions[__acts - 1]
+		case _mime_version_actions[__acts - 1]
 when 2 then
-# line 13 "ragel/mime_version.rl"
+# line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+		begin
+		end
+when 5 then
+# line 33 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 		begin
  mime_version.minor = data[mark..(p-1)] 		end
-# line 303 "ragel/mime_version.rb"
+# line 363 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
 		end # eof action switch
 	end
 	if _trigger_goto
@@ -313,7 +373,7 @@ end
 	end
 	end
 
-# line 35 "ragel/mime_version.rl"
+# line 55 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 
           if p != eof
             puts "FAILURE"

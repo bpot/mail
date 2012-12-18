@@ -8,6 +8,20 @@
   action e_msg_id { }
   action e_date {}
   action e_time {}
+  action s_ccontent {}
+  action e_ccontent {}
+  action e_comment {}
+  action mark_local {}
+  action e_local_part {}
+  action e_domain {}
+  action s_angle_addr {}
+  action e_name_addr_display_name {}
+  action s_address {}
+  action e_address {}
+  action start_group_list {}
+  action e_encoding {}
+  action e_disposition_type {}
+  action e_group_name {}
 
 
   action mark { mark = p }

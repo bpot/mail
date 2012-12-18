@@ -1,7 +1,7 @@
 
-# line 1 "content_disposition.rl"
+# line 1 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 
-# line 43 "content_disposition.rl"
+# line 56 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 
 
 module Mail
@@ -10,14 +10,16 @@ module Mail
       class ContentDispositionParser
         def initialize
           
-# line 14 "content_disposition.rb"
+# line 14 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rb"
 class << self
 	attr_accessor :_content_disposition_actions
 	private :_content_disposition_actions, :_content_disposition_actions=
 end
 self._content_disposition_actions = [
 	0, 1, 0, 1, 1, 1, 2, 1, 
-	3, 1, 4, 2, 0, 2
+	3, 1, 4, 1, 5, 1, 6, 1, 
+	7, 2, 0, 1, 2, 2, 3, 2, 
+	2, 7, 2, 3, 5
 ]
 
 class << self
@@ -25,18 +27,20 @@ class << self
 	private :_content_disposition_key_offsets, :_content_disposition_key_offsets=
 end
 self._content_disposition_key_offsets = [
-	0, 0, 5, 6, 8, 17, 18, 20, 
-	22, 36, 37, 39, 50, 66, 71, 72, 
-	74, 84, 91, 92, 94, 95, 97, 106, 
-	107, 109, 111, 113, 123, 124, 126, 135, 
-	136, 138, 140, 141, 143, 152, 153, 155, 
-	157, 166, 167, 169, 171, 172, 173, 174, 
-	176, 178, 180, 182, 184, 186, 188, 190, 
-	192, 194, 196, 198, 200, 202, 203, 213, 
-	215, 216, 217, 218, 219, 220, 221, 222, 
-	223, 224, 225, 226, 227, 228, 229, 230, 
-	231, 232, 233, 234, 235, 236, 237, 238, 
-	253, 258, 275, 280, 285
+	0, 0, 5, 6, 8, 19, 30, 41, 
+	42, 44, 49, 63, 64, 66, 77, 93, 
+	98, 99, 101, 111, 118, 119, 121, 122, 
+	124, 135, 146, 157, 158, 160, 162, 164, 
+	174, 175, 177, 188, 199, 210, 211, 213, 
+	218, 220, 221, 223, 234, 245, 256, 257, 
+	259, 261, 272, 283, 294, 295, 297, 311, 
+	313, 315, 316, 317, 318, 320, 322, 324, 
+	326, 328, 330, 332, 334, 336, 338, 340, 
+	342, 344, 346, 347, 357, 359, 360, 361, 
+	362, 363, 364, 365, 366, 367, 368, 369, 
+	370, 371, 372, 373, 374, 375, 376, 377, 
+	378, 379, 380, 381, 382, 397, 402, 407, 
+	424, 429, 434, 439
 ]
 
 class << self
@@ -45,27 +49,45 @@ class << self
 end
 self._content_disposition_trans_keys = [
 	9, 13, 32, 40, 59, 10, 9, 32, 
-	13, 41, 92, 1, 9, 11, 39, 42, 
-	127, 10, 9, 32, -128, -1, 9, 13, 
-	32, 40, 33, 39, 42, 46, 48, 57, 
-	65, 90, 94, 126, 10, 9, 32, 61, 
-	33, 39, 42, 46, 48, 57, 65, 90, 
-	94, 126, 9, 13, 32, 34, 40, 61, 
-	33, 39, 42, 46, 48, 57, 65, 90, 
-	94, 126, 9, 13, 32, 34, 40, 10, 
-	9, 32, 9, 13, 32, 92, 1, 8, 
-	11, 33, 35, 127, 13, 34, 92, 1, 
-	9, 11, 127, 10, 9, 32, 10, 9, 
-	32, 13, 41, 92, 1, 9, 11, 39, 
-	42, 127, 10, 9, 32, 0, 127, 0, 
-	127, 9, 13, 32, 92, 1, 8, 11, 
-	33, 35, 127, 10, 9, 32, 13, 41, 
-	92, 1, 9, 11, 39, 42, 127, 10, 
-	9, 32, 0, 127, 10, 9, 32, 13, 
-	41, 92, 1, 9, 11, 39, 42, 127, 
-	10, 9, 32, 0, 127, 13, 41, 92, 
-	1, 9, 11, 39, 42, 127, 10, 9, 
-	32, -128, -1, 98, 105, 116, 84, 116, 
+	9, 13, 32, 41, 92, 1, 8, 11, 
+	39, 42, 127, 9, 13, 32, 41, 92, 
+	1, 8, 11, 39, 42, 127, 9, 13, 
+	32, 41, 92, 1, 8, 11, 39, 42, 
+	127, 10, 9, 32, 9, 13, 32, 40, 
+	59, 9, 13, 32, 40, 33, 39, 42, 
+	46, 48, 57, 65, 90, 94, 126, 10, 
+	9, 32, 61, 33, 39, 42, 46, 48, 
+	57, 65, 90, 94, 126, 9, 13, 32, 
+	34, 40, 61, 33, 39, 42, 46, 48, 
+	57, 65, 90, 94, 126, 9, 13, 32, 
+	34, 40, 10, 9, 32, 9, 13, 32, 
+	92, 1, 8, 11, 33, 35, 127, 13, 
+	34, 92, 1, 9, 11, 127, 10, 9, 
+	32, 10, 9, 32, 9, 13, 32, 41, 
+	92, 1, 8, 11, 39, 42, 127, 9, 
+	13, 32, 41, 92, 1, 8, 11, 39, 
+	42, 127, 9, 13, 32, 41, 92, 1, 
+	8, 11, 39, 42, 127, 10, 9, 32, 
+	0, 127, 0, 127, 9, 13, 32, 92, 
+	1, 8, 11, 33, 35, 127, 10, 9, 
+	32, 9, 13, 32, 41, 92, 1, 8, 
+	11, 39, 42, 127, 9, 13, 32, 41, 
+	92, 1, 8, 11, 39, 42, 127, 9, 
+	13, 32, 41, 92, 1, 8, 11, 39, 
+	42, 127, 10, 9, 32, 9, 13, 32, 
+	34, 40, 0, 127, 10, 9, 32, 9, 
+	13, 32, 41, 92, 1, 8, 11, 39, 
+	42, 127, 9, 13, 32, 41, 92, 1, 
+	8, 11, 39, 42, 127, 9, 13, 32, 
+	41, 92, 1, 8, 11, 39, 42, 127, 
+	10, 9, 32, 0, 127, 9, 13, 32, 
+	41, 92, 1, 8, 11, 39, 42, 127, 
+	9, 13, 32, 41, 92, 1, 8, 11, 
+	39, 42, 127, 9, 13, 32, 41, 92, 
+	1, 8, 11, 39, 42, 127, 10, 9, 
+	32, 9, 13, 32, 40, 33, 39, 42, 
+	46, 48, 57, 65, 90, 94, 126, 0, 
+	127, -128, -1, 98, 105, 116, 84, 116, 
 	84, 116, 65, 97, 67, 99, 72, 104, 
 	77, 109, 69, 101, 78, 110, 84, 116, 
 	78, 110, 76, 108, 73, 105, 78, 110, 
@@ -76,12 +98,13 @@ self._content_disposition_trans_keys = [
 	110, 116, 97, 98, 108, 101, 9, 13, 
 	32, 40, 59, 65, 73, 88, 97, 98, 
 	105, 113, 120, 55, 56, 9, 13, 32, 
-	40, 59, 9, 13, 32, 33, 40, 59, 
-	61, 35, 39, 42, 46, 48, 57, 65, 
-	90, 94, 126, 9, 13, 32, 40, 59, 
+	40, 59, 9, 13, 32, 40, 59, 9, 
+	13, 32, 33, 40, 59, 61, 35, 39, 
+	42, 46, 48, 57, 65, 90, 94, 126, 
 	9, 13, 32, 40, 59, 9, 13, 32, 
-	40, 59, 33, 39, 42, 46, 48, 57, 
-	65, 90, 94, 126, 0
+	40, 59, 9, 13, 32, 40, 59, 9, 
+	13, 32, 40, 59, 33, 39, 42, 46, 
+	48, 57, 65, 90, 94, 126, 0
 ]
 
 class << self
@@ -89,18 +112,20 @@ class << self
 	private :_content_disposition_single_lengths, :_content_disposition_single_lengths=
 end
 self._content_disposition_single_lengths = [
-	0, 5, 1, 2, 3, 1, 2, 0, 
-	4, 1, 2, 1, 6, 5, 1, 2, 
-	4, 3, 1, 2, 1, 2, 3, 1, 
-	2, 0, 0, 4, 1, 2, 3, 1, 
-	2, 0, 1, 2, 3, 1, 2, 0, 
-	3, 1, 2, 0, 1, 1, 1, 2, 
+	0, 5, 1, 2, 5, 5, 5, 1, 
+	2, 5, 4, 1, 2, 1, 6, 5, 
+	1, 2, 4, 3, 1, 2, 1, 2, 
+	5, 5, 5, 1, 2, 0, 0, 4, 
+	1, 2, 5, 5, 5, 1, 2, 5, 
+	0, 1, 2, 5, 5, 5, 1, 2, 
+	0, 5, 5, 5, 1, 2, 4, 0, 
+	0, 1, 1, 1, 2, 2, 2, 2, 
 	2, 2, 2, 2, 2, 2, 2, 2, 
-	2, 2, 2, 2, 2, 1, 0, 2, 
+	2, 2, 1, 0, 2, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 13, 
-	5, 7, 5, 5, 5
+	1, 1, 1, 1, 13, 5, 5, 7, 
+	5, 5, 5, 5
 ]
 
 class << self
@@ -108,18 +133,20 @@ class << self
 	private :_content_disposition_range_lengths, :_content_disposition_range_lengths=
 end
 self._content_disposition_range_lengths = [
-	0, 0, 0, 0, 3, 0, 0, 1, 
-	5, 0, 0, 5, 5, 0, 0, 0, 
-	3, 2, 0, 0, 0, 0, 3, 0, 
-	0, 1, 1, 3, 0, 0, 3, 0, 
-	0, 1, 0, 0, 3, 0, 0, 1, 
-	3, 0, 0, 1, 0, 0, 0, 0, 
+	0, 0, 0, 0, 3, 3, 3, 0, 
+	0, 0, 5, 0, 0, 5, 5, 0, 
+	0, 0, 3, 2, 0, 0, 0, 0, 
+	3, 3, 3, 0, 0, 1, 1, 3, 
+	0, 0, 3, 3, 3, 0, 0, 0, 
+	1, 0, 0, 3, 3, 3, 0, 0, 
+	1, 3, 3, 3, 0, 0, 5, 1, 
+	1, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 0, 5, 0, 
+	0, 0, 0, 5, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 0, 0, 1, 
-	0, 5, 0, 0, 5
+	0, 0, 0, 0, 1, 0, 0, 5, 
+	0, 0, 0, 5
 ]
 
 class << self
@@ -127,67 +154,20 @@ class << self
 	private :_content_disposition_index_offsets, :_content_disposition_index_offsets=
 end
 self._content_disposition_index_offsets = [
-	0, 0, 6, 8, 11, 18, 20, 23, 
-	25, 35, 37, 40, 47, 59, 65, 67, 
-	70, 78, 84, 86, 89, 91, 94, 101, 
-	103, 106, 108, 110, 118, 120, 123, 130, 
-	132, 135, 137, 139, 142, 149, 151, 154, 
-	156, 163, 165, 168, 170, 172, 174, 176, 
-	179, 182, 185, 188, 191, 194, 197, 200, 
-	203, 206, 209, 212, 215, 218, 220, 226, 
-	229, 231, 233, 235, 237, 239, 241, 243, 
-	245, 247, 249, 251, 253, 255, 257, 259, 
-	261, 263, 265, 267, 269, 271, 273, 275, 
-	290, 296, 309, 315, 321
-]
-
-class << self
-	attr_accessor :_content_disposition_indicies
-	private :_content_disposition_indicies, :_content_disposition_indicies=
-end
-self._content_disposition_indicies = [
-	0, 2, 0, 3, 4, 1, 5, 1, 
-	0, 0, 1, 6, 0, 7, 3, 3, 
-	3, 1, 8, 1, 3, 3, 1, 1, 
-	3, 4, 9, 4, 11, 10, 10, 10, 
-	10, 10, 1, 12, 1, 4, 4, 1, 
-	14, 13, 13, 13, 13, 13, 1, 15, 
-	16, 15, 18, 19, 17, 17, 17, 17, 
-	17, 17, 1, 20, 21, 20, 22, 23, 
-	1, 24, 1, 20, 20, 1, 26, 27, 
-	26, 28, 25, 25, 25, 1, 30, 31, 
-	32, 29, 29, 1, 33, 1, 29, 29, 
-	1, 34, 1, 35, 35, 1, 37, 35, 
-	38, 36, 36, 36, 1, 39, 1, 36, 
-	36, 1, 36, 1, 29, 1, 40, 41, 
-	40, 32, 29, 29, 29, 1, 42, 1, 
-	40, 40, 1, 43, 20, 44, 23, 23, 
-	23, 1, 45, 1, 23, 23, 1, 23, 
-	1, 46, 1, 47, 47, 1, 49, 47, 
-	50, 48, 48, 48, 1, 51, 1, 48, 
-	48, 1, 48, 1, 52, 4, 53, 11, 
-	11, 11, 1, 54, 1, 11, 11, 1, 
-	1, 11, 55, 1, 56, 1, 57, 1, 
-	58, 58, 1, 59, 59, 1, 60, 60, 
-	1, 61, 61, 1, 62, 62, 1, 63, 
-	63, 1, 64, 64, 1, 65, 65, 1, 
-	57, 57, 1, 66, 66, 1, 67, 67, 
-	1, 68, 68, 1, 69, 69, 1, 57, 
-	57, 1, 70, 1, 71, 71, 71, 71, 
-	71, 1, 72, 73, 1, 74, 1, 75, 
-	1, 76, 1, 57, 1, 77, 1, 78, 
-	1, 79, 1, 57, 1, 80, 1, 81, 
-	1, 82, 1, 83, 1, 84, 1, 85, 
-	1, 86, 1, 87, 1, 88, 1, 89, 
-	1, 90, 1, 91, 1, 92, 1, 93, 
-	1, 57, 1, 94, 95, 94, 96, 98, 
-	99, 100, 101, 99, 102, 100, 103, 101, 
-	97, 1, 104, 105, 104, 106, 107, 1, 
-	108, 109, 108, 110, 111, 107, 110, 110, 
-	110, 110, 110, 110, 1, 47, 112, 47, 
-	48, 4, 1, 113, 114, 113, 115, 116, 
-	1, 113, 114, 113, 115, 116, 71, 71, 
-	71, 71, 71, 1, 0
+	0, 0, 6, 8, 11, 20, 29, 38, 
+	40, 43, 49, 59, 61, 64, 71, 83, 
+	89, 91, 94, 102, 108, 110, 113, 115, 
+	118, 127, 136, 145, 147, 150, 152, 154, 
+	162, 164, 167, 176, 185, 194, 196, 199, 
+	205, 207, 209, 212, 221, 230, 239, 241, 
+	244, 246, 255, 264, 273, 275, 278, 288, 
+	290, 292, 294, 296, 298, 301, 304, 307, 
+	310, 313, 316, 319, 322, 325, 328, 331, 
+	334, 337, 340, 342, 348, 351, 353, 355, 
+	357, 359, 361, 363, 365, 367, 369, 371, 
+	373, 375, 377, 379, 381, 383, 385, 387, 
+	389, 391, 393, 395, 397, 412, 418, 424, 
+	437, 443, 449, 455
 ]
 
 class << self
@@ -195,21 +175,65 @@ class << self
 	private :_content_disposition_trans_targs, :_content_disposition_trans_targs=
 end
 self._content_disposition_trans_targs = [
-	1, 0, 2, 4, 8, 3, 5, 7, 
-	6, 9, 11, 40, 10, 11, 12, 13, 
-	14, 89, 16, 30, 13, 14, 16, 30, 
-	15, 17, 27, 28, 26, 17, 18, 88, 
-	26, 19, 21, 88, 22, 23, 25, 24, 
-	27, 28, 29, 31, 33, 32, 35, 90, 
-	36, 37, 39, 38, 41, 43, 42, 45, 
-	46, 91, 48, 49, 50, 51, 52, 53, 
-	54, 55, 57, 58, 59, 60, 62, 92, 
-	64, 68, 65, 66, 67, 69, 70, 71, 
-	73, 74, 75, 76, 77, 78, 79, 80, 
-	81, 82, 83, 84, 85, 86, 1, 2, 
-	4, 44, 8, 47, 56, 61, 63, 72, 
-	88, 20, 22, 8, 90, 34, 89, 36, 
-	34, 1, 2, 4, 8
+	1, 2, 1, 4, 10, 0, 3, 0, 
+	1, 1, 0, 6, 7, 6, 9, 56, 
+	5, 5, 5, 0, 6, 7, 6, 9, 
+	56, 5, 5, 5, 0, 6, 7, 6, 
+	9, 56, 5, 5, 5, 0, 8, 0, 
+	6, 6, 0, 1, 2, 1, 4, 10, 
+	0, 10, 11, 10, 49, 13, 13, 13, 
+	13, 13, 0, 12, 0, 10, 10, 0, 
+	14, 13, 13, 13, 13, 13, 0, 15, 
+	16, 15, 18, 34, 103, 103, 103, 103, 
+	103, 103, 0, 15, 16, 15, 18, 34, 
+	0, 17, 0, 15, 15, 0, 31, 32, 
+	31, 30, 19, 19, 19, 0, 20, 101, 
+	30, 19, 19, 0, 21, 0, 19, 19, 
+	0, 23, 0, 101, 101, 0, 26, 27, 
+	26, 102, 29, 25, 25, 25, 0, 26, 
+	27, 26, 102, 29, 25, 25, 25, 0, 
+	26, 27, 26, 102, 29, 25, 25, 25, 
+	0, 28, 0, 26, 26, 0, 25, 0, 
+	19, 0, 31, 32, 31, 30, 19, 19, 
+	19, 0, 33, 0, 31, 31, 0, 36, 
+	37, 36, 39, 40, 35, 35, 35, 0, 
+	36, 37, 36, 39, 40, 35, 35, 35, 
+	0, 36, 37, 36, 39, 40, 35, 35, 
+	35, 0, 38, 0, 36, 36, 0, 15, 
+	16, 15, 18, 34, 0, 35, 0, 42, 
+	0, 104, 104, 0, 45, 46, 45, 105, 
+	48, 44, 44, 44, 0, 45, 46, 45, 
+	105, 48, 44, 44, 44, 0, 45, 46, 
+	45, 105, 48, 44, 44, 44, 0, 47, 
+	0, 45, 45, 0, 44, 0, 51, 52, 
+	51, 54, 55, 50, 50, 50, 0, 51, 
+	52, 51, 54, 55, 50, 50, 50, 0, 
+	51, 52, 51, 54, 55, 50, 50, 50, 
+	0, 53, 0, 51, 51, 0, 10, 11, 
+	10, 49, 13, 13, 13, 13, 13, 0, 
+	50, 0, 0, 5, 58, 0, 59, 0, 
+	106, 0, 61, 61, 0, 62, 62, 0, 
+	63, 63, 0, 64, 64, 0, 65, 65, 
+	0, 66, 66, 0, 67, 67, 0, 68, 
+	68, 0, 106, 106, 0, 70, 70, 0, 
+	71, 71, 0, 72, 72, 0, 73, 73, 
+	0, 106, 106, 0, 75, 0, 107, 107, 
+	107, 107, 107, 0, 77, 81, 0, 78, 
+	0, 79, 0, 80, 0, 106, 0, 82, 
+	0, 83, 0, 84, 0, 106, 0, 86, 
+	0, 87, 0, 88, 0, 89, 0, 90, 
+	0, 91, 0, 92, 0, 93, 0, 94, 
+	0, 95, 0, 96, 0, 97, 0, 98, 
+	0, 99, 0, 106, 0, 1, 2, 1, 
+	4, 10, 60, 69, 74, 60, 76, 69, 
+	85, 74, 57, 0, 101, 22, 101, 24, 
+	10, 0, 101, 22, 101, 24, 10, 0, 
+	104, 41, 104, 103, 43, 10, 103, 103, 
+	103, 103, 103, 103, 0, 104, 41, 104, 
+	43, 10, 0, 104, 41, 104, 43, 10, 
+	0, 1, 2, 1, 4, 10, 0, 1, 
+	2, 1, 4, 10, 107, 107, 107, 107, 
+	107, 0, 0
 ]
 
 class << self
@@ -218,9 +242,41 @@ class << self
 end
 self._content_disposition_trans_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 1, 0, 0, 0, 7, 1, 
-	1, 1, 1, 1, 0, 0, 0, 0, 
-	0, 1, 1, 1, 1, 0, 0, 3, 
+	0, 0, 0, 17, 17, 17, 17, 1, 
+	1, 1, 1, 0, 3, 3, 3, 3, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 5, 5, 5, 5, 5, 
+	0, 0, 0, 0, 0, 7, 7, 7, 
+	7, 7, 0, 0, 0, 0, 0, 0, 
+	13, 0, 0, 0, 0, 0, 0, 7, 
+	7, 7, 7, 7, 7, 7, 7, 7, 
+	7, 7, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 0, 0, 7, 7, 
+	7, 7, 7, 7, 7, 0, 0, 9, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 0, 0, 17, 17, 
+	17, 17, 1, 1, 1, 1, 0, 3, 
+	3, 3, 3, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 0, 0, 0, 17, 
+	17, 17, 17, 1, 1, 1, 1, 0, 
+	3, 3, 3, 3, 0, 0, 0, 0, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 0, 0, 0, 5, 
+	5, 5, 5, 5, 0, 0, 0, 0, 
+	0, 0, 0, 0, 17, 17, 17, 17, 
+	1, 1, 1, 1, 0, 3, 3, 3, 
+	3, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 0, 0, 17, 17, 
+	17, 17, 1, 1, 1, 1, 0, 3, 
+	3, 3, 3, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 0, 0, 5, 5, 
+	5, 5, 20, 20, 20, 20, 20, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
@@ -228,10 +284,22 @@ self._content_disposition_trans_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 0, 11, 11, 
-	11, 1, 11, 1, 1, 1, 1, 1, 
-	9, 9, 9, 9, 9, 9, 0, 9, 
-	0, 5, 5, 5, 5
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 0, 26, 26, 26, 
+	26, 26, 7, 7, 7, 7, 7, 7, 
+	7, 7, 7, 0, 15, 15, 15, 15, 
+	15, 0, 23, 23, 23, 23, 23, 0, 
+	15, 15, 15, 0, 15, 15, 0, 0, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 5, 5, 5, 5, 5, 
+	0, 11, 11, 11, 11, 11, 0, 11, 
+	11, 11, 11, 11, 0, 0, 0, 0, 
+	0, 0, 0
 ]
 
 class << self
@@ -249,18 +317,20 @@ self._content_disposition_eof_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 0, 0, 11, 
-	9, 9, 0, 5, 5
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 26, 15, 23, 15, 
+	0, 5, 11, 11
 ]
 
 class << self
 	attr_accessor :content_disposition_start
 end
-self.content_disposition_start = 87;
+self.content_disposition_start = 100;
 class << self
 	attr_accessor :content_disposition_first_final
 end
-self.content_disposition_first_final = 87;
+self.content_disposition_first_final = 100;
 class << self
 	attr_accessor :content_disposition_error
 end
@@ -269,10 +339,10 @@ self.content_disposition_error = 0;
 class << self
 	attr_accessor :content_disposition_en_main
 end
-self.content_disposition_en_main = 87;
+self.content_disposition_en_main = 100;
 
 
-# line 51 "content_disposition.rl"
+# line 64 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
         end
         
         def parse(data)
@@ -282,19 +352,19 @@ self.content_disposition_en_main = 87;
           eof = data.length
 
           
-# line 286 "content_disposition.rb"
+# line 356 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rb"
 begin
 	p ||= 0
 	pe ||= data.length
 	cs = content_disposition_start
 end
 
-# line 60 "content_disposition.rl"
+# line 73 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 
           attribute = nil
           quoted_string = nil
           
-# line 298 "content_disposition.rb"
+# line 368 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rb"
 begin
 	_klen, _trans, _keys, _acts, _nacts = nil
 	_goto_level = 0
@@ -365,7 +435,6 @@ begin
 	     _trans += _klen
 	  end
 	end while false
-	_trans = _content_disposition_indicies[_trans]
 	cs = _content_disposition_trans_targs[_trans]
 	if _content_disposition_trans_actions[_trans] != 0
 		_acts = _content_disposition_trans_actions[_trans]
@@ -376,27 +445,39 @@ begin
 			_acts += 1
 			case _content_disposition_actions[_acts - 1]
 when 0 then
-# line 17 "content_disposition.rl"
+# line 14 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+		begin
+		end
+when 1 then
+# line 15 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+		begin
+		end
+when 2 then
+# line 16 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+		begin
+		end
+when 3 then
+# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 		begin
  mark = p 		end
-when 1 then
-# line 18 "content_disposition.rl"
+when 4 then
+# line 31 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 		begin
  
     quoted_string = data[mark..(p-1)] 
   		end
-when 2 then
-# line 21 "content_disposition.rl"
+when 5 then
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 		begin
  
     content_disposition.disposition_type = data[mark..(p-1)].downcase
   		end
-when 3 then
-# line 24 "content_disposition.rl"
+when 6 then
+# line 37 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 		begin
  attribute = data[mark..(p-1)] 		end
-when 4 then
-# line 25 "content_disposition.rl"
+when 7 then
+# line 38 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 		begin
  
     if attribute.nil?
@@ -413,7 +494,7 @@ when 4 then
     attribute = nil
     quoted_string = nil
   		end
-# line 417 "content_disposition.rb"
+# line 498 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rb"
 			end # action switch
 		end
 	end
@@ -441,18 +522,22 @@ when 4 then
 		__nacts -= 1
 		__acts += 1
 		case _content_disposition_actions[__acts - 1]
-when 0 then
-# line 17 "content_disposition.rl"
+when 2 then
+# line 16 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+		begin
+		end
+when 3 then
+# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 		begin
  mark = p 		end
-when 2 then
-# line 21 "content_disposition.rl"
+when 5 then
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 		begin
  
     content_disposition.disposition_type = data[mark..(p-1)].downcase
   		end
-when 4 then
-# line 25 "content_disposition.rl"
+when 7 then
+# line 38 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 		begin
  
     if attribute.nil?
@@ -469,7 +554,7 @@ when 4 then
     attribute = nil
     quoted_string = nil
   		end
-# line 473 "content_disposition.rb"
+# line 558 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rb"
 		end # eof action switch
 	end
 	if _trigger_goto
@@ -483,7 +568,7 @@ end
 	end
 	end
 
-# line 64 "content_disposition.rl"
+# line 77 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 
           if p != eof
             puts "FAILURE"

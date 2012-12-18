@@ -11,7 +11,20 @@
   action e_time {}
   action e_main_type {}
   action e_sub_type {}
+  action s_ccontent {}
+  action e_ccontent {}
+  action e_comment {}
+  action mark_local {}
+  action e_local_part {}
+  action e_domain {}
+  action s_angle_addr {}
+  action e_name_addr_display_name {}
+  action s_address {}
+  action e_address {}
+  action start_group_list {}
   action e_encoding {}
+  action e_group_name {}
+
 
 
   action mark { mark = p }
