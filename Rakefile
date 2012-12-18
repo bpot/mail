@@ -31,7 +31,7 @@ task :default => :spec
 
 RSpec::Core::RakeTask.new(:spec) do |t|
   t.ruby_opts = '-w'
-  t.rspec_opts = %w(--backtrace --color)
+  t.rspec_opts = %w(--color)
 end
 
 # load custom rake tasks

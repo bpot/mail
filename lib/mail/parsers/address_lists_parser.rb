@@ -9,12 +9,23 @@ module Mail::Parsers
         return address_list
       end
 
-      #puts "TREETOP-------------------------"
-      #pp treetop(string)
-      #puts "RAGEL-------------------------"
       r = ragel(string)
-      #pp r
-      #puts "-----------------------------"
+      t = treetop(string)
+      t.addresses.each do |a|
+        (a.raw.strip! if a.raw); (a.local.strip! if a.local); (a.display_name.strip! if a.display_name)
+      end
+
+      r.addresses.each do |a|
+        (a.raw.strip! if a.raw); (a.local.strip! if a.local); (a.display_name.strip! if a.display_name)
+      end
+
+      if r != t
+        puts
+        p string
+        p r
+        p t
+        raise "Parse failure #{r.inspect} vs #{t.inspect}"
+      end
       r
     end
 

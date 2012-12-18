@@ -42,7 +42,7 @@
       address.display_name = quoted_string
       quoted_string = nil
     elsif phrase_ending
-      address.display_name = data[mark..phrase_ending]
+      address.display_name = data[mark..(phrase_ending)]
       phrase_ending = nil
     end
   }
@@ -127,12 +127,12 @@ module Mail
           quoted_string = nil
           %%write exec;
 
-          if address && address_list.addresses.empty? && mark_local
+          if address && address_list.addresses.empty? && address_list.group_names.empty? && mark_local
             address.local = data
             address_list.addresses << address
           end
 
-          if (p != eof) || (address_list.addresses.empty?) || cs < %%{ write first_final; }%%
+          if (p != eof) || (address_list.addresses.empty? && address_list.group_names.empty?) || cs < %%{ write first_final; }%%
           #  puts "FAILURE"
           #  p data
           #  p data[0..p]
