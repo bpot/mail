@@ -4,9 +4,9 @@ module Mail::Parsers
 
     def parse(string)
       data = ragel(string)
-      if data != treetop(string)
-        raise "#{data.inspect}\n#{treetop(string).inspect}"
-      end
+      #if data != treetop(string)
+      #  raise "#{data.inspect}\n#{treetop(string).inspect}"
+      #end
       data
     end
 

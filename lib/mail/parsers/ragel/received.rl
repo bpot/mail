@@ -32,10 +32,11 @@
   action e_time { received.time = data[mark..(p-1)] }
   include common "common.rl";
 
-  action e_received_tokens { received.info = data[mark..(p-1)] }
+  action received_mark   { received_mark = p }
+  action e_received_tokens { received.info = data[received_mark..(p-1)] }
 
   # Added CFWS? to increase robustness
-  main := CFWS? (received_token* >mark %e_received_tokens) ";" date_time;
+  main := CFWS? (received_token* >received_mark %e_received_tokens) ";" date_time;
 }%%
 
 module Mail
