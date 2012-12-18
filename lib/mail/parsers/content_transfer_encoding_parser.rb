@@ -8,7 +8,9 @@ module Mail::Parsers
         return content_transfer_encoding
       end
       
-      ragel(string.downcase)
+      r = ragel(string.downcase)
+#      compare(string, r,treetop(string))
+      r
     end
 
     def ragel(string)
@@ -16,6 +18,10 @@ module Mail::Parsers
     end
 
     def treetop(string)
+      content_transfer_encoding = Data::ContentTransferEncodingData.new("")
+      if string.blank?
+        return content_transfer_encoding
+      end
 
       parser = Treetops::ContentTransferEncodingParser.new
       if tree = parser.parse(string.downcase)

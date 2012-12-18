@@ -8,7 +8,9 @@ module Mail::Parsers
         return content_location
       end
 
-      ragel(string)
+      r = ragel(string)
+      compare(string, r,treetop(string))
+      r
     end
 
     private

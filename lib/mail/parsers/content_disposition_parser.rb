@@ -8,7 +8,9 @@ module Mail::Parsers
         return content_disposition
       end
 
-      ragel(string)
+      r = ragel(string)
+      compare(string, r,treetop(string))
+      r
     end
 
     def ragel(string)
@@ -17,6 +19,7 @@ module Mail::Parsers
     end
 
     def treetop(string)
+      content_disposition = Data::ContentDispositionData.new("", nil)
       parser = Treetops::ContentDispositionParser.new
       if tree = parser.parse(string)
         content_disposition.disposition_type = tree.disposition_type.text_value.downcase

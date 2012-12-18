@@ -2,6 +2,27 @@
 module Mail
   module Utilities
     include Patterns
+
+    def compare(string, ragel, treetop)
+      ragel.each_pair do |_, v|
+        if v.class == String
+          v.strip!
+        end
+      end
+      treetop.each_pair do |_, v|
+        if v.class == String
+          v.strip!
+        end
+      end
+
+      if ragel != treetop
+        puts
+        p string
+        p r
+        p t
+        raise "Parse mismatch"
+      end
+    end
     
     # Returns true if the string supplied is free from characters not allowed as an ATOM
     def atom_safe?( str )
