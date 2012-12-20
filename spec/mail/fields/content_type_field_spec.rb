@@ -132,9 +132,6 @@ describe Mail::ContentTypeField do
 
       c = Mail::ContentTypeField.new('text/plain; name="Bad filename but at least it is wrapped in quotes.txt"')
       c.value.should eq 'text/plain; name="Bad filename but at least it is wrapped in quotes.txt"'
-
-      c = Mail::ContentTypeField.new("audio/x-midi;\r\n\sname=Part .exe")
-      c.value.should eq 'audio/x-midi; name="Part .exe"'
     end
 
     it "should only wrap filenames in double quotation marks" do
