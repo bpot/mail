@@ -3,25 +3,32 @@ module Mail
   module Utilities
     include Patterns
 
-    def compare(string, ragel, treetop)
-      ragel.each_pair do |_, v|
-        if v.class == String
-          v.strip!
-        end
-      end
-      treetop.each_pair do |_, v|
-        if v.class == String
-          v.strip!
-        end
-      end
+    def compare(string)
+      r = ragel(string)
+      tt = treetop(string)
 
-      if ragel != treetop
+      if !structs_similar(r,tt)
         puts
         p string
         p r
-        p t
+        p tt
         raise "Parse mismatch"
+      else
+        p "SIMILAR!"
       end
+      r
+    end
+
+    def structs_similar(r, tt)
+      similar = true
+      r.each_pair do |k,v|
+        if k == :error
+          similar &&= (v.nil? == tt[:error].nil?)
+        else
+          similar &&= (v == tt[k])
+        end
+      end
+      similar
     end
     
     # Returns true if the string supplied is free from characters not allowed as an ATOM

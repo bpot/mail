@@ -3,11 +3,13 @@ module Mail::Parsers
     include Mail::Utilities
 
     def parse(string)
-      t = treetop(string)
-#      puts "TREETOP: #{t.inspect}"
+      p "PARSE: #{string}"
+      data = compare(string)
 
-      r = ragel(string)
-#      puts "RAGEL: #{r.inspect}"
+      if data.error
+        raise Mail::Field::ParseError.new(Mail::ContentTypeElement, string, data.error)
+      end
+      data
     end
 
     def ragel(string)
@@ -24,7 +26,7 @@ module Mail::Parsers
         content_type.sub_type = tree.sub_type.text_value.downcase
         content_type.parameters = tree.parameters
       else
-        raise Mail::Field::ParseError.new(Mail::ContentTypeElement, string, parser.failure_reason)
+        content_type.error = parser.failure_reason
       end
 
       content_type

@@ -20,19 +20,19 @@ module Mail
     require 'mail/parsers/ragel/received'
 
     module Data
-      AddressListData = Struct.new(:addresses, :group_names)
+      AddressListData = Struct.new(:addresses, :group_names, :error)
       AddressData = Struct.new(:raw, :domain, :comments, :local,
-                               :obs_domain_list, :display_name, :group)
-      ContentDispositionData = Struct.new(:disposition_type, :parameters)
-      ContentLocationData = Struct.new(:location)
-      ContentTransferEncodingData = Struct.new(:encoding)
-      ContentTypeData = Struct.new(:main_type, :sub_type, :parameters)
-      DateTimeData = Struct.new(:date_string, :time_string)
-      EnvelopeFromData = Struct.new(:address, :ctime_date)
-      MessageIdsData = Struct.new(:message_ids)
-      MimeVersionData = Struct.new(:major, :minor)
-      PhraseListsData = Struct.new(:phrases)
-      ReceivedData = Struct.new(:date, :time, :info)
+                               :obs_domain_list, :display_name, :group, :error)
+      ContentDispositionData = Struct.new(:disposition_type, :parameters, :error)
+      ContentLocationData = Struct.new(:location, :error)
+      ContentTransferEncodingData = Struct.new(:encoding, :error)
+      ContentTypeData = Struct.new(:main_type, :sub_type, :parameters, :error)
+      DateTimeData = Struct.new(:date_string, :time_string, :error)
+      EnvelopeFromData = Struct.new(:address, :ctime_date, :error)
+      MessageIdsData = Struct.new(:message_ids, :error)
+      MimeVersionData = Struct.new(:major, :minor, :error)
+      PhraseListsData = Struct.new(:phrases, :error)
+      ReceivedData = Struct.new(:date, :time, :info, :error)
     end
 
     module Treetops

@@ -92,8 +92,8 @@ self._content_type_trans_keys = [
 	127, 9, 13, 32, 41, 92, 1, 8, 
 	11, 39, 42, 127, 10, 9, 32, 9, 
 	13, 32, 40, 33, 39, 42, 46, 48, 
-	57, 65, 90, 94, 126, 0, 127, 0, 
-	127, 80, 85, 112, 117, 80, 112, 76, 
+	57, 65, 90, 94, 126, 0, 127, -128, 
+	-1, 80, 85, 112, 117, 80, 112, 76, 
 	108, 73, 105, 67, 99, 65, 97, 84, 
 	116, 73, 105, 79, 111, 78, 110, 68, 
 	100, 73, 105, 79, 111, 77, 109, 65, 
@@ -230,7 +230,7 @@ self._content_type_trans_targs = [
 	57, 60, 61, 56, 56, 56, 0, 59, 
 	0, 57, 57, 0, 16, 17, 16, 55, 
 	19, 19, 19, 19, 19, 0, 56, 0, 
-	11, 0, 64, 73, 64, 73, 0, 65, 
+	0, 11, 64, 73, 64, 73, 0, 65, 
 	65, 0, 66, 66, 0, 67, 67, 0, 
 	68, 68, 0, 69, 69, 0, 70, 70, 
 	0, 71, 71, 0, 72, 72, 0, 5, 
@@ -379,25 +379,24 @@ self.content_type_en_main = 1;
         end
         
         def parse(data)
-          content_type = Data::ContentTypeData.new(nil,nil,[])
-
           p = 0
           eof = data.length
 
+          content_type = Data::ContentTypeData.new(nil,nil,[])
           
-# line 389 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
+# line 388 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
 begin
 	p ||= 0
 	pe ||= data.length
 	cs = content_type_start
 end
 
-# line 74 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 73 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
 
           attribute = nil
           quoted_string = nil
           
-# line 401 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
+# line 400 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
 begin
 	_klen, _trans, _keys, _acts, _nacts = nil
 	_goto_level = 0
@@ -537,7 +536,7 @@ when 9 then
     attribute = nil
     quoted_string = nil
   		end
-# line 541 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
+# line 540 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
 			end # action switch
 		end
 	end
@@ -593,7 +592,7 @@ when 9 then
     attribute = nil
     quoted_string = nil
   		end
-# line 597 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
+# line 596 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
 		end # eof action switch
 	end
 	if _trigger_goto
@@ -607,26 +606,18 @@ end
 	end
 	end
 
+# line 77 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+
+          if p == eof && cs >= 
+# line 613 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
+122
 # line 78 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
 
-          if p != eof
-            puts "FAILURE"
-            p data
-            p data[0..p]
-            if content_type.main_type && content_type.sub_type
-              return content_type
-            else
-              raise "FAILED TO PARSE" 
-            end
-        
-            #raise Mail::Field::ParseError.new(Mail::ContentTypeElement, data, "whatevs")
+            content_type
+          else
+            content_type.error = "Only able to parse up to #{data[0..p]}"
+            content_type
           end
-
-          content_type
-        end
-
-        def failure_reason
-          "failed"
         end
       end
     end

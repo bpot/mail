@@ -65,35 +65,22 @@ module Mail
         end
         
         def parse(data)
-          content_type = Data::ContentTypeData.new(nil,nil,[])
-
           p = 0
           eof = data.length
 
+          content_type = Data::ContentTypeData.new(nil,nil,[])
           %%write init;
 
           attribute = nil
           quoted_string = nil
           %%write exec;
 
-          if p != eof
-            puts "FAILURE"
-            p data
-            p data[0..p]
-            if content_type.main_type && content_type.sub_type
-              return content_type
-            else
-              raise "FAILED TO PARSE" 
-            end
-        
-            #raise Mail::Field::ParseError.new(Mail::ContentTypeElement, data, "whatevs")
+          if p == eof && cs >= %%{ write first_final; }%%
+            content_type
+          else
+            content_type.error = "Only able to parse up to #{data[0..p]}"
+            content_type
           end
-
-          content_type
-        end
-
-        def failure_reason
-          "failed"
         end
       end
     end
