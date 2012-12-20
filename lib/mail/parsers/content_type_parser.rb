@@ -13,7 +13,7 @@ module Mail::Parsers
     end
 
     def ragel(string)
-      @@parser = Ragel::ContentTypeParser.new
+      @@parser ||= Ragel::ContentTypeParser.new
       @@parser.parse(string)
     end
 

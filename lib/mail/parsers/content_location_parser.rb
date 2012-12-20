@@ -8,9 +8,11 @@ module Mail::Parsers
         return content_location
       end
 
-      r = ragel(string)
-      compare(string, r,treetop(string))
-      r
+      data = compare(string)
+      if data.error
+        raise Mail::Field::ParseError.new(Mail::ContentLocationElement, string, data.error)
+      end
+      data
     end
 
     private
@@ -21,15 +23,15 @@ module Mail::Parsers
       if tree = parser.parse(string)
         content_location.location = tree.location.text_value
       else
-        raise Mail::Field::ParseError.new(Mail::ContentLocationElement, string, parser.failure_reason)
+        content_location.error = parser.failure_reason
       end
 
       content_location
     end
 
     def ragel(string)
-      parser = Ragel::ContentLocationParser.new
-      parser.parse(string)
+      @@parser ||= Ragel::ContentLocationParser.new
+      @@parser.parse(string)
     end
   end
 end

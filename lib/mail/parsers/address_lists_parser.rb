@@ -9,24 +9,11 @@ module Mail::Parsers
         return address_list
       end
 
-      r = ragel(string)
-      t = treetop(string)
-      t.addresses.each do |a|
-        (a.raw.strip! if a.raw); (a.local.strip! if a.local); (a.display_name.strip! if a.display_name)
+      data = compare(string)
+      if data.error
+        raise Mail::Field::ParseError.new(AddressListsParser, string, data.error)
       end
-
-      r.addresses.each do |a|
-        (a.raw.strip! if a.raw); (a.local.strip! if a.local); (a.display_name.strip! if a.display_name)
-      end
-
-      if r != t
-        puts
-        p string
-        p r
-        p t
-        raise "Parse failure #{r.inspect} vs #{t.inspect}"
-      end
-      r
+      data
     end
 
     def ragel(string)
@@ -40,7 +27,7 @@ module Mail::Parsers
       if tree = parser.parse(string)
         address_nodes = tree.addresses
       else
-        raise Mail::Field::ParseError.new(AddressListsParser, string, parser.failure_reason)
+        address_list.error = parser.failure_reason
       end
 
       group_recipients = address_nodes.select { |an| an.respond_to?(:group_name) }

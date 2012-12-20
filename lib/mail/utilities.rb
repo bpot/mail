@@ -10,25 +10,45 @@ module Mail
       if !structs_similar(r,tt)
         puts
         p string
-        p r
-        p tt
+        puts "Ragel: #{r.inspect}"
+        puts "Treetop: #{tt.inspect}"
         raise "Parse mismatch"
       else
-        p "SIMILAR!"
+      #  p "SIMILAR!"
       end
       r
     end
 
     def structs_similar(r, tt)
-      similar = true
-      r.each_pair do |k,v|
-        if k == :error
-          similar &&= (v.nil? == tt[:error].nil?)
-        else
-          similar &&= (v == tt[k])
-        end
+      strip_strings(r)
+      strip_strings(tt)
+
+      if r[:error] && tt[:error]
+        return true
+      elsif r[:error].nil? && tt[:error].nil?
+        # meh
+      else
+        return false
       end
-      similar
+
+      r == tt
+    end
+
+    def strip_strings(o)
+      case o
+      when String
+        o.strip!
+      when Struct
+        o.each_pair do |k,v|
+          case v
+          when Array
+            v.each { |e| strip_strings(e) }
+          when String
+            v.strip!
+          end
+        end
+      else
+      end
     end
     
     # Returns true if the string supplied is free from characters not allowed as an ATOM

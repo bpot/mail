@@ -8,9 +8,11 @@ module Mail::Parsers
         return content_disposition
       end
 
-      r = ragel(string)
-      compare(string, r,treetop(string))
-      r
+      data = compare(string)
+      if data.error
+        raise Mail::Field::ParseError.new(Mail::ContentDispositionElement, string, data.error)
+      end
+      data
     end
 
     def ragel(string)
@@ -25,7 +27,6 @@ module Mail::Parsers
         content_disposition.disposition_type = tree.disposition_type.text_value.downcase
         content_disposition.parameters = tree.parameters
       else
-        raise Mail::Field::ParseError.new(Mail::ContentDispositionElement, string, parser.failure_reason)
       end
 
       content_disposition

@@ -3,31 +3,30 @@ module Mail::Parsers
     include Mail::Utilities
 
     def parse(string)
-      content_transfer_encoding = Data::ContentTransferEncodingData.new("")
       if string.blank?
-        return content_transfer_encoding
+        return Data::ContentTransferEncodingData.new("")
       end
       
-      r = ragel(string.downcase)
-#      compare(string, r,treetop(string))
-      r
+      data = compare(string)
+      if data.error
+        raise Mail::Field::ParseError.new(Mail::ContentTransferEncodingElement, string, data.error)
+      end
+      data
     end
 
     def ragel(string)
-      Ragel::ContentTransferEncodingParser.new.parse(string)
+      @@parser ||= Ragel::ContentTransferEncodingParser.new
+      @@parser.parse(string)
     end
 
     def treetop(string)
       content_transfer_encoding = Data::ContentTransferEncodingData.new("")
-      if string.blank?
-        return content_transfer_encoding
-      end
 
       parser = Treetops::ContentTransferEncodingParser.new
       if tree = parser.parse(string.downcase)
         content_transfer_encoding.encoding = tree.encoding.text_value
       else
-        raise Mail::Field::ParseError.new(Mail::ContentTransferEncodingElement, string, parser.failure_reason)
+        content_transfer_encoding.error = parser.failure_reason
       end
 
       content_transfer_encoding

@@ -666,10 +666,7 @@ end
 # line 55 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rl"
 
           if p != eof
-          #  puts "FAILURE"
-          #  p data
-          #  p data[0..p]
-            raise "FAILED TO PARSE" 
+            message_ids.error = "Unable to parse past #{data[0..p]}"
           end
 
           message_ids

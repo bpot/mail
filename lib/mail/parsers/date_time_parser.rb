@@ -3,11 +3,16 @@ module Mail::Parsers
     include Mail::Utilities
 
     def parse(string)
-      ragel(string)
+      data = compare(string)
+      if data.error
+        raise Mail::Field::ParseError.new(Mail::DateTimeElement, string, data.error)
+      end
+      data
     end
 
     def ragel(string)
-      Ragel::DateTimeParser.new.parse(string)
+      @@parser ||= Ragel::DateTimeParser.new
+      @@parser.parse(string)
     end
 
     def treetop(string)
@@ -18,7 +23,7 @@ module Mail::Parsers
         date_time.date_string = tree.date.text_value
         date_time.time_string = tree.time.text_value
       else
-        raise Mail::Field::ParseError.new(Mail::DateTimeElement, string, parser.failure_reason)
+        date_time.error = parser.failure_reason
       end
 
       date_time

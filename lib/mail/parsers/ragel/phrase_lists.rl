@@ -55,17 +55,10 @@ module Mail
           %%write exec;
 
           if p != eof
-#            puts "FAILURE"
-#            p data
-#            p data[0..p]
-            raise "FAILED TO PARSE" 
+            phrase_lists.error = "FAILED TO PARSE" 
           end
 
           phrase_lists
-        end
-
-        def failure_reason
-          "failed"
         end
       end
     end

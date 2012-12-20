@@ -3,12 +3,17 @@ module Mail::Parsers
     include Mail::Utilities
 
     def parse(string)
-      ragel(string)
+      data = compare(string)
+      if data.error
+        raise Mail::Field::ParseError.new(Mail::PhraseListsElement, string, data.error)
+      end
+      data
     end
 
     private
     def ragel(string)
-      Ragel::PhraseListsParser.new.parse(string)
+      @@parser ||= Ragel::PhraseListsParser.new
+      @@parser.parse(string)
     end
 
     def treetop(string)
@@ -18,7 +23,7 @@ module Mail::Parsers
       if tree = parser.parse(string)
         phrase_lists.phrases = tree.phrases.map(&:text_value)
       else
-        raise Mail::Field::ParseError.new(Mail::PhraseListsElement, string, parser.failure_reason)
+        phrase_lists.error = parser.failure_reason
       end
 
       phrase_lists

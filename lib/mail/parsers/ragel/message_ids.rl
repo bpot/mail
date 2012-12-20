@@ -54,10 +54,7 @@ module Mail
           %%write exec;
 
           if p != eof
-          #  puts "FAILURE"
-          #  p data
-          #  p data[0..p]
-            raise "FAILED TO PARSE" 
+            message_ids.error = "Unable to parse past #{data[0..p]}"
           end
 
           message_ids
