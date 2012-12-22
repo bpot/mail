@@ -133,19 +133,11 @@ module Mail
           end
 
           if (p != eof) || (address_list.addresses.empty? && address_list.group_names.empty?) || cs < %%{ write first_final; }%%
-          #  puts "FAILURE"
-          #  p data
-          #  p data[0..p]
-            #raise "FAILED TO PARSE" 
-        
-            raise Mail::Field::ParseError.new(Mail::AddressList, data, "whatevs")
+            address_list.error = "Only able to parse up to #{data[0..p]}"
+          else
+            address_list.group_names.uniq!
           end
-          address_list.group_names.uniq!
           address_list
-        end
-
-        def failure_reason
-          "failed"
         end
       end
     end

@@ -61,9 +61,9 @@ describe Mail::Field do
     end
 
     it "should split the name and values out of the raw field passed in" do
-      field = Mail::Field.new('To: Bob')
+      field = Mail::Field.new('To: bob@example.com')
       field.name.should eq 'To'
-      field.value.should eq 'Bob'
+      field.value.should eq 'bob@example.com'
     end
 
     it "should split the name and values out of the raw field passed in if missing whitespace" do

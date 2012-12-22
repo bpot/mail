@@ -5060,19 +5060,11 @@ end
 1385
 # line 135 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
 
-          #  puts "FAILURE"
-          #  p data
-          #  p data[0..p]
-            #raise "FAILED TO PARSE" 
-        
-            raise Mail::Field::ParseError.new(Mail::AddressList, data, "whatevs")
+            address_list.error = "Only able to parse up to #{data[0..p]}"
+          else
+            address_list.group_names.uniq!
           end
-          address_list.group_names.uniq!
           address_list
-        end
-
-        def failure_reason
-          "failed"
         end
       end
     end

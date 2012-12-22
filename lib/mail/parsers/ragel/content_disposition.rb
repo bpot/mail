@@ -581,10 +581,6 @@ end
 
           content_disposition
         end
-
-        def failure_reason
-          "failed"
-        end
       end
     end
   end

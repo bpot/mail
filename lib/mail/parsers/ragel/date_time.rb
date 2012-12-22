@@ -695,10 +695,6 @@ end
 
           date_time
         end
-
-        def failure_reason
-          "failed"
-        end
       end
     end
   end

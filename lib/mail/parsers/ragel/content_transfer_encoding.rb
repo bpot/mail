@@ -412,10 +412,6 @@ end
 
           content_transfer_encoding
         end
-
-        def failure_reason
-          "failed"
-        end
       end
     end
   end
