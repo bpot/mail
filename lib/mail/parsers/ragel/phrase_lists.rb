@@ -381,17 +381,10 @@ end
 # line 56 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 
           if p != eof
-#            puts "FAILURE"
-#            p data
-#            p data[0..p]
-            raise "FAILED TO PARSE" 
+            phrase_lists.error = "FAILED TO PARSE" 
           end
 
           phrase_lists
-        end
-
-        def failure_reason
-          "failed"
         end
       end
     end

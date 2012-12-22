@@ -30,7 +30,7 @@
 
 
   action mark { mark = p }
-  action e_encoding { content_transfer_encoding.encoding = data[mark..(p-1)] } 
+  action e_encoding { content_transfer_encoding.encoding = data[mark..(p-1)].downcase } 
 
   include common "common.rl";
 

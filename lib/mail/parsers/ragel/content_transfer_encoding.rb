@@ -348,7 +348,7 @@ when 3 then
 when 4 then
 # line 33 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 		begin
- content_transfer_encoding.encoding = data[mark..(p-1)] 		end
+ content_transfer_encoding.encoding = data[mark..(p-1)].downcase 		end
 # line 353 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
 			end # action switch
 		end
@@ -384,7 +384,7 @@ when 2 then
 when 4 then
 # line 33 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 		begin
- content_transfer_encoding.encoding = data[mark..(p-1)] 		end
+ content_transfer_encoding.encoding = data[mark..(p-1)].downcase 		end
 # line 389 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
 		end # eof action switch
 	end

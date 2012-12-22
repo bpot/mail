@@ -3,7 +3,6 @@ module Mail::Parsers
     include Mail::Utilities
 
     def parse(string)
-      p "PARSE: #{string}"
       data = compare(string)
 
       if data.error

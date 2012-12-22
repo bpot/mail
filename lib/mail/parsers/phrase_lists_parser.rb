@@ -21,7 +21,7 @@ module Mail::Parsers
 
       parser = Treetops::PhraseListsParser.new
       if tree = parser.parse(string)
-        phrase_lists.phrases = tree.phrases.map(&:text_value)
+        phrase_lists.phrases = tree.phrases.map { |p| unquote(p.text_value) }
       else
         phrase_lists.error = parser.failure_reason
       end
