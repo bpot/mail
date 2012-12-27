@@ -39,7 +39,7 @@ describe Mail::Address do
 
     ['"-Earnings...Notification-" <vodacom.co.rs>', '<56253817>'].each do |spammy_address|
       it "should allow for funky spammy address #{spammy_address}" do
-        pending "bpot"
+        pending "bpot -- clarification"
         Mail::Address.new(spammy_address).address.should eq nil
       end
     end
@@ -161,7 +161,6 @@ describe Mail::Address do
 
     describe "basic email addresses" do
       it "should handle all OK local parts" do
-        #pending "bpot"
         [['aamine', 'aamine'],
          ['"Minero Aoki"', '"Minero Aoki"'],
          ['"!@#$%^&*()"', '"!@#$%^&*()"'],
@@ -476,7 +475,7 @@ describe Mail::Address do
       end
 
       it "should handle |a909937 (Graham Barr          (0004 bodg))|" do
-        pending "bpot"
+        pending "bpot -- recursive comments"
         address = Mail::Address.new('a909937 (Graham Barr          (0004 bodg))')
         address.should break_down_to({
                                          :name         => 'Graham Barr (0004 bodg)',
@@ -503,7 +502,7 @@ describe Mail::Address do
       end
 
       it "should handle |(foo@bar.com (foobar), ned@foo.com (nedfoo) ) <kevin@goess.org>|" do
-        pending "bpot"
+        pending "bpot -- dunno"
         address = Mail::Address.new('(foo@bar.com (foobar), ned@foo.com (nedfoo) ) <kevin@goess.org>')
         address.should break_down_to({
                                          :name         => 'foo@bar.com \(foobar\), ned@foo.com \(nedfoo\) ',
