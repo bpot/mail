@@ -75,7 +75,11 @@
   attribute = token+;
   value = quoted_string | (token -- '"' | 0x3d)+;
   id_left = dot_atom_text | obs_id_left;
-  id_right = dot_atom_text | no_fold_literal | obs_id_right;
+  # id_right modifications to support multiple '@' in msg_id.
+  msg_id_atext = ALPHA | DIGIT | "!" | "#" | "$" | "%" | "&" | "'" | "*" | "+" | "-" | "/" | "=" | "?" | "^" | "_" | "`" | "{" | "|" | "}" | "~" | "@";
+  #msg_id_domain_text = (DQUOTE (FWS? quoted_domain)+ FWS? DQUOTE) | msg_id_atext+;
+  msg_id_dot_atom_text = (msg_id_atext+ "."?)+;
+  id_right = msg_id_dot_atom_text | no_fold_literal | obs_id_right;
   address = group | mailbox;
   main_type = discrete_type | composite_type;
   sub_type = extension_token | iana_token;
