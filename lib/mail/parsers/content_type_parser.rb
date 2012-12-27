@@ -8,6 +8,7 @@ module Mail::Parsers
       if data.error
         raise Mail::Field::ParseError.new(Mail::ContentTypeElement, string, data.error)
       end
+      p data
       data
     end
 

@@ -90,7 +90,7 @@
   address_list = address? (FWS* ("," | ";") FWS* address?)*;
   obs_addr_list = (CFWS? ",")* address ("," (address | CFWS)?)*;
   location = quoted_string | ((token | 0x3d)+ >mark %e_token_string);
-  content_type = (main_type >mark %e_main_type) "/" (sub_type >mark_sub_type %e_sub_type) (CFWS? ";" parameter CFWS?)*;
+  content_type = (main_type >mark %e_main_type) "/" (sub_type >mark_sub_type %e_sub_type) (((CFWS? ";") | CFWS) parameter CFWS?)*;
   message_ids = msg_id (CFWS? msg_id)*;
   phrase_list = phrase ("," FWS* phrase)*;
   received_token = word | angle_addr | addr_spec | domain;
