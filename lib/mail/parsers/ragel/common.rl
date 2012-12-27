@@ -31,7 +31,7 @@
   qcontent = qtext | quoted_pair;
   dtext = 0x21..0x5a | 0x5e..0x7e | obs_dtext;
   atom = CFWS? atext+ CFWS?;
-  dot_atom = CFWS? dot_atom_text CFWS?;
+  dot_atom = CFWS? dot_atom_text (CFWS? >(comment_after_address,1));
   quoted_string = CFWS? DQUOTE 
                   (((FWS? qcontent)+ FWS?) >mark %e_quoted_string)
                   DQUOTE CFWS?;
@@ -87,7 +87,7 @@
   msg_id = (CFWS)? 
            (("<" id_left "@" id_right ">") >mark %e_msg_id)
            (CFWS)?;
-  address_list = address? (FWS* ("," | ";") FWS* address?)*;
+  address_list = address? %(comment_after_address,0) (FWS* ("," | ";") FWS* address?)*;
   obs_addr_list = (CFWS? ",")* address ("," (address | CFWS)?)*;
   location = quoted_string | ((token | 0x3d)+ >mark %e_token_string);
   content_type = (main_type >mark %e_main_type) "/" (sub_type >mark_sub_type %e_sub_type) (((CFWS? ";") | CFWS) parameter CFWS?)*;

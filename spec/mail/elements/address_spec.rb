@@ -307,7 +307,6 @@ describe Mail::Address do
       end
 
       it "should handle |rls@intgp8.ih.att.com (-Schieve,R.L.)|" do
-        pending "bpot"
         address = Mail::Address.new('rls@intgp8.ih.att.com (-Schieve,R.L.)')
         address.should break_down_to({
                                          :name         => '-Schieve,R.L.',
@@ -334,7 +333,6 @@ describe Mail::Address do
       end
 
       it "should handle |astrachan@austlcm.sps.mot.com ('paul astrachan/xvt3')|" do
-        pending "bpot"
         address = Mail::Address.new("astrachan@austlcm.sps.mot.com ('paul astrachan/xvt3')")
         address.should break_down_to({
                                          :name         => "'paul astrachan/xvt3'",
@@ -348,7 +346,6 @@ describe Mail::Address do
       end
 
       it "should handle 'TWINE57%SDELVB.decnet@SNYBUF.CS.SNYBUF.EDU (JAMES R. TWINE - THE NERD)'" do
-        pending "bpot"
         address = Mail::Address.new('TWINE57%SDELVB.decnet@SNYBUF.CS.SNYBUF.EDU (JAMES R. TWINE - THE NERD)')
         address.should break_down_to({
                                          :name         => 'JAMES R. TWINE - THE NERD',
@@ -427,7 +424,6 @@ describe Mail::Address do
       end
 
       it "should handle 'Suba.Peddada@eng.sun.com (Suba Peddada [CONTRACTOR])'" do
-        pending "bpot"
         address = Mail::Address.new('Suba.Peddada@eng.sun.com (Suba Peddada [CONTRACTOR])')
         address.should break_down_to({
                                          :name         => 'Suba Peddada [CONTRACTOR]',
