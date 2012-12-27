@@ -60,7 +60,7 @@ module Mail
 #            puts "FAILURE"
 #            p data
 #            p data[0..p]
-            raise "FAILED TO PARSE" 
+            received.error = "Only able to parse up to #{data[0..p]}"
           end
 
           received
