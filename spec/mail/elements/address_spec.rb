@@ -100,7 +100,6 @@ describe Mail::Address do
     end
 
     it "should handle an address without a domain" do
-      pending "bpot"
       parse_text = 'test'
       result     = 'test'
       a          = Mail::Address.new(parse_text)
@@ -162,7 +161,7 @@ describe Mail::Address do
 
     describe "basic email addresses" do
       it "should handle all OK local parts" do
-        pending "bpot"
+        #pending "bpot"
         [['aamine', 'aamine'],
          ['"Minero Aoki"', '"Minero Aoki"'],
          ['"!@#$%^&*()"', '"!@#$%^&*()"'],
@@ -251,7 +250,6 @@ describe Mail::Address do
       end
 
       it "should handle lots of dots" do
-        pending "bpot"
         1.upto(10) do |times|
           dots    = "." * times
           address = Mail::Address.new("hoge#{dots}test@docomo.ne.jp")
