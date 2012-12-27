@@ -7,7 +7,7 @@ module Mail
       r = ragel(string)
       tt = treetop(string)
 
-      if !structs_similar(r,tt)
+      if ENV["MAIL_COMPATABILITY"] && !structs_similar(r,tt)
         puts
         p string
         puts "Ragel: #{r.inspect}"

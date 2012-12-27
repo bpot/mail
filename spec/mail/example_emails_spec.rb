@@ -294,17 +294,15 @@ describe "Test emails" do
 
     describe "handling invalid group lists" do
       before(:each) do
-        #@message = Mail::Message.new(File.read(fixture('emails', 'error_emails', 'empty_group_lists.eml')))
+        @message = Mail::Message.new(File.read(fixture('emails', 'error_emails', 'empty_group_lists.eml')))
       end
 
       it "should parse the email and encode without crashing" do
-        pending "ragel tt mismatch. ragel bettah :)"
-        #doing { @message.encoded }.should_not raise_error
+        doing { @message.encoded }.should_not raise_error
       end
 
       it "should return an empty groups list" do
-        pending "bpot"
-        #@message[:to].group_addresses.should eq []
+        @message[:to].group_addresses.should eq []
       end
     end
 
@@ -313,17 +311,15 @@ describe "Test emails" do
   describe "empty address lists" do
 
     before(:each) do
-      #@message = Mail::Message.new(File.read(fixture('emails', 'error_emails', 'weird_to_header.eml')))
+      @message = Mail::Message.new(File.read(fixture('emails', 'error_emails', 'weird_to_header.eml')))
     end
 
     it "should parse the email and encode without crashing" do
-      pending "ragel tt mismatch. ragel bettah :)"
-      #doing { @message.encoded }.should_not raise_error
+      doing { @message.encoded }.should_not raise_error
     end
 
     it "should return an empty groups list" do
-      pending "ragel tt mismatch. ragel bettah :)"
-      #@message.to.should eq ['user-example@aol.com', 'e-s-a-s-2200@app.ar.com']
+      @message.to.should eq ['user-example@aol.com', 'e-s-a-s-2200@app.ar.com']
     end
 
   end

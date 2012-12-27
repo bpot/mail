@@ -27,7 +27,6 @@ describe "multipart/report emails" do
 
     describe "multipart reports with more than one address" do
       it "should not crash" do
-        pending "bpot"
         mail1 = Mail.read(fixture('emails', 'multipart_report_emails', 'multi_address_bounce1.eml'))
         mail2 = Mail.read(fixture('emails', 'multipart_report_emails', 'multi_address_bounce2.eml'))
         doing { mail1.bounced? }.should_not raise_error
@@ -35,7 +34,6 @@ describe "multipart/report emails" do
       end
 
       it "should not know that a multi address email was bounced" do
-        pending "bpot"
         mail1 = Mail.read(fixture('emails', 'multipart_report_emails', 'multi_address_bounce1.eml'))
         mail2 = Mail.read(fixture('emails', 'multipart_report_emails', 'multi_address_bounce2.eml'))
         mail1.should be_bounced
