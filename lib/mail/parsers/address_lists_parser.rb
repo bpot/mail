@@ -26,27 +26,27 @@ module Mail::Parsers
       parser = Mail::Parsers::Treetops::AddressListsParser.new
       if tree = parser.parse(string)
         address_nodes = tree.addresses
-      else
-        address_list.error = parser.failure_reason
-      end
 
-      group_recipients = address_nodes.select { |an| an.respond_to?(:group_name) }
-      individual_recipients = address_nodes - group_recipients
-      individual_recipients.each do |address_node|
-        address_list.addresses << address(address_node)
-      end
+        group_recipients = address_nodes.select { |an| an.respond_to?(:group_name) }
+        individual_recipients = address_nodes - group_recipients
+        individual_recipients.each do |address_node|
+          address_list.addresses << address(address_node)
+        end
 
-      group_recipients.each do |group_receipient|
-        group_name = group_receipient.group_name.text_value
-        address_list.group_names << group_name
+        group_recipients.each do |group_receipient|
+          group_name = group_receipient.group_name.text_value
+          address_list.group_names << group_name
 
-        if group_receipient.group_list.respond_to?(:addresses)
-          group_receipient.group_list.addresses.each do |address_node|
-            a = address(address_node)
-            a.group = group_name
-            address_list.addresses << a
+          if group_receipient.group_list.respond_to?(:addresses)
+            group_receipient.group_list.addresses.each do |address_node|
+              a = address(address_node)
+              a.group = group_name
+              address_list.addresses << a
+            end
           end
         end
+      else
+        address_list.error = parser.failure_reason
       end
 
       address_list
@@ -107,6 +107,8 @@ module Mail::Parsers
         tree.local_dot_atom_text.text_value
       when tree.respond_to?(:angle_addr) && tree.angle_addr.respond_to?(:addr_spec) && tree.angle_addr.addr_spec.respond_to?(:local_part)
         tree.angle_addr.addr_spec.local_part.text_value
+      when tree.respond_to?(:angle_addr) && tree.angle_addr.respond_to?(:addr_spec) && tree.angle_addr.addr_spec.respond_to?(:local_dot_atom_text)
+        tree.angle_addr.addr_spec.local_dot_atom_text.text_value
       when tree.respond_to?(:addr_spec) && tree.addr_spec.respond_to?(:local_part)
         tree.addr_spec.local_part.text_value
       else

@@ -39,9 +39,11 @@
   # display name events on spaces.
   action s_angle_addr {
     if quoted_string
+p quoted_string 
       address.display_name = quoted_string
       quoted_string = nil
     elsif phrase_ending
+p data[mark..(phrase_ending)]
       address.display_name = data[mark..(phrase_ending)]
       phrase_ending = nil
     end
@@ -57,7 +59,7 @@
     address.group = group_name
   }
   action e_address { 
-  #  puts "EADDR: #{data[0..p].inspect}"
+puts "EADDR: #{data[0..p].inspect}"
     address.raw = data[mark_address..(p-1)]
     address_list.addresses << address if address
     address = nil
@@ -113,6 +115,7 @@ module Mail
         end
         
         def parse(data)
+p data
           address_list = Data::AddressListData.new([], [])
           address = nil
           group_name = nil
@@ -127,10 +130,10 @@ module Mail
           quoted_string = nil
           %%write exec;
 
-          if address && address_list.addresses.empty? && address_list.group_names.empty? && mark_local
-            address.local = data
-            address_list.addresses << address
-          end
+#          if address && address_list.addresses.empty? && address_list.group_names.empty? && mark_local
+#            address.local = data
+#            address_list.addresses << address
+#          end
 
           if (p != eof) || (address_list.addresses.empty? && address_list.group_names.empty?) || cs < %%{ write first_final; }%%
             address_list.error = "Only able to parse up to #{data[0..p]}"

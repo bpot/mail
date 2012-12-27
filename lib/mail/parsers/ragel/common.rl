@@ -26,7 +26,7 @@
   # modified from:
   #   dot_atom_text = atext+ ("." atext+)*;
   # to support consecutive dots in local part
-  dot_atom_text = atext+ ("."+ atext)*;
+  dot_atom_text = ("."+)? atext+ (("."+)? atext+)*;
   DQUOTE = '"';
   qcontent = qtext | quoted_pair;
   dtext = 0x21..0x5a | 0x5e..0x7e | obs_dtext;
@@ -46,22 +46,22 @@
   local_part = (local_dot_atom | quoted_string | obs_local_part) >mark_local;
   obs_phrase = (word | "." | "@")+;
   obs_route = obs_domain_list ":";
-  addr_spec = local_part >mark %e_local_part "@" (domain >mark %e_domain);
+  # the end_addr priority solves uncertainty when whitespace
+  # after an addr_spec could cause it to be interpreted as a 
+  # display name "bar@example.com ,..."
+  addr_spec = (local_part >mark %e_local_part "@" (domain >mark %e_domain)) %(end_addr,2) | local_part >mark %e_local_part %(end_addr,0);
   phrase = (obs_phrase | word+) >mark %e_phrase;
   obs_angle_addr = CFWS? "<" obs_route? addr_spec ">" CFWS?;
   display_name = phrase;
   angle_addr = CFWS? ("<" >s_angle_addr) addr_spec ">" CFWS? | obs_angle_addr;
-  # the end_addr priority solves uncertainty when whitespace
-  # after an addr_spec could cause it to be interpreted as a 
-  # display name "bar@example.com ,..."
-  name_addr = display_name? %e_name_addr_display_name %(end_addr,0) angle_addr;
-  mailbox = (name_addr | addr_spec %(end_addr,1)) >s_address %e_address;
+  name_addr = display_name? %e_name_addr_display_name %(end_addr,1) angle_addr;
+  mailbox = (name_addr | addr_spec) >s_address %e_address;
   obs_mbox_list = (CFWS? ",")* mailbox ("," (mailbox | CFWS)?)*;
   token = 0x21..0x27 | 0x2a..0x2b | 0x2c..0x2e | 0x30..0x39 | 0x41..0x5a | 0x5e..0x7e;
   mailbox_list = (mailbox (("," | ";") mailbox)*) | obs_mbox_list;
   obs_group_list = (CFWS? ",")+ CFWS?;
   ietf_token = "7bit" | "8bit" | "binary" | "quoted-printable" | "base64";
-  custom_x_token = [xX] "-" token+;
+  custom_x_token = 'x'i "-" token+;
   group_list = mailbox_list | CFWS | obs_group_list;
   extension_token = ietf_token | custom_x_token;
   obs_id_left = local_part;
