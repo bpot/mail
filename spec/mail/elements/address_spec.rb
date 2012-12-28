@@ -506,7 +506,7 @@ describe Mail::Address do
       end
 
       it "should handle |(foo@bar.com (foobar), ned@foo.com (nedfoo) ) <kevin@goess.org>|" do
-        pending "bpot -- dunno"
+        pending "bpot -- trouble with comment recursion and starting an address"
         address = Mail::Address.new('(foo@bar.com (foobar), ned@foo.com (nedfoo) ) <kevin@goess.org>')
         address.should break_down_to({
                                          :name         => 'foo@bar.com \(foobar\), ned@foo.com \(nedfoo\) ',
