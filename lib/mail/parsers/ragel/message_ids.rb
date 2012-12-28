@@ -90,7 +90,7 @@ self._message_ids_trans_keys = [
 	40, 46, 61, 63, 91, 35, 39, 42, 
 	43, 45, 57, 65, 90, 94, 126, 13, 
 	92, 93, 1, 9, 11, 90, 94, 127, 
-	10, 9, 32, -128, -1, 9, 13, 32, 
+	10, 9, 32, 0, 127, 9, 13, 32, 
 	33, 40, 46, 62, 64, 35, 39, 42, 
 	43, 45, 57, 61, 90, 94, 126, 9, 
 	13, 32, 33, 40, 46, 62, 64, 35, 
@@ -119,7 +119,7 @@ self._message_ids_trans_keys = [
 	8, 11, 127, 9, 13, 32, 40, 41, 
 	92, 1, 8, 11, 127, 9, 13, 32, 
 	40, 41, 92, 1, 8, 11, 127, 10, 
-	9, 32, -128, -1, 9, 13, 32, 40, 
+	9, 32, 0, 127, 9, 13, 32, 40, 
 	60, 9, 13, 32, 40, 60, 9, 13, 
 	32, 40, 60, 0
 ]
@@ -219,7 +219,7 @@ self._message_ids_trans_targs = [
 	40, 73, 0, 19, 20, 19, 22, 41, 
 	35, 22, 22, 42, 22, 22, 22, 22, 
 	22, 0, 43, 45, 37, 42, 42, 42, 
-	0, 44, 0, 42, 42, 0, 0, 42, 
+	0, 44, 0, 42, 42, 0, 42, 0, 
 	23, 24, 23, 46, 26, 47, 73, 48, 
 	46, 46, 46, 46, 46, 0, 27, 28, 
 	27, 46, 33, 35, 73, 48, 46, 46, 
@@ -244,7 +244,7 @@ self._message_ids_trans_targs = [
 	72, 68, 68, 0, 69, 70, 69, 68, 
 	76, 72, 68, 68, 0, 69, 70, 69, 
 	68, 76, 72, 68, 68, 0, 71, 0, 
-	69, 69, 0, 0, 68, 74, 31, 74, 
+	69, 69, 0, 68, 0, 74, 31, 74, 
 	75, 5, 0, 74, 31, 74, 75, 5, 
 	0, 74, 31, 74, 75, 5, 0, 0, 
 	0
@@ -569,8 +569,15 @@ end
 
 # line 56 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rl"
 
-          if p != eof
-            message_ids.error = "Unable to parse past #{data[0..p]}"
+          if p == eof && cs >= 
+# line 574 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rb"
+73
+# line 57 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rl"
+
+            message_ids
+          else
+            message_ids.error = "Only able to parse up to #{data[0..p]}"
+            message_ids
           end
 
           message_ids

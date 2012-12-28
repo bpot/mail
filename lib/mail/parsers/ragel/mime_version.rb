@@ -350,11 +350,15 @@ end
 
 # line 56 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 
-          if p != eof
-            puts "FAILURE"
-            p data
-            p data[0..p]
-            raise "FAILED TO PARSE" 
+          if p == eof && cs >= 
+# line 355 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
+17
+# line 57 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+
+            mime_version
+          else
+            mime_version.error = "Only able to parse up to #{data[0..p]}"
+            mime_version
           end
 
           mime_version

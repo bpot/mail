@@ -536,13 +536,15 @@ end
 
 # line 78 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 
-          if p != eof
-            puts "FAILURE"
-            p data
-            p data[0..p]
-            #raise "FAILED TO PARSE" 
-        
-            raise Mail::Field::ParseError.new(Mail::ContentDispositionElement, data, "whatevs")
+          if p == eof && cs >= 
+# line 541 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rb"
+76
+# line 79 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+
+            content_disposition
+          else
+            content_disposition.error = "Only able to parse up to #{data[0..p]}"
+            content_disposition
           end
 
           content_disposition

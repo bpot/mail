@@ -1122,12 +1122,15 @@ end
 
 # line 59 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/received.rl"
 
-          if p != eof || cs < 
+          if p == eof && cs >= 
 # line 1127 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/received.rb"
 259
 # line 60 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/received.rl"
 
+            received
+          else
             received.error = "Only able to parse up to #{data[0..p]}"
+            received
           end
 
           received

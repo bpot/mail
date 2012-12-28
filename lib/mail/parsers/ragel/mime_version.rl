@@ -54,11 +54,11 @@ module Mail
           %%write init;
           %%write exec;
 
-          if p != eof
-            puts "FAILURE"
-            p data
-            p data[0..p]
-            raise "FAILED TO PARSE" 
+          if p == eof && cs >= %%{ write first_final; }%%
+            mime_version
+          else
+            mime_version.error = "Only able to parse up to #{data[0..p]}"
+            mime_version
           end
 
           mime_version

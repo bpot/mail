@@ -54,12 +54,11 @@ module Mail
           %%write init;
           %%write exec;
 
-          if p != eof
-          #  puts "FAILURE"
-          #  p data
-          #  p data[0..p]
-#            raise "FAILED TO PARSE" 
-            raise Mail::Field::ParseError.new(Mail::DateTimeElement, data, "whatevs")
+          if p == eof && cs >= %%{ write first_final; }%%
+            date_time
+          else
+            date_time.error = "Only able to parse up to #{data[0..p]}"
+            date_time
           end
 
           date_time

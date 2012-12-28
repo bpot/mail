@@ -395,8 +395,15 @@ end
 
 # line 57 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 
-          if p != eof
-            phrase_lists.error = "FAILED TO PARSE" 
+          if p == eof && cs >= 
+# line 400 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
+25
+# line 58 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
+
+            phrase_lists
+          else
+            phrase_lists.error = "Only able to parse up to #{data[0..p]}"
+            phrase_lists
           end
 
           phrase_lists

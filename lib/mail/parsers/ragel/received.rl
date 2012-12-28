@@ -57,8 +57,11 @@ module Mail
           %%write init;
           %%write exec;
 
-          if p != eof || cs < %%{ write first_final; }%%
+          if p == eof && cs >= %%{ write first_final; }%%
+            received
+          else
             received.error = "Only able to parse up to #{data[0..p]}"
+            received
           end
 
           received

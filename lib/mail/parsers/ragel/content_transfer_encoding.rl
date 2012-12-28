@@ -56,13 +56,11 @@ module Mail
           %%write init;
           %%write exec;
 
-          if p != eof
-            puts "FAILURE"
-            p data
-            p data[0..p]
-            #raise "FAILED TO PARSE" 
-        
-            raise Mail::Field::ParseError.new(Mail::ContentTransferEncodingElement, data, "whatevs")
+          if p == eof && cs >= %%{ write first_final; }%%
+            content_transfer_encoding
+          else
+            content_transfer_encoding.error = "Only able to parse up to #{data[0..p]}"
+            content_transfer_encoding
           end
 
           content_transfer_encoding

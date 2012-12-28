@@ -403,13 +403,15 @@ end
 
 # line 58 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 
-          if p != eof
-            puts "FAILURE"
-            p data
-            p data[0..p]
-            #raise "FAILED TO PARSE" 
-        
-            raise Mail::Field::ParseError.new(Mail::ContentTransferEncodingElement, data, "whatevs")
+          if p == eof && cs >= 
+# line 408 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
+44
+# line 59 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+
+            content_transfer_encoding
+          else
+            content_transfer_encoding.error = "Only able to parse up to #{data[0..p]}"
+            content_transfer_encoding
           end
 
           content_transfer_encoding

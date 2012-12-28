@@ -53,6 +53,13 @@ module Mail
           %%write init;
           %%write exec;
 
+          if p == eof && cs >= %%{ write first_final; }%%
+            content_location
+          else
+            content_location.error = "Only able to parse up to #{data[0..p]}"
+            content_location
+          end
+
           content_location
         end
       end

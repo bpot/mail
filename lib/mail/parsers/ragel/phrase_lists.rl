@@ -55,8 +55,11 @@ module Mail
           %%write init;
           %%write exec;
 
-          if p != eof
-            phrase_lists.error = "FAILED TO PARSE" 
+          if p == eof && cs >= %%{ write first_final; }%%
+            phrase_lists
+          else
+            phrase_lists.error = "Only able to parse up to #{data[0..p]}"
+            phrase_lists
           end
 
           phrase_lists

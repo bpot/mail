@@ -400,6 +400,17 @@ end
 
 # line 55 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 
+          if p == eof && cs >= 
+# line 405 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
+21
+# line 56 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+
+            content_location
+          else
+            content_location.error = "Only able to parse up to #{data[0..p]}"
+            content_location
+          end
+
           content_location
         end
       end

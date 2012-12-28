@@ -525,12 +525,15 @@ end
 
 # line 56 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
 
-          if p != eof
-          #  puts "FAILURE"
-          #  p data
-          #  p data[0..p]
-#            raise "FAILED TO PARSE" 
-            raise Mail::Field::ParseError.new(Mail::DateTimeElement, data, "whatevs")
+          if p == eof && cs >= 
+# line 530 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
+97
+# line 57 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+
+            date_time
+          else
+            date_time.error = "Only able to parse up to #{data[0..p]}"
+            date_time
           end
 
           date_time

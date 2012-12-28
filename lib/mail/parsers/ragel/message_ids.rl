@@ -54,8 +54,11 @@ module Mail
           %%write init;
           %%write exec;
 
-          if p != eof
-            message_ids.error = "Unable to parse past #{data[0..p]}"
+          if p == eof && cs >= %%{ write first_final; }%%
+            message_ids
+          else
+            message_ids.error = "Only able to parse up to #{data[0..p]}"
+            message_ids
           end
 
           message_ids

@@ -76,13 +76,11 @@ module Mail
           quoted_string = nil
           %%write exec;
 
-          if p != eof
-            puts "FAILURE"
-            p data
-            p data[0..p]
-            #raise "FAILED TO PARSE" 
-        
-            raise Mail::Field::ParseError.new(Mail::ContentDispositionElement, data, "whatevs")
+          if p == eof && cs >= %%{ write first_final; }%%
+            content_disposition
+          else
+            content_disposition.error = "Only able to parse up to #{data[0..p]}"
+            content_disposition
           end
 
           content_disposition
