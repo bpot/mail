@@ -1,7 +1,7 @@
 
 # line 1 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 
-# line 39 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
+# line 40 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 
 
 module Mail
@@ -46,7 +46,7 @@ self._phrase_lists_trans_keys = [
 	65, 90, 94, 126, 10, 9, 32, 10, 
 	9, 32, 9, 13, 32, 92, 1, 8, 
 	11, 33, 35, 127, 13, 34, 92, 1, 
-	9, 11, 127, 10, 9, 32, 0, 127, 
+	9, 11, 127, 10, 9, 32, -128, -1, 
 	9, 13, 32, 92, 1, 8, 11, 33, 
 	35, 127, 10, 9, 32, 9, 13, 32, 
 	34, 40, 46, 61, 64, 33, 39, 42, 
@@ -112,7 +112,7 @@ self._phrase_lists_indicies = [
 	1, 13, 1, 9, 9, 1, 15, 16, 
 	15, 17, 14, 14, 14, 1, 19, 20, 
 	21, 18, 18, 1, 22, 1, 18, 18, 
-	1, 18, 1, 23, 24, 23, 21, 18, 
+	1, 1, 18, 23, 24, 23, 21, 18, 
 	18, 18, 1, 25, 1, 23, 23, 1, 
 	26, 27, 26, 4, 5, 6, 3, 6, 
 	3, 3, 3, 3, 3, 1, 28, 1, 
@@ -194,7 +194,7 @@ end
 self.phrase_lists_en_main = 1;
 
 
-# line 47 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
+# line 48 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
         end
         
         def parse(data)
@@ -213,7 +213,7 @@ begin
 	top = 0
 end
 
-# line 57 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
+# line 58 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
           
 # line 219 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
 begin
@@ -309,15 +309,15 @@ when 2 then
 		begin
 		end
 when 3 then
-# line 31 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
+# line 32 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 		begin
  mark = p 		end
 when 4 then
-# line 33 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 		begin
  phrase_lists.phrases << data[mark..(p-1)] if mark; mark = nil 		end
 when 5 then
-# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
+# line 35 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 		begin
  phrase_lists.phrases << data[mark..(p-1)] if mark; mark = nil 		end
 when 6 then
@@ -376,7 +376,7 @@ when 2 then
 		begin
 		end
 when 5 then
-# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
+# line 35 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 		begin
  phrase_lists.phrases << data[mark..(p-1)] if mark; mark = nil 		end
 # line 383 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
@@ -393,12 +393,12 @@ end
 	end
 	end
 
-# line 58 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
+# line 59 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 
           if p == eof && cs >= 
 # line 400 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
 25
-# line 59 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
+# line 60 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 
             phrase_lists
           else

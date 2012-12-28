@@ -27,6 +27,7 @@
   action mark_sub_type { }
   action e_sub_type { }
   action e_ctime_date {}
+  action mark_domain { }
 
   action mark { mark = p }
   action e_date { received.date = data[mark..(p-1)].strip }

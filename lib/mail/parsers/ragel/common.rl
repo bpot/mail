@@ -20,6 +20,7 @@
   FWS = (WSP* CRLF WSP+) | (CRLF WSP+) | obs_FWS;
   ALPHA = [a-zA-Z];
   DIGIT = [0-9];
+  DQUOTE = '"';
   obs_qtext = obs_NO_WS_CTL;
   
   # Handle recursive comments
@@ -30,13 +31,16 @@
   atext = ALPHA | DIGIT | "!" | "#" | "$" | "%" | "&" | "'" | "*" | "+" | "-" | "/" | "=" | "?" | "^" | "_" | "`" | "{" | "|" | "}" | "~";
   qtext = 0x21 | 0x23..0x5b | 0x5d..0x7e | obs_qtext;
   obs_dtext = obs_NO_WS_CTL | quoted_pair;
+  qcontent = qtext | quoted_pair;
+
   CFWS = ((FWS? comment)+ FWS?) | FWS;
   # modified from:
   #   dot_atom_text = atext+ ("." atext+)*;
   # to support consecutive dots in local part
-  dot_atom_text = ("."+)? atext+ (("."+)? atext+)*;
-  DQUOTE = '"';
-  qcontent = qtext | quoted_pair;
+  #dot_atom_text = ("."+)? atext+ (("."+)? atext+)*;
+  domain_text = (DQUOTE (FWS? qcontent)+ FWS? DQUOTE) | atext+;
+  # XXX can this be simplified
+  dot_atom_text = ("."+)? domain_text (("."+)? domain_text)*;
   dtext = 0x21..0x5a | 0x5e..0x7e | obs_dtext;
   atom = CFWS? atext+ CFWS?;
   dot_atom = CFWS? dot_atom_text (CFWS? >(comment_after_address,1));
@@ -57,7 +61,7 @@
   # the end_addr priority solves uncertainty when whitespace
   # after an addr_spec could cause it to be interpreted as a 
   # display name "bar@example.com ,..."
-  addr_spec = (local_part >mark %e_local_part "@" (domain >mark %e_domain)) %(end_addr,2) | local_part >mark %e_local_part %(end_addr,0);
+  addr_spec = (local_part >mark %e_local_part "@" (domain >mark_domain %e_domain)) %(end_addr,2) | local_part >mark %e_local_part %(end_addr,0);
   phrase = (obs_phrase | word+) >mark %e_phrase;
   obs_angle_addr = CFWS? "<" obs_route? addr_spec ">" CFWS?;
   display_name = phrase;

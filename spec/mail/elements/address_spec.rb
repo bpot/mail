@@ -179,7 +179,6 @@ describe Mail::Address do
       end
 
       it "should handle all OK domains" do
-        pending "bpot -- quoted strings in domains"
         [['loveruby.net', 'loveruby.net'],
          ['"love ruby".net', '"love ruby".net'],
          ['a."love ruby".net', 'a."love ruby".net'],

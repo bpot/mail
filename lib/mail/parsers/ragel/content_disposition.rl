@@ -25,6 +25,7 @@
   action e_encoding {}
   action e_group_name {}
   action e_ctime_date {}
+  action mark_domain {  }
 
 
 

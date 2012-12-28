@@ -16,7 +16,13 @@
   action e_parameter_value { }
   action e_ctime_date {}
 
-  action mark { mark = p }
+  action mark { 
+    mark = p 
+  }
+
+  action mark_domain { 
+    mark_domain = p 
+  }
 
   action mark_local {
     mark_local = p
@@ -74,7 +80,7 @@
       address.local = data[mark..(p-1)] if address 
     end
   }
-  action e_domain { address.domain = data[mark..(p-1)] if address }
+  action e_domain { address.domain = data[mark_domain..(p-1)] if address }
   action e_group_name {
     if quoted_string
       group = quoted_string

@@ -26,6 +26,7 @@
   action e_quoted_string {}
   action e_local_part {}
   action e_domain {}
+  action mark_domain { }
 
 
   action mark { mark = p }
