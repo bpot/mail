@@ -1,7 +1,7 @@
 
 # line 1 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
 
-# line 111 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
+# line 108 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
 
 
 module Mail
@@ -277,7 +277,7 @@ self._address_lists_trans_keys = [
 	94, 126, 10, 9, 32, 9, 13, 32, 
 	92, 1, 8, 11, 33, 35, 127, 13, 
 	34, 92, 1, 9, 11, 127, 10, 9, 
-	32, -128, -1, 9, 13, 32, 92, 1, 
+	32, 0, 127, 9, 13, 32, 92, 1, 
 	8, 11, 33, 35, 127, 10, 9, 32, 
 	9, 13, 32, 34, 40, 46, 60, 61, 
 	64, 33, 39, 42, 43, 45, 57, 63, 
@@ -336,7 +336,7 @@ self._address_lists_trans_keys = [
 	127, 10, 9, 32, -128, -1, 9, 13, 
 	32, 92, 1, 8, 11, 33, 35, 127, 
 	13, 34, 92, 1, 9, 11, 127, 10, 
-	9, 32, 0, 127, 9, 13, 32, 92, 
+	9, 32, -128, -1, 9, 13, 32, 92, 
 	1, 8, 11, 33, 35, 127, 10, 9, 
 	32, 9, 13, 32, 34, 40, 45, 61, 
 	63, 33, 39, 42, 43, 47, 57, 65, 
@@ -508,8 +508,8 @@ self._address_lists_trans_keys = [
 	42, 43, 45, 57, 63, 90, 94, 126, 
 	10, 9, 32, 9, 13, 32, 92, 1, 
 	8, 11, 33, 35, 127, 13, 34, 92, 
-	1, 9, 11, 127, 10, 9, 32, -128, 
-	-1, 9, 13, 32, 92, 1, 8, 11, 
+	1, 9, 11, 127, 10, 9, 32, 0, 
+	127, 9, 13, 32, 92, 1, 8, 11, 
 	33, 35, 127, 10, 9, 32, 9, 13, 
 	32, 34, 40, 46, 60, 61, 64, 33, 
 	39, 42, 43, 45, 57, 63, 90, 94, 
@@ -544,7 +544,7 @@ self._address_lists_trans_keys = [
 	126, 10, 9, 32, 9, 13, 32, 92, 
 	1, 8, 11, 33, 35, 127, 13, 34, 
 	92, 1, 9, 11, 127, 10, 9, 32, 
-	0, 127, 9, 13, 32, 92, 1, 8, 
+	-128, -1, 9, 13, 32, 92, 1, 8, 
 	11, 33, 35, 127, 10, 9, 32, 9, 
 	13, 32, 34, 40, 46, 60, 61, 63, 
 	33, 39, 42, 43, 45, 57, 65, 90, 
@@ -583,7 +583,7 @@ self._address_lists_trans_keys = [
 	63, 91, 35, 39, 42, 43, 45, 57, 
 	65, 90, 94, 126, 13, 92, 93, 1, 
 	9, 11, 90, 94, 127, 10, 9, 32, 
-	-128, -1, 9, 13, 32, 34, 40, 46, 
+	0, 127, 9, 13, 32, 34, 40, 46, 
 	60, 61, 64, 33, 39, 42, 43, 45, 
 	57, 63, 90, 94, 126, 9, 13, 32, 
 	34, 40, 44, 46, 59, 60, 61, 64, 
@@ -659,7 +659,7 @@ self._address_lists_trans_keys = [
 	61, 63, 91, 35, 39, 42, 43, 45, 
 	57, 65, 90, 94, 126, 13, 92, 93, 
 	1, 9, 11, 90, 94, 127, 10, 9, 
-	32, 0, 127, 9, 13, 32, 92, 1, 
+	32, -128, -1, 9, 13, 32, 92, 1, 
 	8, 11, 33, 35, 127, 13, 34, 92, 
 	1, 9, 11, 127, 10, 9, 32, 0, 
 	127, 9, 13, 32, 92, 1, 8, 11, 
@@ -833,7 +833,7 @@ self._address_lists_trans_keys = [
 	46, 61, 63, 91, 35, 39, 42, 43, 
 	45, 57, 65, 90, 94, 126, 13, 92, 
 	93, 1, 9, 11, 90, 94, 127, 10, 
-	9, 32, 0, 127, 9, 13, 32, 92, 
+	9, 32, -128, -1, 9, 13, 32, 92, 
 	1, 8, 11, 33, 35, 127, 13, 34, 
 	92, 1, 9, 11, 127, 10, 9, 32, 
 	-128, -1, 9, 13, 32, 92, 1, 8, 
@@ -1003,7 +1003,7 @@ self._address_lists_trans_keys = [
 	11, 90, 94, 127, 10, 9, 32, -128, 
 	-1, 9, 13, 32, 92, 1, 8, 11, 
 	33, 35, 127, 13, 34, 92, 1, 9, 
-	11, 127, 10, 9, 32, 0, 127, 9, 
+	11, 127, 10, 9, 32, -128, -1, 9, 
 	13, 32, 92, 1, 8, 11, 33, 35, 
 	127, 10, 9, 32, 9, 13, 32, 34, 
 	40, 45, 61, 63, 33, 39, 42, 43, 
@@ -1667,7 +1667,7 @@ self._address_lists_indicies = [
 	269, 269, 269, 269, 1, 277, 1, 269, 
 	269, 1, 279, 280, 279, 281, 278, 278, 
 	278, 1, 283, 284, 285, 282, 282, 1, 
-	286, 1, 282, 282, 1, 1, 282, 287, 
+	286, 1, 282, 282, 1, 282, 1, 287, 
 	288, 287, 285, 282, 282, 282, 1, 289, 
 	1, 287, 287, 1, 290, 291, 290, 293, 
 	294, 295, 296, 292, 295, 292, 292, 292, 
@@ -1720,7 +1720,7 @@ self._address_lists_indicies = [
 	364, 1, 401, 1, 364, 364, 1, 1, 
 	364, 403, 404, 403, 405, 402, 402, 402, 
 	1, 407, 408, 409, 406, 406, 1, 410, 
-	1, 406, 406, 1, 406, 1, 411, 412, 
+	1, 406, 406, 1, 1, 406, 411, 412, 
 	411, 409, 406, 406, 406, 1, 413, 1, 
 	411, 411, 1, 334, 414, 334, 416, 417, 
 	415, 415, 415, 415, 415, 415, 415, 415, 
@@ -1873,8 +1873,8 @@ self._address_lists_indicies = [
 	681, 674, 674, 674, 674, 674, 1, 682, 
 	1, 674, 674, 1, 684, 685, 684, 686, 
 	683, 683, 683, 1, 688, 689, 690, 687, 
-	687, 1, 691, 1, 687, 687, 1, 1, 
-	687, 692, 693, 692, 690, 687, 687, 687, 
+	687, 1, 691, 1, 687, 687, 1, 687, 
+	1, 692, 693, 692, 690, 687, 687, 687, 
 	1, 694, 1, 692, 692, 1, 695, 696, 
 	695, 698, 699, 700, 701, 697, 700, 697, 
 	697, 697, 697, 697, 1, 702, 703, 702, 
@@ -1905,7 +1905,7 @@ self._address_lists_indicies = [
 	667, 667, 667, 667, 1, 769, 1, 764, 
 	764, 1, 771, 772, 771, 773, 770, 770, 
 	770, 1, 775, 776, 777, 774, 774, 1, 
-	778, 1, 774, 774, 1, 774, 1, 779, 
+	778, 1, 774, 774, 1, 1, 774, 779, 
 	780, 779, 777, 774, 774, 774, 1, 781, 
 	1, 779, 779, 1, 782, 783, 782, 785, 
 	786, 787, 713, 784, 784, 784, 784, 784, 
@@ -1940,7 +1940,7 @@ self._address_lists_indicies = [
 	825, 1, 841, 842, 841, 843, 844, 845, 
 	843, 843, 846, 843, 843, 843, 843, 843, 
 	1, 847, 848, 834, 810, 810, 810, 1, 
-	849, 1, 810, 810, 1, 1, 810, 702, 
+	849, 1, 810, 810, 1, 810, 1, 702, 
 	703, 702, 668, 704, 851, 672, 850, 681, 
 	850, 850, 850, 850, 850, 1, 852, 853, 
 	852, 668, 854, 670, 851, 125, 672, 850, 
@@ -2005,8 +2005,8 @@ self._address_lists_indicies = [
 	945, 947, 932, 1, 948, 949, 948, 950, 
 	951, 952, 950, 950, 953, 950, 950, 950, 
 	950, 950, 1, 954, 955, 941, 919, 919, 
-	919, 1, 956, 1, 919, 919, 1, 919, 
-	1, 958, 959, 958, 960, 957, 957, 957, 
+	919, 1, 956, 1, 919, 919, 1, 1, 
+	919, 958, 959, 958, 960, 957, 957, 957, 
 	1, 962, 963, 964, 961, 961, 1, 965, 
 	1, 961, 961, 1, 961, 1, 966, 967, 
 	966, 964, 961, 961, 961, 1, 968, 1, 
@@ -2158,7 +2158,7 @@ self._address_lists_indicies = [
 	1198, 1, 1214, 1215, 1214, 1216, 1217, 1218, 
 	1216, 1216, 1219, 1216, 1216, 1216, 1216, 1216, 
 	1, 1220, 1221, 1207, 1185, 1185, 1185, 1, 
-	1222, 1, 1185, 1185, 1, 1185, 1, 1224, 
+	1222, 1, 1185, 1185, 1, 1, 1185, 1224, 
 	1225, 1224, 1226, 1223, 1223, 1223, 1, 1228, 
 	1229, 1230, 1227, 1227, 1, 1231, 1, 1227, 
 	1227, 1, 1, 1227, 1232, 1233, 1232, 1230, 
@@ -2308,7 +2308,7 @@ self._address_lists_indicies = [
 	1, 1497, 1, 1460, 1460, 1, 1, 1460, 
 	1499, 1500, 1499, 1501, 1498, 1498, 1498, 1, 
 	1503, 1504, 1505, 1502, 1502, 1, 1506, 1, 
-	1502, 1502, 1, 1502, 1, 1507, 1508, 1507, 
+	1502, 1502, 1, 1, 1502, 1507, 1508, 1507, 
 	1505, 1502, 1502, 1502, 1, 1509, 1, 1507, 
 	1507, 1, 78, 1510, 78, 1512, 1513, 1511, 
 	1511, 1511, 1511, 1511, 1511, 1511, 1511, 1, 
@@ -3094,7 +3094,7 @@ end
 self.address_lists_en_main = 846;
 
 
-# line 119 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
+# line 116 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
         end
         
         def parse(data)
@@ -3118,7 +3118,7 @@ begin
 	top = 0
 end
 
-# line 134 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
+# line 131 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
 
           quoted_string = nil
           
@@ -3298,29 +3298,26 @@ when 11 then
 # line 89 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
 		begin
 
-  #  puts "SCC: #{data[0..(p-1)].inspect}"
     mark_comment = p unless mark_comment
   		end
 when 12 then
-# line 93 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
+# line 92 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
 		begin
 
   		end
 when 13 then
-# line 95 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
+# line 94 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
 		begin
 
-  #  puts "ECM: #{data[0..(p-1)].inspect}"
-if address
-    address.comments << data[mark_comment..(p-2)]
-end
+    if address
+      address.comments << data[mark_comment..(p-2)]
+    end
     mark_comment = nil
   		end
 when 14 then
-# line 103 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
+# line 101 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
 		begin
 
-  #  puts "SGL: #{data[0..p].inspect}"
   		end
 when 15 then
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
@@ -3345,7 +3342,7 @@ when 16 then
 		break
 	end
  		end
-# line 3349 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rb"
+# line 3346 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rb"
 			end # action switch
 		end
 	end
@@ -3399,16 +3396,15 @@ when 9 then
 		begin
  address.domain = data[mark..(p-1)] if address 		end
 when 13 then
-# line 95 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
+# line 94 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
 		begin
 
-  #  puts "ECM: #{data[0..(p-1)].inspect}"
-if address
-    address.comments << data[mark_comment..(p-2)]
-end
+    if address
+      address.comments << data[mark_comment..(p-2)]
+    end
     mark_comment = nil
   		end
-# line 3412 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rb"
+# line 3408 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rb"
 		end # eof action switch
 	end
 	if _trigger_goto
@@ -3422,7 +3418,7 @@ end
 	end
 	end
 
-# line 137 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
+# line 134 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
 
 #          if address && address_list.addresses.empty? && address_list.group_names.empty? && mark_local
 #            address.local = data
@@ -3430,10 +3426,12 @@ end
 #          end
 
           if (p != eof) || (address_list.addresses.empty? && address_list.group_names.empty?) || cs < 
-# line 3434 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rb"
+# line 3430 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rb"
 846
-# line 143 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
+# line 140 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
 
+            p cs
+            p address
             address_list.error = "Only able to parse up to #{data[0..p]}"
           else
             address_list.group_names.uniq!

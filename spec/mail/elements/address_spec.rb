@@ -179,7 +179,7 @@ describe Mail::Address do
       end
 
       it "should handle all OK domains" do
-        pending "bpot"
+        pending "bpot -- quoted strings in domains"
         [['loveruby.net', 'loveruby.net'],
          ['"love ruby".net', '"love ruby".net'],
          ['a."love ruby".net', 'a."love ruby".net'],
@@ -270,7 +270,7 @@ describe Mail::Address do
       end
 
       it "should handle trailing dots" do
-        pending "bpot"
+        pending "bpot -- trailing dots in local"
         1.upto(10) do |times|
           dots    = "." * times
           address = Mail::Address.new("hogetest#{dots}@docomo.ne.jp")
@@ -481,7 +481,7 @@ describe Mail::Address do
       end
 
       it "should handle |a909937 (Graham Barr          (0004 bodg))|" do
-        pending "bpot -- recursive comments"
+        pending "bpot -- inner local"
         address = Mail::Address.new('a909937 (Graham Barr          (0004 bodg))')
         address.should break_down_to({
                                          :name         => 'Graham Barr (0004 bodg)',
@@ -548,7 +548,7 @@ describe Mail::Address do
       end
 
       it "should handle |Mary Smith <@machine.tld:mary@example.net>|" do
-        pending "bpot"
+        pending "bpot -- cray local"
         address = Mail::Address.new('Mary Smith <@machine.tld:mary@example.net>')
         address.should break_down_to({
                                          :name         => 'Mary Smith',

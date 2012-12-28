@@ -87,21 +87,18 @@
     group_name = group
   }
   action s_ccontent {
-  #  puts "SCC: #{data[0..(p-1)].inspect}"
     mark_comment = p unless mark_comment
   }
   action e_ccontent {
   }
   action e_comment {
-  #  puts "ECM: #{data[0..(p-1)].inspect}"
-if address
-    address.comments << data[mark_comment..(p-2)]
-end
+    if address
+      address.comments << data[mark_comment..(p-2)]
+    end
     mark_comment = nil
   }
 
   action start_group_list {
-  #  puts "SGL: #{data[0..p].inspect}"
   }
 
   include common "common.rl";
@@ -141,6 +138,8 @@ module Mail
 #          end
 
           if (p != eof) || (address_list.addresses.empty? && address_list.group_names.empty?) || cs < %%{ write first_final; }%%
+            p cs
+            p address
             address_list.error = "Only able to parse up to #{data[0..p]}"
           else
             address_list.group_names.uniq!
