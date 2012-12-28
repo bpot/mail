@@ -24,12 +24,21 @@
   action e_group_name {}
   action e_ctime_date {}
   action mark_domain { }
+  action e_atom {}
+  action e_local_part_dot_atom {}
+  action e_mark_atom {}
+  action mark_local_dot_atom {}
+  action mark_atom {}
+  action e_local_quoted_string {}
 
 
   action mark { mark = p }
   action mark_sub_type { mark_sub_type = p }
-  action e_quoted_string { 
-    quoted_string = data[mark..(p-1)] 
+  action mark_quoted {
+    mark_quoted = p
+  }
+  action e_quoted { 
+    quoted_string = data[mark_quoted..(p-1)] 
   }
   action e_main_type { 
     content_type.main_type = data[mark..(p-1)].downcase 

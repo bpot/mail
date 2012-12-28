@@ -28,6 +28,14 @@
   action e_sub_type { }
   action e_ctime_date {}
   action mark_domain { }
+  action e_atom {}
+  action e_local_part_dot_atom {}
+  action mark_quoted {}
+  action e_quoted {}
+  action e_mark_atom {}
+  action mark_local_dot_atom {}
+  action mark_atom {}
+  action e_local_quoted_string {}
 
   action mark { mark = p }
   action e_date { received.date = data[mark..(p-1)].strip }

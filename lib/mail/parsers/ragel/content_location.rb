@@ -1,7 +1,7 @@
 
 # line 1 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 
-# line 38 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+# line 49 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 
 
 module Mail
@@ -18,11 +18,11 @@ end
 self._content_location_actions = [
 	0, 1, 0, 1, 1, 1, 2, 1, 
 	3, 1, 4, 1, 5, 1, 6, 1, 
-	7, 2, 0, 1, 2, 0, 6, 2, 
-	1, 7, 2, 2, 3, 2, 2, 6, 
-	2, 3, 5, 2, 5, 6, 2, 6, 
-	5, 3, 0, 1, 7, 3, 3, 5, 
-	6
+	7, 1, 8, 2, 0, 1, 2, 0, 
+	7, 2, 1, 8, 2, 2, 3, 2, 
+	2, 7, 2, 4, 6, 2, 6, 7, 
+	2, 7, 6, 3, 0, 1, 8, 3, 
+	4, 6, 7
 ]
 
 class << self
@@ -154,15 +154,15 @@ class << self
 	private :_content_location_trans_actions, :_content_location_trans_actions=
 end
 self._content_location_trans_actions = [
-	0, 0, 0, 7, 7, 13, 0, 0, 
-	0, 0, 0, 9, 0, 0, 0, 0, 
-	0, 0, 5, 5, 26, 26, 29, 1, 
-	17, 17, 20, 41, 1, 0, 3, 3, 
-	13, 23, 0, 0, 0, 15, 0, 11, 
-	11, 0, 35, 0, 13, 5, 5, 29, 
-	7, 32, 32, 7, 45, 7, 0, 13, 
-	5, 5, 29, 0, 11, 11, 0, 9, 
-	35, 38
+	0, 0, 0, 7, 7, 15, 0, 0, 
+	0, 0, 0, 11, 0, 0, 0, 0, 
+	0, 0, 5, 5, 28, 28, 31, 1, 
+	19, 19, 22, 43, 1, 0, 3, 3, 
+	15, 25, 0, 0, 0, 17, 0, 13, 
+	13, 0, 37, 0, 15, 5, 5, 31, 
+	9, 34, 34, 9, 47, 9, 0, 15, 
+	5, 5, 31, 0, 13, 13, 0, 11, 
+	37, 40
 ]
 
 class << self
@@ -172,8 +172,8 @@ end
 self._content_location_eof_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 11, 0, 5, 
-	11, 0, 5, 0, 11, 11, 0
+	0, 0, 0, 0, 0, 13, 0, 5, 
+	13, 0, 5, 0, 13, 13, 0
 ]
 
 class << self
@@ -199,7 +199,7 @@ end
 self.content_location_en_main = 1;
 
 
-# line 46 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+# line 57 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
         end
         
         def parse(data)
@@ -218,7 +218,7 @@ begin
 	top = 0
 end
 
-# line 56 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+# line 67 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
           
 # line 224 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
 begin
@@ -314,18 +314,26 @@ when 2 then
 		begin
 		end
 when 3 then
-# line 31 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+# line 37 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
  mark = p 		end
 when 4 then
-# line 32 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+# line 38 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
- content_location.location = data[mark..(p-1)] 		end
+
+    mark_quoted = p
+  		end
 when 5 then
-# line 33 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+# line 41 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+		begin
+ 
+    content_location.location = data[mark_quoted..(p-1)] 
+  		end
+when 6 then
+# line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
  content_location.location = data[mark..(p-1)] 		end
-when 6 then
+when 7 then
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -337,7 +345,7 @@ when 6 then
 		break
 	end
  		end
-when 7 then
+when 8 then
 # line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -348,7 +356,7 @@ when 7 then
 		break
 	end
  		end
-# line 352 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
+# line 360 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
 			end # action switch
 		end
 	end
@@ -380,11 +388,11 @@ when 2 then
 # line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
 		end
-when 5 then
-# line 33 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+when 6 then
+# line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
  content_location.location = data[mark..(p-1)] 		end
-# line 388 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
+# line 396 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
 		end # eof action switch
 	end
 	if _trigger_goto
@@ -398,12 +406,12 @@ end
 	end
 	end
 
-# line 57 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+# line 68 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 
           if p == eof && cs >= 
-# line 405 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
+# line 413 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
 21
-# line 58 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+# line 69 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 
             content_location
           else

@@ -27,6 +27,14 @@
   action e_local_part {}
   action e_domain {}
   action mark_domain { }
+  action e_atom {}
+  action e_local_part_dot_atom {}
+  action mark_quoted {}
+  action e_quoted {}
+  action e_mark_atom {}
+  action mark_local_dot_atom {}
+  action mark_atom {}
+  action e_local_quoted_string {}
 
 
   action mark { mark = p }

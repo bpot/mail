@@ -24,13 +24,40 @@
     mark_domain = p 
   }
 
-  action mark_local {
-    mark_local = p
+  # Common
+
+  action mark_quoted { 
+    mark_quoted = p
   }
 
-  action e_quoted_string { 
-    quoted_string = data[mark..(p-1)]
+  action e_quoted { 
+    quoted_string = data[mark_quoted..(p-1)]
   }
+
+
+
+  # Local Part
+
+  action mark_local_dot_atom {
+    mark_local_dot_atom = p
+  }
+  
+  action e_local_part_dot_atom {
+    address.local = data[mark_local_dot_atom..(p-1)] if address
+  }
+
+  action e_local_quoted_string {
+    address.local = '"' + quoted_string + '"' if address
+  }
+
+  action mark_atom {
+    mark_atom = p unless mark_atom
+  }
+
+  action e_atom {
+    atom = data[mark_atom..(p-1)]
+  }
+
   # display name
   action e_name_addr_display_name {
   #  puts "ENA: #{data[mark..p].inspect}"
@@ -70,15 +97,6 @@
     address.raw = data[mark_address..(p-1)]
     address_list.addresses << address if address
     address = nil
-  }
-  action e_local_part {
-    if quoted_string
-      # Maintain quotes for quoted strings when they are in
-      # the local part 
-      address.local = '"' + quoted_string + '"' if address 
-    else
-      address.local = data[mark..(p-1)] if address 
-    end
   }
   action e_domain { address.domain = data[mark_domain..(p-1)] if address }
   action e_group_name {

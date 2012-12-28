@@ -34,34 +34,51 @@
   qcontent = qtext | quoted_pair;
 
   CFWS = ((FWS? comment)+ FWS?) | FWS;
+
+  # Address
+  # Common
+  domain_text = (DQUOTE (FWS? qcontent)+ FWS? DQUOTE) | atext+;
+
+  # XXX can this be simplified
+  # local_part can take three different forms:
+  #
+  # local_dot_atom: we take content between comments
+  # quoted_string: we take the qouted content between comments
+  # obs_local_part: a bunch of "." words that can contain quoted strings
+  #                 we have to concatenate these
+  local_dot_atom_text = ("."* domain_text "."*)+;
+  local_dot_atom = CFWS? 
+                   (local_dot_atom_text >mark_local_dot_atom %e_local_part_dot_atom) 
+                   CFWS?;
+  quoted_string = CFWS? 
+                  (DQUOTE 
+                    (((FWS? qcontent)+ FWS?) >mark_quoted %e_quoted)
+                  DQUOTE)
+                  CFWS?;
+  atom = CFWS? (atext+ >mark_atom %e_atom) CFWS?;
+  word = atom | quoted_string;
+  obs_local_part = word ("." word)*;
+  local_part = (local_dot_atom |
+                (quoted_string %e_local_quoted_string) |
+                obs_local_part);
+
   # modified from:
   #   dot_atom_text = atext+ ("." atext+)*;
   # to support consecutive dots in local part
   #dot_atom_text = ("."+)? atext+ (("."+)? atext+)*;
-  domain_text = (DQUOTE (FWS? qcontent)+ FWS? DQUOTE) | atext+;
-  # XXX can this be simplified
   dot_atom_text = ("."+)? domain_text (("."+)? domain_text)*;
   dtext = 0x21..0x5a | 0x5e..0x7e | obs_dtext;
-  atom = CFWS? atext+ CFWS?;
   dot_atom = CFWS? dot_atom_text (CFWS? >(comment_after_address,1));
-  quoted_string = CFWS? DQUOTE 
-                  (((FWS? qcontent)+ FWS?) >mark %e_quoted_string)
-                  DQUOTE CFWS?;
   domain_literal = CFWS? "[" (FWS? dtext)* FWS? "]" CFWS?;
   obs_domain = atom ("." atom)*;
-  local_dot_atom_text = ("."* domain_text "."*)+;
-  word = atom | quoted_string;
   domain = dot_atom | domain_literal | obs_domain;
-  local_dot_atom = CFWS? local_dot_atom_text CFWS?;
-  obs_local_part = word ("." word)*;
   obs_domain_list = (CFWS | ",")* "@" domain ("," CFWS? ("@" domain)?)*;
-  local_part = (local_dot_atom | quoted_string | obs_local_part) >mark_local;
   obs_phrase = (word | "." | "@")+;
   obs_route = obs_domain_list ":";
   # the end_addr priority solves uncertainty when whitespace
   # after an addr_spec could cause it to be interpreted as a 
   # display name "bar@example.com ,..."
-  addr_spec = (local_part >mark %e_local_part "@" (domain >mark_domain %e_domain)) %(end_addr,2) | local_part >mark %e_local_part %(end_addr,0);
+  addr_spec = (local_part >mark "@" (domain >mark_domain %e_domain)) %(end_addr,2) | local_part %(end_addr,0);
   phrase = (obs_phrase | word+) >mark %e_phrase;
   obs_angle_addr = CFWS? "<" obs_route? addr_spec ">" CFWS?;
   display_name = phrase;

@@ -27,9 +27,20 @@
   action e_sub_type { }
   action e_ctime_date {}
   action mark_domain { }
+  action e_atom {}
+  action e_local_part_dot_atom {}
+  action e_mark_atom {}
+  action mark_local_dot_atom {}
+  action mark_atom {}
+  action e_local_quoted_string {}
 
   action mark { mark = p }
-  action e_quoted_string { content_location.location = data[mark..(p-1)] }
+  action mark_quoted {
+    mark_quoted = p
+  }
+  action e_quoted { 
+    content_location.location = data[mark_quoted..(p-1)] 
+  }
   action e_token_string { content_location.location = data[mark..(p-1)] }
 
   include common "common.rl";

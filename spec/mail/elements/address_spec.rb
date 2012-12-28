@@ -479,7 +479,7 @@ describe Mail::Address do
       end
 
       it "should handle |a909937 (Graham Barr          (0004 bodg))|" do
-        pending "bpot -- inner local"
+        #pending "bpot -- inner local"
         address = Mail::Address.new('a909937 (Graham Barr          (0004 bodg))')
         address.should break_down_to({
                                          :name         => 'Graham Barr (0004 bodg)',
@@ -520,6 +520,7 @@ describe Mail::Address do
       end
 
       it "should handle |Pete(A wonderful ) chap) <pete(his account)@silly.test(his host)>|" do
+        pending "bpot -- clarification (include comments in local?)"
         address = Mail::Address.new('Pete(A wonderful \) chap) <pete(his account)@silly.test(his host)>')
         address.should break_down_to({
                                          :name         => 'Pete',
