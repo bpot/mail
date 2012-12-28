@@ -1,7 +1,7 @@
 
 # line 1 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
 
-# line 57 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 58 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
 
 
 module Mail
@@ -338,7 +338,7 @@ end
 self.content_type_en_main = 1;
 
 
-# line 65 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 66 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
         end
         
         def parse(data)
@@ -356,7 +356,7 @@ begin
 	top = 0
 end
 
-# line 74 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 75 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
 
           attribute = nil
           quoted_string = nil
@@ -454,37 +454,37 @@ when 2 then
 		begin
 		end
 when 3 then
-# line 27 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 28 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
 		begin
  mark = p 		end
 when 4 then
-# line 28 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 29 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
 		begin
  mark_sub_type = p 		end
 when 5 then
-# line 29 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
 		begin
  
     quoted_string = data[mark..(p-1)] 
   		end
 when 6 then
-# line 32 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 33 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
 		begin
  
     content_type.main_type = data[mark..(p-1)].downcase 
   		end
 when 7 then
-# line 35 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 36 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
 		begin
  
     content_type.sub_type = data[mark_sub_type..(p-1)].downcase 
   		end
 when 8 then
-# line 38 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 39 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
 		begin
  attribute = data[mark..(p-1)] 		end
 when 9 then
-# line 39 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 40 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
 		begin
  
     if attribute.nil?
@@ -557,13 +557,13 @@ when 2 then
 		begin
 		end
 when 7 then
-# line 35 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 36 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
 		begin
  
     content_type.sub_type = data[mark_sub_type..(p-1)].downcase 
   		end
 when 9 then
-# line 39 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 40 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
 		begin
  
     if attribute.nil?
@@ -594,12 +594,12 @@ end
 	end
 	end
 
-# line 78 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 79 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
 
           if p == eof && cs >= 
 # line 601 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
 98
-# line 79 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 80 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
 
             content_type
           else

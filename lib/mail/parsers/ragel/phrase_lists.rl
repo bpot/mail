@@ -26,6 +26,7 @@
   action e_main_type { }
   action mark_sub_type { }
   action e_sub_type { }
+  action e_ctime_date {}
 
   action mark { mark = p }
 # XXX a quoted string can also be interpreted as a word+ / obsolete_phrase?

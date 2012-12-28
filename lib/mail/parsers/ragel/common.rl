@@ -126,7 +126,7 @@
             (DIGIT+ >mark %e_minor_digits)
             CFWS?;
   ctime_date = day_name " "+ month " "+ day " " time_of_day " " year;
-  envelope_from = addr_spec ctime_date;
+  envelope_from = addr_spec >s_address %e_address " " (ctime_date >mark %e_ctime_date);
   encoding = ietf_token "s"? | custom_x_token;
   content_transfer_encoding = CFWS? (encoding >mark %e_encoding) CFWS? ";"? CFWS?;
 

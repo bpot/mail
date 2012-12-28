@@ -1,7 +1,7 @@
 
 # line 1 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 
-# line 56 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 57 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 
 
 module Mail
@@ -283,7 +283,7 @@ end
 self.content_disposition_en_main = 76;
 
 
-# line 64 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 65 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
         end
         
         def parse(data)
@@ -302,7 +302,7 @@ begin
 	top = 0
 end
 
-# line 74 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 75 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 
           attribute = nil
           quoted_string = nil
@@ -400,27 +400,27 @@ when 2 then
 		begin
 		end
 when 3 then
-# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 31 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 		begin
  mark = p 		end
 when 4 then
-# line 31 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 32 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 		begin
  
     quoted_string = data[mark..(p-1)] 
   		end
 when 5 then
-# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 35 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 		begin
  
     content_disposition.disposition_type = data[mark..(p-1)].downcase
   		end
 when 6 then
-# line 37 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 38 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 		begin
  attribute = data[mark..(p-1)] 		end
 when 7 then
-# line 38 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 39 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 		begin
  
     if attribute.nil?
@@ -493,17 +493,17 @@ when 2 then
 		begin
 		end
 when 3 then
-# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 31 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 		begin
  mark = p 		end
 when 5 then
-# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 35 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 		begin
  
     content_disposition.disposition_type = data[mark..(p-1)].downcase
   		end
 when 7 then
-# line 38 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 39 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 		begin
  
     if attribute.nil?
@@ -534,12 +534,12 @@ end
 	end
 	end
 
-# line 78 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 79 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 
           if p == eof && cs >= 
 # line 541 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rb"
 76
-# line 79 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 80 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 
             content_disposition
           else

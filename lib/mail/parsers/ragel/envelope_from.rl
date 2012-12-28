@@ -2,9 +2,6 @@
   machine envelope_from;
 
   action e_token_string { }
-  action e_date { }
-  action e_time { }
-  action e_quoted_string { }
   action e_phrase { }
   action e_major_digits { }
   action e_minor_digits { }
@@ -12,12 +9,8 @@
   action e_ccontent {}
   action e_comment {}
   action mark_local {}
-  action e_local_part {}
-  action e_domain {}
   action s_angle_addr {}
   action e_name_addr_display_name {}
-  action s_address {}
-  action e_address {}
   action start_group_list {}
   action e_encoding {}
   action e_disposition_type {}
@@ -27,10 +20,22 @@
   action e_main_type { }
   action mark_sub_type { }
   action e_sub_type { }
+  action e_msg_id { }
+  action e_date { }
+  action e_time { }
+  action e_quoted_string {}
+  action e_local_part {}
+  action e_domain {}
 
 
   action mark { mark = p }
-  action e_msg_id { message_ids.message_ids << data[mark..(p-1)] }
+  action e_ctime_date { envelope_from.ctime_date = data[mark..(p-1)] }
+  action s_address { 
+    mark_address = p
+  }
+  action e_address { 
+    envelope_from.address = data[mark_address..(p-1)]
+  }
   include common "common.rl";
 
   main := envelope_from;
@@ -39,13 +44,15 @@
 module Mail
   module Parsers
     module Ragel
-      class MessageIdsParser
+      class EnvelopeFromParser
         def initialize
           %%write data;
         end
         
         def parse(data)
-          message_ids = Data::MessageIdsData.new([])
+          envelope_from = Data::EnvelopeFromData.new
+          quoted_string = nil
+          mark_address = nil
 
           p = 0
           eof = data.length
@@ -54,14 +61,14 @@ module Mail
           %%write init;
           %%write exec;
 
-          if p != eof
-          #  puts "FAILURE"
-          #  p data
-          #  p data[0..p]
-            raise "FAILED TO PARSE" 
+          if p == eof && cs >= %%{ write first_final; }%%
+            envelope_from
+          else
+            envelope_from.error = "Only able to parse up to #{data[0..p]}"
+            envelope_from
           end
 
-          message_ids
+          envelope_from
         end
       end
     end

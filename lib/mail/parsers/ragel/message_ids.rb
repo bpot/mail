@@ -1,7 +1,7 @@
 
 # line 1 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rl"
 
-# line 37 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rl"
+# line 38 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rl"
 
 
 module Mail
@@ -100,8 +100,8 @@ self._message_ids_trans_keys = [
 	62, 35, 39, 42, 43, 47, 57, 61, 
 	90, 94, 126, 9, 13, 32, 92, 1, 
 	8, 11, 33, 35, 127, 13, 34, 92, 
-	1, 9, 11, 127, 10, 9, 32, 0, 
-	127, 9, 13, 32, 92, 1, 8, 11, 
+	1, 9, 11, 127, 10, 9, 32, -128, 
+	-1, 9, 13, 32, 92, 1, 8, 11, 
 	33, 35, 127, 10, 9, 32, 9, 13, 
 	32, 34, 40, 45, 61, 63, 33, 39, 
 	42, 43, 47, 57, 65, 90, 94, 126, 
@@ -119,7 +119,7 @@ self._message_ids_trans_keys = [
 	8, 11, 127, 9, 13, 32, 40, 41, 
 	92, 1, 8, 11, 127, 9, 13, 32, 
 	40, 41, 92, 1, 8, 11, 127, 10, 
-	9, 32, 0, 127, 9, 13, 32, 40, 
+	9, 32, -128, -1, 9, 13, 32, 40, 
 	60, 9, 13, 32, 40, 60, 9, 13, 
 	32, 40, 60, 0
 ]
@@ -228,7 +228,7 @@ self._message_ids_trans_targs = [
 	48, 48, 48, 48, 48, 0, 55, 56, 
 	55, 54, 51, 51, 51, 0, 52, 10, 
 	54, 51, 51, 0, 53, 0, 51, 51, 
-	0, 51, 0, 55, 56, 55, 54, 51, 
+	0, 0, 51, 55, 56, 55, 54, 51, 
 	51, 51, 0, 57, 0, 55, 55, 0, 
 	14, 15, 14, 50, 58, 17, 17, 17, 
 	17, 17, 17, 17, 17, 0, 14, 15, 
@@ -244,7 +244,7 @@ self._message_ids_trans_targs = [
 	72, 68, 68, 0, 69, 70, 69, 68, 
 	76, 72, 68, 68, 0, 69, 70, 69, 
 	68, 76, 72, 68, 68, 0, 71, 0, 
-	69, 69, 0, 68, 0, 74, 31, 74, 
+	69, 69, 0, 0, 68, 74, 31, 74, 
 	75, 5, 0, 74, 31, 74, 75, 5, 
 	0, 74, 31, 74, 75, 5, 0, 0, 
 	0
@@ -365,7 +365,7 @@ end
 self.message_ids_en_main = 1;
 
 
-# line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rl"
+# line 46 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rl"
         end
         
         def parse(data)
@@ -384,7 +384,7 @@ begin
 	top = 0
 end
 
-# line 55 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rl"
+# line 56 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rl"
           
 # line 390 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rb"
 begin
@@ -487,11 +487,11 @@ when 4 then
 		begin
 		end
 when 5 then
-# line 32 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rl"
+# line 33 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rl"
 		begin
  mark = p 		end
 when 6 then
-# line 33 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rl"
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rl"
 		begin
  message_ids.message_ids << data[mark..(p-1)] 		end
 when 7 then
@@ -550,7 +550,7 @@ when 3 then
 		begin
 		end
 when 6 then
-# line 33 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rl"
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rl"
 		begin
  message_ids.message_ids << data[mark..(p-1)] 		end
 # line 557 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rb"
@@ -567,12 +567,12 @@ end
 	end
 	end
 
-# line 56 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rl"
+# line 57 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rl"
 
           if p == eof && cs >= 
 # line 574 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rb"
 73
-# line 57 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rl"
+# line 58 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rl"
 
             message_ids
           else
