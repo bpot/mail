@@ -10,7 +10,7 @@ module Mail
       if ENV["MAIL_COMPATABILITY"] && !structs_similar(r,tt)
         puts
         p string
-        puts "Ragel: #{r.inspect}"
+        puts "Ragel  : #{r.inspect}"
         puts "Treetop: #{tt.inspect}"
         raise "Parse mismatch"
       else

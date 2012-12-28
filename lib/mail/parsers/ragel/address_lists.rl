@@ -87,16 +87,17 @@
     group_name = group
   }
   action s_ccontent {
-    mark_comment = p
+  #  puts "SCC: #{data[0..(p-1)].inspect}"
+    mark_comment = p unless mark_comment
   }
   action e_ccontent {
-  #  puts "ECOMMON: #{data[0..p].inspect}"
-    end_comment = p - 1 
   }
   action e_comment {
+  #  puts "ECM: #{data[0..(p-1)].inspect}"
 if address
-    address.comments << data[mark_comment..end_comment]
+    address.comments << data[mark_comment..(p-2)]
 end
+    mark_comment = nil
   }
 
   action start_group_list {
@@ -124,7 +125,6 @@ module Mail
           group_name = nil
           phrase_ending = nil
           mark_local = nil
-          comment_depth = 0
           stack = []
 
           p = 0

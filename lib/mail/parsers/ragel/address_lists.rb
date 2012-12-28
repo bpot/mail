@@ -1,7 +1,7 @@
 
 # line 1 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
 
-# line 110 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
+# line 111 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
 
 
 module Mail
@@ -333,7 +333,7 @@ self._address_lists_trans_keys = [
 	33, 40, 46, 61, 63, 91, 35, 39, 
 	42, 43, 45, 57, 65, 90, 94, 126, 
 	13, 92, 93, 1, 9, 11, 90, 94, 
-	127, 10, 9, 32, 0, 127, 9, 13, 
+	127, 10, 9, 32, -128, -1, 9, 13, 
 	32, 92, 1, 8, 11, 33, 35, 127, 
 	13, 34, 92, 1, 9, 11, 127, 10, 
 	9, 32, 0, 127, 9, 13, 32, 92, 
@@ -388,7 +388,7 @@ self._address_lists_trans_keys = [
 	63, 91, 35, 39, 42, 43, 45, 57, 
 	65, 90, 94, 126, 13, 92, 93, 1, 
 	9, 11, 90, 94, 127, 10, 9, 32, 
-	0, 127, 9, 13, 32, 34, 40, 44, 
+	-128, -1, 9, 13, 32, 34, 40, 44, 
 	46, 59, 60, 61, 64, 33, 39, 42, 
 	57, 63, 90, 94, 126, 9, 13, 32, 
 	34, 40, 46, 60, 61, 64, 33, 39, 
@@ -443,7 +443,7 @@ self._address_lists_trans_keys = [
 	40, 44, 59, 10, 9, 32, 9, 13, 
 	32, 40, 44, 59, 13, 92, 93, 1, 
 	9, 11, 90, 94, 127, 10, 9, 32, 
-	0, 127, 9, 13, 32, 92, 1, 8, 
+	-128, -1, 9, 13, 32, 92, 1, 8, 
 	11, 33, 35, 127, 13, 34, 92, 1, 
 	9, 11, 127, 10, 9, 32, -128, -1, 
 	9, 13, 32, 92, 1, 8, 11, 33, 
@@ -544,7 +544,7 @@ self._address_lists_trans_keys = [
 	126, 10, 9, 32, 9, 13, 32, 92, 
 	1, 8, 11, 33, 35, 127, 13, 34, 
 	92, 1, 9, 11, 127, 10, 9, 32, 
-	-128, -1, 9, 13, 32, 92, 1, 8, 
+	0, 127, 9, 13, 32, 92, 1, 8, 
 	11, 33, 35, 127, 10, 9, 32, 9, 
 	13, 32, 34, 40, 46, 60, 61, 63, 
 	33, 39, 42, 43, 45, 57, 65, 90, 
@@ -659,7 +659,7 @@ self._address_lists_trans_keys = [
 	61, 63, 91, 35, 39, 42, 43, 45, 
 	57, 65, 90, 94, 126, 13, 92, 93, 
 	1, 9, 11, 90, 94, 127, 10, 9, 
-	32, -128, -1, 9, 13, 32, 92, 1, 
+	32, 0, 127, 9, 13, 32, 92, 1, 
 	8, 11, 33, 35, 127, 13, 34, 92, 
 	1, 9, 11, 127, 10, 9, 32, 0, 
 	127, 9, 13, 32, 92, 1, 8, 11, 
@@ -713,7 +713,7 @@ self._address_lists_trans_keys = [
 	32, 33, 40, 46, 61, 63, 91, 35, 
 	39, 42, 43, 45, 57, 65, 90, 94, 
 	126, 13, 92, 93, 1, 9, 11, 90, 
-	94, 127, 10, 9, 32, 0, 127, 9, 
+	94, 127, 10, 9, 32, -128, -1, 9, 
 	13, 32, 34, 40, 44, 46, 59, 60, 
 	61, 64, 33, 39, 42, 57, 63, 90, 
 	94, 126, 9, 13, 32, 34, 40, 46, 
@@ -757,7 +757,7 @@ self._address_lists_trans_keys = [
 	61, 63, 91, 35, 39, 42, 43, 45, 
 	57, 65, 90, 94, 126, 13, 92, 93, 
 	1, 9, 11, 90, 94, 127, 10, 9, 
-	32, 0, 127, 9, 13, 32, 34, 40, 
+	32, -128, -1, 9, 13, 32, 34, 40, 
 	46, 60, 61, 64, 33, 39, 42, 43, 
 	45, 57, 63, 90, 94, 126, 9, 13, 
 	32, 34, 40, 44, 46, 59, 60, 61, 
@@ -833,7 +833,7 @@ self._address_lists_trans_keys = [
 	46, 61, 63, 91, 35, 39, 42, 43, 
 	45, 57, 65, 90, 94, 126, 13, 92, 
 	93, 1, 9, 11, 90, 94, 127, 10, 
-	9, 32, -128, -1, 9, 13, 32, 92, 
+	9, 32, 0, 127, 9, 13, 32, 92, 
 	1, 8, 11, 33, 35, 127, 13, 34, 
 	92, 1, 9, 11, 127, 10, 9, 32, 
 	-128, -1, 9, 13, 32, 92, 1, 8, 
@@ -937,7 +937,7 @@ self._address_lists_trans_keys = [
 	126, 33, 46, 61, 63, 35, 39, 42, 
 	43, 45, 57, 65, 90, 94, 126, 10, 
 	9, 32, 13, 92, 93, 1, 9, 11, 
-	90, 94, 127, 10, 9, 32, 0, 127, 
+	90, 94, 127, 10, 9, 32, -128, -1, 
 	9, 13, 32, 92, 1, 8, 11, 33, 
 	35, 127, 13, 34, 92, 1, 9, 11, 
 	127, 10, 9, 32, -128, -1, 9, 13, 
@@ -1003,7 +1003,7 @@ self._address_lists_trans_keys = [
 	11, 90, 94, 127, 10, 9, 32, -128, 
 	-1, 9, 13, 32, 92, 1, 8, 11, 
 	33, 35, 127, 13, 34, 92, 1, 9, 
-	11, 127, 10, 9, 32, -128, -1, 9, 
+	11, 127, 10, 9, 32, 0, 127, 9, 
 	13, 32, 92, 1, 8, 11, 33, 35, 
 	127, 10, 9, 32, 9, 13, 32, 34, 
 	40, 45, 61, 63, 33, 39, 42, 43, 
@@ -1109,7 +1109,7 @@ self._address_lists_trans_keys = [
 	41, 92, 1, 8, 11, 127, 9, 13, 
 	32, 40, 41, 92, 1, 8, 11, 127, 
 	9, 13, 32, 40, 41, 92, 1, 8, 
-	11, 127, 10, 9, 32, 0, 127, 9, 
+	11, 127, 10, 9, 32, -128, -1, 9, 
 	13, 32, 34, 40, 44, 46, 59, 60, 
 	61, 64, 33, 39, 42, 57, 63, 90, 
 	94, 126, 9, 13, 32, 34, 40, 44, 
@@ -1717,8 +1717,8 @@ self._address_lists_indicies = [
 	390, 392, 377, 1, 393, 394, 393, 395, 
 	396, 397, 395, 395, 398, 395, 395, 395, 
 	395, 395, 1, 399, 400, 386, 364, 364, 
-	364, 1, 401, 1, 364, 364, 1, 364, 
-	1, 403, 404, 403, 405, 402, 402, 402, 
+	364, 1, 401, 1, 364, 364, 1, 1, 
+	364, 403, 404, 403, 405, 402, 402, 402, 
 	1, 407, 408, 409, 406, 406, 1, 410, 
 	1, 406, 406, 1, 406, 1, 411, 412, 
 	411, 409, 406, 406, 406, 1, 413, 1, 
@@ -1767,7 +1767,7 @@ self._address_lists_indicies = [
 	1, 432, 488, 432, 489, 490, 491, 489, 
 	489, 492, 489, 489, 489, 489, 489, 1, 
 	493, 494, 481, 442, 442, 442, 1, 495, 
-	1, 442, 442, 1, 442, 1, 496, 497, 
+	1, 442, 442, 1, 1, 442, 496, 497, 
 	496, 293, 498, 499, 500, 501, 296, 292, 
 	502, 292, 292, 292, 292, 1, 503, 504, 
 	503, 255, 506, 276, 267, 505, 276, 505, 
@@ -1815,7 +1815,7 @@ self._address_lists_indicies = [
 	571, 1, 568, 568, 1, 572, 573, 572, 
 	574, 536, 538, 1, 575, 576, 568, 522, 
 	522, 522, 1, 577, 1, 522, 522, 1, 
-	522, 1, 579, 580, 579, 581, 578, 578, 
+	1, 522, 579, 580, 579, 581, 578, 578, 
 	578, 1, 583, 584, 585, 582, 582, 1, 
 	586, 1, 582, 582, 1, 1, 582, 587, 
 	588, 587, 585, 582, 582, 582, 1, 589, 
@@ -1905,7 +1905,7 @@ self._address_lists_indicies = [
 	667, 667, 667, 667, 1, 769, 1, 764, 
 	764, 1, 771, 772, 771, 773, 770, 770, 
 	770, 1, 775, 776, 777, 774, 774, 1, 
-	778, 1, 774, 774, 1, 1, 774, 779, 
+	778, 1, 774, 774, 1, 774, 1, 779, 
 	780, 779, 777, 774, 774, 774, 1, 781, 
 	1, 779, 779, 1, 782, 783, 782, 785, 
 	786, 787, 713, 784, 784, 784, 784, 784, 
@@ -2005,8 +2005,8 @@ self._address_lists_indicies = [
 	945, 947, 932, 1, 948, 949, 948, 950, 
 	951, 952, 950, 950, 953, 950, 950, 950, 
 	950, 950, 1, 954, 955, 941, 919, 919, 
-	919, 1, 956, 1, 919, 919, 1, 1, 
-	919, 958, 959, 958, 960, 957, 957, 957, 
+	919, 1, 956, 1, 919, 919, 1, 919, 
+	1, 958, 959, 958, 960, 957, 957, 957, 
 	1, 962, 963, 964, 961, 961, 1, 965, 
 	1, 961, 961, 1, 961, 1, 966, 967, 
 	966, 964, 961, 961, 961, 1, 968, 1, 
@@ -2055,7 +2055,7 @@ self._address_lists_indicies = [
 	1, 987, 1043, 987, 1044, 1045, 1046, 1044, 
 	1044, 1047, 1044, 1044, 1044, 1044, 1044, 1, 
 	1048, 1049, 1036, 997, 997, 997, 1, 1050, 
-	1, 997, 997, 1, 997, 1, 1051, 1052, 
+	1, 997, 997, 1, 1, 997, 1051, 1052, 
 	1051, 698, 1053, 797, 1054, 661, 701, 697, 
 	860, 697, 697, 697, 697, 1, 1055, 1056, 
 	1055, 766, 1058, 681, 672, 1057, 681, 1057, 
@@ -2093,7 +2093,7 @@ self._address_lists_indicies = [
 	1107, 1108, 1107, 1109, 1110, 1111, 1109, 1109, 
 	1112, 1109, 1109, 1109, 1109, 1109, 1, 1113, 
 	1114, 1100, 1078, 1078, 1078, 1, 1115, 1, 
-	1078, 1078, 1, 1078, 1, 156, 157, 156, 
+	1078, 1078, 1, 1, 1078, 156, 157, 156, 
 	121, 158, 1117, 126, 1116, 135, 1116, 1116, 
 	1116, 1116, 1116, 1, 1118, 1119, 1118, 121, 
 	1120, 123, 1117, 125, 126, 1116, 127, 1116, 
@@ -2158,7 +2158,7 @@ self._address_lists_indicies = [
 	1198, 1, 1214, 1215, 1214, 1216, 1217, 1218, 
 	1216, 1216, 1219, 1216, 1216, 1216, 1216, 1216, 
 	1, 1220, 1221, 1207, 1185, 1185, 1185, 1, 
-	1222, 1, 1185, 1185, 1, 1, 1185, 1224, 
+	1222, 1, 1185, 1185, 1, 1185, 1, 1224, 
 	1225, 1224, 1226, 1223, 1223, 1223, 1, 1228, 
 	1229, 1230, 1227, 1227, 1, 1231, 1, 1227, 
 	1227, 1, 1, 1227, 1232, 1233, 1232, 1230, 
@@ -2251,7 +2251,7 @@ self._address_lists_indicies = [
 	1383, 1383, 1383, 1383, 1383, 1383, 1383, 1, 
 	1384, 1, 1385, 1385, 1, 1386, 1387, 1385, 
 	1358, 1358, 1358, 1, 1388, 1, 1358, 1358, 
-	1, 1358, 1, 1390, 1391, 1390, 1392, 1389, 
+	1, 1, 1358, 1390, 1391, 1390, 1392, 1389, 
 	1389, 1389, 1, 1394, 1395, 1396, 1393, 1393, 
 	1, 1397, 1, 1393, 1393, 1, 1, 1393, 
 	1398, 1399, 1398, 1396, 1393, 1393, 1393, 1, 
@@ -2308,7 +2308,7 @@ self._address_lists_indicies = [
 	1, 1497, 1, 1460, 1460, 1, 1, 1460, 
 	1499, 1500, 1499, 1501, 1498, 1498, 1498, 1, 
 	1503, 1504, 1505, 1502, 1502, 1, 1506, 1, 
-	1502, 1502, 1, 1, 1502, 1507, 1508, 1507, 
+	1502, 1502, 1, 1502, 1, 1507, 1508, 1507, 
 	1505, 1502, 1502, 1502, 1, 1509, 1, 1507, 
 	1507, 1, 78, 1510, 78, 1512, 1513, 1511, 
 	1511, 1511, 1511, 1511, 1511, 1511, 1511, 1, 
@@ -2402,7 +2402,7 @@ self._address_lists_indicies = [
 	1674, 1669, 1669, 1, 1676, 1677, 1676, 1678, 
 	1679, 1680, 1675, 1675, 1, 1681, 1682, 1681, 
 	1678, 1683, 1680, 1675, 1675, 1, 1684, 1, 
-	1681, 1681, 1, 1675, 1, 1685, 1686, 1685, 
+	1681, 1681, 1, 1, 1675, 1685, 1686, 1685, 
 	1688, 1689, 6, 1690, 6, 1691, 1687, 1692, 
 	1687, 1687, 1687, 1687, 1, 1693, 1694, 1693, 
 	15, 1695, 1696, 1697, 18, 1696, 19, 1698, 
@@ -3094,7 +3094,7 @@ end
 self.address_lists_en_main = 846;
 
 
-# line 118 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
+# line 119 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
         end
         
         def parse(data)
@@ -3104,14 +3104,13 @@ self.address_lists_en_main = 846;
           group_name = nil
           phrase_ending = nil
           mark_local = nil
-          comment_depth = 0
           stack = []
 
           p = 0
           eof = data.length
 
           
-# line 3115 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rb"
+# line 3114 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rb"
 begin
 	p ||= 0
 	pe ||= data.length
@@ -3123,7 +3122,7 @@ end
 
           quoted_string = nil
           
-# line 3127 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rb"
+# line 3126 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rb"
 begin
 	_klen, _trans, _keys, _acts, _nacts = nil
 	_goto_level = 0
@@ -3299,25 +3298,26 @@ when 11 then
 # line 89 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
 		begin
 
-    mark_comment = p
+  #  puts "SCC: #{data[0..(p-1)].inspect}"
+    mark_comment = p unless mark_comment
   		end
 when 12 then
-# line 92 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
+# line 93 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
 		begin
 
-  #  puts "ECOMMON: #{data[0..p].inspect}"
-    end_comment = p - 1 
   		end
 when 13 then
-# line 96 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
+# line 95 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
 		begin
 
+  #  puts "ECM: #{data[0..(p-1)].inspect}"
 if address
-    address.comments << data[mark_comment..end_comment]
+    address.comments << data[mark_comment..(p-2)]
 end
+    mark_comment = nil
   		end
 when 14 then
-# line 102 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
+# line 103 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
 		begin
 
   #  puts "SGL: #{data[0..p].inspect}"
@@ -3399,14 +3399,16 @@ when 9 then
 		begin
  address.domain = data[mark..(p-1)] if address 		end
 when 13 then
-# line 96 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
+# line 95 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
 		begin
 
+  #  puts "ECM: #{data[0..(p-1)].inspect}"
 if address
-    address.comments << data[mark_comment..end_comment]
+    address.comments << data[mark_comment..(p-2)]
 end
+    mark_comment = nil
   		end
-# line 3410 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rb"
+# line 3412 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rb"
 		end # eof action switch
 	end
 	if _trigger_goto
@@ -3428,7 +3430,7 @@ end
 #          end
 
           if (p != eof) || (address_list.addresses.empty? && address_list.group_names.empty?) || cs < 
-# line 3432 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rb"
+# line 3434 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rb"
 846
 # line 143 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/address_lists.rl"
 
