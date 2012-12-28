@@ -269,7 +269,6 @@ describe Mail::Address do
       end
 
       it "should handle trailing dots" do
-        pending "bpot -- trailing dots in local"
         1.upto(10) do |times|
           dots    = "." * times
           address = Mail::Address.new("hogetest#{dots}@docomo.ne.jp")

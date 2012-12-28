@@ -49,7 +49,7 @@
                   DQUOTE CFWS?;
   domain_literal = CFWS? "[" (FWS? dtext)* FWS? "]" CFWS?;
   obs_domain = atom ("." atom)*;
-  local_dot_atom_text = dot_atom;
+  local_dot_atom_text = ("."* domain_text "."*)+;
   word = atom | quoted_string;
   domain = dot_atom | domain_literal | obs_domain;
   local_dot_atom = CFWS? local_dot_atom_text CFWS?;
