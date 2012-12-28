@@ -67,6 +67,7 @@ module Mail
         def parse(data)
           p = 0
           eof = data.length
+          stack = []
 
           content_type = Data::ContentTypeData.new(nil,nil,[])
           %%write init;

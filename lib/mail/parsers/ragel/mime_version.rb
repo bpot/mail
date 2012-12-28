@@ -17,8 +17,11 @@ class << self
 end
 self._mime_version_actions = [
 	0, 1, 0, 1, 1, 1, 2, 1, 
-	3, 1, 4, 1, 5, 2, 0, 1, 
-	2, 2, 3
+	3, 1, 4, 1, 5, 1, 6, 1, 
+	7, 2, 0, 1, 2, 0, 6, 2, 
+	1, 7, 2, 2, 3, 2, 2, 6, 
+	2, 4, 6, 2, 5, 6, 3, 0, 
+	1, 7
 ]
 
 class << self
@@ -26,11 +29,9 @@ class << self
 	private :_mime_version_key_offsets, :_mime_version_key_offsets=
 end
 self._mime_version_key_offsets = [
-	0, 0, 6, 7, 9, 20, 31, 42, 
-	43, 45, 51, 55, 66, 77, 88, 89, 
-	91, 92, 95, 106, 117, 128, 129, 131, 
-	133, 134, 136, 147, 158, 169, 170, 172, 
-	174, 176, 178, 180, 186, 190
+	0, 0, 6, 7, 9, 15, 19, 20, 
+	23, 25, 26, 28, 38, 48, 58, 59, 
+	61, 63, 69, 73, 77
 ]
 
 class << self
@@ -39,30 +40,15 @@ class << self
 end
 self._mime_version_trans_keys = [
 	9, 13, 32, 40, 48, 57, 10, 9, 
-	32, 9, 13, 32, 41, 92, 1, 8, 
-	11, 39, 42, 127, 9, 13, 32, 41, 
-	92, 1, 8, 11, 39, 42, 127, 9, 
-	13, 32, 41, 92, 1, 8, 11, 39, 
-	42, 127, 10, 9, 32, 9, 13, 32, 
-	40, 48, 57, 40, 46, 48, 57, 9, 
-	13, 32, 41, 92, 1, 8, 11, 39, 
-	42, 127, 9, 13, 32, 41, 92, 1, 
-	8, 11, 39, 42, 127, 9, 13, 32, 
-	41, 92, 1, 8, 11, 39, 42, 127, 
-	10, 9, 32, 46, 40, 48, 57, 9, 
-	13, 32, 41, 92, 1, 8, 11, 39, 
-	42, 127, 9, 13, 32, 41, 92, 1, 
-	8, 11, 39, 42, 127, 9, 13, 32, 
-	41, 92, 1, 8, 11, 39, 42, 127, 
-	10, 9, 32, 48, 57, 10, 9, 32, 
-	9, 13, 32, 41, 92, 1, 8, 11, 
-	39, 42, 127, 9, 13, 32, 41, 92, 
-	1, 8, 11, 39, 42, 127, 9, 13, 
-	32, 41, 92, 1, 8, 11, 39, 42, 
-	127, 10, 9, 32, 0, 127, 0, 127, 
-	-128, -1, 0, 127, 9, 13, 32, 40, 
-	48, 57, 9, 13, 32, 40, 9, 13, 
-	32, 40, 0
+	32, 9, 13, 32, 40, 48, 57, 40, 
+	46, 48, 57, 46, 40, 48, 57, 48, 
+	57, 10, 9, 32, 9, 13, 32, 40, 
+	41, 92, 1, 8, 11, 127, 9, 13, 
+	32, 40, 41, 92, 1, 8, 11, 127, 
+	9, 13, 32, 40, 41, 92, 1, 8, 
+	11, 127, 10, 9, 32, 0, 127, 9, 
+	13, 32, 40, 48, 57, 9, 13, 32, 
+	40, 9, 13, 32, 40, 0
 ]
 
 class << self
@@ -70,11 +56,9 @@ class << self
 	private :_mime_version_single_lengths, :_mime_version_single_lengths=
 end
 self._mime_version_single_lengths = [
-	0, 4, 1, 2, 5, 5, 5, 1, 
-	2, 4, 2, 5, 5, 5, 1, 2, 
-	1, 1, 5, 5, 5, 1, 2, 0, 
-	1, 2, 5, 5, 5, 1, 2, 0, 
-	0, 0, 0, 4, 4, 4
+	0, 4, 1, 2, 4, 2, 1, 1, 
+	0, 1, 2, 6, 6, 6, 1, 2, 
+	0, 4, 4, 4, 0
 ]
 
 class << self
@@ -82,11 +66,9 @@ class << self
 	private :_mime_version_range_lengths, :_mime_version_range_lengths=
 end
 self._mime_version_range_lengths = [
-	0, 1, 0, 0, 3, 3, 3, 0, 
-	0, 1, 1, 3, 3, 3, 0, 0, 
-	0, 1, 3, 3, 3, 0, 0, 1, 
-	0, 0, 3, 3, 3, 0, 0, 1, 
-	1, 1, 1, 1, 0, 0
+	0, 1, 0, 0, 1, 1, 0, 1, 
+	1, 0, 0, 2, 2, 2, 0, 0, 
+	1, 1, 0, 0, 0
 ]
 
 class << self
@@ -94,42 +76,9 @@ class << self
 	private :_mime_version_index_offsets, :_mime_version_index_offsets=
 end
 self._mime_version_index_offsets = [
-	0, 0, 6, 8, 11, 20, 29, 38, 
-	40, 43, 49, 53, 62, 71, 80, 82, 
-	85, 87, 90, 99, 108, 117, 119, 122, 
-	124, 126, 129, 138, 147, 156, 158, 161, 
-	163, 165, 167, 169, 175, 180
-]
-
-class << self
-	attr_accessor :_mime_version_indicies
-	private :_mime_version_indicies, :_mime_version_indicies=
-end
-self._mime_version_indicies = [
-	0, 2, 0, 3, 4, 1, 5, 1, 
-	0, 0, 1, 7, 8, 7, 9, 10, 
-	6, 6, 6, 1, 12, 13, 12, 14, 
-	15, 11, 11, 11, 1, 16, 17, 16, 
-	18, 15, 11, 11, 11, 1, 19, 1, 
-	16, 16, 1, 20, 21, 20, 22, 23, 
-	1, 24, 25, 26, 1, 28, 29, 28, 
-	30, 31, 27, 27, 27, 1, 33, 34, 
-	33, 35, 36, 32, 32, 32, 1, 37, 
-	38, 37, 39, 36, 32, 32, 32, 1, 
-	40, 1, 37, 37, 1, 41, 1, 42, 
-	43, 1, 45, 46, 45, 47, 48, 44, 
-	44, 44, 1, 50, 51, 50, 52, 53, 
-	49, 49, 49, 1, 54, 55, 54, 56, 
-	53, 49, 49, 49, 1, 57, 1, 54, 
-	54, 1, 58, 1, 59, 1, 60, 60, 
-	1, 62, 63, 62, 64, 65, 61, 61, 
-	61, 1, 67, 68, 67, 69, 70, 66, 
-	66, 66, 1, 71, 72, 71, 73, 70, 
-	66, 66, 66, 1, 74, 1, 71, 71, 
-	1, 66, 1, 49, 1, 1, 32, 11, 
-	1, 75, 76, 75, 77, 78, 1, 60, 
-	79, 60, 80, 1, 81, 82, 81, 83, 
-	1, 0
+	0, 0, 6, 8, 11, 17, 21, 23, 
+	26, 28, 30, 33, 42, 51, 60, 62, 
+	65, 67, 73, 78, 83
 ]
 
 class << self
@@ -137,17 +86,17 @@ class << self
 	private :_mime_version_trans_targs, :_mime_version_trans_targs=
 end
 self._mime_version_trans_targs = [
-	1, 0, 2, 4, 10, 3, 5, 6, 
-	7, 9, 34, 5, 6, 7, 9, 34, 
-	6, 7, 9, 8, 1, 2, 4, 10, 
-	11, 17, 10, 12, 13, 14, 16, 33, 
-	12, 13, 14, 16, 33, 13, 14, 16, 
-	15, 17, 18, 35, 19, 20, 21, 23, 
-	32, 19, 20, 21, 23, 32, 20, 21, 
-	23, 22, 35, 25, 36, 27, 28, 29, 
-	37, 31, 27, 28, 29, 37, 31, 28, 
-	29, 37, 30, 36, 24, 26, 35, 24, 
-	26, 36, 24, 26
+	1, 2, 1, 4, 5, 0, 3, 0, 
+	1, 1, 0, 1, 2, 1, 4, 5, 
+	0, 6, 7, 5, 0, 7, 0, 8, 
+	17, 0, 17, 0, 10, 0, 18, 18, 
+	0, 13, 14, 13, 12, 20, 16, 12, 
+	12, 0, 13, 14, 13, 12, 20, 16, 
+	12, 12, 0, 13, 14, 13, 12, 20, 
+	16, 12, 12, 0, 15, 0, 13, 13, 
+	0, 12, 0, 18, 9, 18, 19, 17, 
+	0, 18, 9, 18, 19, 0, 18, 9, 
+	18, 19, 0, 0, 0
 ]
 
 class << self
@@ -155,17 +104,17 @@ class << self
 	private :_mime_version_trans_actions, :_mime_version_trans_actions=
 end
 self._mime_version_trans_actions = [
-	0, 0, 0, 0, 7, 0, 1, 13, 
-	13, 13, 1, 0, 3, 3, 3, 0, 
-	0, 0, 0, 0, 5, 5, 5, 16, 
-	9, 9, 0, 1, 13, 13, 13, 1, 
-	0, 3, 3, 3, 0, 0, 0, 0, 
-	0, 5, 0, 7, 1, 13, 13, 13, 
-	1, 0, 3, 3, 3, 0, 0, 0, 
-	0, 0, 16, 0, 0, 1, 13, 13, 
-	13, 1, 0, 3, 3, 3, 0, 0, 
-	0, 0, 0, 11, 11, 11, 0, 0, 
-	0, 5, 5, 5
+	0, 0, 0, 13, 7, 0, 0, 0, 
+	0, 0, 0, 5, 5, 5, 29, 26, 
+	0, 32, 9, 0, 0, 5, 0, 13, 
+	7, 0, 26, 0, 0, 0, 0, 0, 
+	0, 17, 17, 17, 20, 38, 1, 1, 
+	1, 0, 3, 3, 3, 13, 23, 0, 
+	0, 0, 0, 0, 0, 0, 13, 15, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0, 11, 11, 11, 35, 0, 
+	0, 0, 0, 0, 13, 0, 5, 5, 
+	5, 29, 0, 0, 0
 ]
 
 class << self
@@ -175,9 +124,7 @@ end
 self._mime_version_eof_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 11, 0, 5
+	0, 11, 0, 5, 0
 ]
 
 class << self
@@ -187,12 +134,16 @@ self.mime_version_start = 1;
 class << self
 	attr_accessor :mime_version_first_final
 end
-self.mime_version_first_final = 35;
+self.mime_version_first_final = 17;
 class << self
 	attr_accessor :mime_version_error
 end
 self.mime_version_error = 0;
 
+class << self
+	attr_accessor :mime_version_en_comment_tail
+end
+self.mime_version_en_comment_tail = 11;
 class << self
 	attr_accessor :mime_version_en_main
 end
@@ -207,18 +158,20 @@ self.mime_version_en_main = 1;
 
           p = 0
           eof = data.length
+          stack = []
 
           
-# line 213 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
+# line 165 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
 begin
 	p ||= 0
 	pe ||= data.length
 	cs = mime_version_start
+	top = 0
 end
 
-# line 54 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+# line 55 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
           
-# line 222 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
+# line 175 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
 begin
 	_klen, _trans, _keys, _acts, _nacts = nil
 	_goto_level = 0
@@ -289,7 +242,6 @@ begin
 	     _trans += _klen
 	  end
 	end while false
-	_trans = _mime_version_indicies[_trans]
 	cs = _mime_version_trans_targs[_trans]
 	if _mime_version_trans_actions[_trans] != 0
 		_acts = _mime_version_trans_actions[_trans]
@@ -323,7 +275,30 @@ when 5 then
 # line 33 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 		begin
  mime_version.minor = data[mark..(p-1)] 		end
-# line 327 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
+when 6 then
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 11
+		_trigger_goto = true
+		_goto_level = _again
+		break
+	end
+ 		end
+when 7 then
+# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		top -= 1
+		cs = stack[top]
+		_trigger_goto = true
+		_goto_level = _again
+		break
+	end
+ 		end
+# line 302 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
 			end # action switch
 		end
 	end
@@ -359,7 +334,7 @@ when 5 then
 # line 33 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 		begin
  mime_version.minor = data[mark..(p-1)] 		end
-# line 363 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
+# line 338 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
 		end # eof action switch
 	end
 	if _trigger_goto
@@ -373,7 +348,7 @@ end
 	end
 	end
 
-# line 55 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+# line 56 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 
           if p != eof
             puts "FAILURE"

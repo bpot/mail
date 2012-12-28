@@ -68,6 +68,7 @@ module Mail
 
           p = 0
           eof = data.length
+          stack = []
 
           %%write init;
 

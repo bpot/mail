@@ -52,14 +52,12 @@ module Mail
 
           p = 0
           eof = data.length
+          stack = []
 
           %%write init;
           %%write exec;
 
-          if p != eof
-#            puts "FAILURE"
-#            p data
-#            p data[0..p]
+          if p != eof || cs < %%{ write first_final; }%%
             received.error = "Only able to parse up to #{data[0..p]}"
           end
 

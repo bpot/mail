@@ -17,9 +17,12 @@ class << self
 end
 self._content_location_actions = [
 	0, 1, 0, 1, 1, 1, 2, 1, 
-	3, 1, 4, 1, 5, 2, 0, 1, 
-	2, 2, 3, 2, 3, 5, 2, 4, 
-	0
+	3, 1, 4, 1, 5, 1, 6, 1, 
+	7, 2, 0, 1, 2, 0, 6, 2, 
+	1, 7, 2, 2, 3, 2, 2, 6, 
+	2, 3, 5, 2, 5, 6, 2, 6, 
+	5, 3, 0, 1, 7, 3, 3, 5, 
+	6
 ]
 
 class << self
@@ -27,12 +30,10 @@ class << self
 	private :_content_location_key_offsets, :_content_location_key_offsets=
 end
 self._content_location_key_offsets = [
-	0, 0, 16, 17, 19, 20, 22, 33, 
-	44, 55, 56, 58, 60, 67, 68, 70, 
-	72, 73, 75, 86, 97, 108, 109, 111, 
-	112, 114, 115, 117, 119, 130, 141, 152, 
-	153, 155, 171, 173, 188, 192, 196, 218, 
-	229, 239, 249, 259, 269
+	0, 0, 16, 17, 19, 20, 22, 29, 
+	30, 32, 34, 35, 37, 38, 40, 56, 
+	66, 76, 86, 87, 89, 91, 106, 110, 
+	114, 136, 147, 157, 167, 189, 204
 ]
 
 class << self
@@ -42,41 +43,30 @@ end
 self._content_location_trans_keys = [
 	9, 13, 32, 34, 40, 61, 33, 39, 
 	42, 46, 48, 57, 65, 90, 94, 126, 
-	10, 9, 32, 10, 9, 32, 9, 13, 
-	32, 41, 92, 1, 8, 11, 39, 42, 
-	127, 9, 13, 32, 41, 92, 1, 8, 
-	11, 39, 42, 127, 9, 13, 32, 41, 
-	92, 1, 8, 11, 39, 42, 127, 10, 
-	9, 32, -128, -1, 13, 34, 92, 1, 
-	9, 11, 127, 10, 9, 32, 0, 127, 
-	10, 9, 32, 9, 13, 32, 34, 40, 
-	41, 92, 1, 8, 11, 127, 9, 13, 
-	32, 34, 40, 41, 92, 1, 8, 11, 
-	127, 9, 13, 32, 34, 40, 41, 92, 
-	1, 8, 11, 127, 10, 9, 32, 10, 
-	9, 32, 10, 9, 32, 0, 127, 9, 
-	13, 32, 41, 92, 1, 8, 11, 39, 
-	42, 127, 9, 13, 32, 41, 92, 1, 
-	8, 11, 39, 42, 127, 9, 13, 32, 
-	41, 92, 1, 8, 11, 39, 42, 127, 
-	10, 9, 32, 9, 13, 32, 34, 40, 
-	61, 33, 39, 42, 46, 48, 57, 65, 
-	90, 94, 126, -128, -1, 9, 13, 32, 
-	40, 61, 33, 39, 42, 46, 48, 57, 
-	65, 90, 94, 126, 9, 13, 32, 40, 
-	9, 13, 32, 40, 9, 13, 32, 34, 
-	40, 41, 47, 61, 91, 92, 93, 127, 
-	1, 8, 11, 31, 33, 57, 58, 64, 
-	65, 126, 9, 13, 32, 40, 92, 1, 
-	8, 11, 33, 35, 127, 9, 13, 32, 
-	40, 41, 92, 1, 8, 11, 127, 9, 
-	13, 32, 40, 41, 92, 1, 8, 11, 
-	127, 9, 13, 32, 34, 40, 92, 1, 
-	8, 11, 127, 9, 13, 32, 34, 40, 
+	10, 9, 32, 10, 9, 32, 13, 34, 
+	92, 1, 9, 11, 127, 10, 9, 32, 
+	0, 127, 10, 9, 32, 10, 9, 32, 
+	9, 13, 32, 34, 40, 61, 33, 39, 
+	42, 46, 48, 57, 65, 90, 94, 126, 
+	9, 13, 32, 40, 41, 92, 1, 8, 
+	11, 127, 9, 13, 32, 40, 41, 92, 
+	1, 8, 11, 127, 9, 13, 32, 40, 
+	41, 92, 1, 8, 11, 127, 10, 9, 
+	32, 0, 127, 9, 13, 32, 40, 61, 
+	33, 39, 42, 46, 48, 57, 65, 90, 
+	94, 126, 9, 13, 32, 40, 9, 13, 
+	32, 40, 9, 13, 32, 34, 40, 41, 
+	47, 61, 91, 92, 93, 127, 1, 8, 
+	11, 31, 33, 57, 58, 64, 65, 126, 
+	9, 13, 32, 40, 92, 1, 8, 11, 
+	33, 35, 127, 9, 13, 32, 34, 40, 
 	92, 1, 8, 11, 127, 9, 13, 32, 
-	34, 40, 41, 47, 61, 91, 92, 93, 
-	127, 1, 8, 11, 31, 33, 57, 58, 
-	64, 65, 126, 0
+	34, 40, 92, 1, 8, 11, 127, 9, 
+	13, 32, 34, 40, 41, 47, 61, 91, 
+	92, 93, 127, 1, 8, 11, 31, 33, 
+	57, 58, 64, 65, 126, 9, 13, 32, 
+	40, 61, 33, 39, 42, 46, 48, 57, 
+	65, 90, 94, 126, 0
 ]
 
 class << self
@@ -84,12 +74,10 @@ class << self
 	private :_content_location_single_lengths, :_content_location_single_lengths=
 end
 self._content_location_single_lengths = [
-	0, 6, 1, 2, 1, 2, 5, 5, 
-	5, 1, 2, 0, 3, 1, 2, 0, 
-	1, 2, 7, 7, 7, 1, 2, 1, 
-	2, 1, 2, 0, 5, 5, 5, 1, 
-	2, 6, 0, 5, 4, 4, 12, 5, 
-	6, 6, 6, 6, 12
+	0, 6, 1, 2, 1, 2, 3, 1, 
+	2, 0, 1, 2, 1, 2, 6, 6, 
+	6, 6, 1, 2, 0, 5, 4, 4, 
+	12, 5, 6, 6, 12, 5, 0
 ]
 
 class << self
@@ -97,12 +85,10 @@ class << self
 	private :_content_location_range_lengths, :_content_location_range_lengths=
 end
 self._content_location_range_lengths = [
-	0, 5, 0, 0, 0, 0, 3, 3, 
-	3, 0, 0, 1, 2, 0, 0, 1, 
-	0, 0, 2, 2, 2, 0, 0, 0, 
-	0, 0, 0, 1, 3, 3, 3, 0, 
-	0, 5, 1, 5, 0, 0, 5, 3, 
-	2, 2, 2, 2, 5
+	0, 5, 0, 0, 0, 0, 2, 0, 
+	0, 1, 0, 0, 0, 0, 5, 2, 
+	2, 2, 0, 0, 1, 5, 0, 0, 
+	5, 3, 2, 2, 5, 5, 0
 ]
 
 class << self
@@ -110,12 +96,10 @@ class << self
 	private :_content_location_index_offsets, :_content_location_index_offsets=
 end
 self._content_location_index_offsets = [
-	0, 0, 12, 14, 17, 19, 22, 31, 
-	40, 49, 51, 54, 56, 62, 64, 67, 
-	69, 71, 74, 84, 94, 104, 106, 109, 
-	111, 114, 116, 119, 121, 130, 139, 148, 
-	150, 153, 165, 167, 178, 183, 188, 206, 
-	215, 224, 233, 242, 251
+	0, 0, 12, 14, 17, 19, 22, 28, 
+	30, 33, 35, 37, 40, 42, 45, 57, 
+	66, 75, 84, 86, 89, 91, 102, 107, 
+	112, 130, 139, 148, 157, 175, 186
 ]
 
 class << self
@@ -126,37 +110,27 @@ self._content_location_indicies = [
 	0, 2, 0, 4, 5, 3, 3, 3, 
 	3, 3, 3, 1, 6, 1, 0, 0, 
 	1, 7, 1, 8, 8, 1, 10, 11, 
-	10, 12, 13, 9, 9, 9, 1, 15, 
-	16, 15, 17, 18, 14, 14, 14, 1, 
-	19, 20, 19, 21, 18, 14, 14, 14, 
-	1, 22, 1, 19, 19, 1, 1, 14, 
-	24, 25, 26, 23, 23, 1, 27, 1, 
-	23, 23, 1, 23, 1, 28, 1, 29, 
-	29, 1, 31, 32, 31, 33, 23, 34, 
-	35, 30, 30, 1, 37, 38, 37, 39, 
-	23, 40, 41, 36, 36, 1, 42, 43, 
-	42, 39, 23, 44, 41, 36, 36, 1, 
-	45, 1, 42, 42, 1, 46, 1, 47, 
-	47, 1, 48, 1, 49, 49, 1, 36, 
-	1, 51, 52, 51, 53, 54, 50, 50, 
-	50, 1, 56, 57, 56, 58, 59, 55, 
-	55, 55, 1, 60, 61, 60, 62, 59, 
-	55, 55, 55, 1, 63, 1, 60, 60, 
-	1, 64, 65, 64, 67, 68, 66, 66, 
-	66, 66, 66, 66, 1, 1, 55, 69, 
-	70, 69, 72, 71, 71, 71, 71, 71, 
-	71, 1, 8, 73, 8, 74, 1, 75, 
-	76, 75, 77, 1, 79, 80, 79, 71, 
-	82, 78, 78, 81, 78, 83, 78, 78, 
-	78, 78, 81, 78, 81, 1, 29, 84, 
-	29, 85, 26, 23, 23, 23, 1, 86, 
-	87, 86, 74, 17, 18, 14, 14, 1, 
-	47, 88, 47, 74, 21, 18, 14, 14, 
-	1, 89, 90, 89, 25, 91, 26, 23, 
-	23, 1, 49, 92, 49, 25, 85, 26, 
-	23, 23, 1, 93, 94, 93, 96, 97, 
-	23, 23, 95, 23, 26, 23, 23, 23, 
-	23, 95, 23, 95, 1, 0
+	12, 9, 9, 1, 13, 1, 9, 9, 
+	1, 9, 1, 14, 1, 15, 15, 1, 
+	16, 1, 17, 17, 1, 18, 19, 18, 
+	21, 22, 20, 20, 20, 20, 20, 20, 
+	1, 24, 25, 24, 26, 27, 28, 23, 
+	23, 1, 30, 31, 30, 32, 33, 34, 
+	29, 29, 1, 35, 36, 35, 32, 37, 
+	34, 29, 29, 1, 38, 1, 35, 35, 
+	1, 29, 1, 39, 40, 39, 42, 41, 
+	41, 41, 41, 41, 41, 1, 8, 43, 
+	8, 44, 1, 45, 46, 45, 47, 1, 
+	49, 50, 49, 41, 52, 48, 48, 51, 
+	48, 53, 48, 48, 48, 48, 51, 48, 
+	51, 1, 15, 54, 15, 55, 12, 9, 
+	9, 9, 1, 56, 57, 56, 11, 58, 
+	12, 9, 9, 1, 17, 59, 17, 11, 
+	55, 12, 9, 9, 1, 60, 61, 60, 
+	63, 64, 9, 9, 62, 9, 12, 9, 
+	9, 9, 9, 62, 9, 62, 1, 39, 
+	40, 39, 65, 41, 41, 41, 41, 41, 
+	41, 1, 1, 0
 ]
 
 class << self
@@ -164,19 +138,15 @@ class << self
 	private :_content_location_trans_targs, :_content_location_trans_targs=
 end
 self._content_location_trans_targs = [
-	1, 0, 2, 35, 38, 28, 3, 5, 
-	36, 7, 8, 9, 37, 11, 7, 8, 
-	9, 37, 11, 8, 9, 37, 10, 12, 
-	13, 36, 15, 14, 17, 39, 19, 20, 
-	21, 40, 42, 27, 19, 20, 21, 40, 
-	42, 27, 20, 21, 42, 22, 24, 41, 
-	26, 43, 29, 30, 31, 33, 34, 29, 
-	30, 31, 33, 34, 30, 31, 33, 32, 
-	1, 2, 35, 38, 28, 36, 4, 35, 
-	6, 4, 6, 36, 4, 6, 12, 39, 
-	16, 44, 18, 15, 16, 18, 41, 23, 
-	23, 43, 25, 18, 25, 43, 25, 44, 
-	35, 18
+	1, 0, 2, 21, 24, 14, 3, 5, 
+	22, 6, 7, 22, 9, 8, 11, 25, 
+	13, 27, 1, 2, 21, 24, 14, 16, 
+	17, 18, 16, 30, 20, 16, 17, 18, 
+	16, 30, 20, 17, 18, 30, 19, 22, 
+	4, 21, 23, 4, 23, 22, 4, 23, 
+	6, 25, 10, 28, 26, 9, 10, 26, 
+	27, 12, 26, 12, 27, 12, 28, 29, 
+	26, 23
 ]
 
 class << self
@@ -184,19 +154,15 @@ class << self
 	private :_content_location_trans_actions, :_content_location_trans_actions=
 end
 self._content_location_trans_actions = [
-	0, 0, 0, 7, 7, 0, 0, 0, 
-	0, 1, 13, 13, 13, 1, 0, 3, 
-	3, 3, 0, 0, 0, 0, 0, 0, 
-	0, 9, 0, 0, 0, 0, 1, 13, 
-	13, 22, 13, 1, 0, 3, 3, 9, 
-	3, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 1, 13, 13, 13, 1, 0, 
-	3, 3, 3, 0, 0, 0, 0, 0, 
-	5, 5, 16, 16, 5, 11, 11, 0, 
-	11, 0, 0, 5, 5, 5, 7, 19, 
-	19, 7, 19, 7, 0, 0, 3, 3, 
-	0, 5, 5, 5, 0, 11, 11, 0, 
-	9, 11
+	0, 0, 0, 7, 7, 13, 0, 0, 
+	0, 0, 0, 9, 0, 0, 0, 0, 
+	0, 0, 5, 5, 26, 26, 29, 1, 
+	17, 17, 20, 41, 1, 0, 3, 3, 
+	13, 23, 0, 0, 0, 15, 0, 11, 
+	11, 0, 35, 0, 13, 5, 5, 29, 
+	7, 32, 32, 7, 45, 7, 0, 13, 
+	5, 5, 29, 0, 11, 11, 0, 9, 
+	35, 38
 ]
 
 class << self
@@ -206,10 +172,8 @@ end
 self._content_location_eof_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 11, 0, 5, 11, 0, 
-	0, 0, 5, 0, 11
+	0, 0, 0, 0, 0, 11, 0, 5, 
+	11, 0, 5, 0, 11, 11, 0
 ]
 
 class << self
@@ -219,12 +183,16 @@ self.content_location_start = 1;
 class << self
 	attr_accessor :content_location_first_final
 end
-self.content_location_first_final = 35;
+self.content_location_first_final = 21;
 class << self
 	attr_accessor :content_location_error
 end
 self.content_location_error = 0;
 
+class << self
+	attr_accessor :content_location_en_comment_tail
+end
+self.content_location_en_comment_tail = 15;
 class << self
 	attr_accessor :content_location_en_main
 end
@@ -239,18 +207,20 @@ self.content_location_en_main = 1;
 
           p = 0
           eof = data.length
+          stack = []
 
           
-# line 245 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
+# line 214 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
 begin
 	p ||= 0
 	pe ||= data.length
 	cs = content_location_start
+	top = 0
 end
 
-# line 53 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+# line 54 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
           
-# line 254 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
+# line 224 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
 begin
 	_klen, _trans, _keys, _acts, _nacts = nil
 	_goto_level = 0
@@ -355,7 +325,30 @@ when 5 then
 # line 31 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
  content_location.location = data[mark..(p-1)] 		end
-# line 359 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
+when 6 then
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 15
+		_trigger_goto = true
+		_goto_level = _again
+		break
+	end
+ 		end
+when 7 then
+# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		top -= 1
+		cs = stack[top]
+		_trigger_goto = true
+		_goto_level = _again
+		break
+	end
+ 		end
+# line 352 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
 			end # action switch
 		end
 	end
@@ -391,7 +384,7 @@ when 5 then
 # line 31 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
  content_location.location = data[mark..(p-1)] 		end
-# line 395 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
+# line 388 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
 		end # eof action switch
 	end
 	if _trigger_goto
@@ -405,7 +398,7 @@ end
 	end
 	end
 
-# line 54 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+# line 55 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 
           content_location
         end

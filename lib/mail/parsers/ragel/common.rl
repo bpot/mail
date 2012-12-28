@@ -2,6 +2,10 @@
 
   machine common;
 
+  action comment_begin { fcall comment_tail; }
+
+  action comment_exit { fret; }
+  
   obs_NO_WS_CTL = 0x01..0x08 | 0x0b | 0x0c | 0x0e..0x1f | 0x7f;
   LF = "\n";
   CR = "\r";
@@ -14,11 +18,13 @@
   ctext = 0x21..0x27 | 0x2a..0x5b | 0x5d..0x7e | obs_ctext;
   quoted_pair = ("\\" (VCHAR | WSP)) | obs_qp;
   FWS = (WSP* CRLF WSP+) | (CRLF WSP+) | obs_FWS;
-  ccontent = ctext | quoted_pair; # |comment
+  ccontent = ctext | quoted_pair | "(" @comment_begin; # |comment
   ALPHA = [a-zA-Z];
   DIGIT = [0-9];
   obs_qtext = obs_NO_WS_CTL;
-  comment = "(" ((FWS? ccontent)* >s_ccontent %e_ccontent) FWS? ")" %e_comment;
+  # Handle recursive comments
+  comment_tail := ((FWS? ccontent)* >s_ccontent %e_ccontent) FWS? ")" @comment_exit;
+  comment = "(" @comment_begin %e_comment;
   atext = ALPHA | DIGIT | "!" | "#" | "$" | "%" | "&" | "'" | "*" | "+" | "-" | "/" | "=" | "?" | "^" | "_" | "`" | "{" | "|" | "}" | "~";
   qtext = 0x21 | 0x23..0x5b | 0x5d..0x7e | obs_qtext;
   obs_dtext = obs_NO_WS_CTL | quoted_pair;

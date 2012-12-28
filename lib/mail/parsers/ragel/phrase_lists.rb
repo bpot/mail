@@ -17,8 +17,10 @@ class << self
 end
 self._phrase_lists_actions = [
 	0, 1, 0, 1, 1, 1, 2, 1, 
-	3, 1, 4, 1, 5, 2, 0, 1, 
-	2, 2, 5
+	3, 1, 4, 1, 5, 1, 6, 1, 
+	7, 2, 0, 1, 2, 0, 6, 2, 
+	1, 7, 2, 2, 5, 2, 2, 6, 
+	2, 3, 6, 3, 0, 1, 7
 ]
 
 class << self
@@ -28,9 +30,8 @@ end
 self._phrase_lists_key_offsets = [
 	0, 0, 18, 36, 37, 39, 40, 42, 
 	52, 59, 60, 62, 64, 74, 75, 77, 
-	88, 99, 110, 111, 113, 131, 132, 134, 
-	145, 156, 167, 168, 170, 188, 190, 192, 
-	208, 224
+	95, 96, 98, 116, 126, 136, 146, 147, 
+	149, 151, 167, 183, 200
 ]
 
 class << self
@@ -48,27 +49,22 @@ self._phrase_lists_trans_keys = [
 	9, 11, 127, 10, 9, 32, 0, 127, 
 	9, 13, 32, 92, 1, 8, 11, 33, 
 	35, 127, 10, 9, 32, 9, 13, 32, 
-	41, 92, 1, 8, 11, 39, 42, 127, 
-	9, 13, 32, 41, 92, 1, 8, 11, 
-	39, 42, 127, 9, 13, 32, 41, 92, 
-	1, 8, 11, 39, 42, 127, 10, 9, 
-	32, 9, 13, 32, 34, 40, 46, 61, 
-	64, 33, 39, 42, 43, 45, 57, 63, 
-	90, 94, 126, 10, 9, 32, 9, 13, 
-	32, 41, 92, 1, 8, 11, 39, 42, 
-	127, 9, 13, 32, 41, 92, 1, 8, 
-	11, 39, 42, 127, 9, 13, 32, 41, 
-	92, 1, 8, 11, 39, 42, 127, 10, 
+	34, 40, 46, 61, 64, 33, 39, 42, 
+	43, 45, 57, 63, 90, 94, 126, 10, 
 	9, 32, 9, 13, 32, 34, 40, 45, 
 	61, 63, 33, 39, 42, 43, 47, 57, 
-	65, 90, 94, 126, 0, 127, 0, 127, 
-	9, 13, 34, 40, 44, 46, 61, 64, 
-	32, 39, 42, 57, 63, 90, 94, 126, 
-	9, 13, 34, 40, 44, 46, 61, 64, 
-	32, 39, 42, 57, 63, 90, 94, 126, 
-	9, 13, 32, 34, 40, 44, 46, 61, 
-	64, 33, 39, 42, 57, 63, 90, 94, 
-	126, 0
+	65, 90, 94, 126, 9, 13, 32, 40, 
+	41, 92, 1, 8, 11, 127, 9, 13, 
+	32, 40, 41, 92, 1, 8, 11, 127, 
+	9, 13, 32, 40, 41, 92, 1, 8, 
+	11, 127, 10, 9, 32, 0, 127, 9, 
+	13, 34, 40, 44, 46, 61, 64, 32, 
+	39, 42, 57, 63, 90, 94, 126, 9, 
+	13, 34, 40, 44, 46, 61, 64, 32, 
+	39, 42, 57, 63, 90, 94, 126, 9, 
+	13, 32, 34, 40, 44, 46, 61, 64, 
+	33, 39, 42, 57, 63, 90, 94, 126, 
+	0
 ]
 
 class << self
@@ -77,10 +73,9 @@ class << self
 end
 self._phrase_lists_single_lengths = [
 	0, 8, 8, 1, 2, 1, 2, 4, 
-	3, 1, 2, 0, 4, 1, 2, 5, 
-	5, 5, 1, 2, 8, 1, 2, 5, 
-	5, 5, 1, 2, 8, 0, 0, 8, 
-	8, 9
+	3, 1, 2, 0, 4, 1, 2, 8, 
+	1, 2, 8, 6, 6, 6, 1, 2, 
+	0, 8, 8, 9, 0
 ]
 
 class << self
@@ -89,10 +84,9 @@ class << self
 end
 self._phrase_lists_range_lengths = [
 	0, 5, 5, 0, 0, 0, 0, 3, 
-	2, 0, 0, 1, 3, 0, 0, 3, 
-	3, 3, 0, 0, 5, 0, 0, 3, 
-	3, 3, 0, 0, 5, 1, 1, 4, 
-	4, 4
+	2, 0, 0, 1, 3, 0, 0, 5, 
+	0, 0, 5, 2, 2, 2, 0, 0, 
+	1, 4, 4, 4, 0
 ]
 
 class << self
@@ -102,9 +96,8 @@ end
 self._phrase_lists_index_offsets = [
 	0, 0, 14, 28, 30, 33, 35, 38, 
 	46, 52, 54, 57, 59, 67, 69, 72, 
-	81, 90, 99, 101, 104, 118, 120, 123, 
-	132, 141, 150, 152, 155, 169, 171, 173, 
-	186, 199
+	86, 88, 91, 105, 114, 123, 132, 134, 
+	137, 139, 152, 165, 179
 ]
 
 class << self
@@ -121,24 +114,20 @@ self._phrase_lists_indicies = [
 	21, 18, 18, 1, 22, 1, 18, 18, 
 	1, 18, 1, 23, 24, 23, 21, 18, 
 	18, 18, 1, 25, 1, 23, 23, 1, 
-	27, 28, 27, 29, 30, 26, 26, 26, 
-	1, 32, 33, 32, 34, 35, 31, 31, 
-	31, 1, 36, 37, 36, 38, 35, 31, 
-	31, 31, 1, 39, 1, 36, 36, 1, 
-	40, 41, 40, 4, 5, 6, 3, 6, 
-	3, 3, 3, 3, 3, 1, 42, 1, 
-	43, 43, 1, 45, 46, 45, 47, 48, 
-	44, 44, 44, 1, 50, 51, 50, 52, 
-	53, 49, 49, 49, 1, 54, 55, 54, 
-	56, 53, 49, 49, 49, 1, 57, 1, 
-	54, 54, 1, 58, 59, 58, 61, 62, 
-	60, 60, 60, 60, 60, 60, 60, 60, 
-	1, 49, 1, 31, 1, 9, 63, 10, 
-	64, 65, 66, 9, 66, 9, 9, 9, 
-	9, 1, 60, 67, 61, 68, 69, 70, 
-	60, 70, 60, 60, 60, 60, 1, 7, 
-	8, 7, 10, 11, 65, 66, 9, 66, 
-	9, 9, 9, 9, 1, 0
+	26, 27, 26, 4, 5, 6, 3, 6, 
+	3, 3, 3, 3, 3, 1, 28, 1, 
+	29, 29, 1, 30, 31, 30, 33, 34, 
+	32, 32, 32, 32, 32, 32, 32, 32, 
+	1, 36, 37, 36, 38, 39, 40, 35, 
+	35, 1, 42, 43, 42, 44, 45, 46, 
+	41, 41, 1, 47, 48, 47, 44, 49, 
+	46, 41, 41, 1, 50, 1, 47, 47, 
+	1, 41, 1, 9, 51, 10, 52, 53, 
+	54, 9, 54, 9, 9, 9, 9, 1, 
+	32, 55, 33, 56, 57, 58, 32, 58, 
+	32, 32, 32, 32, 1, 7, 8, 7, 
+	10, 11, 53, 54, 9, 54, 9, 9, 
+	9, 9, 1, 1, 0
 ]
 
 class << self
@@ -146,15 +135,14 @@ class << self
 	private :_phrase_lists_trans_targs, :_phrase_lists_trans_targs=
 end
 self._phrase_lists_trans_targs = [
-	2, 0, 3, 31, 7, 23, 33, 2, 
-	3, 31, 7, 23, 4, 6, 8, 12, 
-	13, 11, 8, 9, 31, 11, 10, 12, 
-	13, 14, 16, 17, 18, 32, 30, 16, 
-	17, 18, 32, 30, 17, 18, 32, 19, 
-	20, 21, 22, 20, 24, 25, 26, 28, 
-	29, 24, 25, 26, 28, 29, 25, 26, 
-	28, 27, 2, 3, 31, 7, 23, 5, 
-	15, 20, 33, 5, 15, 20, 33
+	2, 0, 3, 25, 7, 18, 27, 2, 
+	3, 25, 7, 18, 4, 6, 8, 12, 
+	13, 11, 8, 9, 25, 11, 10, 12, 
+	13, 14, 15, 16, 17, 15, 2, 3, 
+	25, 7, 18, 20, 21, 22, 20, 28, 
+	24, 20, 21, 22, 20, 28, 24, 21, 
+	22, 28, 23, 5, 26, 15, 27, 5, 
+	26, 15, 27
 ]
 
 class << self
@@ -162,15 +150,14 @@ class << self
 	private :_phrase_lists_trans_actions, :_phrase_lists_trans_actions=
 end
 self._phrase_lists_trans_actions = [
-	7, 0, 7, 7, 7, 7, 7, 0, 
-	0, 0, 0, 0, 0, 0, 7, 7, 
+	7, 0, 7, 7, 7, 32, 7, 0, 
+	0, 0, 0, 13, 0, 0, 7, 7, 
 	7, 7, 0, 0, 9, 0, 0, 0, 
-	0, 0, 1, 13, 13, 13, 1, 0, 
-	3, 3, 3, 0, 0, 0, 0, 0, 
-	7, 7, 0, 0, 1, 13, 13, 13, 
-	1, 0, 3, 3, 3, 0, 0, 0, 
-	0, 0, 5, 5, 5, 5, 5, 0, 
-	0, 11, 0, 5, 5, 16, 5
+	0, 0, 7, 7, 0, 0, 5, 5, 
+	5, 5, 29, 1, 17, 17, 20, 35, 
+	1, 0, 3, 3, 13, 23, 0, 0, 
+	0, 15, 0, 0, 13, 11, 0, 5, 
+	29, 26, 5
 ]
 
 class << self
@@ -181,8 +168,7 @@ self._phrase_lists_eof_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 0, 0, 11, 
-	16, 11
+	0, 11, 26, 11, 0
 ]
 
 class << self
@@ -192,12 +178,16 @@ self.phrase_lists_start = 1;
 class << self
 	attr_accessor :phrase_lists_first_final
 end
-self.phrase_lists_first_final = 31;
+self.phrase_lists_first_final = 25;
 class << self
 	attr_accessor :phrase_lists_error
 end
 self.phrase_lists_error = 0;
 
+class << self
+	attr_accessor :phrase_lists_en_comment_tail
+end
+self.phrase_lists_en_comment_tail = 19;
 class << self
 	attr_accessor :phrase_lists_en_main
 end
@@ -212,18 +202,20 @@ self.phrase_lists_en_main = 1;
 
           p = 0
           eof = data.length
+          stack = []
 
           
-# line 218 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
+# line 209 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
 begin
 	p ||= 0
 	pe ||= data.length
 	cs = phrase_lists_start
+	top = 0
 end
 
-# line 55 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
+# line 56 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
           
-# line 227 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
+# line 219 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
 begin
 	_klen, _trans, _keys, _acts, _nacts = nil
 	_goto_level = 0
@@ -328,7 +320,30 @@ when 5 then
 # line 33 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 		begin
  phrase_lists.phrases << data[mark..(p-1)] if mark; mark = nil 		end
-# line 332 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
+when 6 then
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 19
+		_trigger_goto = true
+		_goto_level = _again
+		break
+	end
+ 		end
+when 7 then
+# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		top -= 1
+		cs = stack[top]
+		_trigger_goto = true
+		_goto_level = _again
+		break
+	end
+ 		end
+# line 347 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
 			end # action switch
 		end
 	end
@@ -364,7 +379,7 @@ when 5 then
 # line 33 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 		begin
  phrase_lists.phrases << data[mark..(p-1)] if mark; mark = nil 		end
-# line 368 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
+# line 383 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
 		end # eof action switch
 	end
 	if _trigger_goto
@@ -378,7 +393,7 @@ end
 	end
 	end
 
-# line 56 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
+# line 57 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 
           if p != eof
             phrase_lists.error = "FAILED TO PARSE" 

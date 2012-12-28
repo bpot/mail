@@ -93,7 +93,9 @@ puts "EADDR: #{data[0..p].inspect}"
     end_comment = p - 1 
   }
   action e_comment {
+if address
     address.comments << data[mark_comment..end_comment]
+end
   }
 
   action start_group_list {
@@ -121,6 +123,8 @@ p data
           group_name = nil
           phrase_ending = nil
           mark_local = nil
+          comment_depth = 0
+          stack = []
 
           p = 0
           eof = data.length
