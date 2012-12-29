@@ -547,7 +547,7 @@ describe Mail::Address do
       end
 
       it "should handle |Mary Smith <@machine.tld:mary@example.net>|" do
-        pending "bpot -- cray local"
+      #  pending "bpot -- obs_domain_list"
         address = Mail::Address.new('Mary Smith <@machine.tld:mary@example.net>')
         address.should break_down_to({
                                          :name         => 'Mary Smith',

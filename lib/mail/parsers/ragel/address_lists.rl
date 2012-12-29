@@ -125,6 +125,10 @@
   action start_group_list {
   }
 
+  action e_obs_domain_list {
+    address.obs_domain_list = data[mark..(p-1)]
+  }
+
   include common "common.rl";
 
 

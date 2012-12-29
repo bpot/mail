@@ -74,7 +74,7 @@
   domain = dot_atom | domain_literal | obs_domain;
   obs_domain_list = (CFWS | ",")* "@" domain ("," CFWS? ("@" domain)?)*;
   obs_phrase = (word | "." | "@")+;
-  obs_route = obs_domain_list ":";
+  obs_route = (obs_domain_list ":") >mark %e_obs_domain_list;
   # the end_addr priority solves uncertainty when whitespace
   # after an addr_spec could cause it to be interpreted as a 
   # display name "bar@example.com ,..."

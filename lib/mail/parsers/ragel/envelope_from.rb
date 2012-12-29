@@ -1,7 +1,7 @@
 
 # line 1 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 
-# line 51 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+# line 52 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 
 
 module Mail
@@ -142,16 +142,16 @@ self._envelope_from_trans_keys = [
 	40, 70, 77, 83, 84, 87, 9, 13, 
 	32, 40, 34, 46, 61, 63, 33, 39, 
 	42, 43, 45, 57, 65, 90, 94, 126, 
-	-128, -1, 10, 9, 32, 9, 13, 32, 
+	0, 127, 10, 9, 32, 9, 13, 32, 
 	34, 40, 46, 61, 63, 33, 39, 42, 
 	43, 45, 57, 65, 90, 94, 126, 9, 
 	13, 32, 34, 40, 46, 61, 63, 91, 
 	33, 39, 42, 43, 45, 57, 65, 90, 
 	94, 126, 13, 92, 93, 1, 9, 11, 
-	90, 94, 127, 10, 9, 32, -128, -1, 
+	90, 94, 127, 10, 9, 32, 0, 127, 
 	9, 13, 32, 92, 1, 8, 11, 33, 
 	35, 127, 13, 34, 92, 1, 9, 11, 
-	127, 10, 9, 32, -128, -1, 9, 13, 
+	127, 10, 9, 32, 0, 127, 9, 13, 
 	32, 92, 1, 8, 11, 33, 35, 127, 
 	10, 9, 32, 9, 13, 32, 34, 40, 
 	45, 61, 63, 33, 39, 42, 43, 47, 
@@ -163,7 +163,7 @@ self._envelope_from_trans_keys = [
 	94, 126, 9, 13, 32, 40, 64, 10, 
 	9, 32, 9, 13, 32, 40, 64, 70, 
 	77, 83, 84, 87, 9, 13, 32, 40, 
-	64, -128, -1, 10, 9, 32, 9, 13, 
+	64, 0, 127, 10, 9, 32, 9, 13, 
 	32, 34, 40, 46, 61, 64, 33, 39, 
 	42, 43, 45, 57, 63, 90, 94, 126, 
 	9, 13, 32, 34, 40, 45, 61, 64, 
@@ -210,7 +210,7 @@ self._envelope_from_trans_keys = [
 	9, 11, 127, 10, 9, 32, 9, 13, 
 	32, 34, 40, 46, 61, 64, 33, 39, 
 	42, 43, 45, 57, 63, 90, 94, 126, 
-	0, 127, 9, 13, 32, 92, 1, 8, 
+	-128, -1, 9, 13, 32, 92, 1, 8, 
 	11, 33, 35, 127, 10, 9, 32, 9, 
 	13, 32, 92, 1, 8, 11, 33, 35, 
 	127, 13, 34, 92, 1, 9, 11, 127, 
@@ -219,8 +219,8 @@ self._envelope_from_trans_keys = [
 	57, 63, 90, 94, 126, 9, 13, 32, 
 	40, 46, 64, 10, 9, 32, 9, 13, 
 	32, 40, 46, 64, 70, 77, 83, 84, 
-	87, 9, 13, 32, 40, 46, 64, -128, 
-	-1, 9, 13, 32, 92, 1, 8, 11, 
+	87, 9, 13, 32, 40, 46, 64, 0, 
+	127, 9, 13, 32, 92, 1, 8, 11, 
 	33, 35, 127, 10, 9, 32, 9, 13, 
 	32, 34, 40, 46, 61, 63, 33, 39, 
 	42, 43, 45, 57, 65, 90, 94, 126, 
@@ -409,15 +409,15 @@ self._envelope_from_indicies = [
 	211, 212, 213, 29, 30, 31, 32, 33, 
 	1, 215, 216, 217, 218, 1, 62, 64, 
 	208, 208, 208, 208, 208, 208, 208, 1, 
-	1, 204, 219, 1, 62, 62, 1, 77, 
+	204, 1, 219, 1, 62, 62, 1, 77, 
 	84, 77, 62, 86, 64, 61, 61, 61, 
 	61, 61, 61, 61, 1, 220, 221, 220, 
 	223, 224, 225, 222, 222, 226, 222, 222, 
 	222, 222, 222, 1, 227, 228, 210, 65, 
 	65, 65, 1, 229, 1, 65, 65, 1, 
-	1, 65, 231, 232, 231, 233, 230, 230, 
+	65, 1, 231, 232, 231, 233, 230, 230, 
 	230, 1, 235, 236, 237, 234, 234, 1, 
-	238, 1, 234, 234, 1, 1, 234, 239, 
+	238, 1, 234, 234, 1, 234, 1, 239, 
 	240, 239, 237, 234, 234, 234, 1, 241, 
 	1, 239, 239, 1, 38, 242, 38, 244, 
 	245, 243, 243, 243, 243, 243, 243, 243, 
@@ -428,7 +428,7 @@ self._envelope_from_indicies = [
 	250, 1, 257, 258, 259, 260, 27, 1, 
 	261, 1, 257, 257, 1, 257, 258, 259, 
 	260, 27, 29, 30, 31, 32, 33, 1, 
-	262, 263, 264, 265, 39, 1, 1, 246, 
+	262, 263, 264, 265, 39, 1, 246, 1, 
 	266, 1, 18, 18, 1, 267, 268, 269, 
 	271, 272, 250, 270, 256, 270, 270, 270, 
 	270, 270, 1, 273, 274, 275, 42, 276, 
@@ -468,7 +468,7 @@ self._envelope_from_indicies = [
 	305, 306, 303, 303, 1, 307, 1, 303, 
 	303, 1, 308, 309, 310, 18, 311, 312, 
 	250, 256, 250, 250, 250, 250, 250, 1, 
-	303, 1, 313, 314, 313, 306, 303, 303, 
+	1, 303, 313, 314, 313, 306, 303, 303, 
 	303, 1, 315, 1, 313, 313, 1, 317, 
 	318, 317, 319, 316, 316, 316, 1, 321, 
 	322, 323, 320, 320, 1, 324, 1, 320, 
@@ -477,8 +477,8 @@ self._envelope_from_indicies = [
 	330, 331, 332, 333, 26, 334, 1, 335, 
 	1, 330, 330, 1, 330, 331, 332, 333, 
 	26, 334, 29, 30, 31, 32, 33, 1, 
-	336, 337, 338, 339, 38, 340, 1, 1, 
-	320, 341, 342, 341, 323, 320, 320, 320, 
+	336, 337, 338, 339, 38, 340, 1, 320, 
+	1, 341, 342, 341, 323, 320, 320, 320, 
 	1, 343, 1, 341, 341, 1, 344, 345, 
 	344, 347, 348, 349, 346, 346, 346, 346, 
 	346, 346, 346, 1, 18, 350, 250, 250, 
@@ -656,7 +656,7 @@ end
 self.envelope_from_en_main = 1;
 
 
-# line 59 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+# line 60 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
         end
         
         def parse(data)
@@ -677,7 +677,7 @@ begin
 	top = 0
 end
 
-# line 71 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+# line 72 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
           
 # line 683 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rb"
 begin
@@ -809,17 +809,17 @@ when 11 then
 		begin
 		end
 when 12 then
-# line 40 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+# line 41 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 		begin
  mark = p 		end
 when 14 then
-# line 42 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+# line 43 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 		begin
  
     mark_address = p
   		end
 when 15 then
-# line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+# line 46 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 		begin
  
     envelope_from.address = data[mark_address..(p-1)]
@@ -880,7 +880,7 @@ when 2 then
 		begin
 		end
 when 13 then
-# line 41 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+# line 42 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 		begin
  envelope_from.ctime_date = data[mark..(p-1)] 		end
 # line 887 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rb"
@@ -897,12 +897,12 @@ end
 	end
 	end
 
-# line 72 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+# line 73 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 
           if p == eof && cs >= 
 # line 904 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rb"
 204
-# line 73 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+# line 74 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 
             envelope_from
           else

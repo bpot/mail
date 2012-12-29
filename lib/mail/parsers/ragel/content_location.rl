@@ -33,6 +33,7 @@
   action mark_local_dot_atom {}
   action mark_atom {}
   action e_local_quoted_string {}
+  action e_obs_domain_list {}
 
   action mark { mark = p }
   action mark_quoted {
