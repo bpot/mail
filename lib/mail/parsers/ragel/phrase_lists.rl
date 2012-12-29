@@ -30,17 +30,18 @@
   action mark_domain { }
   action e_atom {}
   action e_local_part_dot_atom {}
-  action mark_quoted {}
-  action e_quoted {}
   action e_mark_atom {}
   action mark_local_dot_atom {}
   action mark_atom {}
   action e_local_quoted_string {}
   action e_obs_domain_list {}
 
+  action mark_quoted { 
+    mark_quoted = p
+  }
   action mark { mark = p }
 # XXX a quoted string can also be interpreted as a word+ / obsolete_phrase?
-  action e_quoted_string { phrase_lists.phrases << data[mark..(p-1)] if mark; mark = nil }
+  action e_quoted { phrase_lists.phrases << data[mark_quoted..(p-1)] if mark; mark = nil }
   action e_phrase { phrase_lists.phrases << data[mark..(p-1)] if mark; mark = nil }
 
   include common "common.rl";

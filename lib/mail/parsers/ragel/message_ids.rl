@@ -41,7 +41,7 @@
 
 
   action mark { mark = p }
-  action e_msg_id { message_ids.message_ids << data[mark..(p-1)] }
+  action e_msg_id { message_ids.message_ids << data[mark..(p-1)].rstrip }
   include common "common.rl";
 
   main := message_ids;

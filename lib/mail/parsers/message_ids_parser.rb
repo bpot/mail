@@ -23,7 +23,7 @@ module Mail::Parsers
       message_ids = Data::MessageIdsData.new
       parser = Treetops::MessageIdsParser.new
       if tree = parser.parse(string)
-        message_ids.message_ids = tree.message_ids.map(&:text_value)
+        message_ids.message_ids = tree.message_ids.map(&:text_value).map(&:strip)
       else
         message_ids.error = parser.failure_reason
       end

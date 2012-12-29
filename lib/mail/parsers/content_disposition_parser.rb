@@ -8,7 +8,7 @@ module Mail::Parsers
         return content_disposition
       end
 
-      data = compare(string)
+      data = compare(cleaned(string))
       if data.error
         raise Mail::Field::ParseError.new(Mail::ContentDispositionElement, string, data.error)
       end
@@ -27,9 +27,14 @@ module Mail::Parsers
         content_disposition.disposition_type = tree.disposition_type.text_value.downcase
         content_disposition.parameters = tree.parameters
       else
+        content_disposition.error = parser.failure_reason
       end
 
       content_disposition
+    end
+
+    def cleaned(string)
+      string =~ /(.+);\s*$/ ? $1 : string
     end
   end
 end

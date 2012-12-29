@@ -445,7 +445,7 @@ when 3 then
 when 4 then
 # line 43 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
 		begin
- date_time.date_string = data[mark..(p-1)] 		end
+ date_time.date_string = data[mark..(p-1)].rstrip 		end
 when 5 then
 # line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
 		begin

@@ -44,7 +44,7 @@
     mark_address = p
   }
   action e_address { 
-    envelope_from.address = data[mark_address..(p-1)]
+    envelope_from.address = data[mark_address..(p-1)].rstrip
   }
   include common "common.rl";
 

@@ -20,8 +20,8 @@ module Mail
     end
 
     def structs_similar(r, tt)
-      strip_strings(r)
-      strip_strings(tt)
+      #strip_strings(r)
+      #strip_strings(tt)
 
       if r[:error] && tt[:error]
         return true

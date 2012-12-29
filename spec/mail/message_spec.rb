@@ -76,6 +76,9 @@ describe Mail::Message do
     end
 
     it "should be able to parse every email example we have without raising an exception" do
+      old_compat_val = ENV["MAIL_COMPATABILITY"]
+      ENV["MAIL_COMPATABILITY"] = nil
+
       emails = Dir.glob( fixture('emails/**/*') ).delete_if { |f| File.directory?(f) }
 
       STDERR.stub!(:puts) # Don't want to get noisy about any warnings
@@ -93,6 +96,7 @@ describe Mail::Message do
         end
       end
       errors.should be_false
+      ENV["MAIL_COMPATABILITY"] = old_compat_val
     end
 
     it "should be able to parse a large email without raising an exception" do

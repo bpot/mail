@@ -78,7 +78,7 @@
       quoted_string = nil
     elsif phrase_ending
 #p data[mark..(phrase_ending)]
-      address.display_name = data[mark..(phrase_ending)]
+      address.display_name = data[mark..(phrase_ending)].strip
       phrase_ending = nil
     end
   }
@@ -98,7 +98,7 @@
     address_list.addresses << address if address
     address = nil
   }
-  action e_domain { address.domain = data[mark_domain..(p-1)] if address }
+  action e_domain { address.domain = data[mark_domain..(p-1)].rstrip if address }
   action e_group_name {
     if quoted_string
       group = quoted_string

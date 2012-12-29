@@ -47,9 +47,9 @@
   # obs_local_part: a bunch of "." words that can contain quoted strings
   #                 we have to concatenate these
   local_dot_atom_text = ("."* domain_text "."*)+;
-  local_dot_atom = CFWS? 
-                   (local_dot_atom_text >mark_local_dot_atom %e_local_part_dot_atom) 
-                   CFWS?;
+  local_dot_atom = (CFWS? 
+                   local_dot_atom_text
+                   CFWS?) >mark_local_dot_atom %e_local_part_dot_atom;
   quoted_string = CFWS? 
                   (DQUOTE 
                     (((FWS? qcontent)+ FWS?) >mark_quoted %e_quoted)

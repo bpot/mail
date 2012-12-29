@@ -40,7 +40,7 @@
 
 
   action mark { mark = p }
-  action e_date { date_time.date_string = data[mark..(p-1)] }
+  action e_date { date_time.date_string = data[mark..(p-1)].rstrip }
   action e_time { date_time.time_string = data[mark..(p-1)] }
   include common "common.rl";
 

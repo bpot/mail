@@ -25,7 +25,7 @@ module Mail::Parsers
       address_list = Data::AddressListData.new([],[])
       parser = Mail::Parsers::Treetops::AddressListsParser.new
       if tree = parser.parse(string)
-#        p tree
+        #p tree
         address_nodes = tree.addresses
 
         group_recipients = address_nodes.select { |an| an.respond_to?(:group_name) }

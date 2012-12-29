@@ -224,7 +224,7 @@ module Mail
         end
       
         rule mailbox
-          name_addr / addr_spec {
+          (name_addr / addr_spec) {
             def dig_comments(comments, elements)
               elements.each { |elem|
                 if elem.respond_to?(:comment)
