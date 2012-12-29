@@ -53,7 +53,7 @@ describe Mail::Message do
     end
 
     it "should be able to parse an email with @ in display name" do
-      pending "bpot"
+    #  pending "bpot"
       message = Mail::Message.new(File.read(fixture('emails', 'plain_emails', 'raw_email_with_at_display_name.eml')))
       message.to.should eq ["smith@gmail.com", "raasdnil@gmail.com", "tom@gmail.com"]
     end
