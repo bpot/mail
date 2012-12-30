@@ -39,7 +39,7 @@ describe Mail::Address do
 
     ['"-Earnings...Notification-" <vodacom.co.rs>', '<56253817>'].each do |spammy_address|
       it "should allow for funky spammy address #{spammy_address}" do
-        pending "bpot -- clarification"
+      #  pending "bpot -- clarification"
         Mail::Address.new(spammy_address).address.should eq nil
       end
     end

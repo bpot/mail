@@ -49,7 +49,7 @@
   local_dot_atom_text = ("."* domain_text "."*)+;
   local_dot_atom = (CFWS? 
                    local_dot_atom_text
-                   CFWS?) >mark_local_dot_atom %e_local_part_dot_atom;
+                   CFWS?);
   quoted_string = CFWS? 
                   (DQUOTE 
                     (((FWS? qcontent)+ FWS?) >mark_quoted %e_quoted)
@@ -58,8 +58,12 @@
   atom = CFWS? (atext+ >mark_atom %e_atom) CFWS?;
   word = atom | quoted_string;
   obs_local_part = word ("." word)*;
-  local_part = (local_dot_atom |
+  local_part = (local_dot_atom >mark_local_dot_atom %e_local_part_dot_atom |
                 (quoted_string %e_local_quoted_string) |
+                obs_local_part);
+
+  local_part_no_capture = (local_dot_atom |
+                (quoted_string) |
                 obs_local_part);
 
   # modified from:
@@ -78,13 +82,14 @@
   # the end_addr priority solves uncertainty when whitespace
   # after an addr_spec could cause it to be interpreted as a 
   # display name "bar@example.com ,..."
-  addr_spec = (local_part >mark "@" (domain >mark_domain %e_domain)) %(end_addr,1) | local_part %(end_addr,0);
+  addr_spec = (local_part >mark "@" (domain >mark_domain %e_domain)) %(end_addr,1) | local_part_no_capture %(end_addr,0);
+  addr_spec_allow_local_only = (local_part >mark "@" (domain >mark_domain %e_domain)) %(end_addr,1) | local_part %(end_addr,0);
   phrase = (obs_phrase | word+) >mark %e_phrase;
   obs_angle_addr = CFWS? "<" obs_route? addr_spec ">" CFWS?;
   display_name = phrase;
   angle_addr = CFWS? ("<" >s_angle_addr) addr_spec ">" CFWS? | obs_angle_addr;
   name_addr = display_name? %e_name_addr_display_name %(end_addr,2) angle_addr;
-  mailbox = (name_addr | addr_spec) >s_address %e_address;
+  mailbox = (name_addr | addr_spec_allow_local_only) >s_address %e_address;
   obs_mbox_list = (CFWS? ",")* mailbox ("," (mailbox | CFWS)?)*;
   token = 0x21..0x27 | 0x2a..0x2b | 0x2c..0x2e | 0x30..0x39 | 0x41..0x5a | 0x5e..0x7e;
   mailbox_list = (mailbox (("," | ";") mailbox)*) | obs_mbox_list;
