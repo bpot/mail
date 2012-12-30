@@ -91,12 +91,6 @@
   #  puts "EPH: #{data[mark..p].inspect} -- #{quoted_string} -- #{address.inspect}"
     phrase_ending = p-1
   }
-  action s_address {
-  #  puts "SADDR: #{data[0..p].inspect}"
-    address = Data::AddressData.new(nil, nil, [], nil, nil, nil, nil)
-    mark_address = p
-    address.group = group_name
-  }
   action e_address { 
 #puts "EADDR: #{data[0..p].inspect}"
     if address.local.nil? && e_local_part_dot_atom_pre_comment && e_local_part_dot_atom
@@ -109,7 +103,11 @@
     #address.local = data[mark_local_dot_atom..(p-1)] if address
     address.raw = data[mark_address..(p-1)]
     address_list.addresses << address if address
-    address = nil
+
+    # Start next address
+    address = Data::AddressData.new(nil, nil, [], nil, nil, nil, nil)
+    mark_address = p
+    address.group = group_name
   }
   action e_domain { address.domain = data[mark_domain..(p-1)].rstrip if address }
   action e_group_name {
@@ -122,6 +120,11 @@
     end
     address_list.group_names << group
     group_name = group
+
+    # Start next address
+    address = Data::AddressData.new(nil, nil, [], nil, nil, nil, nil)
+    mark_address = p
+    address.group = group_name
   }
   action s_ccontent {
     mark_comment = p unless mark_comment
@@ -159,24 +162,20 @@ module Mail
         def parse(data)
 #p data
           address_list = Data::AddressListData.new([], [])
-          address = nil
           group_name = nil
           phrase_ending = nil
           mark_local = nil
-          stack = []
+          address = Data::AddressData.new(nil, nil, [], nil, nil, nil, nil)
+          mark_address = 0
 
           p = 0
           eof = data.length
+          stack = []
 
           %%write init;
 
           quoted_string = nil
           %%write exec;
-
-#          if address && address_list.addresses.empty? && address_list.group_names.empty? && mark_local
-#            address.local = data
-#            address_list.addresses << address
-#          end
 
           if (p != eof) || (address_list.addresses.empty? && address_list.group_names.empty?) || cs < %%{ write first_final; }%%
             address_list.error = "Only able to parse up to #{data[0..p]}"
