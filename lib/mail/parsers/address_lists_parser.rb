@@ -25,7 +25,7 @@ module Mail::Parsers
       address_list = Data::AddressListData.new([],[])
       parser = Mail::Parsers::Treetops::AddressListsParser.new
       if tree = parser.parse(string)
-        #p tree
+      #  p tree
         address_nodes = tree.addresses
 
         group_recipients = address_nodes.select { |an| an.respond_to?(:group_name) }
@@ -109,7 +109,8 @@ module Mail::Parsers
       when tree.respond_to?(:angle_addr) && tree.angle_addr.respond_to?(:addr_spec) && tree.angle_addr.addr_spec.respond_to?(:local_part)
         tree.angle_addr.addr_spec.local_part.text_value
       when tree.respond_to?(:angle_addr) && tree.angle_addr.respond_to?(:addr_spec) && tree.angle_addr.addr_spec.respond_to?(:local_dot_atom_text)
-        tree.angle_addr.addr_spec.local_dot_atom_text.text_value
+        nil
+    #    tree.angle_addr.addr_spec.local_dot_atom_text.text_value
       when tree.respond_to?(:addr_spec) && tree.addr_spec.respond_to?(:local_part)
         tree.addr_spec.local_part.text_value
       else
