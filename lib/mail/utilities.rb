@@ -5,16 +5,16 @@ module Mail
 
     def compare(string)
       r = ragel(string)
-      tt = treetop(string)
 
-      if ENV["MAIL_COMPATABILITY"] && !structs_similar(r,tt)
-        puts
-        p string
-        puts "Ragel  : #{r.inspect}"
-        puts "Treetop: #{tt.inspect}"
-        raise "Parse mismatch"
-      else
-      #  p "SIMILAR!"
+      if ENV["MAIL_COMPATABILITY"] 
+        tt = treetop(string)
+        if !structs_similar(r,tt)
+          puts
+          p string
+          puts "Ragel  : #{r.inspect}"
+          puts "Treetop: #{tt.inspect}"
+          raise "Parse mismatch"
+        end
       end
       r
     end
