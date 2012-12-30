@@ -91,6 +91,9 @@
   #  puts "EPH: #{data[mark..p].inspect} -- #{quoted_string} -- #{address.inspect}"
     phrase_ending = p-1
   }
+  action s_address {
+    mark_address = p
+  }
   action e_address { 
 #puts "EADDR: #{data[0..p].inspect}"
     if address.local.nil? && e_local_part_dot_atom_pre_comment && e_local_part_dot_atom
@@ -106,7 +109,7 @@
 
     # Start next address
     address = Data::AddressData.new(nil, nil, [], nil, nil, nil, nil)
-    mark_address = p
+    #mark_address = p
     address.group = group_name
   }
   action e_domain { address.domain = data[mark_domain..(p-1)].rstrip if address }

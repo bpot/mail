@@ -89,7 +89,7 @@
   display_name = phrase;
   angle_addr = CFWS? ("<" >s_angle_addr) addr_spec ">" CFWS? | obs_angle_addr;
   name_addr = display_name? %e_name_addr_display_name %(end_addr,2) angle_addr;
-  mailbox = (name_addr | addr_spec_allow_local_only) %e_address;
+  mailbox = (name_addr | addr_spec_allow_local_only) >s_address %e_address;
   obs_mbox_list = (CFWS? ",")* mailbox ("," (mailbox | CFWS)?)*;
   token = 0x21..0x27 | 0x2a..0x2b | 0x2c..0x2e | 0x30..0x39 | 0x41..0x5a | 0x5e..0x7e;
   mailbox_list = (mailbox (("," | ";") mailbox)*) | obs_mbox_list;
