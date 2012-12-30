@@ -48,7 +48,7 @@
   #                 we have to concatenate these
   local_dot_atom_text = ("."* domain_text "."*)+;
   local_dot_atom = (CFWS? 
-                   local_dot_atom_text
+                   local_dot_atom_text %e_local_part_dot_atom_pre_comment
                    CFWS?);
   quoted_string = CFWS? 
                   (DQUOTE 

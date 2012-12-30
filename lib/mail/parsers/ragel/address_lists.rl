@@ -41,9 +41,14 @@
   action mark_local_dot_atom {
     mark_local_dot_atom = p
   }
+
+  action e_local_part_dot_atom_pre_comment {
+    e_local_part_dot_atom_pre_comment = p-1
+  }
   
   action e_local_part_dot_atom {
-    address.local = data[mark_local_dot_atom..(p-1)] if address
+    e_local_part_dot_atom = p-1
+    #address.local = data[mark_local_dot_atom..(p-1)] if address
   }
 
   action e_local_quoted_string {
@@ -94,6 +99,14 @@
   }
   action e_address { 
 #puts "EADDR: #{data[0..p].inspect}"
+    if address.local.nil? && e_local_part_dot_atom_pre_comment && e_local_part_dot_atom
+      if address.domain
+        address.local = data[mark_local_dot_atom..e_local_part_dot_atom] if address
+      else
+        address.local = data[mark_local_dot_atom..e_local_part_dot_atom_pre_comment] if address
+      end
+    end
+    #address.local = data[mark_local_dot_atom..(p-1)] if address
     address.raw = data[mark_address..(p-1)]
     address_list.addresses << address if address
     address = nil
@@ -166,8 +179,6 @@ module Mail
 #          end
 
           if (p != eof) || (address_list.addresses.empty? && address_list.group_names.empty?) || cs < %%{ write first_final; }%%
-            p cs
-            p address
             address_list.error = "Only able to parse up to #{data[0..p]}"
           else
             address_list.group_names.uniq!

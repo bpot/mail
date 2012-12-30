@@ -29,7 +29,6 @@
   action e_ctime_date {}
   action mark_domain { }
   action e_atom {}
-  action e_local_part_dot_atom {}
   action mark_quoted {}
   action e_quoted {}
   action e_mark_atom {}
@@ -37,6 +36,8 @@
   action mark_atom {}
   action e_local_quoted_string {}
   action e_obs_domain_list {}
+  action e_local_part_dot_atom_pre_comment {}
+  action e_local_part_dot_atom {}
 
   action mark { mark = p }
   action e_date { received.date = data[mark..(p-1)].strip }
