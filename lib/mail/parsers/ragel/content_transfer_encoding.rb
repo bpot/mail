@@ -24,71 +24,44 @@ self._content_transfer_encoding_actions = [
 ]
 
 class << self
-	attr_accessor :_content_transfer_encoding_key_offsets
-	private :_content_transfer_encoding_key_offsets, :_content_transfer_encoding_key_offsets=
-end
-self._content_transfer_encoding_key_offsets = [
-	0, 0, 10, 11, 13, 23, 24, 25, 
-	26, 27, 29, 30, 32, 33, 43, 45, 
-	46, 47, 48, 49, 50, 51, 52, 53, 
-	54, 55, 56, 57, 58, 59, 60, 61, 
-	62, 63, 64, 65, 66, 67, 68, 78, 
-	88, 98, 99, 101, 103, 109, 114, 119, 
-	123, 127, 132, 147
-]
-
-class << self
 	attr_accessor :_content_transfer_encoding_trans_keys
 	private :_content_transfer_encoding_trans_keys, :_content_transfer_encoding_trans_keys=
 end
 self._content_transfer_encoding_trans_keys = [
-	9, 13, 32, 40, 88, 98, 113, 120, 
-	55, 56, 10, 9, 32, 9, 13, 32, 
-	40, 88, 98, 113, 120, 55, 56, 98, 
-	105, 116, 10, 9, 32, 10, 9, 32, 
-	45, 33, 39, 42, 46, 48, 57, 65, 
-	90, 94, 126, 97, 105, 115, 101, 54, 
-	52, 110, 97, 114, 121, 117, 111, 116, 
-	101, 100, 45, 112, 114, 105, 110, 116, 
-	97, 98, 108, 101, 9, 13, 32, 40, 
-	41, 92, 1, 8, 11, 127, 9, 13, 
-	32, 40, 41, 92, 1, 8, 11, 127, 
-	9, 13, 32, 40, 41, 92, 1, 8, 
-	11, 127, 10, 9, 32, 0, 127, 9, 
-	13, 32, 40, 59, 115, 9, 13, 32, 
-	40, 59, 9, 13, 32, 40, 59, 9, 
-	13, 32, 40, 9, 13, 32, 40, 9, 
-	13, 32, 40, 59, 9, 13, 32, 40, 
-	59, 33, 39, 42, 46, 48, 57, 65, 
-	90, 94, 126, 0
+	0, 0, 9, 120, 10, 10, 
+	9, 32, 9, 120, 98, 
+	98, 105, 105, 116, 116, 
+	10, 10, 9, 32, 10, 10, 
+	9, 32, 45, 45, 33, 
+	126, 97, 105, 115, 115, 
+	101, 101, 54, 54, 52, 52, 
+	110, 110, 97, 97, 114, 
+	114, 121, 121, 117, 117, 
+	111, 111, 116, 116, 101, 101, 
+	100, 100, 45, 45, 112, 
+	112, 114, 114, 105, 105, 
+	110, 110, 116, 116, 97, 97, 
+	98, 98, 108, 108, 101, 
+	101, 1, 127, 1, 127, 
+	1, 127, 10, 10, 9, 32, 
+	0, 127, 9, 115, 9, 
+	59, 9, 59, 9, 40, 
+	9, 40, 9, 59, 9, 126, 
+	0, 0, 0
 ]
 
 class << self
-	attr_accessor :_content_transfer_encoding_single_lengths
-	private :_content_transfer_encoding_single_lengths, :_content_transfer_encoding_single_lengths=
+	attr_accessor :_content_transfer_encoding_key_spans
+	private :_content_transfer_encoding_key_spans, :_content_transfer_encoding_key_spans=
 end
-self._content_transfer_encoding_single_lengths = [
-	0, 8, 1, 2, 8, 1, 1, 1, 
-	1, 2, 1, 2, 1, 0, 2, 1, 
+self._content_transfer_encoding_key_spans = [
+	0, 112, 1, 24, 112, 1, 1, 1, 
+	1, 24, 1, 24, 1, 94, 9, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 6, 6, 
-	6, 1, 2, 0, 6, 5, 5, 4, 
-	4, 5, 5, 0
-]
-
-class << self
-	attr_accessor :_content_transfer_encoding_range_lengths
-	private :_content_transfer_encoding_range_lengths, :_content_transfer_encoding_range_lengths=
-end
-self._content_transfer_encoding_range_lengths = [
-	0, 1, 0, 0, 1, 0, 0, 0, 
-	0, 0, 0, 0, 0, 5, 0, 0, 
-	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 0, 2, 2, 
-	2, 0, 0, 1, 0, 0, 0, 0, 
-	0, 0, 5, 0
+	1, 1, 1, 1, 1, 1, 127, 127, 
+	127, 1, 24, 128, 107, 51, 51, 32, 
+	32, 51, 118, 0
 ]
 
 class << self
@@ -96,13 +69,13 @@ class << self
 	private :_content_transfer_encoding_index_offsets, :_content_transfer_encoding_index_offsets=
 end
 self._content_transfer_encoding_index_offsets = [
-	0, 0, 10, 12, 15, 25, 27, 29, 
-	31, 33, 36, 38, 41, 43, 49, 52, 
-	54, 56, 58, 60, 62, 64, 66, 68, 
-	70, 72, 74, 76, 78, 80, 82, 84, 
-	86, 88, 90, 92, 94, 96, 98, 107, 
-	116, 125, 127, 130, 132, 139, 145, 151, 
-	156, 161, 167, 178
+	0, 0, 113, 115, 140, 253, 255, 257, 
+	259, 261, 286, 288, 313, 315, 410, 420, 
+	422, 424, 426, 428, 430, 432, 434, 436, 
+	438, 440, 442, 444, 446, 448, 450, 452, 
+	454, 456, 458, 460, 462, 464, 466, 594, 
+	722, 850, 852, 877, 1006, 1114, 1166, 1218, 
+	1251, 1284, 1336, 1455
 ]
 
 class << self
@@ -110,29 +83,189 @@ class << self
 	private :_content_transfer_encoding_indicies, :_content_transfer_encoding_indicies=
 end
 self._content_transfer_encoding_indicies = [
-	0, 2, 0, 3, 5, 6, 7, 5, 
-	4, 1, 8, 1, 0, 0, 1, 9, 
-	10, 9, 11, 13, 14, 15, 13, 12, 
-	1, 16, 1, 17, 1, 18, 1, 19, 
-	1, 20, 20, 1, 21, 1, 22, 22, 
+	0, 1, 1, 1, 2, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 0, 
+	1, 1, 1, 1, 1, 1, 1, 3, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 4, 4, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 5, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 6, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	7, 1, 1, 1, 1, 1, 1, 5, 
+	1, 8, 1, 0, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 0, 1, 9, 1, 1, 1, 
+	10, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 9, 1, 1, 1, 1, 
+	1, 1, 1, 11, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 12, 12, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 13, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 14, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 15, 1, 1, 1, 
+	1, 1, 1, 13, 1, 16, 1, 17, 
+	1, 18, 1, 19, 1, 20, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 20, 1, 21, 1, 
+	22, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 22, 
 	1, 23, 1, 24, 24, 24, 24, 24, 
-	1, 25, 26, 1, 27, 1, 28, 1, 
+	24, 24, 1, 1, 24, 24, 24, 24, 
+	24, 1, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 1, 1, 1, 1, 
+	1, 1, 1, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 1, 1, 1, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 1, 25, 1, 1, 1, 1, 1, 
+	1, 1, 26, 1, 27, 1, 28, 1, 
 	29, 1, 18, 1, 30, 1, 31, 1, 
 	32, 1, 18, 1, 33, 1, 34, 1, 
 	35, 1, 36, 1, 37, 1, 38, 1, 
 	39, 1, 40, 1, 41, 1, 42, 1, 
 	43, 1, 44, 1, 45, 1, 46, 1, 
-	18, 1, 48, 49, 48, 50, 51, 52, 
-	47, 47, 1, 54, 55, 54, 56, 57, 
-	58, 53, 53, 1, 59, 60, 59, 56, 
-	61, 58, 53, 53, 1, 62, 1, 59, 
-	59, 1, 53, 1, 63, 64, 63, 65, 
-	66, 67, 1, 20, 68, 20, 69, 22, 
-	1, 70, 71, 70, 72, 73, 1, 22, 
-	74, 22, 75, 1, 73, 76, 73, 77, 
-	1, 63, 64, 63, 65, 66, 1, 63, 
-	64, 63, 65, 66, 24, 24, 24, 24, 
-	24, 1, 1, 0
+	18, 1, 47, 47, 47, 47, 47, 47, 
+	47, 47, 48, 1, 47, 47, 49, 47, 
+	47, 47, 47, 47, 47, 47, 47, 47, 
+	47, 47, 47, 47, 47, 47, 47, 47, 
+	47, 48, 47, 47, 47, 47, 47, 47, 
+	47, 50, 51, 47, 47, 47, 47, 47, 
+	47, 47, 47, 47, 47, 47, 47, 47, 
+	47, 47, 47, 47, 47, 47, 47, 47, 
+	47, 47, 47, 47, 47, 47, 47, 47, 
+	47, 47, 47, 47, 47, 47, 47, 47, 
+	47, 47, 47, 47, 47, 47, 47, 47, 
+	47, 47, 47, 47, 47, 52, 47, 47, 
+	47, 47, 47, 47, 47, 47, 47, 47, 
+	47, 47, 47, 47, 47, 47, 47, 47, 
+	47, 47, 47, 47, 47, 47, 47, 47, 
+	47, 47, 47, 47, 47, 47, 47, 47, 
+	47, 1, 53, 53, 53, 53, 53, 53, 
+	53, 53, 54, 1, 53, 53, 55, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 54, 53, 53, 53, 53, 53, 53, 
+	53, 56, 57, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 58, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 1, 53, 53, 53, 53, 53, 53, 
+	53, 53, 59, 1, 53, 53, 60, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 59, 53, 53, 53, 53, 53, 53, 
+	53, 56, 61, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 58, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 1, 62, 1, 59, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 59, 1, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 53, 53, 53, 
+	53, 53, 53, 53, 53, 1, 63, 1, 
+	1, 1, 64, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 63, 1, 1, 
+	1, 1, 1, 1, 1, 65, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	66, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	67, 1, 20, 1, 1, 1, 68, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 20, 1, 1, 1, 1, 1, 1, 
+	1, 69, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 22, 1, 70, 1, 
+	1, 1, 71, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 70, 1, 1, 
+	1, 1, 1, 1, 1, 72, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	73, 1, 22, 1, 1, 1, 74, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 22, 1, 1, 1, 1, 1, 1, 
+	1, 75, 1, 73, 1, 1, 1, 76, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 73, 1, 1, 1, 1, 1, 
+	1, 1, 77, 1, 63, 1, 1, 1, 
+	64, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 63, 1, 1, 1, 1, 
+	1, 1, 1, 65, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 66, 1, 
+	63, 1, 1, 1, 64, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 63, 
+	24, 24, 24, 24, 24, 24, 24, 65, 
+	1, 24, 24, 24, 24, 24, 1, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 1, 66, 1, 1, 1, 1, 1, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 1, 1, 1, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 1, 1, 
+	0
 ]
 
 class << self
@@ -217,7 +350,7 @@ self.content_transfer_encoding_en_main = 1;
           stack = []
 
           
-# line 221 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
+# line 354 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
 begin
 	p ||= 0
 	pe ||= data.length
@@ -227,9 +360,10 @@ end
 
 # line 69 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
           
-# line 231 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
-begin
-	_klen, _trans, _keys, _acts, _nacts = nil
+# line 364 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
+begin # ragel flat
+	testEof = false
+	_slen, _trans, _keys, _inds, _acts, _nacts = nil
 	_goto_level = 0
 	_resume = 10
 	_eof_trans = 15
@@ -249,56 +383,17 @@ begin
 	end
 	end
 	if _goto_level <= _resume
-	_keys = _content_transfer_encoding_key_offsets[cs]
-	_trans = _content_transfer_encoding_index_offsets[cs]
-	_klen = _content_transfer_encoding_single_lengths[cs]
-	_break_match = false
-	
-	begin
-	  if _klen > 0
-	     _lower = _keys
-	     _upper = _keys + _klen - 1
-
-	     loop do
-	        break if _upper < _lower
-	        _mid = _lower + ( (_upper - _lower) >> 1 )
-
-	        if data[p].ord < _content_transfer_encoding_trans_keys[_mid]
-	           _upper = _mid - 1
-	        elsif data[p].ord > _content_transfer_encoding_trans_keys[_mid]
-	           _lower = _mid + 1
-	        else
-	           _trans += (_mid - _keys)
-	           _break_match = true
-	           break
-	        end
-	     end # loop
-	     break if _break_match
-	     _keys += _klen
-	     _trans += _klen
-	  end
-	  _klen = _content_transfer_encoding_range_lengths[cs]
-	  if _klen > 0
-	     _lower = _keys
-	     _upper = _keys + (_klen << 1) - 2
-	     loop do
-	        break if _upper < _lower
-	        _mid = _lower + (((_upper-_lower) >> 1) & ~1)
-	        if data[p].ord < _content_transfer_encoding_trans_keys[_mid]
-	          _upper = _mid - 2
-	        elsif data[p].ord > _content_transfer_encoding_trans_keys[_mid+1]
-	          _lower = _mid + 2
-	        else
-	          _trans += ((_mid - _keys) >> 1)
-	          _break_match = true
-	          break
-	        end
-	     end # loop
-	     break if _break_match
-	     _trans += _klen
-	  end
-	end while false
-	_trans = _content_transfer_encoding_indicies[_trans]
+	_keys = cs << 1
+	_inds = _content_transfer_encoding_index_offsets[cs]
+	_slen = _content_transfer_encoding_key_spans[cs]
+	_trans = if (   _slen > 0 && 
+			_content_transfer_encoding_trans_keys[_keys] <= data[p].ord && 
+			data[p].ord <= _content_transfer_encoding_trans_keys[_keys + 1] 
+		    ) then
+			_content_transfer_encoding_indicies[ _inds + data[p].ord - _content_transfer_encoding_trans_keys[_keys] ] 
+		 else 
+			_content_transfer_encoding_indicies[ _inds + _slen ]
+		 end
 	cs = _content_transfer_encoding_trans_targs[_trans]
 	if _content_transfer_encoding_trans_actions[_trans] != 0
 		_acts = _content_transfer_encoding_trans_actions[_trans]
@@ -308,27 +403,27 @@ begin
 			_nacts -= 1
 			_acts += 1
 			case _content_transfer_encoding_actions[_acts - 1]
-when 0 then
+	when 0 then
 # line 17 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 		begin
 		end
-when 1 then
+	when 1 then
 # line 18 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 		begin
 		end
-when 2 then
+	when 2 then
 # line 19 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 		begin
 		end
-when 3 then
+	when 3 then
 # line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 		begin
  mark = p 		end
-when 4 then
+	when 4 then
 # line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 		begin
  content_transfer_encoding.encoding = data[mark..(p-1)].downcase 		end
-when 5 then
+	when 5 then
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -340,7 +435,7 @@ when 5 then
 		break
 	end
  		end
-when 6 then
+	when 6 then
 # line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -351,7 +446,7 @@ when 6 then
 		break
 	end
  		end
-# line 355 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
+# line 450 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
 			end # action switch
 		end
 	end
@@ -372,28 +467,30 @@ when 6 then
 	end
 	if _goto_level <= _test_eof
 	if p == eof
+	begin
 	__acts = _content_transfer_encoding_eof_actions[cs]
-	__nacts =  _content_transfer_encoding_actions[__acts]
+	__nacts = _content_transfer_encoding_actions[__acts]
 	__acts += 1
-	while __nacts > 0
+	while ( __nacts > 0 ) 
 		__nacts -= 1
 		__acts += 1
-		case _content_transfer_encoding_actions[__acts - 1]
-when 2 then
+		case ( _content_transfer_encoding_actions[__acts-1] ) 
+	when 2 then
 # line 19 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 		begin
 		end
-when 4 then
+	when 4 then
 # line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 		begin
  content_transfer_encoding.encoding = data[mark..(p-1)].downcase 		end
-# line 391 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
-		end # eof action switch
+# line 487 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
+		end
 	end
 	if _trigger_goto
 		next
 	end
-end
+	end
+	end
 	end
 	if _goto_level <= _out
 		break
@@ -404,7 +501,7 @@ end
 # line 70 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 
           if p == eof && cs >= 
-# line 408 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
+# line 505 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
 44
 # line 71 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 

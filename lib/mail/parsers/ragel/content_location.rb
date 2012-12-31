@@ -26,69 +26,33 @@ self._content_location_actions = [
 ]
 
 class << self
-	attr_accessor :_content_location_key_offsets
-	private :_content_location_key_offsets, :_content_location_key_offsets=
-end
-self._content_location_key_offsets = [
-	0, 0, 16, 17, 19, 20, 22, 29, 
-	30, 32, 34, 35, 37, 38, 40, 56, 
-	66, 76, 86, 87, 89, 91, 106, 110, 
-	114, 136, 147, 157, 167, 189, 204
-]
-
-class << self
 	attr_accessor :_content_location_trans_keys
 	private :_content_location_trans_keys, :_content_location_trans_keys=
 end
 self._content_location_trans_keys = [
-	9, 13, 32, 34, 40, 61, 33, 39, 
-	42, 46, 48, 57, 65, 90, 94, 126, 
-	10, 9, 32, 10, 9, 32, 13, 34, 
-	92, 1, 9, 11, 127, 10, 9, 32, 
-	-128, -1, 10, 9, 32, 10, 9, 32, 
-	9, 13, 32, 34, 40, 61, 33, 39, 
-	42, 46, 48, 57, 65, 90, 94, 126, 
-	9, 13, 32, 40, 41, 92, 1, 8, 
-	11, 127, 9, 13, 32, 40, 41, 92, 
-	1, 8, 11, 127, 9, 13, 32, 40, 
-	41, 92, 1, 8, 11, 127, 10, 9, 
-	32, 0, 127, 9, 13, 32, 40, 61, 
-	33, 39, 42, 46, 48, 57, 65, 90, 
-	94, 126, 9, 13, 32, 40, 9, 13, 
-	32, 40, 9, 13, 32, 34, 40, 41, 
-	47, 61, 91, 92, 93, 127, 1, 8, 
-	11, 31, 33, 57, 58, 64, 65, 126, 
-	9, 13, 32, 40, 92, 1, 8, 11, 
-	33, 35, 127, 9, 13, 32, 34, 40, 
-	92, 1, 8, 11, 127, 9, 13, 32, 
-	34, 40, 92, 1, 8, 11, 127, 9, 
-	13, 32, 34, 40, 41, 47, 61, 91, 
-	92, 93, 127, 1, 8, 11, 31, 33, 
-	57, 58, 64, 65, 126, 9, 13, 32, 
-	40, 61, 33, 39, 42, 46, 48, 57, 
-	65, 90, 94, 126, 0
+	0, 0, 9, 126, 10, 10, 
+	9, 32, 10, 10, 9, 
+	32, 1, 127, 10, 10, 
+	9, 32, -128, -1, 10, 10, 
+	9, 32, 10, 10, 9, 
+	32, 9, 126, 1, 127, 
+	1, 127, 1, 127, 10, 10, 
+	9, 32, 0, 127, 9, 
+	126, 9, 40, 9, 40, 
+	1, 127, 1, 127, 1, 127, 
+	1, 127, 1, 127, 9, 
+	126, 0, 0, 0
 ]
 
 class << self
-	attr_accessor :_content_location_single_lengths
-	private :_content_location_single_lengths, :_content_location_single_lengths=
+	attr_accessor :_content_location_key_spans
+	private :_content_location_key_spans, :_content_location_key_spans=
 end
-self._content_location_single_lengths = [
-	0, 6, 1, 2, 1, 2, 3, 1, 
-	2, 0, 1, 2, 1, 2, 6, 6, 
-	6, 6, 1, 2, 0, 5, 4, 4, 
-	12, 5, 6, 6, 12, 5, 0
-]
-
-class << self
-	attr_accessor :_content_location_range_lengths
-	private :_content_location_range_lengths, :_content_location_range_lengths=
-end
-self._content_location_range_lengths = [
-	0, 5, 0, 0, 0, 0, 2, 0, 
-	0, 1, 0, 0, 0, 0, 5, 2, 
-	2, 2, 0, 0, 1, 5, 0, 0, 
-	5, 3, 2, 2, 5, 5, 0
+self._content_location_key_spans = [
+	0, 118, 1, 24, 1, 24, 127, 1, 
+	24, 128, 1, 24, 1, 24, 118, 127, 
+	127, 127, 1, 24, 128, 118, 32, 32, 
+	127, 127, 127, 127, 127, 118, 0
 ]
 
 class << self
@@ -96,10 +60,10 @@ class << self
 	private :_content_location_index_offsets, :_content_location_index_offsets=
 end
 self._content_location_index_offsets = [
-	0, 0, 12, 14, 17, 19, 22, 28, 
-	30, 33, 35, 37, 40, 42, 45, 57, 
-	66, 75, 84, 86, 89, 91, 102, 107, 
-	112, 130, 139, 148, 157, 175, 186
+	0, 0, 119, 121, 146, 148, 173, 301, 
+	303, 328, 457, 459, 484, 486, 511, 630, 
+	758, 886, 1014, 1016, 1041, 1170, 1289, 1322, 
+	1355, 1483, 1611, 1739, 1867, 1995, 2114
 ]
 
 class << self
@@ -107,29 +71,270 @@ class << self
 	private :_content_location_indicies, :_content_location_indicies=
 end
 self._content_location_indicies = [
-	0, 2, 0, 4, 5, 3, 3, 3, 
-	3, 3, 3, 1, 6, 1, 0, 0, 
-	1, 7, 1, 8, 8, 1, 10, 11, 
-	12, 9, 9, 1, 13, 1, 9, 9, 
-	1, 1, 9, 14, 1, 15, 15, 1, 
-	16, 1, 17, 17, 1, 18, 19, 18, 
-	21, 22, 20, 20, 20, 20, 20, 20, 
-	1, 24, 25, 24, 26, 27, 28, 23, 
-	23, 1, 30, 31, 30, 32, 33, 34, 
-	29, 29, 1, 35, 36, 35, 32, 37, 
-	34, 29, 29, 1, 38, 1, 35, 35, 
-	1, 29, 1, 39, 40, 39, 42, 41, 
-	41, 41, 41, 41, 41, 1, 8, 43, 
-	8, 44, 1, 45, 46, 45, 47, 1, 
-	49, 50, 49, 41, 52, 48, 48, 51, 
-	48, 53, 48, 48, 48, 48, 51, 48, 
-	51, 1, 15, 54, 15, 55, 12, 9, 
-	9, 9, 1, 56, 57, 56, 11, 58, 
-	12, 9, 9, 1, 17, 59, 17, 11, 
-	55, 12, 9, 9, 1, 60, 61, 60, 
-	63, 64, 9, 9, 62, 9, 12, 9, 
-	9, 9, 9, 62, 9, 62, 1, 39, 
-	40, 39, 65, 41, 41, 41, 41, 41, 
+	0, 1, 1, 1, 2, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 0, 
+	3, 4, 3, 3, 3, 3, 3, 5, 
+	1, 3, 3, 3, 3, 3, 1, 3, 
+	3, 3, 3, 3, 3, 3, 3, 3, 
+	3, 1, 1, 1, 3, 1, 1, 1, 
+	3, 3, 3, 3, 3, 3, 3, 3, 
+	3, 3, 3, 3, 3, 3, 3, 3, 
+	3, 3, 3, 3, 3, 3, 3, 3, 
+	3, 3, 1, 1, 1, 3, 3, 3, 
+	3, 3, 3, 3, 3, 3, 3, 3, 
+	3, 3, 3, 3, 3, 3, 3, 3, 
+	3, 3, 3, 3, 3, 3, 3, 3, 
+	3, 3, 3, 3, 3, 3, 1, 6, 
+	1, 0, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	0, 1, 7, 1, 8, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 8, 1, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 1, 9, 
+	9, 10, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 11, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	12, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 1, 13, 1, 9, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 9, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	9, 14, 1, 15, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 15, 1, 16, 1, 17, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 17, 1, 18, 
+	1, 1, 1, 19, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 18, 20, 
+	21, 20, 20, 20, 20, 20, 22, 1, 
+	20, 20, 20, 20, 20, 1, 20, 20, 
+	20, 20, 20, 20, 20, 20, 20, 20, 
+	1, 1, 1, 20, 1, 1, 1, 20, 
+	20, 20, 20, 20, 20, 20, 20, 20, 
+	20, 20, 20, 20, 20, 20, 20, 20, 
+	20, 20, 20, 20, 20, 20, 20, 20, 
+	20, 1, 1, 1, 20, 20, 20, 20, 
+	20, 20, 20, 20, 20, 20, 20, 20, 
+	20, 20, 20, 20, 20, 20, 20, 20, 
+	20, 20, 20, 20, 20, 20, 20, 20, 
+	20, 20, 20, 20, 20, 1, 23, 23, 
+	23, 23, 23, 23, 23, 23, 24, 1, 
+	23, 23, 25, 23, 23, 23, 23, 23, 
+	23, 23, 23, 23, 23, 23, 23, 23, 
+	23, 23, 23, 23, 23, 24, 23, 23, 
+	23, 23, 23, 23, 23, 26, 27, 23, 
+	23, 23, 23, 23, 23, 23, 23, 23, 
+	23, 23, 23, 23, 23, 23, 23, 23, 
+	23, 23, 23, 23, 23, 23, 23, 23, 
+	23, 23, 23, 23, 23, 23, 23, 23, 
+	23, 23, 23, 23, 23, 23, 23, 23, 
+	23, 23, 23, 23, 23, 23, 23, 23, 
+	23, 28, 23, 23, 23, 23, 23, 23, 
+	23, 23, 23, 23, 23, 23, 23, 23, 
+	23, 23, 23, 23, 23, 23, 23, 23, 
+	23, 23, 23, 23, 23, 23, 23, 23, 
+	23, 23, 23, 23, 23, 1, 29, 29, 
+	29, 29, 29, 29, 29, 29, 30, 1, 
+	29, 29, 31, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 30, 29, 29, 
+	29, 29, 29, 29, 29, 32, 33, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 34, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 1, 29, 29, 
+	29, 29, 29, 29, 29, 29, 35, 1, 
+	29, 29, 36, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 35, 29, 29, 
+	29, 29, 29, 29, 29, 32, 37, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 34, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 1, 38, 1, 
+	35, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 35, 
+	1, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 29, 29, 29, 29, 29, 29, 29, 
+	29, 1, 39, 1, 1, 1, 40, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 39, 41, 41, 41, 41, 41, 41, 
+	41, 42, 1, 41, 41, 41, 41, 41, 
+	1, 41, 41, 41, 41, 41, 41, 41, 
+	41, 41, 41, 1, 1, 1, 41, 1, 
+	1, 1, 41, 41, 41, 41, 41, 41, 
+	41, 41, 41, 41, 41, 41, 41, 41, 
+	41, 41, 41, 41, 41, 41, 41, 41, 
+	41, 41, 41, 41, 1, 1, 1, 41, 
+	41, 41, 41, 41, 41, 41, 41, 41, 
+	41, 41, 41, 41, 41, 41, 41, 41, 
+	41, 41, 41, 41, 41, 41, 41, 41, 
+	41, 41, 41, 41, 41, 41, 41, 41, 
+	1, 8, 1, 1, 1, 43, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	8, 1, 1, 1, 1, 1, 1, 1, 
+	44, 1, 45, 1, 1, 1, 46, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 45, 1, 1, 1, 1, 1, 1, 
+	1, 47, 1, 48, 48, 48, 48, 48, 
+	48, 48, 48, 49, 1, 48, 48, 50, 
+	48, 48, 48, 48, 48, 48, 48, 48, 
+	48, 48, 48, 48, 48, 48, 48, 48, 
+	48, 48, 49, 51, 41, 51, 51, 51, 
+	51, 51, 52, 48, 51, 51, 51, 51, 
+	51, 48, 51, 51, 51, 51, 51, 51, 
+	51, 51, 51, 51, 48, 48, 48, 51, 
+	48, 48, 48, 51, 51, 51, 51, 51, 
+	51, 51, 51, 51, 51, 51, 51, 51, 
+	51, 51, 51, 51, 51, 51, 51, 51, 
+	51, 51, 51, 51, 51, 48, 53, 48, 
+	51, 51, 51, 51, 51, 51, 51, 51, 
+	51, 51, 51, 51, 51, 51, 51, 51, 
+	51, 51, 51, 51, 51, 51, 51, 51, 
+	51, 51, 51, 51, 51, 51, 51, 51, 
+	51, 48, 1, 9, 9, 9, 9, 9, 
+	9, 9, 9, 15, 1, 9, 9, 54, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 15, 9, 1, 9, 9, 9, 
+	9, 9, 55, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 12, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 1, 9, 9, 9, 9, 9, 
+	9, 9, 9, 56, 1, 9, 9, 57, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 56, 9, 11, 9, 9, 9, 
+	9, 9, 58, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 12, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 1, 9, 9, 9, 9, 9, 
+	9, 9, 9, 17, 1, 9, 9, 59, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 17, 9, 11, 9, 9, 9, 
+	9, 9, 55, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 12, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 1, 9, 9, 9, 9, 9, 
+	9, 9, 9, 60, 1, 9, 9, 61, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 60, 62, 63, 62, 62, 62, 
+	62, 62, 64, 9, 62, 62, 62, 62, 
+	62, 9, 62, 62, 62, 62, 62, 62, 
+	62, 62, 62, 62, 9, 9, 9, 62, 
+	9, 9, 9, 62, 62, 62, 62, 62, 
+	62, 62, 62, 62, 62, 62, 62, 62, 
+	62, 62, 62, 62, 62, 62, 62, 62, 
+	62, 62, 62, 62, 62, 9, 12, 9, 
+	62, 62, 62, 62, 62, 62, 62, 62, 
+	62, 62, 62, 62, 62, 62, 62, 62, 
+	62, 62, 62, 62, 62, 62, 62, 62, 
+	62, 62, 62, 62, 62, 62, 62, 62, 
+	62, 9, 1, 39, 1, 1, 1, 40, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 39, 41, 41, 41, 41, 41, 
+	41, 41, 65, 1, 41, 41, 41, 41, 
+	41, 1, 41, 41, 41, 41, 41, 41, 
+	41, 41, 41, 41, 1, 1, 1, 41, 
+	1, 1, 1, 41, 41, 41, 41, 41, 
+	41, 41, 41, 41, 41, 41, 41, 41, 
+	41, 41, 41, 41, 41, 41, 41, 41, 
+	41, 41, 41, 41, 41, 1, 1, 1, 
+	41, 41, 41, 41, 41, 41, 41, 41, 
+	41, 41, 41, 41, 41, 41, 41, 41, 
+	41, 41, 41, 41, 41, 41, 41, 41, 
+	41, 41, 41, 41, 41, 41, 41, 41, 
 	41, 1, 1, 0
 ]
 
@@ -210,7 +415,7 @@ self.content_location_en_main = 1;
           stack = []
 
           
-# line 214 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
+# line 419 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
 begin
 	p ||= 0
 	pe ||= data.length
@@ -220,9 +425,10 @@ end
 
 # line 69 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
           
-# line 224 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
-begin
-	_klen, _trans, _keys, _acts, _nacts = nil
+# line 429 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
+begin # ragel flat
+	testEof = false
+	_slen, _trans, _keys, _inds, _acts, _nacts = nil
 	_goto_level = 0
 	_resume = 10
 	_eof_trans = 15
@@ -242,56 +448,17 @@ begin
 	end
 	end
 	if _goto_level <= _resume
-	_keys = _content_location_key_offsets[cs]
-	_trans = _content_location_index_offsets[cs]
-	_klen = _content_location_single_lengths[cs]
-	_break_match = false
-	
-	begin
-	  if _klen > 0
-	     _lower = _keys
-	     _upper = _keys + _klen - 1
-
-	     loop do
-	        break if _upper < _lower
-	        _mid = _lower + ( (_upper - _lower) >> 1 )
-
-	        if data[p].ord < _content_location_trans_keys[_mid]
-	           _upper = _mid - 1
-	        elsif data[p].ord > _content_location_trans_keys[_mid]
-	           _lower = _mid + 1
-	        else
-	           _trans += (_mid - _keys)
-	           _break_match = true
-	           break
-	        end
-	     end # loop
-	     break if _break_match
-	     _keys += _klen
-	     _trans += _klen
-	  end
-	  _klen = _content_location_range_lengths[cs]
-	  if _klen > 0
-	     _lower = _keys
-	     _upper = _keys + (_klen << 1) - 2
-	     loop do
-	        break if _upper < _lower
-	        _mid = _lower + (((_upper-_lower) >> 1) & ~1)
-	        if data[p].ord < _content_location_trans_keys[_mid]
-	          _upper = _mid - 2
-	        elsif data[p].ord > _content_location_trans_keys[_mid+1]
-	          _lower = _mid + 2
-	        else
-	          _trans += ((_mid - _keys) >> 1)
-	          _break_match = true
-	          break
-	        end
-	     end # loop
-	     break if _break_match
-	     _trans += _klen
-	  end
-	end while false
-	_trans = _content_location_indicies[_trans]
+	_keys = cs << 1
+	_inds = _content_location_index_offsets[cs]
+	_slen = _content_location_key_spans[cs]
+	_trans = if (   _slen > 0 && 
+			_content_location_trans_keys[_keys] <= data[p].ord && 
+			data[p].ord <= _content_location_trans_keys[_keys + 1] 
+		    ) then
+			_content_location_indicies[ _inds + data[p].ord - _content_location_trans_keys[_keys] ] 
+		 else 
+			_content_location_indicies[ _inds + _slen ]
+		 end
 	cs = _content_location_trans_targs[_trans]
 	if _content_location_trans_actions[_trans] != 0
 		_acts = _content_location_trans_actions[_trans]
@@ -301,39 +468,39 @@ begin
 			_nacts -= 1
 			_acts += 1
 			case _content_location_actions[_acts - 1]
-when 0 then
+	when 0 then
 # line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
 		end
-when 1 then
+	when 1 then
 # line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
 		end
-when 2 then
+	when 2 then
 # line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
 		end
-when 3 then
+	when 3 then
 # line 39 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
  mark = p 		end
-when 4 then
+	when 4 then
 # line 40 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
 
     mark_quoted = p
   		end
-when 5 then
+	when 5 then
 # line 43 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
  
     content_location.location = data[mark_quoted..(p-1)] 
   		end
-when 6 then
+	when 6 then
 # line 46 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
  content_location.location = data[mark..(p-1)] 		end
-when 7 then
+	when 7 then
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -345,7 +512,7 @@ when 7 then
 		break
 	end
  		end
-when 8 then
+	when 8 then
 # line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -356,7 +523,7 @@ when 8 then
 		break
 	end
  		end
-# line 360 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
+# line 527 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
 			end # action switch
 		end
 	end
@@ -377,28 +544,30 @@ when 8 then
 	end
 	if _goto_level <= _test_eof
 	if p == eof
+	begin
 	__acts = _content_location_eof_actions[cs]
-	__nacts =  _content_location_actions[__acts]
+	__nacts = _content_location_actions[__acts]
 	__acts += 1
-	while __nacts > 0
+	while ( __nacts > 0 ) 
 		__nacts -= 1
 		__acts += 1
-		case _content_location_actions[__acts - 1]
-when 2 then
+		case ( _content_location_actions[__acts-1] ) 
+	when 2 then
 # line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
 		end
-when 6 then
+	when 6 then
 # line 46 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
  content_location.location = data[mark..(p-1)] 		end
-# line 396 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
-		end # eof action switch
+# line 564 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
+		end
 	end
 	if _trigger_goto
 		next
 	end
-end
+	end
+	end
 	end
 	if _goto_level <= _out
 		break
@@ -409,7 +578,7 @@ end
 # line 70 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 
           if p == eof && cs >= 
-# line 413 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
+# line 582 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
 21
 # line 71 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 

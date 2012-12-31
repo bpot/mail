@@ -27,71 +27,33 @@ self._phrase_lists_actions = [
 ]
 
 class << self
-	attr_accessor :_phrase_lists_key_offsets
-	private :_phrase_lists_key_offsets, :_phrase_lists_key_offsets=
-end
-self._phrase_lists_key_offsets = [
-	0, 0, 18, 36, 37, 39, 40, 42, 
-	52, 59, 60, 62, 64, 74, 75, 77, 
-	95, 96, 98, 116, 126, 136, 146, 147, 
-	149, 151, 168, 185, 202, 219
-]
-
-class << self
 	attr_accessor :_phrase_lists_trans_keys
 	private :_phrase_lists_trans_keys, :_phrase_lists_trans_keys=
 end
 self._phrase_lists_trans_keys = [
-	9, 13, 32, 34, 40, 46, 61, 64, 
-	33, 39, 42, 43, 45, 57, 63, 90, 
-	94, 126, 9, 13, 32, 34, 40, 45, 
-	61, 63, 33, 39, 42, 43, 47, 57, 
-	65, 90, 94, 126, 10, 9, 32, 10, 
-	9, 32, 9, 13, 32, 92, 1, 8, 
-	11, 33, 35, 127, 13, 34, 92, 1, 
-	9, 11, 127, 10, 9, 32, -128, -1, 
-	9, 13, 32, 92, 1, 8, 11, 33, 
-	35, 127, 10, 9, 32, 9, 13, 32, 
-	34, 40, 46, 61, 64, 33, 39, 42, 
-	43, 45, 57, 63, 90, 94, 126, 10, 
-	9, 32, 9, 13, 32, 34, 40, 45, 
-	61, 63, 33, 39, 42, 43, 47, 57, 
-	65, 90, 94, 126, 9, 13, 32, 40, 
-	41, 92, 1, 8, 11, 127, 9, 13, 
-	32, 40, 41, 92, 1, 8, 11, 127, 
-	9, 13, 32, 40, 41, 92, 1, 8, 
-	11, 127, 10, 9, 32, 0, 127, 9, 
-	13, 32, 34, 40, 44, 46, 61, 64, 
-	33, 39, 42, 57, 63, 90, 94, 126, 
-	9, 13, 32, 34, 40, 44, 46, 61, 
-	64, 33, 39, 42, 57, 63, 90, 94, 
-	126, 9, 13, 32, 34, 40, 44, 46, 
-	61, 64, 33, 39, 42, 57, 63, 90, 
-	94, 126, 9, 13, 32, 34, 40, 44, 
-	46, 61, 64, 33, 39, 42, 57, 63, 
-	90, 94, 126, 0
+	0, 0, 9, 126, 9, 126, 
+	10, 10, 9, 32, 10, 
+	10, 9, 32, 1, 127, 
+	1, 127, 10, 10, 9, 32, 
+	-128, -1, 1, 127, 10, 
+	10, 9, 32, 9, 126, 
+	10, 10, 9, 32, 9, 126, 
+	1, 127, 1, 127, 1, 
+	127, 10, 10, 9, 32, 
+	0, 127, 9, 126, 9, 126, 
+	9, 126, 9, 126, 0, 
+	0, 0
 ]
 
 class << self
-	attr_accessor :_phrase_lists_single_lengths
-	private :_phrase_lists_single_lengths, :_phrase_lists_single_lengths=
+	attr_accessor :_phrase_lists_key_spans
+	private :_phrase_lists_key_spans, :_phrase_lists_key_spans=
 end
-self._phrase_lists_single_lengths = [
-	0, 8, 8, 1, 2, 1, 2, 4, 
-	3, 1, 2, 0, 4, 1, 2, 8, 
-	1, 2, 8, 6, 6, 6, 1, 2, 
-	0, 9, 9, 9, 9, 0
-]
-
-class << self
-	attr_accessor :_phrase_lists_range_lengths
-	private :_phrase_lists_range_lengths, :_phrase_lists_range_lengths=
-end
-self._phrase_lists_range_lengths = [
-	0, 5, 5, 0, 0, 0, 0, 3, 
-	2, 0, 0, 1, 3, 0, 0, 5, 
-	0, 0, 5, 2, 2, 2, 0, 0, 
-	1, 4, 4, 4, 4, 0
+self._phrase_lists_key_spans = [
+	0, 118, 118, 1, 24, 1, 24, 127, 
+	127, 1, 24, 128, 127, 1, 24, 118, 
+	1, 24, 118, 127, 127, 127, 1, 24, 
+	128, 118, 118, 118, 118, 0
 ]
 
 class << self
@@ -99,10 +61,10 @@ class << self
 	private :_phrase_lists_index_offsets, :_phrase_lists_index_offsets=
 end
 self._phrase_lists_index_offsets = [
-	0, 0, 14, 28, 30, 33, 35, 38, 
-	46, 52, 54, 57, 59, 67, 69, 72, 
-	86, 88, 91, 105, 114, 123, 132, 134, 
-	137, 139, 153, 167, 181, 195
+	0, 0, 119, 238, 240, 265, 267, 292, 
+	420, 548, 550, 575, 704, 832, 834, 859, 
+	978, 980, 1005, 1124, 1252, 1380, 1508, 1510, 
+	1535, 1664, 1783, 1902, 2021, 2140
 ]
 
 class << self
@@ -110,31 +72,274 @@ class << self
 	private :_phrase_lists_indicies, :_phrase_lists_indicies=
 end
 self._phrase_lists_indicies = [
-	0, 2, 0, 4, 5, 6, 3, 6, 
-	3, 3, 3, 3, 3, 1, 7, 8, 
-	7, 10, 11, 9, 9, 9, 9, 9, 
-	9, 9, 9, 1, 12, 1, 7, 7, 
-	1, 13, 1, 14, 14, 1, 16, 17, 
-	16, 18, 15, 15, 15, 1, 20, 21, 
-	22, 19, 19, 1, 23, 1, 19, 19, 
-	1, 1, 19, 24, 25, 24, 22, 19, 
-	19, 19, 1, 26, 1, 24, 24, 1, 
-	27, 28, 27, 4, 5, 6, 3, 6, 
-	3, 3, 3, 3, 3, 1, 29, 1, 
-	30, 30, 1, 31, 32, 31, 34, 35, 
+	0, 1, 1, 1, 2, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 0, 
+	3, 4, 3, 3, 3, 3, 3, 5, 
+	1, 3, 3, 1, 3, 6, 3, 3, 
+	3, 3, 3, 3, 3, 3, 3, 3, 
+	3, 1, 1, 1, 3, 1, 3, 6, 
+	3, 3, 3, 3, 3, 3, 3, 3, 
+	3, 3, 3, 3, 3, 3, 3, 3, 
+	3, 3, 3, 3, 3, 3, 3, 3, 
+	3, 3, 1, 1, 1, 3, 3, 3, 
+	3, 3, 3, 3, 3, 3, 3, 3, 
+	3, 3, 3, 3, 3, 3, 3, 3, 
+	3, 3, 3, 3, 3, 3, 3, 3, 
+	3, 3, 3, 3, 3, 3, 1, 7, 
+	1, 1, 1, 8, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 7, 9, 
+	10, 9, 9, 9, 9, 9, 11, 1, 
+	9, 9, 1, 9, 1, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	1, 1, 1, 9, 1, 9, 1, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 1, 1, 1, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 1, 12, 1, 
+	7, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 7, 
+	1, 13, 1, 14, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 14, 1, 15, 15, 15, 15, 
+	15, 15, 15, 15, 16, 1, 15, 15, 
+	17, 15, 15, 15, 15, 15, 15, 15, 
+	15, 15, 15, 15, 15, 15, 15, 15, 
+	15, 15, 15, 16, 15, 1, 15, 15, 
+	15, 15, 15, 15, 15, 15, 15, 15, 
+	15, 15, 15, 15, 15, 15, 15, 15, 
+	15, 15, 15, 15, 15, 15, 15, 15, 
+	15, 15, 15, 15, 15, 15, 15, 15, 
+	15, 15, 15, 15, 15, 15, 15, 15, 
+	15, 15, 15, 15, 15, 15, 15, 15, 
+	15, 15, 15, 15, 15, 15, 15, 18, 
+	15, 15, 15, 15, 15, 15, 15, 15, 
+	15, 15, 15, 15, 15, 15, 15, 15, 
+	15, 15, 15, 15, 15, 15, 15, 15, 
+	15, 15, 15, 15, 15, 15, 15, 15, 
+	15, 15, 15, 1, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 1, 19, 19, 
+	20, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 21, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 22, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 1, 23, 1, 19, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 19, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	24, 1, 19, 19, 25, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 24, 
+	19, 1, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 22, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 1, 
+	26, 1, 24, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 24, 1, 27, 1, 1, 1, 28, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 27, 3, 4, 3, 3, 3, 
+	3, 3, 5, 1, 3, 3, 1, 3, 
+	6, 3, 3, 3, 3, 3, 3, 3, 
+	3, 3, 3, 3, 1, 1, 1, 3, 
+	1, 3, 6, 3, 3, 3, 3, 3, 
+	3, 3, 3, 3, 3, 3, 3, 3, 
+	3, 3, 3, 3, 3, 3, 3, 3, 
+	3, 3, 3, 3, 3, 1, 1, 1, 
+	3, 3, 3, 3, 3, 3, 3, 3, 
+	3, 3, 3, 3, 3, 3, 3, 3, 
+	3, 3, 3, 3, 3, 3, 3, 3, 
+	3, 3, 3, 3, 3, 3, 3, 3, 
+	3, 1, 29, 1, 30, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 30, 1, 31, 1, 1, 
+	1, 32, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 31, 33, 34, 33, 
+	33, 33, 33, 33, 35, 1, 33, 33, 
+	1, 33, 1, 33, 33, 33, 33, 33, 
+	33, 33, 33, 33, 33, 33, 1, 1, 
+	1, 33, 1, 33, 1, 33, 33, 33, 
 	33, 33, 33, 33, 33, 33, 33, 33, 
-	1, 37, 38, 37, 39, 40, 41, 36, 
-	36, 1, 43, 44, 43, 45, 46, 47, 
-	42, 42, 1, 48, 49, 48, 45, 50, 
-	47, 42, 42, 1, 51, 1, 48, 48, 
-	1, 42, 1, 52, 53, 52, 55, 56, 
-	57, 58, 54, 58, 54, 54, 54, 54, 
-	1, 14, 59, 14, 10, 60, 61, 62, 
-	9, 62, 9, 9, 9, 9, 1, 63, 
-	64, 63, 34, 65, 66, 67, 33, 67, 
-	33, 33, 33, 33, 1, 7, 8, 7, 
-	10, 11, 61, 62, 9, 62, 9, 9, 
-	9, 9, 1, 1, 0
+	33, 33, 33, 33, 33, 33, 33, 33, 
+	33, 33, 33, 33, 33, 33, 33, 1, 
+	1, 1, 33, 33, 33, 33, 33, 33, 
+	33, 33, 33, 33, 33, 33, 33, 33, 
+	33, 33, 33, 33, 33, 33, 33, 33, 
+	33, 33, 33, 33, 33, 33, 33, 33, 
+	33, 33, 33, 1, 36, 36, 36, 36, 
+	36, 36, 36, 36, 37, 1, 36, 36, 
+	38, 36, 36, 36, 36, 36, 36, 36, 
+	36, 36, 36, 36, 36, 36, 36, 36, 
+	36, 36, 36, 37, 36, 36, 36, 36, 
+	36, 36, 36, 39, 40, 36, 36, 36, 
+	36, 36, 36, 36, 36, 36, 36, 36, 
+	36, 36, 36, 36, 36, 36, 36, 36, 
+	36, 36, 36, 36, 36, 36, 36, 36, 
+	36, 36, 36, 36, 36, 36, 36, 36, 
+	36, 36, 36, 36, 36, 36, 36, 36, 
+	36, 36, 36, 36, 36, 36, 36, 41, 
+	36, 36, 36, 36, 36, 36, 36, 36, 
+	36, 36, 36, 36, 36, 36, 36, 36, 
+	36, 36, 36, 36, 36, 36, 36, 36, 
+	36, 36, 36, 36, 36, 36, 36, 36, 
+	36, 36, 36, 1, 42, 42, 42, 42, 
+	42, 42, 42, 42, 43, 1, 42, 42, 
+	44, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 43, 42, 42, 42, 42, 
+	42, 42, 42, 45, 46, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 47, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 1, 42, 42, 42, 42, 
+	42, 42, 42, 42, 48, 1, 42, 42, 
+	49, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 48, 42, 42, 42, 42, 
+	42, 42, 42, 45, 50, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 47, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 1, 51, 1, 48, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 48, 1, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 42, 
+	42, 42, 42, 42, 42, 42, 42, 1, 
+	52, 1, 1, 1, 53, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 52, 
+	54, 55, 54, 54, 54, 54, 54, 56, 
+	1, 54, 54, 57, 54, 58, 54, 54, 
+	54, 54, 54, 54, 54, 54, 54, 54, 
+	54, 1, 1, 1, 54, 1, 54, 58, 
+	54, 54, 54, 54, 54, 54, 54, 54, 
+	54, 54, 54, 54, 54, 54, 54, 54, 
+	54, 54, 54, 54, 54, 54, 54, 54, 
+	54, 54, 1, 1, 1, 54, 54, 54, 
+	54, 54, 54, 54, 54, 54, 54, 54, 
+	54, 54, 54, 54, 54, 54, 54, 54, 
+	54, 54, 54, 54, 54, 54, 54, 54, 
+	54, 54, 54, 54, 54, 54, 1, 14, 
+	1, 1, 1, 59, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 14, 9, 
+	10, 9, 9, 9, 9, 9, 60, 1, 
+	9, 9, 61, 9, 62, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	1, 1, 1, 9, 1, 9, 62, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 1, 1, 1, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 1, 63, 1, 
+	1, 1, 64, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 63, 33, 34, 
+	33, 33, 33, 33, 33, 65, 1, 33, 
+	33, 66, 33, 67, 33, 33, 33, 33, 
+	33, 33, 33, 33, 33, 33, 33, 1, 
+	1, 1, 33, 1, 33, 67, 33, 33, 
+	33, 33, 33, 33, 33, 33, 33, 33, 
+	33, 33, 33, 33, 33, 33, 33, 33, 
+	33, 33, 33, 33, 33, 33, 33, 33, 
+	1, 1, 1, 33, 33, 33, 33, 33, 
+	33, 33, 33, 33, 33, 33, 33, 33, 
+	33, 33, 33, 33, 33, 33, 33, 33, 
+	33, 33, 33, 33, 33, 33, 33, 33, 
+	33, 33, 33, 33, 1, 7, 1, 1, 
+	1, 8, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 7, 9, 10, 9, 
+	9, 9, 9, 9, 11, 1, 9, 9, 
+	61, 9, 62, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 1, 1, 
+	1, 9, 1, 9, 62, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 1, 
+	1, 1, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 1, 1, 0
 ]
 
 class << self
@@ -214,7 +419,7 @@ self.phrase_lists_en_main = 1;
           stack = []
 
           
-# line 218 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
+# line 423 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
 begin
 	p ||= 0
 	pe ||= data.length
@@ -224,9 +429,10 @@ end
 
 # line 69 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
           
-# line 228 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
-begin
-	_klen, _trans, _keys, _acts, _nacts = nil
+# line 433 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
+begin # ragel flat
+	testEof = false
+	_slen, _trans, _keys, _inds, _acts, _nacts = nil
 	_goto_level = 0
 	_resume = 10
 	_eof_trans = 15
@@ -246,56 +452,17 @@ begin
 	end
 	end
 	if _goto_level <= _resume
-	_keys = _phrase_lists_key_offsets[cs]
-	_trans = _phrase_lists_index_offsets[cs]
-	_klen = _phrase_lists_single_lengths[cs]
-	_break_match = false
-	
-	begin
-	  if _klen > 0
-	     _lower = _keys
-	     _upper = _keys + _klen - 1
-
-	     loop do
-	        break if _upper < _lower
-	        _mid = _lower + ( (_upper - _lower) >> 1 )
-
-	        if data[p].ord < _phrase_lists_trans_keys[_mid]
-	           _upper = _mid - 1
-	        elsif data[p].ord > _phrase_lists_trans_keys[_mid]
-	           _lower = _mid + 1
-	        else
-	           _trans += (_mid - _keys)
-	           _break_match = true
-	           break
-	        end
-	     end # loop
-	     break if _break_match
-	     _keys += _klen
-	     _trans += _klen
-	  end
-	  _klen = _phrase_lists_range_lengths[cs]
-	  if _klen > 0
-	     _lower = _keys
-	     _upper = _keys + (_klen << 1) - 2
-	     loop do
-	        break if _upper < _lower
-	        _mid = _lower + (((_upper-_lower) >> 1) & ~1)
-	        if data[p].ord < _phrase_lists_trans_keys[_mid]
-	          _upper = _mid - 2
-	        elsif data[p].ord > _phrase_lists_trans_keys[_mid+1]
-	          _lower = _mid + 2
-	        else
-	          _trans += ((_mid - _keys) >> 1)
-	          _break_match = true
-	          break
-	        end
-	     end # loop
-	     break if _break_match
-	     _trans += _klen
-	  end
-	end while false
-	_trans = _phrase_lists_indicies[_trans]
+	_keys = cs << 1
+	_inds = _phrase_lists_index_offsets[cs]
+	_slen = _phrase_lists_key_spans[cs]
+	_trans = if (   _slen > 0 && 
+			_phrase_lists_trans_keys[_keys] <= data[p].ord && 
+			data[p].ord <= _phrase_lists_trans_keys[_keys + 1] 
+		    ) then
+			_phrase_lists_indicies[ _inds + data[p].ord - _phrase_lists_trans_keys[_keys] ] 
+		 else 
+			_phrase_lists_indicies[ _inds + _slen ]
+		 end
 	cs = _phrase_lists_trans_targs[_trans]
 	if _phrase_lists_trans_actions[_trans] != 0
 		_acts = _phrase_lists_trans_actions[_trans]
@@ -305,45 +472,45 @@ begin
 			_nacts -= 1
 			_acts += 1
 			case _phrase_lists_actions[_acts - 1]
-when 0 then
+	when 0 then
 # line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 		begin
 		end
-when 1 then
+	when 1 then
 # line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 		begin
 		end
-when 2 then
+	when 2 then
 # line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 		begin
 		end
-when 3 then
+	when 3 then
 # line 31 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 		begin
 		end
-when 4 then
+	when 4 then
 # line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 		begin
 		end
-when 5 then
+	when 5 then
 # line 40 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 		begin
  
     mark_quoted = p
   		end
-when 6 then
+	when 6 then
 # line 43 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 		begin
  mark = p 		end
-when 7 then
+	when 7 then
 # line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 		begin
  phrase_lists.phrases << data[mark_quoted..(p-1)] if mark; mark = nil 		end
-when 8 then
+	when 8 then
 # line 46 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 		begin
  phrase_lists.phrases << data[mark..(p-1)] if mark; mark = nil 		end
-when 9 then
+	when 9 then
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -355,7 +522,7 @@ when 9 then
 		break
 	end
  		end
-when 10 then
+	when 10 then
 # line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -366,7 +533,7 @@ when 10 then
 		break
 	end
  		end
-# line 370 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
+# line 537 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
 			end # action switch
 		end
 	end
@@ -387,32 +554,34 @@ when 10 then
 	end
 	if _goto_level <= _test_eof
 	if p == eof
+	begin
 	__acts = _phrase_lists_eof_actions[cs]
-	__nacts =  _phrase_lists_actions[__acts]
+	__nacts = _phrase_lists_actions[__acts]
 	__acts += 1
-	while __nacts > 0
+	while ( __nacts > 0 ) 
 		__nacts -= 1
 		__acts += 1
-		case _phrase_lists_actions[__acts - 1]
-when 2 then
+		case ( _phrase_lists_actions[__acts-1] ) 
+	when 2 then
 # line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 		begin
 		end
-when 3 then
+	when 3 then
 # line 31 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 		begin
 		end
-when 8 then
+	when 8 then
 # line 46 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 		begin
  phrase_lists.phrases << data[mark..(p-1)] if mark; mark = nil 		end
-# line 410 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
-		end # eof action switch
+# line 578 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
+		end
 	end
 	if _trigger_goto
 		next
 	end
-end
+	end
+	end
 	end
 	if _goto_level <= _out
 		break
@@ -423,7 +592,7 @@ end
 # line 70 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 
           if p == eof && cs >= 
-# line 427 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
+# line 596 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"
 25
 # line 71 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rl"
 
