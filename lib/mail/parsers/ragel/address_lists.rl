@@ -170,6 +170,7 @@ module Mail
           mark_local = nil
           address = Data::AddressData.new(nil, nil, [], nil, nil, nil, nil)
           mark_address = 0
+          mark_local_dot_atom = nil
 
           p = 0
           eof = data.length
