@@ -60,6 +60,7 @@ module Mail
         end
         
         def parse(data)
+          data_unpacked = data.bytes.to_a
           received = Data::ReceivedData.new
 
           p = 0

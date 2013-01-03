@@ -57,6 +57,7 @@ module Mail
         end
         
         def parse(data)
+          data_unpacked = data.bytes.to_a
           mime_version = Data::MimeVersionData.new
 
           p = 0

@@ -57,6 +57,7 @@ module Mail
         end
         
         def parse(data)
+          data_unpacked = data.bytes.to_a
           message_ids = Data::MessageIdsData.new([])
 
           p = 0

@@ -59,6 +59,7 @@ module Mail
         end
         
         def parse(data)
+          data_unpacked = data.bytes.to_a
           content_location = Data::ContentLocationData.new
 
           p = 0

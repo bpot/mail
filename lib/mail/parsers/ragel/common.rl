@@ -5,6 +5,8 @@
   action comment_begin { fcall comment_tail; }
 
   action comment_exit { fret; }
+
+  getkey data_unpacked[p];
   
   obs_NO_WS_CTL = 0x01..0x08 | 0x0b | 0x0c | 0x0e..0x1f | 0x7f;
   LF = "\n";

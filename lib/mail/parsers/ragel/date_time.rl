@@ -57,6 +57,7 @@ module Mail
         end
         
         def parse(data)
+          data_unpacked = data.bytes.to_a
           date_time = Data::DateTimeData.new([])
 
           p = 0

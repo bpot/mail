@@ -78,6 +78,7 @@ module Mail
         end
         
         def parse(data)
+          data_unpacked = data.bytes.to_a
           p = 0
           eof = data.length
           stack = []

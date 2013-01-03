@@ -59,6 +59,7 @@ module Mail
         end
         
         def parse(data)
+          data_unpacked = data.bytes.to_a
           phrase_lists = Data::PhraseListsData.new([])
 
           p = 0

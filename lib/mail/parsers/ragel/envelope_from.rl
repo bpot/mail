@@ -61,6 +61,7 @@ module Mail
         end
         
         def parse(data)
+          data_unpacked = data.bytes.to_a
           envelope_from = Data::EnvelopeFromData.new
           quoted_string = nil
           mark_address = nil

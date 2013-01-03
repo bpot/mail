@@ -78,6 +78,7 @@ module Mail
         
         def parse(data)
           content_disposition = Data::ContentDispositionData.new(nil, [])
+          data_unpacked = data.bytes.to_a
 
           p = 0
           eof = data.length
