@@ -12,20 +12,6 @@ module Mail
           
 # line 14 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
 class << self
-	attr_accessor :_content_location_actions
-	private :_content_location_actions, :_content_location_actions=
-end
-self._content_location_actions = [
-	0, 1, 0, 1, 1, 1, 2, 1, 
-	3, 1, 4, 1, 5, 1, 6, 1, 
-	7, 1, 8, 2, 0, 1, 2, 0, 
-	7, 2, 1, 8, 2, 2, 3, 2, 
-	2, 7, 2, 4, 6, 2, 6, 7, 
-	2, 7, 6, 3, 0, 1, 8, 3, 
-	4, 6, 7
-]
-
-class << self
 	attr_accessor :_content_location_trans_keys
 	private :_content_location_trans_keys, :_content_location_trans_keys=
 end
@@ -33,11 +19,11 @@ self._content_location_trans_keys = [
 	0, 0, 9, 126, 10, 10, 
 	9, 32, 10, 10, 9, 
 	32, 1, 127, 10, 10, 
-	9, 32, -128, -1, 10, 10, 
+	9, 32, 0, 127, 10, 10, 
 	9, 32, 10, 10, 9, 
 	32, 9, 126, 1, 127, 
 	1, 127, 1, 127, 10, 10, 
-	9, 32, 0, 127, 9, 
+	9, 32, -128, -1, 9, 
 	126, 9, 40, 9, 40, 
 	1, 127, 1, 127, 1, 127, 
 	1, 127, 1, 127, 9, 
@@ -112,23 +98,23 @@ self._content_location_indicies = [
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 9, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	9, 14, 1, 15, 1, 1, 1, 1, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	9, 9, 9, 9, 9, 9, 9, 9, 
+	1, 14, 1, 15, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 15, 1, 16, 1, 17, 1, 
@@ -201,23 +187,23 @@ self._content_location_indicies = [
 	35, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 35, 
-	1, 29, 29, 29, 29, 29, 29, 29, 
-	29, 29, 29, 29, 29, 29, 29, 29, 
-	29, 29, 29, 29, 29, 29, 29, 29, 
-	29, 29, 29, 29, 29, 29, 29, 29, 
-	29, 29, 29, 29, 29, 29, 29, 29, 
-	29, 29, 29, 29, 29, 29, 29, 29, 
-	29, 29, 29, 29, 29, 29, 29, 29, 
-	29, 29, 29, 29, 29, 29, 29, 29, 
-	29, 29, 29, 29, 29, 29, 29, 29, 
-	29, 29, 29, 29, 29, 29, 29, 29, 
-	29, 29, 29, 29, 29, 29, 29, 29, 
-	29, 29, 29, 29, 29, 29, 29, 29, 
-	29, 29, 29, 29, 29, 29, 29, 29, 
-	29, 29, 29, 29, 29, 29, 29, 29, 
-	29, 29, 29, 29, 29, 29, 29, 29, 
-	29, 29, 29, 29, 29, 29, 29, 29, 
-	29, 1, 39, 1, 1, 1, 40, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 29, 39, 1, 1, 1, 40, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 39, 41, 41, 41, 41, 41, 41, 
@@ -359,15 +345,15 @@ class << self
 	private :_content_location_trans_actions, :_content_location_trans_actions=
 end
 self._content_location_trans_actions = [
-	0, 0, 0, 7, 7, 15, 0, 0, 
-	0, 0, 0, 11, 0, 0, 0, 0, 
-	0, 0, 5, 5, 28, 28, 31, 1, 
-	19, 19, 22, 43, 1, 0, 3, 3, 
-	15, 25, 0, 0, 0, 17, 0, 13, 
-	13, 0, 37, 0, 15, 5, 5, 31, 
-	9, 34, 34, 9, 47, 9, 0, 15, 
-	5, 5, 31, 0, 13, 13, 0, 11, 
-	37, 40
+	0, 0, 0, 1, 1, 2, 0, 0, 
+	0, 0, 0, 3, 0, 0, 0, 0, 
+	0, 0, 4, 4, 5, 5, 6, 7, 
+	8, 8, 9, 10, 7, 0, 11, 11, 
+	2, 12, 0, 0, 0, 13, 0, 14, 
+	14, 0, 15, 0, 2, 4, 4, 6, 
+	16, 17, 17, 16, 18, 16, 0, 2, 
+	4, 4, 6, 0, 14, 14, 0, 3, 
+	15, 19
 ]
 
 class << self
@@ -377,8 +363,8 @@ end
 self._content_location_eof_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 13, 0, 5, 
-	13, 0, 5, 0, 13, 13, 0
+	0, 0, 0, 0, 0, 14, 0, 4, 
+	14, 0, 4, 0, 14, 14, 0
 ]
 
 class << self
@@ -408,6 +394,7 @@ self.content_location_en_main = 1;
         end
         
         def parse(data)
+          data_unpacked = data.bytes.to_a
           content_location = Data::ContentLocationData.new
 
           p = 0
@@ -415,7 +402,7 @@ self.content_location_en_main = 1;
           stack = []
 
           
-# line 419 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
+# line 406 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
 begin
 	p ||= 0
 	pe ||= data.length
@@ -423,10 +410,10 @@ begin
 	top = 0
 end
 
-# line 69 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+# line 70 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
           
-# line 429 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
-begin # ragel flat
+# line 416 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
+begin
 	testEof = false
 	_slen, _trans, _keys, _inds, _acts, _nacts = nil
 	_goto_level = 0
@@ -436,7 +423,6 @@ begin # ragel flat
 	_test_eof = 30
 	_out = 40
 	while true
-	_trigger_goto = false
 	if _goto_level <= 0
 	if p == pe
 		_goto_level = _test_eof
@@ -452,83 +438,198 @@ begin # ragel flat
 	_inds = _content_location_index_offsets[cs]
 	_slen = _content_location_key_spans[cs]
 	_trans = if (   _slen > 0 && 
-			_content_location_trans_keys[_keys] <= data[p].ord && 
-			data[p].ord <= _content_location_trans_keys[_keys + 1] 
+			_content_location_trans_keys[_keys] <= ( data_unpacked[p]) && 
+			( data_unpacked[p]) <= _content_location_trans_keys[_keys + 1] 
 		    ) then
-			_content_location_indicies[ _inds + data[p].ord - _content_location_trans_keys[_keys] ] 
+			_content_location_indicies[ _inds + ( data_unpacked[p]) - _content_location_trans_keys[_keys] ] 
 		 else 
 			_content_location_indicies[ _inds + _slen ]
 		 end
 	cs = _content_location_trans_targs[_trans]
 	if _content_location_trans_actions[_trans] != 0
-		_acts = _content_location_trans_actions[_trans]
-		_nacts = _content_location_actions[_acts]
-		_acts += 1
-		while _nacts > 0
-			_nacts -= 1
-			_acts += 1
-			case _content_location_actions[_acts - 1]
-	when 0 then
+	case _content_location_trans_actions[_trans]
+	when 7 then
 # line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
 		end
-	when 1 then
+	when 11 then
 # line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
 		end
-	when 2 then
+	when 4 then
 # line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
 		end
-	when 3 then
+	when 1 then
 # line 39 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
  mark = p 		end
-	when 4 then
+	when 16 then
 # line 40 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
 
     mark_quoted = p
   		end
-	when 5 then
+	when 3 then
 # line 43 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
  
     content_location.location = data[mark_quoted..(p-1)] 
   		end
-	when 6 then
+	when 14 then
 # line 46 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
  content_location.location = data[mark..(p-1)] 		end
-	when 7 then
+	when 2 then
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
 		stack[top] = cs
 		top+= 1
 		cs = 15
-		_trigger_goto = true
 		_goto_level = _again
-		break
+		next
 	end
  		end
-	when 8 then
+	when 13 then
 # line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
 		top -= 1
 		cs = stack[top]
-		_trigger_goto = true
 		_goto_level = _again
-		break
+		next
 	end
  		end
-# line 527 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
-			end # action switch
+	when 8 then
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+		begin
 		end
-	end
-	if _trigger_goto
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+		begin
+		end
+	when 9 then
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+		begin
+		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 15
+		_goto_level = _again
 		next
+	end
+ 		end
+	when 12 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+		begin
+		end
+# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		top -= 1
+		cs = stack[top]
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 5 then
+# line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+		begin
+		end
+# line 39 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+		begin
+ mark = p 		end
+	when 6 then
+# line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+		begin
+		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 15
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 17 then
+# line 40 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+		begin
+
+    mark_quoted = p
+  		end
+# line 46 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+		begin
+ content_location.location = data[mark..(p-1)] 		end
+	when 15 then
+# line 46 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+		begin
+ content_location.location = data[mark..(p-1)] 		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 15
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 19 then
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 15
+		_goto_level = _again
+		next
+	end
+ 		end
+# line 46 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+		begin
+ content_location.location = data[mark..(p-1)] 		end
+	when 10 then
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+		begin
+		end
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+		begin
+		end
+# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		top -= 1
+		cs = stack[top]
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 18 then
+# line 40 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+		begin
+
+    mark_quoted = p
+  		end
+# line 46 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+		begin
+ content_location.location = data[mark..(p-1)] 		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 15
+		_goto_level = _again
+		next
+	end
+ 		end
+# line 632 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
+	end
 	end
 	end
 	if _goto_level <= _again
@@ -544,43 +645,32 @@ begin # ragel flat
 	end
 	if _goto_level <= _test_eof
 	if p == eof
-	begin
-	__acts = _content_location_eof_actions[cs]
-	__nacts = _content_location_actions[__acts]
-	__acts += 1
-	while ( __nacts > 0 ) 
-		__nacts -= 1
-		__acts += 1
-		case ( _content_location_actions[__acts-1] ) 
-	when 2 then
+	  case _content_location_eof_actions[cs]
+	when 4 then
 # line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
 		end
-	when 6 then
+	when 14 then
 # line 46 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 		begin
  content_location.location = data[mark..(p-1)] 		end
-# line 564 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
-		end
+# line 658 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
+	  end
 	end
-	if _trigger_goto
-		next
-	end
-	end
-	end
+
 	end
 	if _goto_level <= _out
 		break
 	end
-	end
+end
 	end
 
-# line 70 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+# line 71 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 
           if p == eof && cs >= 
-# line 582 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
+# line 672 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rb"
 21
-# line 71 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
+# line 72 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_location.rl"
 
             content_location
           else

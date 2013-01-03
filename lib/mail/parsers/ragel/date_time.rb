@@ -12,19 +12,6 @@ module Mail
           
 # line 14 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
 class << self
-	attr_accessor :_date_time_actions
-	private :_date_time_actions, :_date_time_actions=
-end
-self._date_time_actions = [
-	0, 1, 0, 1, 1, 1, 2, 1, 
-	3, 1, 5, 1, 6, 1, 7, 2, 
-	0, 1, 2, 0, 6, 2, 1, 7, 
-	2, 2, 6, 2, 3, 6, 2, 4, 
-	3, 2, 5, 6, 2, 6, 3, 3, 
-	0, 1, 7, 3, 2, 4, 3
-]
-
-class << self
 	attr_accessor :_date_time_trans_keys
 	private :_date_time_trans_keys, :_date_time_trans_keys=
 end
@@ -534,28 +521,28 @@ class << self
 	private :_date_time_trans_actions, :_date_time_trans_actions=
 end
 self._date_time_trans_actions = [
-	7, 0, 7, 36, 7, 0, 0, 0, 
-	0, 0, 0, 0, 11, 0, 0, 5, 
-	5, 24, 5, 5, 5, 5, 5, 5, 
-	0, 0, 11, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 5, 5, 24, 5, 
-	5, 5, 5, 5, 5, 5, 5, 0, 
-	0, 0, 0, 11, 0, 0, 5, 5, 
-	24, 5, 0, 0, 0, 11, 30, 0, 
-	5, 5, 24, 43, 0, 0, 11, 0, 
-	0, 5, 5, 24, 5, 0, 11, 0, 
-	0, 5, 24, 5, 0, 0, 0, 11, 
-	0, 0, 0, 0, 0, 0, 0, 5, 
-	5, 24, 5, 0, 11, 0, 0, 5, 
-	24, 5, 0, 0, 0, 11, 0, 5, 
-	5, 24, 0, 0, 0, 0, 0, 0, 
+	1, 0, 1, 2, 1, 0, 0, 0, 
+	0, 0, 0, 0, 3, 0, 0, 4, 
+	4, 5, 4, 4, 4, 4, 4, 4, 
+	0, 0, 3, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 4, 4, 5, 4, 
+	4, 4, 4, 4, 4, 4, 4, 0, 
+	0, 0, 0, 3, 0, 0, 4, 4, 
+	5, 4, 0, 0, 0, 3, 6, 0, 
+	4, 4, 5, 7, 0, 0, 3, 0, 
+	0, 4, 4, 5, 4, 0, 3, 0, 
+	0, 4, 5, 4, 0, 0, 0, 3, 
+	0, 0, 0, 0, 0, 0, 0, 4, 
+	4, 5, 4, 0, 3, 0, 0, 4, 
+	5, 4, 0, 0, 0, 3, 0, 4, 
+	4, 5, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 11, 0, 0, 5, 5, 24, 
-	5, 7, 7, 27, 0, 0, 11, 0, 
-	5, 5, 24, 0, 0, 0, 0, 0, 
-	1, 15, 15, 18, 39, 1, 0, 3, 
-	3, 11, 21, 0, 0, 0, 13, 0, 
-	9, 9, 33, 0, 11, 5, 5, 24, 
+	0, 0, 3, 0, 0, 4, 4, 5, 
+	4, 1, 1, 8, 0, 0, 3, 0, 
+	4, 4, 5, 0, 0, 0, 0, 0, 
+	9, 10, 10, 11, 12, 9, 0, 13, 
+	13, 3, 14, 0, 0, 0, 15, 0, 
+	16, 16, 17, 0, 3, 4, 4, 5, 
 	0
 ]
 
@@ -576,7 +563,7 @@ self._date_time_eof_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 9, 0, 5, 9, 9, 9, 0
+	0, 16, 0, 4, 16, 16, 16, 0
 ]
 
 class << self
@@ -606,6 +593,7 @@ self.date_time_en_main = 1;
         end
         
         def parse(data)
+          data_unpacked = data.bytes.to_a
           date_time = Data::DateTimeData.new([])
 
           p = 0
@@ -613,7 +601,7 @@ self.date_time_en_main = 1;
           stack = []
 
           
-# line 617 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
+# line 605 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
 begin
 	p ||= 0
 	pe ||= data.length
@@ -621,10 +609,10 @@ begin
 	top = 0
 end
 
-# line 67 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+# line 68 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
           
-# line 627 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
-begin # ragel flat
+# line 615 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
+begin
 	testEof = false
 	_slen, _trans, _keys, _inds, _acts, _nacts = nil
 	_goto_level = 0
@@ -634,7 +622,6 @@ begin # ragel flat
 	_test_eof = 30
 	_out = 40
 	while true
-	_trigger_goto = false
 	if _goto_level <= 0
 	if p == pe
 		_goto_level = _test_eof
@@ -650,75 +637,182 @@ begin # ragel flat
 	_inds = _date_time_index_offsets[cs]
 	_slen = _date_time_key_spans[cs]
 	_trans = if (   _slen > 0 && 
-			_date_time_trans_keys[_keys] <= data[p].ord && 
-			data[p].ord <= _date_time_trans_keys[_keys + 1] 
+			_date_time_trans_keys[_keys] <= ( data_unpacked[p]) && 
+			( data_unpacked[p]) <= _date_time_trans_keys[_keys + 1] 
 		    ) then
-			_date_time_indicies[ _inds + data[p].ord - _date_time_trans_keys[_keys] ] 
+			_date_time_indicies[ _inds + ( data_unpacked[p]) - _date_time_trans_keys[_keys] ] 
 		 else 
 			_date_time_indicies[ _inds + _slen ]
 		 end
 	cs = _date_time_trans_targs[_trans]
 	if _date_time_trans_actions[_trans] != 0
-		_acts = _date_time_trans_actions[_trans]
-		_nacts = _date_time_actions[_acts]
-		_acts += 1
-		while _nacts > 0
-			_nacts -= 1
-			_acts += 1
-			case _date_time_actions[_acts - 1]
-	when 0 then
+	case _date_time_trans_actions[_trans]
+	when 9 then
 # line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
 		begin
 		end
-	when 1 then
+	when 13 then
 # line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
 		begin
 		end
-	when 2 then
+	when 4 then
 # line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
 		begin
 		end
-	when 3 then
+	when 1 then
 # line 43 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
 		begin
  mark = p 		end
-	when 4 then
-# line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
-		begin
- date_time.date_string = data[mark..(p-1)].rstrip 		end
-	when 5 then
+	when 16 then
 # line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
 		begin
  date_time.time_string = data[mark..(p-1)] 		end
-	when 6 then
+	when 3 then
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
 		stack[top] = cs
 		top+= 1
 		cs = 91
-		_trigger_goto = true
 		_goto_level = _again
-		break
+		next
 	end
  		end
-	when 7 then
+	when 15 then
 # line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
 		top -= 1
 		cs = stack[top]
-		_trigger_goto = true
 		_goto_level = _again
-		break
+		next
 	end
  		end
-# line 717 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
-			end # action switch
+	when 10 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+		begin
 		end
-	end
-	if _trigger_goto
+# line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+		begin
+		end
+	when 11 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+		begin
+		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 91
+		_goto_level = _again
 		next
+	end
+ 		end
+	when 14 then
+# line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+		begin
+		end
+# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		top -= 1
+		cs = stack[top]
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 5 then
+# line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+		begin
+		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 91
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 8 then
+# line 43 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+		begin
+ mark = p 		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 91
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 6 then
+# line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+		begin
+ date_time.date_string = data[mark..(p-1)].rstrip 		end
+# line 43 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+		begin
+ mark = p 		end
+	when 17 then
+# line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+		begin
+ date_time.time_string = data[mark..(p-1)] 		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 91
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 2 then
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 91
+		_goto_level = _again
+		next
+	end
+ 		end
+# line 43 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+		begin
+ mark = p 		end
+	when 12 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+		begin
+		end
+# line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+		begin
+		end
+# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		top -= 1
+		cs = stack[top]
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 7 then
+# line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+		begin
+		end
+# line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+		begin
+ date_time.date_string = data[mark..(p-1)].rstrip 		end
+# line 43 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+		begin
+ mark = p 		end
+# line 815 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
+	end
 	end
 	end
 	if _goto_level <= _again
@@ -734,43 +828,32 @@ begin # ragel flat
 	end
 	if _goto_level <= _test_eof
 	if p == eof
-	begin
-	__acts = _date_time_eof_actions[cs]
-	__nacts = _date_time_actions[__acts]
-	__acts += 1
-	while ( __nacts > 0 ) 
-		__nacts -= 1
-		__acts += 1
-		case ( _date_time_actions[__acts-1] ) 
-	when 2 then
+	  case _date_time_eof_actions[cs]
+	when 4 then
 # line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
 		begin
 		end
-	when 5 then
+	when 16 then
 # line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
 		begin
  date_time.time_string = data[mark..(p-1)] 		end
-# line 754 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
-		end
+# line 841 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
+	  end
 	end
-	if _trigger_goto
-		next
-	end
-	end
-	end
+
 	end
 	if _goto_level <= _out
 		break
 	end
-	end
+end
 	end
 
-# line 68 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+# line 69 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
 
           if p == eof && cs >= 
-# line 772 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
+# line 855 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
 97
-# line 69 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+# line 70 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
 
             date_time
           else

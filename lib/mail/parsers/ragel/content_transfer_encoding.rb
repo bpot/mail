@@ -12,18 +12,6 @@ module Mail
           
 # line 14 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
 class << self
-	attr_accessor :_content_transfer_encoding_actions
-	private :_content_transfer_encoding_actions, :_content_transfer_encoding_actions=
-end
-self._content_transfer_encoding_actions = [
-	0, 1, 0, 1, 1, 1, 2, 1, 
-	3, 1, 4, 1, 5, 1, 6, 2, 
-	0, 1, 2, 0, 5, 2, 1, 6, 
-	2, 2, 3, 2, 2, 5, 2, 4, 
-	5, 3, 0, 1, 6
-]
-
-class << self
 	attr_accessor :_content_transfer_encoding_trans_keys
 	private :_content_transfer_encoding_trans_keys, :_content_transfer_encoding_trans_keys=
 end
@@ -290,16 +278,16 @@ class << self
 	private :_content_transfer_encoding_trans_actions, :_content_transfer_encoding_trans_actions=
 end
 self._content_transfer_encoding_trans_actions = [
-	0, 0, 0, 11, 7, 7, 7, 7, 
-	0, 5, 5, 27, 24, 24, 24, 24, 
+	0, 0, 0, 1, 2, 2, 2, 2, 
+	0, 3, 3, 4, 5, 5, 5, 5, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 0, 0, 1, 
-	15, 15, 18, 33, 1, 0, 3, 3, 
-	11, 21, 0, 0, 0, 13, 0, 9, 
-	9, 30, 9, 0, 0, 11, 5, 5, 
-	27, 5, 0, 11, 5, 27
+	0, 0, 0, 0, 0, 0, 0, 6, 
+	7, 7, 8, 9, 6, 0, 10, 10, 
+	1, 11, 0, 0, 0, 12, 0, 13, 
+	13, 14, 13, 0, 0, 1, 3, 3, 
+	4, 3, 0, 1, 3, 4
 ]
 
 class << self
@@ -312,8 +300,8 @@ self._content_transfer_encoding_eof_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 9, 0, 5, 0, 
-	5, 9, 9, 0
+	0, 0, 0, 0, 13, 0, 3, 0, 
+	3, 13, 13, 0
 ]
 
 class << self
@@ -343,6 +331,7 @@ self.content_transfer_encoding_en_main = 1;
         end
         
         def parse(data)
+          data_unpacked = data.bytes.to_a
           content_transfer_encoding = Data::ContentTransferEncodingData.new("")
 
           p = 0
@@ -350,7 +339,7 @@ self.content_transfer_encoding_en_main = 1;
           stack = []
 
           
-# line 354 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
+# line 343 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
 begin
 	p ||= 0
 	pe ||= data.length
@@ -358,10 +347,10 @@ begin
 	top = 0
 end
 
-# line 69 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+# line 70 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
           
-# line 364 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
-begin # ragel flat
+# line 353 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
+begin
 	testEof = false
 	_slen, _trans, _keys, _inds, _acts, _nacts = nil
 	_goto_level = 0
@@ -371,7 +360,6 @@ begin # ragel flat
 	_test_eof = 30
 	_out = 40
 	while true
-	_trigger_goto = false
 	if _goto_level <= 0
 	if p == pe
 		_goto_level = _test_eof
@@ -387,71 +375,144 @@ begin # ragel flat
 	_inds = _content_transfer_encoding_index_offsets[cs]
 	_slen = _content_transfer_encoding_key_spans[cs]
 	_trans = if (   _slen > 0 && 
-			_content_transfer_encoding_trans_keys[_keys] <= data[p].ord && 
-			data[p].ord <= _content_transfer_encoding_trans_keys[_keys + 1] 
+			_content_transfer_encoding_trans_keys[_keys] <= ( data_unpacked[p]) && 
+			( data_unpacked[p]) <= _content_transfer_encoding_trans_keys[_keys + 1] 
 		    ) then
-			_content_transfer_encoding_indicies[ _inds + data[p].ord - _content_transfer_encoding_trans_keys[_keys] ] 
+			_content_transfer_encoding_indicies[ _inds + ( data_unpacked[p]) - _content_transfer_encoding_trans_keys[_keys] ] 
 		 else 
 			_content_transfer_encoding_indicies[ _inds + _slen ]
 		 end
 	cs = _content_transfer_encoding_trans_targs[_trans]
 	if _content_transfer_encoding_trans_actions[_trans] != 0
-		_acts = _content_transfer_encoding_trans_actions[_trans]
-		_nacts = _content_transfer_encoding_actions[_acts]
-		_acts += 1
-		while _nacts > 0
-			_nacts -= 1
-			_acts += 1
-			case _content_transfer_encoding_actions[_acts - 1]
-	when 0 then
+	case _content_transfer_encoding_trans_actions[_trans]
+	when 6 then
 # line 17 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 		begin
 		end
-	when 1 then
+	when 10 then
 # line 18 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 		begin
 		end
-	when 2 then
+	when 3 then
 # line 19 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 		begin
 		end
-	when 3 then
+	when 2 then
 # line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 		begin
  mark = p 		end
-	when 4 then
+	when 13 then
 # line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 		begin
  content_transfer_encoding.encoding = data[mark..(p-1)].downcase 		end
-	when 5 then
+	when 1 then
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
 		stack[top] = cs
 		top+= 1
 		cs = 38
-		_trigger_goto = true
 		_goto_level = _again
-		break
+		next
 	end
  		end
-	when 6 then
+	when 12 then
 # line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
 		top -= 1
 		cs = stack[top]
-		_trigger_goto = true
 		_goto_level = _again
-		break
+		next
 	end
  		end
-# line 450 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
-			end # action switch
+	when 7 then
+# line 17 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+		begin
 		end
-	end
-	if _trigger_goto
+# line 18 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+		begin
+		end
+	when 8 then
+# line 17 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+		begin
+		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 38
+		_goto_level = _again
 		next
+	end
+ 		end
+	when 11 then
+# line 18 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+		begin
+		end
+# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		top -= 1
+		cs = stack[top]
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 5 then
+# line 19 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+		begin
+		end
+# line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+		begin
+ mark = p 		end
+	when 4 then
+# line 19 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+		begin
+		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 38
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 14 then
+# line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+		begin
+ content_transfer_encoding.encoding = data[mark..(p-1)].downcase 		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 38
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 9 then
+# line 17 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+		begin
+		end
+# line 18 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+		begin
+		end
+# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		top -= 1
+		cs = stack[top]
+		_goto_level = _again
+		next
+	end
+ 		end
+# line 515 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
+	end
 	end
 	end
 	if _goto_level <= _again
@@ -467,43 +528,32 @@ begin # ragel flat
 	end
 	if _goto_level <= _test_eof
 	if p == eof
-	begin
-	__acts = _content_transfer_encoding_eof_actions[cs]
-	__nacts = _content_transfer_encoding_actions[__acts]
-	__acts += 1
-	while ( __nacts > 0 ) 
-		__nacts -= 1
-		__acts += 1
-		case ( _content_transfer_encoding_actions[__acts-1] ) 
-	when 2 then
+	  case _content_transfer_encoding_eof_actions[cs]
+	when 3 then
 # line 19 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 		begin
 		end
-	when 4 then
+	when 13 then
 # line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 		begin
  content_transfer_encoding.encoding = data[mark..(p-1)].downcase 		end
-# line 487 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
-		end
+# line 541 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
+	  end
 	end
-	if _trigger_goto
-		next
-	end
-	end
-	end
+
 	end
 	if _goto_level <= _out
 		break
 	end
-	end
+end
 	end
 
-# line 70 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+# line 71 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 
           if p == eof && cs >= 
-# line 505 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
+# line 555 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
 44
-# line 71 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+# line 72 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 
             content_transfer_encoding
           else

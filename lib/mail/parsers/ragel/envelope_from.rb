@@ -12,31 +12,6 @@ module Mail
           
 # line 14 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rb"
 class << self
-	attr_accessor :_envelope_from_actions
-	private :_envelope_from_actions, :_envelope_from_actions=
-end
-self._envelope_from_actions = [
-	0, 1, 0, 1, 1, 1, 2, 1, 
-	4, 1, 5, 1, 6, 1, 7, 1, 
-	9, 1, 11, 1, 12, 1, 13, 1, 
-	14, 1, 16, 1, 17, 1, 18, 2, 
-	0, 1, 2, 0, 17, 2, 1, 18, 
-	2, 2, 9, 2, 2, 12, 2, 2, 
-	14, 2, 2, 16, 2, 2, 17, 2, 
-	3, 16, 2, 4, 9, 2, 4, 17, 
-	2, 5, 16, 2, 5, 17, 2, 9, 
-	13, 2, 11, 5, 2, 11, 12, 2, 
-	11, 16, 2, 11, 17, 2, 12, 10, 
-	2, 17, 5, 3, 0, 1, 18, 3, 
-	2, 3, 16, 3, 2, 12, 10, 3, 
-	5, 3, 16, 3, 11, 5, 16, 3, 
-	11, 12, 5, 3, 11, 12, 10, 3, 
-	11, 17, 5, 3, 15, 13, 8, 4, 
-	15, 13, 8, 9, 4, 15, 13, 8, 
-	17
-]
-
-class << self
 	attr_accessor :_envelope_from_trans_keys
 	private :_envelope_from_trans_keys, :_envelope_from_trans_keys=
 end
@@ -87,18 +62,18 @@ self._envelope_from_trans_keys = [
 	1, 127, 10, 10, 9, 
 	32, 9, 126, 9, 40, 
 	10, 10, 9, 32, 9, 87, 
-	9, 40, 33, 126, -128, 
-	-1, 10, 10, 9, 32, 
+	9, 40, 33, 126, 0, 
+	127, 10, 10, 9, 32, 
 	9, 126, 9, 126, 1, 127, 
-	10, 10, 9, 32, 0, 
-	127, 1, 127, 1, 127, 
-	10, 10, 9, 32, -128, -1, 
+	10, 10, 9, 32, -128, 
+	-1, 1, 127, 1, 127, 
+	10, 10, 9, 32, 0, 127, 
 	1, 127, 10, 10, 9, 
 	32, 9, 126, 1, 127, 
 	1, 127, 10, 10, 9, 32, 
 	9, 126, 9, 64, 10, 
 	10, 9, 32, 9, 87, 
-	9, 64, -128, -1, 10, 10, 
+	9, 64, 0, 127, 10, 10, 
 	9, 32, 9, 126, 9, 
 	126, 10, 10, 9, 32, 
 	9, 126, 9, 126, 9, 126, 
@@ -114,12 +89,12 @@ self._envelope_from_trans_keys = [
 	1, 127, 1, 127, 10, 
 	10, 9, 32, 9, 126, 
 	9, 64, 10, 10, 9, 32, 
-	9, 87, 9, 64, -128, 
-	-1, 1, 127, 10, 10, 
+	9, 87, 9, 64, 0, 
+	127, 1, 127, 10, 10, 
 	9, 32, 9, 126, 33, 126, 
 	1, 127, 1, 127, 1, 
 	127, 10, 10, 9, 32, 
-	0, 127, 9, 57, 9, 40, 
+	-128, -1, 9, 57, 9, 40, 
 	9, 40, 0, 0, 0
 ]
 
@@ -724,23 +699,23 @@ self._envelope_from_indicies = [
 	219, 219, 219, 219, 219, 219, 219, 219, 
 	219, 219, 219, 219, 219, 219, 219, 219, 
 	219, 219, 219, 219, 219, 219, 219, 219, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 215, 230, 1, 73, 1, 1, 1, 
+	1, 215, 215, 215, 215, 215, 215, 215, 
+	215, 215, 215, 215, 215, 215, 215, 215, 
+	215, 215, 215, 215, 215, 215, 215, 215, 
+	215, 215, 215, 215, 215, 215, 215, 215, 
+	215, 215, 215, 215, 215, 215, 215, 215, 
+	215, 215, 215, 215, 215, 215, 215, 215, 
+	215, 215, 215, 215, 215, 215, 215, 215, 
+	215, 215, 215, 215, 215, 215, 215, 215, 
+	215, 215, 215, 215, 215, 215, 215, 215, 
+	215, 215, 215, 215, 215, 215, 215, 215, 
+	215, 215, 215, 215, 215, 215, 215, 215, 
+	215, 215, 215, 215, 215, 215, 215, 215, 
+	215, 215, 215, 215, 215, 215, 215, 215, 
+	215, 215, 215, 215, 215, 215, 215, 215, 
+	215, 215, 215, 215, 215, 215, 215, 215, 
+	215, 215, 215, 215, 215, 215, 215, 215, 
+	215, 1, 230, 1, 73, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 73, 1, 88, 1, 1, 
@@ -792,23 +767,23 @@ self._envelope_from_indicies = [
 	76, 76, 1, 240, 1, 76, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 76, 1, 76, 76, 
-	76, 76, 76, 76, 76, 76, 76, 76, 
-	76, 76, 76, 76, 76, 76, 76, 76, 
-	76, 76, 76, 76, 76, 76, 76, 76, 
-	76, 76, 76, 76, 76, 76, 76, 76, 
-	76, 76, 76, 76, 76, 76, 76, 76, 
-	76, 76, 76, 76, 76, 76, 76, 76, 
-	76, 76, 76, 76, 76, 76, 76, 76, 
-	76, 76, 76, 76, 76, 76, 76, 76, 
-	76, 76, 76, 76, 76, 76, 76, 76, 
-	76, 76, 76, 76, 76, 76, 76, 76, 
-	76, 76, 76, 76, 76, 76, 76, 76, 
-	76, 76, 76, 76, 76, 76, 76, 76, 
-	76, 76, 76, 76, 76, 76, 76, 76, 
-	76, 76, 76, 76, 76, 76, 76, 76, 
-	76, 76, 76, 76, 76, 76, 76, 76, 
-	76, 76, 76, 76, 76, 76, 1, 241, 
+	1, 1, 1, 1, 76, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 76, 241, 
 	241, 241, 241, 241, 241, 241, 241, 242, 
 	1, 241, 241, 243, 241, 241, 241, 241, 
 	241, 241, 241, 241, 241, 241, 241, 241, 
@@ -844,23 +819,23 @@ self._envelope_from_indicies = [
 	1, 245, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	245, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 245, 245, 245, 245, 245, 245, 
+	245, 1, 245, 245, 245, 245, 245, 245, 
+	245, 245, 245, 245, 245, 245, 245, 245, 
+	245, 245, 245, 245, 245, 245, 245, 245, 
+	245, 245, 245, 245, 245, 245, 245, 245, 
+	245, 245, 245, 245, 245, 245, 245, 245, 
+	245, 245, 245, 245, 245, 245, 245, 245, 
+	245, 245, 245, 245, 245, 245, 245, 245, 
+	245, 245, 245, 245, 245, 245, 245, 245, 
+	245, 245, 245, 245, 245, 245, 245, 245, 
+	245, 245, 245, 245, 245, 245, 245, 245, 
+	245, 245, 245, 245, 245, 245, 245, 245, 
+	245, 245, 245, 245, 245, 245, 245, 245, 
+	245, 245, 245, 245, 245, 245, 245, 245, 
+	245, 245, 245, 245, 245, 245, 245, 245, 
+	245, 245, 245, 245, 245, 245, 245, 245, 
+	245, 245, 245, 245, 245, 245, 245, 245, 
+	245, 245, 1, 245, 245, 245, 245, 245, 
 	245, 245, 245, 250, 1, 245, 245, 251, 
 	245, 245, 245, 245, 245, 245, 245, 245, 
 	245, 245, 245, 245, 245, 245, 245, 245, 
@@ -972,23 +947,23 @@ self._envelope_from_indicies = [
 	1, 1, 276, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 39, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 257, 277, 1, 18, 
+	1, 1, 39, 1, 257, 257, 257, 257, 
+	257, 257, 257, 257, 257, 257, 257, 257, 
+	257, 257, 257, 257, 257, 257, 257, 257, 
+	257, 257, 257, 257, 257, 257, 257, 257, 
+	257, 257, 257, 257, 257, 257, 257, 257, 
+	257, 257, 257, 257, 257, 257, 257, 257, 
+	257, 257, 257, 257, 257, 257, 257, 257, 
+	257, 257, 257, 257, 257, 257, 257, 257, 
+	257, 257, 257, 257, 257, 257, 257, 257, 
+	257, 257, 257, 257, 257, 257, 257, 257, 
+	257, 257, 257, 257, 257, 257, 257, 257, 
+	257, 257, 257, 257, 257, 257, 257, 257, 
+	257, 257, 257, 257, 257, 257, 257, 257, 
+	257, 257, 257, 257, 257, 257, 257, 257, 
+	257, 257, 257, 257, 257, 257, 257, 257, 
+	257, 257, 257, 257, 257, 257, 257, 257, 
+	257, 257, 257, 257, 1, 277, 1, 18, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 18, 1, 
@@ -1413,23 +1388,23 @@ self._envelope_from_indicies = [
 	1, 1, 1, 349, 1, 1, 1, 1, 
 	1, 38, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 350, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 330, 330, 330, 
+	1, 1, 1, 350, 1, 330, 330, 330, 
+	330, 330, 330, 330, 330, 330, 330, 330, 
+	330, 330, 330, 330, 330, 330, 330, 330, 
+	330, 330, 330, 330, 330, 330, 330, 330, 
+	330, 330, 330, 330, 330, 330, 330, 330, 
+	330, 330, 330, 330, 330, 330, 330, 330, 
+	330, 330, 330, 330, 330, 330, 330, 330, 
+	330, 330, 330, 330, 330, 330, 330, 330, 
+	330, 330, 330, 330, 330, 330, 330, 330, 
+	330, 330, 330, 330, 330, 330, 330, 330, 
+	330, 330, 330, 330, 330, 330, 330, 330, 
+	330, 330, 330, 330, 330, 330, 330, 330, 
+	330, 330, 330, 330, 330, 330, 330, 330, 
+	330, 330, 330, 330, 330, 330, 330, 330, 
+	330, 330, 330, 330, 330, 330, 330, 330, 
+	330, 330, 330, 330, 330, 330, 330, 330, 
+	330, 330, 330, 330, 330, 1, 330, 330, 
 	330, 330, 330, 330, 330, 330, 351, 1, 
 	330, 330, 352, 330, 330, 330, 330, 330, 
 	330, 330, 330, 330, 330, 330, 330, 330, 
@@ -1527,23 +1502,23 @@ self._envelope_from_indicies = [
 	1, 372, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	372, 1, 366, 366, 366, 366, 366, 366, 
-	366, 366, 366, 366, 366, 366, 366, 366, 
-	366, 366, 366, 366, 366, 366, 366, 366, 
-	366, 366, 366, 366, 366, 366, 366, 366, 
-	366, 366, 366, 366, 366, 366, 366, 366, 
-	366, 366, 366, 366, 366, 366, 366, 366, 
-	366, 366, 366, 366, 366, 366, 366, 366, 
-	366, 366, 366, 366, 366, 366, 366, 366, 
-	366, 366, 366, 366, 366, 366, 366, 366, 
-	366, 366, 366, 366, 366, 366, 366, 366, 
-	366, 366, 366, 366, 366, 366, 366, 366, 
-	366, 366, 366, 366, 366, 366, 366, 366, 
-	366, 366, 366, 366, 366, 366, 366, 366, 
-	366, 366, 366, 366, 366, 366, 366, 366, 
-	366, 366, 366, 366, 366, 366, 366, 366, 
-	366, 366, 366, 366, 366, 366, 366, 366, 
-	366, 366, 1, 174, 1, 1, 1, 376, 
+	372, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 366, 174, 1, 1, 1, 376, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 174, 1, 1, 1, 1, 1, 
@@ -1621,54 +1596,54 @@ class << self
 	private :_envelope_from_trans_actions, :_envelope_from_trans_actions=
 end
 self._envelope_from_trans_actions = [
-	123, 0, 123, 127, 123, 132, 123, 0, 
-	0, 15, 0, 27, 0, 0, 73, 73, 
-	107, 0, 0, 119, 9, 111, 0, 0, 
-	25, 27, 0, 19, 0, 21, 21, 21, 
-	21, 21, 5, 5, 49, 52, 5, 43, 
-	0, 15, 0, 27, 0, 9, 9, 64, 
-	0, 67, 9, 9, 0, 0, 25, 27, 
-	0, 0, 5, 5, 49, 52, 5, 7, 
-	7, 58, 7, 61, 7, 7, 0, 0, 
-	15, 0, 27, 0, 0, 0, 9, 9, 
-	103, 0, 88, 9, 0, 0, 55, 27, 
-	0, 0, 5, 5, 95, 52, 5, 0, 
-	15, 27, 0, 0, 67, 9, 5, 40, 
-	52, 0, 0, 0, 0, 0, 0, 0, 
+	1, 0, 1, 2, 1, 3, 1, 0, 
+	0, 4, 0, 5, 0, 0, 6, 6, 
+	7, 0, 0, 8, 9, 10, 0, 0, 
+	11, 5, 0, 12, 0, 13, 13, 13, 
+	13, 13, 14, 14, 15, 16, 14, 17, 
+	0, 4, 0, 5, 0, 9, 9, 18, 
+	0, 19, 9, 9, 0, 0, 11, 5, 
+	0, 0, 14, 14, 15, 16, 14, 20, 
+	20, 21, 20, 22, 20, 20, 0, 0, 
+	4, 0, 5, 0, 0, 0, 9, 9, 
+	23, 0, 24, 9, 0, 0, 25, 5, 
+	0, 0, 14, 14, 26, 16, 14, 0, 
+	4, 5, 0, 0, 19, 9, 14, 27, 
+	16, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 27, 0, 0, 5, 5, 52, 5, 
-	0, 0, 0, 27, 0, 0, 27, 0, 
-	0, 5, 5, 52, 5, 0, 0, 27, 
-	0, 0, 5, 5, 52, 5, 0, 27, 
-	0, 0, 5, 52, 5, 0, 0, 0, 
-	27, 0, 0, 0, 27, 0, 0, 5, 
-	5, 52, 5, 5, 0, 0, 0, 0, 
-	27, 0, 0, 5, 52, 5, 0, 0, 
-	0, 27, 0, 0, 27, 0, 5, 5, 
-	52, 5, 5, 52, 5, 5, 52, 5, 
-	5, 52, 0, 0, 0, 0, 0, 0, 
+	0, 5, 0, 0, 14, 14, 16, 14, 
+	0, 0, 0, 5, 0, 0, 5, 0, 
+	0, 14, 14, 16, 14, 0, 0, 5, 
+	0, 0, 14, 14, 16, 14, 0, 5, 
+	0, 0, 14, 16, 14, 0, 0, 0, 
+	5, 0, 0, 0, 5, 0, 0, 14, 
+	14, 16, 14, 14, 0, 0, 0, 0, 
+	5, 0, 0, 14, 16, 14, 0, 0, 
+	0, 5, 0, 0, 5, 0, 14, 14, 
+	16, 14, 14, 16, 14, 14, 16, 14, 
+	14, 16, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 0, 0, 55, 
-	27, 0, 5, 5, 95, 52, 0, 5, 
-	5, 40, 5, 52, 5, 5, 0, 0, 
-	0, 11, 11, 11, 11, 0, 0, 13, 
-	0, 0, 0, 0, 0, 5, 40, 5, 
-	52, 0, 0, 0, 0, 0, 0, 17, 
-	17, 79, 82, 76, 0, 0, 25, 27, 
-	0, 5, 5, 49, 52, 0, 17, 17, 
-	79, 0, 82, 0, 0, 25, 27, 0, 
-	70, 70, 70, 70, 70, 5, 5, 49, 
-	52, 0, 0, 64, 25, 21, 21, 21, 
-	0, 0, 0, 0, 0, 11, 11, 11, 
-	11, 0, 0, 13, 0, 0, 17, 17, 
-	79, 82, 0, 0, 0, 0, 11, 11, 
-	11, 11, 0, 0, 13, 0, 0, 17, 
-	17, 79, 82, 115, 0, 0, 25, 27, 
-	85, 0, 5, 5, 49, 52, 99, 0, 
-	0, 0, 5, 5, 40, 5, 52, 5, 
-	1, 31, 31, 34, 91, 1, 0, 3, 
-	3, 27, 37, 0, 0, 0, 29, 0, 
-	0, 27, 5, 5, 52
+	0, 0, 0, 0, 0, 0, 0, 25, 
+	5, 0, 14, 14, 26, 16, 0, 14, 
+	14, 27, 14, 16, 14, 14, 0, 0, 
+	0, 28, 28, 28, 28, 0, 0, 29, 
+	0, 0, 0, 0, 0, 14, 27, 14, 
+	16, 0, 0, 0, 0, 0, 0, 30, 
+	30, 31, 32, 33, 0, 0, 11, 5, 
+	0, 14, 14, 15, 16, 0, 30, 30, 
+	31, 0, 32, 0, 0, 11, 5, 0, 
+	34, 34, 34, 34, 34, 14, 14, 15, 
+	16, 0, 0, 18, 11, 13, 13, 13, 
+	0, 0, 0, 0, 0, 28, 28, 28, 
+	28, 0, 0, 29, 0, 0, 30, 30, 
+	31, 32, 0, 0, 0, 0, 28, 28, 
+	28, 28, 0, 0, 29, 0, 0, 30, 
+	30, 31, 32, 35, 0, 0, 11, 5, 
+	36, 0, 14, 14, 15, 16, 37, 0, 
+	0, 0, 14, 14, 27, 14, 16, 14, 
+	38, 39, 39, 40, 41, 38, 0, 42, 
+	42, 5, 43, 0, 0, 0, 44, 0, 
+	0, 5, 14, 14, 16
 ]
 
 class << self
@@ -1702,7 +1677,7 @@ self._envelope_from_eof_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 23, 23, 46, 0
+	0, 45, 45, 46, 0
 ]
 
 class << self
@@ -1732,6 +1707,7 @@ self.envelope_from_en_main = 1;
         end
         
         def parse(data)
+          data_unpacked = data.bytes.to_a
           envelope_from = Data::EnvelopeFromData.new
           quoted_string = nil
           mark_address = nil
@@ -1741,7 +1717,7 @@ self.envelope_from_en_main = 1;
           stack = []
 
           
-# line 1745 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rb"
+# line 1721 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rb"
 begin
 	p ||= 0
 	pe ||= data.length
@@ -1749,10 +1725,10 @@ begin
 	top = 0
 end
 
-# line 73 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+# line 74 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
           
-# line 1755 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rb"
-begin # ragel flat
+# line 1731 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rb"
+begin
 	testEof = false
 	_slen, _trans, _keys, _inds, _acts, _nacts = nil
 	_goto_level = 0
@@ -1762,7 +1738,6 @@ begin # ragel flat
 	_test_eof = 30
 	_out = 40
 	while true
-	_trigger_goto = false
 	if _goto_level <= 0
 	if p == pe
 		_goto_level = _test_eof
@@ -1778,67 +1753,49 @@ begin # ragel flat
 	_inds = _envelope_from_index_offsets[cs]
 	_slen = _envelope_from_key_spans[cs]
 	_trans = if (   _slen > 0 && 
-			_envelope_from_trans_keys[_keys] <= data[p].ord && 
-			data[p].ord <= _envelope_from_trans_keys[_keys + 1] 
+			_envelope_from_trans_keys[_keys] <= ( data_unpacked[p]) && 
+			( data_unpacked[p]) <= _envelope_from_trans_keys[_keys + 1] 
 		    ) then
-			_envelope_from_indicies[ _inds + data[p].ord - _envelope_from_trans_keys[_keys] ] 
+			_envelope_from_indicies[ _inds + ( data_unpacked[p]) - _envelope_from_trans_keys[_keys] ] 
 		 else 
 			_envelope_from_indicies[ _inds + _slen ]
 		 end
 	cs = _envelope_from_trans_targs[_trans]
 	if _envelope_from_trans_actions[_trans] != 0
-		_acts = _envelope_from_trans_actions[_trans]
-		_nacts = _envelope_from_actions[_acts]
-		_acts += 1
-		while _nacts > 0
-			_nacts -= 1
-			_acts += 1
-			case _envelope_from_actions[_acts - 1]
-	when 0 then
+	case _envelope_from_trans_actions[_trans]
+	when 38 then
 # line 8 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 		begin
 		end
-	when 1 then
+	when 42 then
 # line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 		begin
 		end
-	when 2 then
+	when 14 then
 # line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 		begin
 		end
-	when 3 then
-# line 28 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
-		begin
-		end
-	when 4 then
+	when 20 then
 # line 29 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 		begin
  		end
-	when 5 then
+	when 9 then
 # line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 		begin
 		end
-	when 6 then
+	when 28 then
 # line 31 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 		begin
 		end
-	when 7 then
+	when 29 then
 # line 32 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 		begin
 		end
-	when 8 then
-# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
-		begin
-		end
-	when 9 then
+	when 4 then
 # line 35 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 		begin
 		end
-	when 10 then
-# line 36 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
-		begin
-		end
-	when 11 then
+	when 30 then
 # line 38 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 		begin
 		end
@@ -1850,47 +1807,372 @@ begin # ragel flat
 # line 42 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 		begin
  mark = p 		end
-	when 15 then
-# line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
-		begin
- 
-    mark_address = p
-  		end
-	when 16 then
+	when 11 then
 # line 47 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 		begin
  
     envelope_from.address = data[mark_address..(p-1)].rstrip
   		end
-	when 17 then
+	when 5 then
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
 		stack[top] = cs
 		top+= 1
 		cs = 203
-		_trigger_goto = true
 		_goto_level = _again
-		break
+		next
 	end
  		end
-	when 18 then
+	when 44 then
 # line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
 		top -= 1
 		cs = stack[top]
-		_trigger_goto = true
 		_goto_level = _again
-		break
+		next
 	end
  		end
-# line 1889 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rb"
-			end # action switch
+	when 39 then
+# line 8 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
 		end
-	end
-	if _trigger_goto
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+	when 40 then
+# line 8 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 203
+		_goto_level = _again
 		next
+	end
+ 		end
+	when 43 then
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		top -= 1
+		cs = stack[top]
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 27 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 35 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+	when 17 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 39 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+	when 15 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 47 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+ 
+    envelope_from.address = data[mark_address..(p-1)].rstrip
+  		end
+	when 16 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 203
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 25 then
+# line 28 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 47 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+ 
+    envelope_from.address = data[mark_address..(p-1)].rstrip
+  		end
+	when 21 then
+# line 29 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+ 		end
+# line 35 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+	when 22 then
+# line 29 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+ 		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 203
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 18 then
+# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 47 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+ 
+    envelope_from.address = data[mark_address..(p-1)].rstrip
+  		end
+	when 19 then
+# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 203
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 34 then
+# line 35 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 42 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+ mark = p 		end
+	when 6 then
+# line 38 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+	when 33 then
+# line 38 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 39 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+	when 31 then
+# line 38 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 47 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+ 
+    envelope_from.address = data[mark_address..(p-1)].rstrip
+  		end
+	when 32 then
+# line 38 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 203
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 36 then
+# line 39 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 36 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+	when 24 then
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 203
+		_goto_level = _again
+		next
+	end
+ 		end
+# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+	when 41 then
+# line 8 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		top -= 1
+		cs = stack[top]
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 26 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 28 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 47 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+ 
+    envelope_from.address = data[mark_address..(p-1)].rstrip
+  		end
+	when 37 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 39 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 36 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+	when 23 then
+# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 28 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 47 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+ 
+    envelope_from.address = data[mark_address..(p-1)].rstrip
+  		end
+	when 7 then
+# line 38 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 47 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+ 
+    envelope_from.address = data[mark_address..(p-1)].rstrip
+  		end
+	when 10 then
+# line 38 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 39 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+	when 35 then
+# line 38 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 39 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 36 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+	when 8 then
+# line 38 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 203
+		_goto_level = _again
+		next
+	end
+ 		end
+# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+	when 1 then
+# line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+ 
+    mark_address = p
+  		end
+# line 42 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+ mark = p 		end
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+	when 2 then
+# line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+ 
+    mark_address = p
+  		end
+# line 42 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+ mark = p 		end
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 35 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+	when 3 then
+# line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+ 
+    mark_address = p
+  		end
+# line 42 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+ mark = p 		end
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 203
+		_goto_level = _again
+		next
+	end
+ 		end
+# line 2175 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rb"
+	end
 	end
 	end
 	if _goto_level <= _again
@@ -1906,43 +2188,35 @@ begin # ragel flat
 	end
 	if _goto_level <= _test_eof
 	if p == eof
-	begin
-	__acts = _envelope_from_eof_actions[cs]
-	__nacts = _envelope_from_actions[__acts]
-	__acts += 1
-	while ( __nacts > 0 ) 
-		__nacts -= 1
-		__acts += 1
-		case ( _envelope_from_actions[__acts-1] ) 
-	when 2 then
-# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
-		begin
-		end
-	when 14 then
+	  case _envelope_from_eof_actions[cs]
+	when 45 then
 # line 43 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 		begin
  envelope_from.ctime_date = data[mark..(p-1)] 		end
-# line 1926 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rb"
+	when 46 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
 		end
+# line 43 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+		begin
+ envelope_from.ctime_date = data[mark..(p-1)] 		end
+# line 2204 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rb"
+	  end
 	end
-	if _trigger_goto
-		next
-	end
-	end
-	end
+
 	end
 	if _goto_level <= _out
 		break
 	end
-	end
+end
 	end
 
-# line 74 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+# line 75 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 
           if p == eof && cs >= 
-# line 1944 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rb"
+# line 2218 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rb"
 209
-# line 75 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
+# line 76 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/envelope_from.rl"
 
             envelope_from
           else

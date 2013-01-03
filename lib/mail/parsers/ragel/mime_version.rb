@@ -12,19 +12,6 @@ module Mail
           
 # line 14 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
 class << self
-	attr_accessor :_mime_version_actions
-	private :_mime_version_actions, :_mime_version_actions=
-end
-self._mime_version_actions = [
-	0, 1, 0, 1, 1, 1, 2, 1, 
-	3, 1, 4, 1, 5, 1, 6, 1, 
-	7, 2, 0, 1, 2, 0, 6, 2, 
-	1, 7, 2, 2, 3, 2, 2, 6, 
-	2, 4, 6, 2, 5, 6, 3, 0, 
-	1, 7
-]
-
-class << self
 	attr_accessor :_mime_version_trans_keys
 	private :_mime_version_trans_keys, :_mime_version_trans_keys=
 end
@@ -192,12 +179,12 @@ class << self
 	private :_mime_version_trans_actions, :_mime_version_trans_actions=
 end
 self._mime_version_trans_actions = [
-	0, 0, 0, 13, 7, 0, 5, 5, 
-	29, 26, 32, 9, 0, 5, 13, 7, 
-	26, 0, 0, 1, 17, 17, 20, 38, 
-	1, 0, 3, 3, 13, 23, 0, 0, 
-	0, 15, 0, 11, 11, 35, 0, 0, 
-	13, 5, 5, 29
+	0, 0, 0, 1, 2, 0, 3, 3, 
+	4, 5, 6, 7, 0, 3, 1, 2, 
+	5, 0, 0, 8, 9, 9, 10, 11, 
+	8, 0, 12, 12, 1, 13, 0, 0, 
+	0, 14, 0, 15, 15, 16, 0, 0, 
+	1, 3, 3, 4
 ]
 
 class << self
@@ -207,7 +194,7 @@ end
 self._mime_version_eof_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 11, 0, 5, 0
+	0, 15, 0, 3, 0
 ]
 
 class << self
@@ -237,6 +224,7 @@ self.mime_version_en_main = 1;
         end
         
         def parse(data)
+          data_unpacked = data.bytes.to_a
           mime_version = Data::MimeVersionData.new
 
           p = 0
@@ -244,7 +232,7 @@ self.mime_version_en_main = 1;
           stack = []
 
           
-# line 248 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
+# line 236 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
 begin
 	p ||= 0
 	pe ||= data.length
@@ -252,10 +240,10 @@ begin
 	top = 0
 end
 
-# line 67 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+# line 68 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
           
-# line 258 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
-begin # ragel flat
+# line 246 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
+begin
 	testEof = false
 	_slen, _trans, _keys, _inds, _acts, _nacts = nil
 	_goto_level = 0
@@ -265,7 +253,6 @@ begin # ragel flat
 	_test_eof = 30
 	_out = 40
 	while true
-	_trigger_goto = false
 	if _goto_level <= 0
 	if p == pe
 		_goto_level = _test_eof
@@ -281,75 +268,162 @@ begin # ragel flat
 	_inds = _mime_version_index_offsets[cs]
 	_slen = _mime_version_key_spans[cs]
 	_trans = if (   _slen > 0 && 
-			_mime_version_trans_keys[_keys] <= data[p].ord && 
-			data[p].ord <= _mime_version_trans_keys[_keys + 1] 
+			_mime_version_trans_keys[_keys] <= ( data_unpacked[p]) && 
+			( data_unpacked[p]) <= _mime_version_trans_keys[_keys + 1] 
 		    ) then
-			_mime_version_indicies[ _inds + data[p].ord - _mime_version_trans_keys[_keys] ] 
+			_mime_version_indicies[ _inds + ( data_unpacked[p]) - _mime_version_trans_keys[_keys] ] 
 		 else 
 			_mime_version_indicies[ _inds + _slen ]
 		 end
 	cs = _mime_version_trans_targs[_trans]
 	if _mime_version_trans_actions[_trans] != 0
-		_acts = _mime_version_trans_actions[_trans]
-		_nacts = _mime_version_actions[_acts]
-		_acts += 1
-		while _nacts > 0
-			_nacts -= 1
-			_acts += 1
-			case _mime_version_actions[_acts - 1]
-	when 0 then
+	case _mime_version_trans_actions[_trans]
+	when 8 then
 # line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 		begin
 		end
-	when 1 then
+	when 12 then
 # line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 		begin
 		end
-	when 2 then
+	when 3 then
 # line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 		begin
 		end
-	when 3 then
+	when 2 then
 # line 43 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 		begin
  mark = p 		end
-	when 4 then
+	when 7 then
 # line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 		begin
  mime_version.major = data[mark..(p-1)] 		end
-	when 5 then
+	when 15 then
 # line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 		begin
  mime_version.minor = data[mark..(p-1)] 		end
-	when 6 then
+	when 1 then
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
 		stack[top] = cs
 		top+= 1
 		cs = 11
-		_trigger_goto = true
 		_goto_level = _again
-		break
+		next
 	end
  		end
-	when 7 then
+	when 14 then
 # line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
 		top -= 1
 		cs = stack[top]
-		_trigger_goto = true
 		_goto_level = _again
-		break
+		next
 	end
  		end
-# line 348 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
-			end # action switch
+	when 9 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+		begin
 		end
-	end
-	if _trigger_goto
+# line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+		begin
+		end
+	when 10 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+		begin
+		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 11
+		_goto_level = _again
 		next
+	end
+ 		end
+	when 13 then
+# line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+		begin
+		end
+# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		top -= 1
+		cs = stack[top]
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 5 then
+# line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+		begin
+		end
+# line 43 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+		begin
+ mark = p 		end
+	when 4 then
+# line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+		begin
+		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 11
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 6 then
+# line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+		begin
+ mime_version.major = data[mark..(p-1)] 		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 11
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 16 then
+# line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+		begin
+ mime_version.minor = data[mark..(p-1)] 		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 11
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 11 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+		begin
+		end
+# line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+		begin
+		end
+# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		top -= 1
+		cs = stack[top]
+		_goto_level = _again
+		next
+	end
+ 		end
+# line 426 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
+	end
 	end
 	end
 	if _goto_level <= _again
@@ -365,43 +439,32 @@ begin # ragel flat
 	end
 	if _goto_level <= _test_eof
 	if p == eof
-	begin
-	__acts = _mime_version_eof_actions[cs]
-	__nacts = _mime_version_actions[__acts]
-	__acts += 1
-	while ( __nacts > 0 ) 
-		__nacts -= 1
-		__acts += 1
-		case ( _mime_version_actions[__acts-1] ) 
-	when 2 then
+	  case _mime_version_eof_actions[cs]
+	when 3 then
 # line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 		begin
 		end
-	when 5 then
+	when 15 then
 # line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 		begin
  mime_version.minor = data[mark..(p-1)] 		end
-# line 385 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
-		end
+# line 452 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
+	  end
 	end
-	if _trigger_goto
-		next
-	end
-	end
-	end
+
 	end
 	if _goto_level <= _out
 		break
 	end
-	end
+end
 	end
 
-# line 68 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+# line 69 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 
           if p == eof && cs >= 
-# line 403 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
+# line 466 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
 17
-# line 69 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+# line 70 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 
             mime_version
           else
