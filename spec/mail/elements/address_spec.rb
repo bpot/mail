@@ -39,7 +39,6 @@ describe Mail::Address do
 
     ['"-Earnings...Notification-" <vodacom.co.rs>', '<56253817>'].each do |spammy_address|
       it "should allow for funky spammy address #{spammy_address}" do
-      #  pending "bpot -- clarification"
         Mail::Address.new(spammy_address).address.should eq nil
       end
     end
@@ -505,7 +504,6 @@ describe Mail::Address do
       end
 
       it "should handle |(foo@bar.com (foobar), ned@foo.com (nedfoo) ) <kevin@goess.org>|" do
-        #pending "bpot -- trouble with comment recursion and starting an address"
         address = Mail::Address.new('(foo@bar.com (foobar), ned@foo.com (nedfoo) ) <kevin@goess.org>')
         address.should break_down_to({
                                          :name         => 'foo@bar.com \(foobar\), ned@foo.com \(nedfoo\) ',
@@ -545,7 +543,6 @@ describe Mail::Address do
       end
 
       it "should handle |Mary Smith <@machine.tld:mary@example.net>|" do
-      #  pending "bpot -- obs_domain_list"
         address = Mail::Address.new('Mary Smith <@machine.tld:mary@example.net>')
         address.should break_down_to({
                                          :name         => 'Mary Smith',

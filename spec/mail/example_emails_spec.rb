@@ -185,7 +185,6 @@ describe "Test emails" do
     # (but not within) the identifier in the "Message-ID:" field.
 
     it "should handle the rfc whitespace test email" do
-    #  pending "isnt it correct to strip domain comments?"
       mail = Mail.read(fixture('emails', 'rfc2822', 'example10.eml'))
       mail.from.should eq ["pete(his account)@silly.test"]
       mail.to.should eq  ["c@public.example", "joe@example.org", "jdoe@one.test"]
@@ -294,13 +293,7 @@ describe "Test emails" do
 
     describe "handling invalid group lists" do
       before(:each) do
-        @old_compat_val = ENV["MAIL_COMPATABILITY"]
-        ENV["MAIL_COMPATABILITY"] = nil
         @message = Mail::Message.new(File.read(fixture('emails', 'error_emails', 'empty_group_lists.eml')))
-      end
-
-      after(:each) do
-        ENV["MAIL_COMPATABILITY"] = @old_compat_val
       end
 
       it "should parse the email and encode without crashing" do
@@ -317,13 +310,7 @@ describe "Test emails" do
   describe "empty address lists" do
 
     before(:each) do
-      @old_compat_val = ENV["MAIL_COMPATABILITY"]
-      ENV["MAIL_COMPATABILITY"] = nil
       @message = Mail::Message.new(File.read(fixture('emails', 'error_emails', 'weird_to_header.eml')))
-    end
-
-    after(:each) do
-      ENV["MAIL_COMPATABILITY"] = @old_compat_val
     end
 
     it "should parse the email and encode without crashing" do

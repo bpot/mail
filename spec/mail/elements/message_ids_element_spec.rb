@@ -35,7 +35,6 @@ describe Mail::MessageIdsElement do
   end
   
   it "should not fail to parse a message id with dots in it" do
-  #  pending "bpot"
     text = "<4afb664ca3078_48dc..fdbe32b865532b@ax-desktop.mail>"
     m = Mail::MessageIdsElement.new(text)
     m.message_id.should eq "4afb664ca3078_48dc..fdbe32b865532b@ax-desktop.mail"

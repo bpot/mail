@@ -53,7 +53,6 @@ describe Mail::Message do
     end
 
     it "should be able to parse an email with @ in display name" do
-    #  pending "bpot"
       message = Mail::Message.new(File.read(fixture('emails', 'plain_emails', 'raw_email_with_at_display_name.eml')))
       message.to.should eq ["smith@gmail.com", "raasdnil@gmail.com", "tom@gmail.com"]
     end
@@ -76,9 +75,6 @@ describe Mail::Message do
     end
 
     it "should be able to parse every email example we have without raising an exception" do
-      old_compat_val = ENV["MAIL_COMPATABILITY"]
-      ENV["MAIL_COMPATABILITY"] = nil
-
       emails = Dir.glob( fixture('emails/**/*') ).delete_if { |f| File.directory?(f) }
 
       STDERR.stub!(:puts) # Don't want to get noisy about any warnings
@@ -96,7 +92,6 @@ describe Mail::Message do
         end
       end
       errors.should be_false
-      ENV["MAIL_COMPATABILITY"] = old_compat_val
     end
 
     it "should be able to parse a large email without raising an exception" do
