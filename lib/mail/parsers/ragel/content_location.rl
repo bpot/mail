@@ -4,7 +4,7 @@
   include ruby_actions "ruby_actions.rl";
   include common "common.rl";
 
-  main := CFWS? location CFWS?;
+  main := content_location;
 }%%
 
 module Mail

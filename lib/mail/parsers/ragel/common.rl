@@ -111,34 +111,52 @@
   msg_id = (CFWS)? 
            (("<" id_left "@" id_right ">") >mark %msg_id_e)
            (CFWS)?;
-  address_list = address? %(comment_after_address,0) (FWS* ("," | ";") FWS* address?)*;
+  address_lists = address? %(comment_after_address,0) (FWS* ("," | ";") FWS* address?)*;
   obs_addr_list = (CFWS? ",")* address ("," (address | CFWS)?)*;
   location = quoted_string | ((token | 0x3d)+ >mark %token_string_e);
+  content_location = CFWS? location CFWS?;
   content_type = (main_type >mark %main_type_e) "/" (sub_type >sub_type_s %sub_type_e) (((CFWS? ";") | CFWS) parameter CFWS?)*;
   message_ids = msg_id (CFWS? msg_id)*;
-  phrase_list = phrase ("," FWS* phrase)*;
-  received_token = word | angle_addr | addr_spec | domain;
-  obs_hour = CFWS? (DIGIT DIGIT) CFWS?;
-  obs_minute = CFWS? (DIGIT DIGIT) CFWS?;
-  obs_second = CFWS? (DIGIT DIGIT) CFWS?;
-  day_name = "Mon" | "Tue" | "Wed" | "Thu" | "Fri" | "Sat" | "Sun";
-  obs_day = CFWS? (DIGIT | (DIGIT DIGIT)) CFWS?;
-  obs_year = CFWS? (DIGIT DIGIT DIGIT*) CFWS?;
-  hour = DIGIT DIGIT | obs_hour;
-  minute = DIGIT DIGIT | obs_minute;
-  second = DIGIT DIGIT | obs_second;
-  obs_zone = "UT" | "GMT" | "EST" | "EDT" | "CST" | "CDT" | "MST" | "MDT" | "PST" | "PDT" | 0x41..0x49 | 0x4B..0x5A | 0x61..0x69 | 0x6B..0x7A;
-  obs_day_of_week = CFWS? day_name CFWS?;
-  day = (FWS? DIGIT DIGIT? FWS) | obs_day;
-  month = "Jan" | "Feb" | "Mar" | "Apr" | "May" | "Jun" | "Jul" | "Aug" | "Sep" | "Oct" | "Nov" | "Dec";
-  year = FWS DIGIT DIGIT DIGIT DIGIT FWS | obs_year;
-  time_of_day = hour ":" minute (":" second)?;
-  zone = FWS ((("+" | "-") DIGIT DIGIT DIGIT DIGIT) | obs_zone);
-  day_of_week = (FWS? day_name) | obs_day_of_week;
-  date = day month year;
-  time = time_of_day zone;
+  phrase_lists = phrase ("," FWS* phrase)*;
+
+
+
+
+    # day_of_week
+        day_name = "Mon" | "Tue" | "Wed" | "Thu" | "Fri" | "Sat" | "Sun";
+      obs_day_of_week = CFWS? day_name CFWS?;
+    day_of_week = (FWS? day_name) | obs_day_of_week;
+
+    # date
+        obs_day = CFWS? (DIGIT | (DIGIT DIGIT)) CFWS?;
+      day = (FWS? DIGIT DIGIT? FWS) | obs_day;
+      month = "Jan" | "Feb" | "Mar" | "Apr" | "May" | "Jun" | "Jul" | "Aug" | "Sep" | "Oct" | "Nov" | "Dec";
+        obs_year = CFWS? (DIGIT DIGIT DIGIT*) CFWS?;
+      year = FWS DIGIT DIGIT DIGIT DIGIT FWS | obs_year;
+    date = day month year;
+
+    # time
+          obs_hour = CFWS? (DIGIT DIGIT) CFWS?;
+        hour = DIGIT DIGIT | obs_hour;
+          obs_minute = CFWS? (DIGIT DIGIT) CFWS?;
+        minute = DIGIT DIGIT | obs_minute;
+          obs_second = CFWS? (DIGIT DIGIT) CFWS?;
+        second = DIGIT DIGIT | obs_second;
+        obs_zone = "UT" | "GMT" | "EST" | "EDT" | "CST" | "CDT" | "MST" | "MDT" | "PST" | "PDT" | 0x41..0x49 | 0x4B..0x5A | 0x61..0x69 | 0x6B..0x7A;
+      time_of_day = hour ":" minute (":" second)?;
+      zone = FWS ((("+" | "-") DIGIT DIGIT DIGIT DIGIT) | obs_zone);
+    time = time_of_day zone;
+
   date_time = (day_of_week ",")? (date >mark %date_e) <: (time >mark %time_e) CFWS?;
-  version = CFWS?
+
+  received_token = word | angle_addr | addr_spec | domain;
+
+  # Added CFWS? to increase robustness (qmail like to include a comment style string...)
+  received = CFWS? (received_token* >received_s %received_tokens_e) ";" date_time;
+
+
+  # RFC
+  mime_version = CFWS?
             (DIGIT+ >mark %major_digits_e)
             comment? "." comment? 
             (DIGIT+ >mark %minor_digits_e)
@@ -150,8 +168,4 @@
 
   disposition_type = 'inline'i | 'attachment'i | extension_token | '';
   content_disposition = (disposition_type >mark %disposition_type_e) (CFWS? ";" parameter CFWS?)*;
-
-  # Added CFWS? to increase robustness (qmail like to include a comment style string...)
-  received = CFWS? (received_token* >received_s %received_tokens_e) ";" date_time;
-
 }%%
