@@ -20,8 +20,8 @@ module Mail::Parsers
       quoted_string = nil
 
       content_disposition.parameters = []
-      actions.each do |event, p|
-        case event
+      actions.each_slice(2) do |action_id, p|
+        case Mail::Parsers::Ragel::ACTIONS[action_id]
         when :disposition_type_e
           content_disposition.disposition_type = string[mark..(p-1)].downcase
         when :mark

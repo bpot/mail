@@ -33,13 +33,13 @@ self._message_ids_trans_keys = [
 	10, 10, 9, 32, 9, 126, 
 	9, 62, 10, 10, 9, 
 	32, 9, 62, 33, 126, 
-	-128, -1, 10, 10, 9, 32, 
+	0, 127, 10, 10, 9, 32, 
 	9, 126, 9, 126, 1, 
 	127, 10, 10, 9, 32, 
-	-128, -1, 9, 126, 9, 126, 
+	0, 127, 9, 126, 9, 126, 
 	33, 126, 33, 126, 1, 
 	127, 1, 127, 10, 10, 
-	9, 32, -128, -1, 1, 127, 
+	9, 32, 0, 127, 1, 127, 
 	10, 10, 9, 32, 9, 
 	126, 1, 127, 1, 127, 
 	10, 10, 9, 32, 9, 126, 
@@ -49,7 +49,7 @@ self._message_ids_trans_keys = [
 	9, 126, 10, 10, 9, 
 	32, 9, 126, 1, 127, 
 	1, 127, 10, 10, 9, 32, 
-	9, 126, -128, -1, 1, 
+	9, 126, 0, 127, 1, 
 	127, 10, 10, 9, 32, 
 	1, 127, 1, 127, 10, 10, 
 	9, 32, 9, 126, 9, 
@@ -58,7 +58,7 @@ self._message_ids_trans_keys = [
 	10, 10, 9, 32, 9, 
 	126, 33, 126, 1, 127, 
 	1, 127, 10, 10, 9, 32, 
-	-128, -1, 9, 60, 9, 
+	0, 127, 9, 60, 9, 
 	60, 9, 60, 0, 0, 
 	0
 ]
@@ -440,23 +440,23 @@ self._message_ids_indicies = [
 	104, 104, 104, 104, 104, 104, 104, 104, 
 	104, 104, 104, 104, 104, 104, 104, 104, 
 	104, 104, 104, 104, 104, 104, 104, 104, 
-	104, 104, 104, 104, 104, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 100, 113, 
+	104, 104, 104, 104, 104, 1, 100, 100, 
+	100, 100, 100, 100, 100, 100, 100, 100, 
+	100, 100, 100, 100, 100, 100, 100, 100, 
+	100, 100, 100, 100, 100, 100, 100, 100, 
+	100, 100, 100, 100, 100, 100, 100, 100, 
+	100, 100, 100, 100, 100, 100, 100, 100, 
+	100, 100, 100, 100, 100, 100, 100, 100, 
+	100, 100, 100, 100, 100, 100, 100, 100, 
+	100, 100, 100, 100, 100, 100, 100, 100, 
+	100, 100, 100, 100, 100, 100, 100, 100, 
+	100, 100, 100, 100, 100, 100, 100, 100, 
+	100, 100, 100, 100, 100, 100, 100, 100, 
+	100, 100, 100, 100, 100, 100, 100, 100, 
+	100, 100, 100, 100, 100, 100, 100, 100, 
+	100, 100, 100, 100, 100, 100, 100, 100, 
+	100, 100, 100, 100, 100, 100, 100, 100, 
+	100, 100, 100, 100, 100, 100, 1, 113, 
 	1, 64, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
@@ -509,23 +509,23 @@ self._message_ids_indicies = [
 	123, 1, 68, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 68, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 68, 71, 1, 1, 1, 
+	1, 68, 1, 68, 68, 68, 68, 68, 
+	68, 68, 68, 68, 68, 68, 68, 68, 
+	68, 68, 68, 68, 68, 68, 68, 68, 
+	68, 68, 68, 68, 68, 68, 68, 68, 
+	68, 68, 68, 68, 68, 68, 68, 68, 
+	68, 68, 68, 68, 68, 68, 68, 68, 
+	68, 68, 68, 68, 68, 68, 68, 68, 
+	68, 68, 68, 68, 68, 68, 68, 68, 
+	68, 68, 68, 68, 68, 68, 68, 68, 
+	68, 68, 68, 68, 68, 68, 68, 68, 
+	68, 68, 68, 68, 68, 68, 68, 68, 
+	68, 68, 68, 68, 68, 68, 68, 68, 
+	68, 68, 68, 68, 68, 68, 68, 68, 
+	68, 68, 68, 68, 68, 68, 68, 68, 
+	68, 68, 68, 68, 68, 68, 68, 68, 
+	68, 68, 68, 68, 68, 68, 68, 68, 
+	68, 68, 68, 1, 71, 1, 1, 1, 
 	72, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 71, 124, 64, 124, 124, 
@@ -614,23 +614,23 @@ self._message_ids_indicies = [
 	135, 1, 131, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 131, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 131, 131, 131, 131, 131, 
+	1, 131, 1, 131, 131, 131, 131, 131, 
+	131, 131, 131, 131, 131, 131, 131, 131, 
+	131, 131, 131, 131, 131, 131, 131, 131, 
+	131, 131, 131, 131, 131, 131, 131, 131, 
+	131, 131, 131, 131, 131, 131, 131, 131, 
+	131, 131, 131, 131, 131, 131, 131, 131, 
+	131, 131, 131, 131, 131, 131, 131, 131, 
+	131, 131, 131, 131, 131, 131, 131, 131, 
+	131, 131, 131, 131, 131, 131, 131, 131, 
+	131, 131, 131, 131, 131, 131, 131, 131, 
+	131, 131, 131, 131, 131, 131, 131, 131, 
+	131, 131, 131, 131, 131, 131, 131, 131, 
+	131, 131, 131, 131, 131, 131, 131, 131, 
+	131, 131, 131, 131, 131, 131, 131, 131, 
+	131, 131, 131, 131, 131, 131, 131, 131, 
+	131, 131, 131, 131, 131, 131, 131, 131, 
+	131, 131, 131, 1, 131, 131, 131, 131, 
 	131, 131, 131, 131, 136, 1, 131, 131, 
 	137, 131, 131, 131, 131, 131, 131, 131, 
 	131, 131, 131, 131, 131, 131, 131, 131, 
@@ -850,23 +850,23 @@ self._message_ids_indicies = [
 	147, 147, 147, 147, 147, 147, 147, 147, 
 	147, 147, 147, 147, 147, 147, 147, 147, 
 	147, 147, 147, 147, 147, 147, 147, 147, 
-	147, 147, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 176, 176, 176, 176, 176, 
+	147, 147, 1, 176, 176, 176, 176, 176, 
+	176, 176, 176, 176, 176, 176, 176, 176, 
+	176, 176, 176, 176, 176, 176, 176, 176, 
+	176, 176, 176, 176, 176, 176, 176, 176, 
+	176, 176, 176, 176, 176, 176, 176, 176, 
+	176, 176, 176, 176, 176, 176, 176, 176, 
+	176, 176, 176, 176, 176, 176, 176, 176, 
+	176, 176, 176, 176, 176, 176, 176, 176, 
+	176, 176, 176, 176, 176, 176, 176, 176, 
+	176, 176, 176, 176, 176, 176, 176, 176, 
+	176, 176, 176, 176, 176, 176, 176, 176, 
+	176, 176, 176, 176, 176, 176, 176, 176, 
+	176, 176, 176, 176, 176, 176, 176, 176, 
+	176, 176, 176, 176, 176, 176, 176, 176, 
+	176, 176, 176, 176, 176, 176, 176, 176, 
+	176, 176, 176, 176, 176, 176, 176, 176, 
+	176, 176, 176, 1, 176, 176, 176, 176, 
 	176, 176, 176, 176, 185, 1, 176, 176, 
 	186, 176, 176, 176, 176, 176, 176, 176, 
 	176, 176, 176, 176, 176, 176, 176, 176, 
@@ -1051,23 +1051,23 @@ self._message_ids_indicies = [
 	229, 1, 224, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 224, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 224, 230, 1, 1, 1, 
+	1, 224, 1, 224, 224, 224, 224, 224, 
+	224, 224, 224, 224, 224, 224, 224, 224, 
+	224, 224, 224, 224, 224, 224, 224, 224, 
+	224, 224, 224, 224, 224, 224, 224, 224, 
+	224, 224, 224, 224, 224, 224, 224, 224, 
+	224, 224, 224, 224, 224, 224, 224, 224, 
+	224, 224, 224, 224, 224, 224, 224, 224, 
+	224, 224, 224, 224, 224, 224, 224, 224, 
+	224, 224, 224, 224, 224, 224, 224, 224, 
+	224, 224, 224, 224, 224, 224, 224, 224, 
+	224, 224, 224, 224, 224, 224, 224, 224, 
+	224, 224, 224, 224, 224, 224, 224, 224, 
+	224, 224, 224, 224, 224, 224, 224, 224, 
+	224, 224, 224, 224, 224, 224, 224, 224, 
+	224, 224, 224, 224, 224, 224, 224, 224, 
+	224, 224, 224, 224, 224, 224, 224, 224, 
+	224, 224, 224, 1, 230, 1, 1, 1, 
 	231, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 230, 1, 1, 1, 1, 
@@ -1255,60 +1255,60 @@ begin
 	_inds = _message_ids_index_offsets[cs]
 	_slen = _message_ids_key_spans[cs]
 	_trans = if (   _slen > 0 && 
-			_message_ids_trans_keys[_keys] <= ( data_unpacked[p]) && 
-			( data_unpacked[p]) <= _message_ids_trans_keys[_keys + 1] 
+			_message_ids_trans_keys[_keys] <= data[p].ord && 
+			data[p].ord <= _message_ids_trans_keys[_keys + 1] 
 		    ) then
-			_message_ids_indicies[ _inds + ( data_unpacked[p]) - _message_ids_trans_keys[_keys] ] 
+			_message_ids_indicies[ _inds + data[p].ord - _message_ids_trans_keys[_keys] ] 
 		 else 
 			_message_ids_indicies[ _inds + _slen ]
 		 end
 	cs = _message_ids_trans_targs[_trans]
 	if _message_ids_trans_actions[_trans] != 0
 	case _message_ids_trans_actions[_trans]
-	when 9 then
+	when 12 then
 # line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:atom_s, p] 		end
-	when 12 then
+ actions.push(3,p) 		end
+	when 9 then
 # line 8 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:atom_e, p] 		end
-	when 27 then
+ actions.push(4,p) 		end
+	when 3 then
 # line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:comment_s, p] 		end
-	when 3 then
+ actions.push(5,p) 		end
+	when 27 then
 # line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:comment_e, p] 		end
-	when 6 then
+ actions.push(6,p) 		end
+	when 14 then
 # line 18 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:local_dot_atom_s, p] 		end
-	when 14 then
+ actions.push(14,p) 		end
+	when 21 then
 # line 19 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:local_dot_atom_e, p] 		end
-	when 21 then
+ actions.push(15,p) 		end
+	when 6 then
 # line 20 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:local_dot_atom_pre_comment_e, p] 		end
-	when 19 then
+ actions.push(16,p) 		end
+	when 2 then
+# line 24 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions.push(20,p) 		end
+	when 31 then
 # line 26 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:quoted_s, p] 		end
+ actions.push(22,p) 		end
 	when 20 then
-# line 27 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 31 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:quoted_e, p] 		end
-	when 2 then
-# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
-		begin
- actions << [:mark, p] 		end
-	when 31 then
+ actions.push(27,p) 		end
+	when 19 then
 # line 32 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:msg_id_e, p] 		end
+ actions.push(28,p) 		end
 	when 1 then
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
@@ -1331,9 +1331,44 @@ begin
 	end
  		end
 	when 16 then
+# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions.push(3,p) 		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 111
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 18 then
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions.push(5,p) 		end
 # line 8 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:atom_e, p] 		end
+ actions.push(4,p) 		end
+	when 15 then
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions.push(5,p) 		end
+# line 18 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions.push(14,p) 		end
+	when 5 then
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions.push(5,p) 		end
+# line 24 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions.push(20,p) 		end
+	when 4 then
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions.push(5,p) 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -1345,9 +1380,9 @@ begin
 	end
  		end
 	when 28 then
-# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:comment_s, p] 		end
+ actions.push(6,p) 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -1359,9 +1394,9 @@ begin
 	end
  		end
 	when 29 then
-# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:comment_s, p] 		end
+ actions.push(6,p) 		end
 # line 6 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -1371,31 +1406,31 @@ begin
 		next
 	end
  		end
-	when 18 then
-# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+	when 25 then
+# line 18 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:comment_e, p] 		end
-# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+ actions.push(14,p) 		end
+# line 21 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:atom_s, p] 		end
-	when 15 then
-# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
-		begin
- actions << [:comment_e, p] 		end
+ actions.push(17,p) 		end
+	when 10 then
 # line 19 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:local_dot_atom_e, p] 		end
-	when 5 then
-# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+ actions.push(15,p) 		end
+# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:comment_e, p] 		end
-# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+ actions.push(3,p) 		end
+	when 23 then
+# line 19 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:mark, p] 		end
-	when 4 then
-# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+ actions.push(15,p) 		end
+# line 18 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:comment_e, p] 		end
+ actions.push(14,p) 		end
+	when 22 then
+# line 19 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions.push(15,p) 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -1407,51 +1442,16 @@ begin
 	end
  		end
 	when 7 then
-# line 18 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
-		begin
- actions << [:local_dot_atom_s, p] 		end
-# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
-		begin
- actions << [:atom_s, p] 		end
-	when 8 then
-# line 18 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
-		begin
- actions << [:local_dot_atom_s, p] 		end
-# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
-		begin
- 	begin
-		stack[top] = cs
-		top+= 1
-		cs = 111
-		_goto_level = _again
-		next
-	end
- 		end
-	when 25 then
-# line 19 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
-		begin
- actions << [:local_dot_atom_e, p] 		end
-# line 21 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
-		begin
- actions << [:local_quoted_string_e, p] 		end
-	when 10 then
 # line 20 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:local_dot_atom_pre_comment_e, p] 		end
+ actions.push(16,p) 		end
 # line 8 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:atom_e, p] 		end
-	when 23 then
+ actions.push(4,p) 		end
+	when 8 then
 # line 20 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:local_dot_atom_pre_comment_e, p] 		end
-# line 19 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
-		begin
- actions << [:local_dot_atom_e, p] 		end
-	when 22 then
-# line 20 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
-		begin
- actions << [:local_dot_atom_pre_comment_e, p] 		end
+ actions.push(16,p) 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -1463,16 +1463,16 @@ begin
 	end
  		end
 	when 33 then
-# line 32 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 26 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:msg_id_e, p] 		end
-# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+ actions.push(22,p) 		end
+# line 24 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:mark, p] 		end
+ actions.push(20,p) 		end
 	when 32 then
-# line 32 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 26 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:msg_id_e, p] 		end
+ actions.push(22,p) 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -1494,43 +1494,43 @@ begin
 		next
 	end
  		end
-# line 8 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:atom_e, p] 		end
+ actions.push(3,p) 		end
 	when 26 then
-# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:comment_e, p] 		end
-# line 19 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+ actions.push(5,p) 		end
+# line 18 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:local_dot_atom_e, p] 		end
+ actions.push(14,p) 		end
 # line 21 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:local_quoted_string_e, p] 		end
+ actions.push(17,p) 		end
 	when 13 then
-# line 20 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
-		begin
- actions << [:local_dot_atom_pre_comment_e, p] 		end
 # line 19 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:local_dot_atom_e, p] 		end
-# line 8 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+ actions.push(15,p) 		end
+# line 18 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:atom_e, p] 		end
+ actions.push(14,p) 		end
+# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions.push(3,p) 		end
 	when 24 then
-# line 20 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
-		begin
- actions << [:local_dot_atom_pre_comment_e, p] 		end
 # line 19 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:local_dot_atom_e, p] 		end
+ actions.push(15,p) 		end
+# line 18 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions.push(14,p) 		end
 # line 21 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:local_quoted_string_e, p] 		end
+ actions.push(17,p) 		end
 	when 11 then
-# line 20 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 19 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:local_dot_atom_pre_comment_e, p] 		end
+ actions.push(15,p) 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -1541,9 +1541,9 @@ begin
 		next
 	end
  		end
-# line 8 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:atom_e, p] 		end
+ actions.push(3,p) 		end
 # line 1548 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rb"
 	end
 	end
@@ -1563,13 +1563,13 @@ begin
 	if p == eof
 	  case _message_ids_eof_actions[cs]
 	when 3 then
-# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:comment_e, p] 		end
+ actions.push(5,p) 		end
 	when 31 then
-# line 32 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 26 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:msg_id_e, p] 		end
+ actions.push(22,p) 		end
 # line 1574 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/message_ids.rb"
 	  end
 	end

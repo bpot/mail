@@ -615,32 +615,32 @@ begin
 	_inds = _date_time_index_offsets[cs]
 	_slen = _date_time_key_spans[cs]
 	_trans = if (   _slen > 0 && 
-			_date_time_trans_keys[_keys] <= ( data_unpacked[p]) && 
-			( data_unpacked[p]) <= _date_time_trans_keys[_keys + 1] 
+			_date_time_trans_keys[_keys] <= data[p].ord && 
+			data[p].ord <= _date_time_trans_keys[_keys + 1] 
 		    ) then
-			_date_time_indicies[ _inds + ( data_unpacked[p]) - _date_time_trans_keys[_keys] ] 
+			_date_time_indicies[ _inds + data[p].ord - _date_time_trans_keys[_keys] ] 
 		 else 
 			_date_time_indicies[ _inds + _slen ]
 		 end
 	cs = _date_time_trans_targs[_trans]
 	if _date_time_trans_actions[_trans] != 0
 	case _date_time_trans_actions[_trans]
-	when 9 then
+	when 4 then
 # line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:comment_s, p] 		end
-	when 4 then
+ actions.push(5,p) 		end
+	when 9 then
 # line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:comment_e, p] 		end
+ actions.push(6,p) 		end
 	when 1 then
-# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 24 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:mark, p] 		end
+ actions.push(20,p) 		end
 	when 13 then
-# line 36 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 37 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:time_e, p] 		end
+ actions.push(33,p) 		end
 	when 3 then
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
@@ -662,10 +662,24 @@ begin
 		next
 	end
  		end
-	when 10 then
+	when 5 then
 # line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:comment_s, p] 		end
+ actions.push(5,p) 		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 91
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 10 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions.push(6,p) 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -677,9 +691,9 @@ begin
 	end
  		end
 	when 11 then
-# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:comment_s, p] 		end
+ actions.push(6,p) 		end
 # line 6 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -689,31 +703,17 @@ begin
 		next
 	end
  		end
-	when 5 then
-# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
-		begin
- actions << [:comment_e, p] 		end
-# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
-		begin
- 	begin
-		stack[top] = cs
-		top+= 1
-		cs = 91
-		_goto_level = _again
-		next
-	end
- 		end
 	when 6 then
 # line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:date_e, p] 		end
-# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+ actions.push(8,p) 		end
+# line 24 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:mark, p] 		end
+ actions.push(20,p) 		end
 	when 8 then
-# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 24 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:mark, p] 		end
+ actions.push(20,p) 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -725,9 +725,9 @@ begin
 	end
  		end
 	when 14 then
-# line 36 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 37 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:time_e, p] 		end
+ actions.push(33,p) 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -749,19 +749,19 @@ begin
 		next
 	end
  		end
-# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 24 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:mark, p] 		end
+ actions.push(20,p) 		end
 	when 7 then
-# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:comment_e, p] 		end
+ actions.push(5,p) 		end
 # line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:date_e, p] 		end
-# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+ actions.push(8,p) 		end
+# line 24 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:mark, p] 		end
+ actions.push(20,p) 		end
 # line 766 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
 	end
 	end
@@ -781,13 +781,13 @@ begin
 	if p == eof
 	  case _date_time_eof_actions[cs]
 	when 4 then
-# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:comment_e, p] 		end
+ actions.push(5,p) 		end
 	when 13 then
-# line 36 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 37 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- actions << [:time_e, p] 		end
+ actions.push(33,p) 		end
 # line 792 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
 	  end
 	end

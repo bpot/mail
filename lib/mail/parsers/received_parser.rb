@@ -12,8 +12,8 @@ module Mail::Parsers
 
       mark = nil
       received_s = nil
-      actions.each do |event, p|
-        case event
+      actions.each_slice(2) do |action_id, p|
+        case Mail::Parsers::Ragel::ACTIONS[action_id]
         when :date_e
           received.date = string[mark..(p-1)].strip
         when :mark

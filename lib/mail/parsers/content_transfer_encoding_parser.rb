@@ -14,8 +14,8 @@ module Mail::Parsers
       end
 
       mark = nil
-      actions.each do |event, p|
-        case event
+      actions.each_slice(2) do |action_id, p|
+        case Mail::Parsers::Ragel::ACTIONS[action_id]
         when :mark
           mark = p
         when :encoding_e

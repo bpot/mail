@@ -20,8 +20,8 @@ module Mail::Parsers
 
       content_type.parameters = []
 
-      actions.each do |event, p|
-        case event
+      actions.each_slice(2) do |action_id, p|
+        case Mail::Parsers::Ragel::ACTIONS[action_id]
         when :main_type_e
           content_type.main_type = string[mark..(p-1)].downcase 
         when :mark

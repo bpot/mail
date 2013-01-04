@@ -15,8 +15,8 @@ module Mail::Parsers
 
       mark = nil
       quoted_s = nil
-      actions.each do |event, p|
-        case event
+      actions.each_slice(2) do |action_id, p|
+        case Mail::Parsers::Ragel::ACTIONS[action_id]
         when :mark
           mark = p
         when :quoted_e

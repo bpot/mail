@@ -33,8 +33,8 @@ module Mail::Parsers
       local_dot_atom = nil
       quoted_string = nil
 
-      actions.each do |event, p|
-        case event
+      actions.each_slice(2) do |action_id, p|
+        case Mail::Parsers::Ragel::ACTIONS[action_id]
         when :mark
           mark = p
         when :address_s
