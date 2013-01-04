@@ -3,7 +3,7 @@ module Mail::Parsers
     include Mail::Utilities
 
     def parse(string)
-      data = compare(string)
+      data = ragel(string)
       if data.error
         raise Mail::Field::ParseError.new(Mail::ReceivedElement, string, data.error)
       end
@@ -14,21 +14,6 @@ module Mail::Parsers
     def ragel(string)
       @@parser ||= Ragel::ReceivedParser.new
       @@parser.parse(string)
-    end
-
-    def treetop(string)
-      received = Data::ReceivedData.new
-
-      parser = Treetops::ReceivedParser.new
-      if tree = parser.parse(string)
-        received.date = tree.date_time.date.text_value.strip
-        received.time = tree.date_time.time.text_value
-        received.info = tree.name_val_list.text_value
-      else
-        received.error = parser.failure_reason
-      end
-
-      received
     end
   end
 end

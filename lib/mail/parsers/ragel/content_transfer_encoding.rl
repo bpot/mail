@@ -42,7 +42,9 @@
 
 
   action mark { mark = p }
-  action e_encoding { content_transfer_encoding.encoding = data[mark..(p-1)].downcase } 
+  action e_encoding {
+    content_transfer_encoding.encoding = data[mark..(p-1)].downcase.gsub(/s$/,'')
+  } 
 
   include common "common.rl";
 
