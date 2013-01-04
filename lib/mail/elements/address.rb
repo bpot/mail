@@ -23,7 +23,7 @@ module Mail
       @output_type = nil
       if value.nil?
         @parsed = false
-        @data = nil
+        @address = nil
         return
       else
         parse(value)
@@ -33,7 +33,7 @@ module Mail
     # Returns the raw input of the passed in string, this is before it is passed
     # by the parser.
     def raw
-      @data.raw
+      @address.raw
     end
 
     # Returns a correctly formatted address for the email going out.  If given
@@ -45,7 +45,7 @@ module Mail
     #  a.format #=> 'Mikel Lindsaar <mikel@test.lindsaar.net> (My email address)'
     def format
       parse unless @parsed
-      if @data.nil?
+      if @address.nil?
         ''
       elsif display_name
         [quote_phrase(display_name), "<#{address}>", format_comments].compact.join(" ")
@@ -100,7 +100,7 @@ module Mail
     #  a.local #=> 'mikel'
     def local
       parse unless @parsed
-      "#{@data.obs_domain_list}#{get_local.strip}" if get_local
+      "#{@address.obs_domain_list}#{get_local.strip}" if get_local
     end
 
     # Returns the domain part (the right hand side of the @ sign in the email address) of
@@ -171,20 +171,18 @@ module Mail
 
       case value
       when NilClass
-        @data = nil
+        @address = nil
         nil
       when Mail::Parsers::Data::AddressData
-        @data = value
+        @address = value
       when String
         @raw_text = value
         if value.blank?
-          @data = nil
+          @address = nil
         else
           address_list = Mail::Parsers::AddressListsParser.new.parse(value)
-          @data = address_list.addresses.first
+          @address = address_list.addresses.first
         end
-      else
-        raise "Unable to parse unknown type: #{value.class}"
       end
     end
     
@@ -200,7 +198,7 @@ module Mail
     def strip_domain_comments(value)
       unless comments.blank?
         comments.each do |comment|
-          if @data.domain && @data.domain.include?("(#{comment})")
+          if @address.domain && @address.domain.include?("(#{comment})")
             value = value.gsub("(#{comment})", '')
           end
         end
@@ -209,10 +207,10 @@ module Mail
     end
     
     def get_display_name
-      if @data.display_name
-        str = strip_all_comments(@data.display_name.to_s)
-      elsif @data.comments
-        if @data.domain
+      if @address.display_name
+        str = strip_all_comments(@address.display_name.to_s)
+      elsif @address.comments
+        if @address.domain
           str = strip_domain_comments(format_comments)
         else
           str = nil
@@ -255,15 +253,15 @@ module Mail
     end
 
     def get_local
-      @data && @data.local
+      @address && @address.local
     end
 
     def get_domain
-      @data && @data.domain
+      @address && @address.domain
     end
     
     def get_comments
-      @data && @data.comments
+      @address && @address.comments
     end
   end
 end

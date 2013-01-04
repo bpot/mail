@@ -6,10 +6,11 @@ module Mail
     
     def initialize(string)
       @content_transfer_encoding = Mail::Parsers::ContentTransferEncodingParser.new.parse(string)
+      @encoding = encoding
     end
     
     def encoding
-      @content_transfer_encoding.encoding
+      @encoding
     end
     
   end

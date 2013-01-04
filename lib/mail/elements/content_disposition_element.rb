@@ -5,15 +5,17 @@ module Mail
     include Mail::Utilities
     
     def initialize( string )
-      @content_disposition = Mail::Parsers::ContentDispositionParser.new.parse(cleaned(string))
+      content_disposition = Mail::Parsers::ContentDispositionParser.new.parse(cleaned(string))
+      @disposition_type = content_disposition.disposition_type
+      @parameters = content_disposition.parameters
     end
     
     def disposition_type
-      @content_disposition.disposition_type
+      @disposition.disposition_type
     end
     
     def parameters
-      @content_disposition.parameters
+      @disposition.parameters
     end
     
     def cleaned(string)
