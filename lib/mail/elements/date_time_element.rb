@@ -5,15 +5,17 @@ module Mail
     include Mail::Utilities
     
     def initialize( string )
-      @date_time = Mail::Parsers::DateTimeParser.new.parse(string)
+      date_time = Mail::Parsers::DateTimeParser.new.parse(string)
+      @date_string = date_time.date_string
+      @time_string = date_time.time_string
     end
     
     def date_string
-      @date_time.date_string
+      @date_string
     end
     
     def time_string
-      @date_time.time_string
+      @time_string
     end
     
   end
