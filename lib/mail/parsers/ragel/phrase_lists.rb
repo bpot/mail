@@ -446,19 +446,19 @@ begin
 		begin
  actions << [:comment_e, p] 		end
 	when 19 then
-# line 28 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 24 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:phrase_e, p] 		end
 	when 6 then
-# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 26 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:quoted_s, p] 		end
 	when 7 then
-# line 31 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 27 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:quoted_e, p] 		end
 	when 1 then
-# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:mark, p] 		end
 	when 5 then
@@ -493,7 +493,7 @@ begin
 # line 8 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:atom_e, p] 		end
-# line 28 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 24 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:phrase_e, p] 		end
 	when 18 then
@@ -548,7 +548,7 @@ begin
 # line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:comment_e, p] 		end
-# line 28 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 24 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:phrase_e, p] 		end
 	when 10 then
@@ -566,14 +566,14 @@ begin
 	end
  		end
 	when 2 then
-# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:mark, p] 		end
 # line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:atom_s, p] 		end
 	when 3 then
-# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:mark, p] 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
@@ -605,21 +605,21 @@ begin
 	if p == eof
 	  case _phrase_lists_eof_actions[cs]
 	when 19 then
-# line 28 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 24 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:phrase_e, p] 		end
 	when 15 then
 # line 8 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:atom_e, p] 		end
-# line 28 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 24 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:phrase_e, p] 		end
 	when 20 then
 # line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:comment_e, p] 		end
-# line 28 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 24 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:phrase_e, p] 		end
 # line 626 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/phrase_lists.rb"

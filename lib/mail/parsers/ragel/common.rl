@@ -78,7 +78,7 @@
   obs_angle_addr = CFWS? "<" obs_route? addr_spec ">" CFWS?;
   display_name = phrase;
   angle_addr = CFWS? ("<" >angle_addr_s) addr_spec ">" CFWS? | obs_angle_addr;
-  name_addr = display_name? %name_addr_display_name_e %(end_addr,2) angle_addr;
+  name_addr = display_name?  %(end_addr,2) angle_addr;
   mailbox = (name_addr | addr_spec_allow_local_only) >address_s %address_e;
   obs_mbox_list = (CFWS? ",")* mailbox ("," (mailbox | CFWS)?)*;
   token = 0x21..0x27 | 0x2a..0x2b | 0x2c..0x2e | 0x30..0x39 | 0x41..0x5a | 0x5e..0x7e;
@@ -91,7 +91,7 @@
   obs_id_left = local_part;
   no_fold_literal = "[" (dtext)* "]";
   obs_id_right = domain;
-  group = (display_name %group_name_e) ":" (group_list? >group_list_s) ";" CFWS?;
+  group = (display_name %group_name_e) ":" (group_list?) ";" CFWS?;
   discrete_type = 'text'i | 'image'i | 'audio'i | 'video'i | 
                   'application'i | extension_token;
   composite_type = 'message'i | 'multipart'i | extension_token;

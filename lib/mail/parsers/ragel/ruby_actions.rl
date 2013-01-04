@@ -14,15 +14,11 @@
   action domain_s { actions << [:domain_s, p] }
   action domain_e { actions << [:domain_e, p] }
   action encoding_e { actions << [:encoding_e, p] }
-# remove?
- action group_list_s { actions << [:group_list_s, p] }
   action group_name_e { actions << [:group_name_e, p] }
   action local_dot_atom_s { actions << [:local_dot_atom_s, p] }
   action local_dot_atom_e { actions << [:local_dot_atom_e, p] }
   action local_dot_atom_pre_comment_e { actions << [:local_dot_atom_pre_comment_e, p] }
   action local_quoted_string_e { actions << [:local_quoted_string_e, p] }
-# remove?
- action name_addr_display_name_e { actions << [:name_addr_display_name_e, p] }
   action parameter_attribute_e { actions << [:parameter_attribute_e, p] }
   action parameter_value_e { actions << [:parameter_value_e, p] }
   action phrase_e { actions << [:phrase_e, p] }

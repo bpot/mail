@@ -266,15 +266,15 @@ begin
 		begin
  actions << [:comment_e, p] 		end
 	when 7 then
-# line 33 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 29 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:major_digits_e, p] 		end
 	when 2 then
-# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:mark, p] 		end
 	when 12 then
-# line 35 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 31 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:minor_digits_e, p] 		end
 	when 1 then
@@ -329,7 +329,7 @@ begin
 # line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:comment_e, p] 		end
-# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:mark, p] 		end
 	when 4 then
@@ -347,7 +347,7 @@ begin
 	end
  		end
 	when 6 then
-# line 33 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 29 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:major_digits_e, p] 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
@@ -361,7 +361,7 @@ begin
 	end
  		end
 	when 13 then
-# line 35 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 31 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:minor_digits_e, p] 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
@@ -397,7 +397,7 @@ begin
 		begin
  actions << [:comment_e, p] 		end
 	when 12 then
-# line 35 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+# line 31 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
  actions << [:minor_digits_e, p] 		end
 # line 404 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"

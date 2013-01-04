@@ -115,10 +115,6 @@ module Mail::Parsers
           quoted_string = string[quoted_s..(p-1)]
         when :quoted_s
           quoted_s = p
-        when :name_addr_display_name_e
-          # dont think I need this
-        when :group_list_s
-          # dont think I need this
         else
           raise "WUT: #{event}"
         end
