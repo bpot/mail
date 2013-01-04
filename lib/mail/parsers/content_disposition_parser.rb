@@ -8,19 +8,52 @@ module Mail::Parsers
         return content_disposition
       end
 
-      data = ragel(cleaned(string))
-      if data.error
-        raise Mail::Field::ParseError.new(Mail::ContentDispositionElement, string, data.error)
+      actions, error = Ragel::ContentDispositionParser.parse(string)
+      if error
+        raise Mail::Field::ParseError.new(Mail::ContentDispositionElement, string, error)
       end
-      data
+
+      mark = nil
+      quoted_s = nil
+
+      attribute = nil
+      quoted_string = nil
+
+      content_disposition.parameters = []
+      actions.each do |event, p|
+        case event
+        when :disposition_type_e
+          content_disposition.disposition_type = string[mark..(p-1)].downcase
+        when :mark
+          mark = p
+        when :parameter_attribute_e
+          attribute = string[mark..(p-1)]
+        when :parameter_value_e
+          # XXX bpot
+          if attribute.nil?
+            raise Mail::Field::ParseError.new(Mail::ContentDispositionElement, string, "no attribute for value")
+          end
+
+          if quoted_string
+            value = quoted_string
+          else
+            value = string[mark..(p-1)]
+          end
+
+          content_disposition.parameters <<  { attribute => value }
+          attribute = nil
+          quoted_string = nil
+        when :quoted_e
+          quoted_string = string[quoted_s..(p-1)]
+        when :quoted_s
+          quoted_s = p
+        end
+      end
+
+      content_disposition
     end
 
     private
-    def ragel(string)
-      @@parser ||= Ragel::ContentDispositionParser.new
-      @@parser.parse(string)
-    end
-
     def cleaned(string)
       string =~ /(.+);\s*$/ ? $1 : string
     end

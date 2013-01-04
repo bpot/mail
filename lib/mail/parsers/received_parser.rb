@@ -3,17 +3,30 @@ module Mail::Parsers
     include Mail::Utilities
 
     def parse(string)
-      data = ragel(string)
-      if data.error
-        raise Mail::Field::ParseError.new(Mail::ReceivedElement, string, data.error)
+      actions, error = Ragel::ReceivedParser.parse(string)
+      if error
+        raise Mail::Field::ParseError.new(Mail::ReceivedElement, string, error)
       end
-      data
-    end
 
-    private
-    def ragel(string)
-      @@parser ||= Ragel::ReceivedParser.new
-      @@parser.parse(string)
+      received = Data::ReceivedData.new
+
+      mark = nil
+      received_s = nil
+      actions.each do |event, p|
+        case event
+        when :date_e
+          received.date = string[mark..(p-1)].strip
+        when :mark
+          mark = p
+        when :received_s
+          received_s = p
+        when :received_tokens_e
+          received.info = string[received_s..(p-1)]
+        when :time_e
+          received.time = string[mark..(p-1)]
+        end
+      end
+      received
     end
   end
 end

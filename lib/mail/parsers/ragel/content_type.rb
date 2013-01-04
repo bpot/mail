@@ -1,16 +1,15 @@
 
 # line 1 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
 
-# line 70 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 8 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
 
 
 module Mail
   module Parsers
     module Ragel
-      class ContentTypeParser
-        def initialize
-          
-# line 14 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
+      module ContentTypeParser
+        
+# line 13 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
 class << self
 	attr_accessor :_content_type_trans_keys
 	private :_content_type_trans_keys, :_content_type_trans_keys=
@@ -51,11 +50,11 @@ self._content_type_trans_keys = [
 	105, 110, 110, 116, 116, 
 	97, 97, 98, 98, 108, 108, 
 	101, 101, 1, 127, 1, 
-	127, 1, 127, 10, 10, 
-	9, 32, 0, 127, 9, 126, 
-	9, 59, 9, 126, 9, 
+	127, 10, 10, 9, 32, 
+	0, 127, 9, 126, 9, 59, 
+	9, 126, 9, 126, 9, 
 	126, 9, 126, 9, 126, 
-	9, 126, 0, 0, 0
+	0, 0, 0
 ]
 
 class << self
@@ -74,9 +73,9 @@ self._content_type_key_spans = [
 	33, 1, 94, 94, 9, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 127, 127, 127, 1, 
-	24, 128, 118, 51, 118, 118, 118, 118, 
-	118, 0
+	1, 1, 1, 1, 127, 127, 1, 24, 
+	128, 118, 51, 118, 118, 118, 118, 118, 
+	0
 ]
 
 class << self
@@ -95,9 +94,9 @@ self._content_type_index_offsets = [
 	2703, 2737, 2739, 2834, 2929, 2939, 2941, 2943, 
 	2945, 2947, 2949, 2951, 2953, 2955, 2957, 2959, 
 	2961, 2963, 2965, 2967, 2969, 2971, 2973, 2975, 
-	2977, 2979, 2981, 2983, 2985, 3113, 3241, 3369, 
-	3371, 3396, 3525, 3644, 3696, 3815, 3934, 4053, 
-	4172, 4291
+	2977, 2979, 2981, 2983, 2985, 3113, 3241, 3243, 
+	3268, 3397, 3516, 3568, 3687, 3806, 3925, 4044, 
+	4163
 ]
 
 class << self
@@ -479,101 +478,85 @@ self._content_type_indicies = [
 	1, 107, 1, 108, 1, 109, 1, 110, 
 	1, 111, 1, 112, 1, 113, 1, 12, 
 	1, 114, 114, 114, 114, 114, 114, 114, 
-	114, 115, 1, 114, 114, 116, 114, 114, 
-	114, 114, 114, 114, 114, 114, 114, 114, 
-	114, 114, 114, 114, 114, 114, 114, 114, 
-	115, 114, 114, 114, 114, 114, 114, 114, 
-	117, 118, 114, 114, 114, 114, 114, 114, 
+	114, 114, 1, 114, 114, 115, 114, 114, 
 	114, 114, 114, 114, 114, 114, 114, 114, 
 	114, 114, 114, 114, 114, 114, 114, 114, 
 	114, 114, 114, 114, 114, 114, 114, 114, 
-	114, 114, 114, 114, 114, 114, 114, 114, 
-	114, 114, 114, 114, 114, 114, 114, 114, 
-	114, 114, 114, 114, 119, 114, 114, 114, 
+	116, 117, 114, 114, 114, 114, 114, 114, 
 	114, 114, 114, 114, 114, 114, 114, 114, 
 	114, 114, 114, 114, 114, 114, 114, 114, 
 	114, 114, 114, 114, 114, 114, 114, 114, 
 	114, 114, 114, 114, 114, 114, 114, 114, 
-	1, 120, 120, 120, 120, 120, 120, 120, 
-	120, 121, 1, 120, 120, 122, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	121, 120, 120, 120, 120, 120, 120, 120, 
-	123, 124, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 125, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	1, 120, 120, 120, 120, 120, 120, 120, 
-	120, 126, 1, 120, 120, 127, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	126, 120, 120, 120, 120, 120, 120, 120, 
-	123, 128, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 125, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	1, 129, 1, 126, 1, 1, 1, 1, 
+	114, 114, 114, 114, 114, 114, 114, 114, 
+	114, 114, 114, 114, 118, 114, 114, 114, 
+	114, 114, 114, 114, 114, 114, 114, 114, 
+	114, 114, 114, 114, 114, 114, 114, 114, 
+	114, 114, 114, 114, 114, 114, 114, 114, 
+	114, 114, 114, 114, 114, 114, 114, 114, 
+	1, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 1, 119, 119, 120, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	121, 122, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 123, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	1, 124, 1, 119, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 126, 1, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 120, 120, 120, 120, 
-	120, 120, 120, 120, 1, 130, 1, 1, 
-	1, 131, 1, 1, 1, 1, 1, 1, 
+	1, 1, 119, 1, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 1, 125, 1, 1, 
+	1, 126, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 130, 132, 132, 132, 
-	132, 132, 132, 132, 133, 1, 132, 132, 
-	132, 132, 132, 1, 132, 132, 132, 132, 
-	132, 132, 132, 132, 132, 132, 1, 134, 
-	1, 1, 1, 1, 1, 132, 132, 132, 
-	132, 132, 132, 132, 132, 132, 132, 132, 
-	132, 132, 132, 132, 132, 132, 132, 132, 
-	132, 132, 132, 132, 132, 132, 132, 1, 
-	1, 1, 132, 132, 132, 132, 132, 132, 
-	132, 132, 132, 132, 132, 132, 132, 132, 
-	132, 132, 132, 132, 132, 132, 132, 132, 
-	132, 132, 132, 132, 132, 132, 132, 132, 
-	132, 132, 132, 1, 135, 1, 1, 1, 
-	136, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 125, 127, 127, 127, 
+	127, 127, 127, 127, 128, 1, 127, 127, 
+	127, 127, 127, 1, 127, 127, 127, 127, 
+	127, 127, 127, 127, 127, 127, 1, 129, 
+	1, 1, 1, 1, 1, 127, 127, 127, 
+	127, 127, 127, 127, 127, 127, 127, 127, 
+	127, 127, 127, 127, 127, 127, 127, 127, 
+	127, 127, 127, 127, 127, 127, 127, 1, 
+	1, 1, 127, 127, 127, 127, 127, 127, 
+	127, 127, 127, 127, 127, 127, 127, 127, 
+	127, 127, 127, 127, 127, 127, 127, 127, 
+	127, 127, 127, 127, 127, 127, 127, 127, 
+	127, 127, 127, 1, 130, 1, 1, 1, 
+	131, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 135, 1, 1, 1, 1, 
-	1, 1, 1, 137, 1, 1, 1, 1, 
+	1, 1, 1, 130, 1, 1, 1, 1, 
+	1, 1, 1, 132, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 138, 1, 
-	135, 1, 1, 1, 136, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 133, 1, 
+	130, 1, 1, 1, 131, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 135, 
-	17, 17, 17, 17, 17, 17, 17, 137, 
+	1, 1, 1, 1, 1, 1, 1, 130, 
+	17, 17, 17, 17, 17, 17, 17, 132, 
 	1, 17, 17, 17, 17, 17, 1, 17, 
 	17, 17, 17, 17, 17, 17, 17, 17, 
-	17, 1, 138, 1, 1, 1, 1, 1, 
+	17, 1, 133, 1, 1, 1, 1, 1, 
 	17, 17, 17, 17, 17, 17, 17, 17, 
 	17, 17, 17, 17, 17, 17, 17, 17, 
 	17, 17, 17, 17, 17, 17, 17, 17, 
@@ -581,14 +564,14 @@ self._content_type_indicies = [
 	17, 17, 17, 17, 17, 17, 17, 17, 
 	17, 17, 17, 17, 17, 17, 17, 17, 
 	17, 17, 17, 17, 17, 17, 17, 17, 
-	17, 17, 17, 17, 17, 17, 1, 139, 
-	1, 1, 1, 140, 1, 1, 1, 1, 
+	17, 17, 17, 17, 17, 17, 1, 134, 
+	1, 1, 1, 135, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 139, 49, 
-	49, 49, 49, 49, 49, 49, 141, 1, 
+	1, 1, 1, 1, 1, 1, 134, 49, 
+	49, 49, 49, 49, 49, 49, 136, 1, 
 	49, 49, 49, 49, 49, 1, 49, 49, 
 	49, 49, 49, 49, 49, 49, 49, 49, 
-	1, 142, 1, 1, 1, 1, 1, 49, 
+	1, 137, 1, 1, 1, 1, 1, 49, 
 	49, 49, 49, 49, 49, 49, 49, 49, 
 	49, 49, 49, 49, 49, 49, 49, 49, 
 	49, 49, 49, 49, 49, 49, 49, 49, 
@@ -596,26 +579,26 @@ self._content_type_indicies = [
 	49, 49, 49, 49, 49, 49, 49, 49, 
 	49, 49, 49, 49, 49, 49, 49, 49, 
 	49, 49, 49, 49, 49, 49, 49, 49, 
-	49, 49, 49, 49, 49, 1, 143, 1, 
-	1, 1, 144, 1, 1, 1, 1, 1, 
+	49, 49, 49, 49, 49, 1, 138, 1, 
+	1, 1, 139, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 143, 145, 1, 
-	145, 145, 145, 145, 145, 146, 1, 145, 
-	145, 145, 145, 145, 1, 145, 145, 145, 
-	145, 145, 145, 145, 145, 145, 145, 1, 
-	138, 1, 145, 1, 1, 1, 145, 145, 
-	145, 145, 145, 145, 145, 145, 145, 145, 
-	145, 145, 145, 145, 145, 145, 145, 145, 
-	145, 145, 145, 145, 145, 145, 145, 145, 
-	1, 1, 1, 145, 145, 145, 145, 145, 
-	145, 145, 145, 145, 145, 145, 145, 145, 
-	145, 145, 145, 145, 145, 145, 145, 145, 
-	145, 145, 145, 145, 145, 145, 145, 145, 
-	145, 145, 145, 145, 1, 59, 1, 1, 
-	1, 147, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 138, 140, 1, 
+	140, 140, 140, 140, 140, 141, 1, 140, 
+	140, 140, 140, 140, 1, 140, 140, 140, 
+	140, 140, 140, 140, 140, 140, 140, 1, 
+	133, 1, 140, 1, 1, 1, 140, 140, 
+	140, 140, 140, 140, 140, 140, 140, 140, 
+	140, 140, 140, 140, 140, 140, 140, 140, 
+	140, 140, 140, 140, 140, 140, 140, 140, 
+	1, 1, 1, 140, 140, 140, 140, 140, 
+	140, 140, 140, 140, 140, 140, 140, 140, 
+	140, 140, 140, 140, 140, 140, 140, 140, 
+	140, 140, 140, 140, 140, 140, 140, 140, 
+	140, 140, 140, 140, 1, 59, 1, 1, 
+	1, 142, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 59, 17, 17, 17, 
-	17, 17, 17, 17, 148, 1, 17, 17, 
+	17, 17, 17, 17, 143, 1, 17, 17, 
 	17, 17, 17, 1, 17, 17, 17, 17, 
 	17, 17, 17, 17, 17, 17, 1, 19, 
 	1, 1, 1, 1, 1, 17, 17, 17, 
@@ -626,11 +609,11 @@ self._content_type_indicies = [
 	17, 17, 17, 17, 17, 17, 17, 17, 
 	17, 17, 17, 17, 17, 17, 17, 17, 
 	17, 17, 17, 17, 17, 17, 17, 17, 
-	17, 17, 17, 1, 149, 1, 1, 1, 
-	150, 1, 1, 1, 1, 1, 1, 1, 
+	17, 17, 17, 1, 144, 1, 1, 1, 
+	145, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 149, 49, 49, 49, 49, 
-	49, 49, 49, 151, 1, 49, 49, 49, 
+	1, 1, 1, 144, 49, 49, 49, 49, 
+	49, 49, 49, 146, 1, 49, 49, 49, 
 	49, 49, 1, 49, 49, 49, 49, 49, 
 	49, 49, 49, 49, 49, 1, 47, 1, 
 	1, 1, 1, 1, 49, 49, 49, 49, 
@@ -650,24 +633,24 @@ class << self
 end
 self._content_type_trans_targs = [
 	2, 0, 33, 46, 50, 60, 62, 65, 
-	68, 77, 3, 4, 5, 6, 98, 7, 
+	68, 77, 3, 4, 5, 6, 97, 7, 
 	8, 10, 32, 21, 9, 10, 11, 12, 
-	13, 102, 15, 29, 12, 13, 15, 29, 
-	14, 16, 26, 27, 25, 16, 17, 99, 
-	25, 18, 20, 100, 22, 24, 23, 21, 
+	13, 101, 15, 29, 12, 13, 15, 29, 
+	14, 16, 26, 27, 25, 16, 17, 98, 
+	25, 18, 20, 99, 22, 24, 23, 21, 
 	22, 10, 24, 26, 27, 28, 12, 13, 
-	15, 29, 31, 103, 7, 8, 32, 34, 
+	15, 29, 31, 102, 7, 8, 32, 34, 
 	43, 35, 36, 37, 38, 39, 40, 41, 
 	42, 44, 45, 47, 48, 49, 51, 53, 
 	52, 54, 55, 56, 57, 58, 59, 61, 
 	63, 64, 66, 67, 69, 73, 70, 71, 
 	72, 74, 75, 76, 78, 79, 80, 81, 
 	82, 83, 84, 85, 86, 87, 88, 89, 
-	90, 91, 93, 94, 95, 93, 105, 97, 
-	93, 94, 95, 93, 105, 97, 94, 95, 
-	105, 96, 7, 8, 98, 32, 21, 100, 
-	19, 101, 21, 100, 19, 101, 21, 103, 
-	30, 102, 104, 30, 104, 103, 30, 104
+	90, 91, 93, 94, 93, 104, 96, 93, 
+	94, 93, 104, 96, 95, 7, 8, 97, 
+	32, 21, 99, 19, 100, 21, 99, 19, 
+	100, 21, 102, 30, 101, 103, 30, 103, 
+	102, 30, 103
 ]
 
 class << self
@@ -689,11 +672,11 @@ self._content_type_trans_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 12, 13, 13, 14, 15, 12, 
-	0, 16, 16, 4, 17, 0, 0, 0, 
-	18, 0, 19, 19, 0, 20, 19, 21, 
-	21, 22, 21, 23, 23, 24, 23, 21, 
-	21, 0, 25, 0, 4, 9, 9, 11
+	0, 0, 12, 12, 13, 14, 12, 0, 
+	0, 4, 15, 0, 0, 16, 16, 0, 
+	17, 16, 18, 18, 19, 18, 20, 20, 
+	21, 20, 18, 18, 0, 22, 0, 4, 
+	9, 9, 11
 ]
 
 class << self
@@ -713,8 +696,8 @@ self._content_type_eof_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 19, 21, 21, 23, 21, 0, 
-	9, 0
+	0, 16, 18, 18, 20, 18, 0, 9, 
+	0
 ]
 
 class << self
@@ -724,7 +707,7 @@ self.content_type_start = 1;
 class << self
 	attr_accessor :content_type_first_final
 end
-self.content_type_first_final = 98;
+self.content_type_first_final = 97;
 class << self
 	attr_accessor :content_type_error
 end
@@ -740,18 +723,17 @@ end
 self.content_type_en_main = 1;
 
 
-# line 78 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
-        end
+# line 15 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
         
-        def parse(data)
-          data_unpacked = data.bytes.to_a
+        def self.parse(data)
           p = 0
           eof = data.length
           stack = []
 
-          content_type = Data::ContentTypeData.new(nil,nil,[])
+          actions = []
+          data_unpacked = data.bytes.to_a
           
-# line 755 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
+# line 737 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
 begin
 	p ||= 0
 	pe ||= data.length
@@ -759,12 +741,9 @@ begin
 	top = 0
 end
 
-# line 88 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
-
-          attribute = nil
-          quoted_string = nil
+# line 24 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
           
-# line 768 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
+# line 747 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
 begin
 	testEof = false
 	_slen, _trans, _keys, _inds, _acts, _nacts = nil
@@ -801,71 +780,45 @@ begin
 	if _content_type_trans_actions[_trans] != 0
 	case _content_type_trans_actions[_trans]
 	when 12 then
-# line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-	when 16 then
-# line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
-		begin
-		end
+ actions << [:comment_s, p] 		end
 	when 9 then
-# line 13 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-	when 1 then
-# line 37 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
-		begin
- mark = p 		end
-	when 3 then
-# line 38 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
-		begin
- mark_sub_type = p 		end
-	when 7 then
-# line 39 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
-		begin
-
-    mark_quoted = p
-  		end
-	when 8 then
-# line 42 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
-		begin
- 
-    quoted_string = data[mark_quoted..(p-1)] 
-  		end
-	when 2 then
-# line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
-		begin
- 
-    content_type.main_type = data[mark..(p-1)].downcase 
-  		end
-	when 19 then
-# line 48 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
-		begin
- 
-    content_type.sub_type = data[mark_sub_type..(p-1)].downcase 
-  		end
+ actions << [:comment_e, p] 		end
 	when 5 then
-# line 51 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 26 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- attribute = data[mark..(p-1)] 		end
-	when 21 then
-# line 52 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+ actions << [:parameter_attribute_e, p] 		end
+	when 18 then
+# line 27 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- 
-    if attribute.nil?
-      raise Mail::Field::ParseError.new(Mail::ContentTypeElement, data, "no attribute for value")
-    end
-
-    if quoted_string
-      value = quoted_string
-    else
-      value = data[mark..(p-1)]
-    end
-
-    content_type.parameters <<  { attribute => value }
-    attribute = nil
-    quoted_string = nil
-  		end
+ actions << [:parameter_value_e, p] 		end
+	when 7 then
+# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:quoted_s, p] 		end
+	when 8 then
+# line 31 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:quoted_e, p] 		end
+	when 2 then
+# line 32 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:main_type_e, p] 		end
+	when 1 then
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:mark, p] 		end
+	when 3 then
+# line 38 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:sub_type_s, p] 		end
+	when 16 then
+# line 39 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:sub_type_e, p] 		end
 	when 4 then
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
@@ -877,8 +830,8 @@ begin
 		next
 	end
  		end
-	when 18 then
-# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+	when 15 then
+# line 6 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
 		top -= 1
@@ -888,16 +841,9 @@ begin
 	end
  		end
 	when 13 then
-# line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-# line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
-		begin
-		end
-	when 14 then
-# line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
-		begin
-		end
+ actions << [:comment_s, p] 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -908,11 +854,11 @@ begin
 		next
 	end
  		end
-	when 17 then
-# line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+	when 14 then
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+ actions << [:comment_s, p] 		end
+# line 6 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
 		top -= 1
@@ -921,96 +867,24 @@ begin
 		next
 	end
  		end
-	when 10 then
-# line 13 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
-		begin
-		end
-# line 37 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
-		begin
- mark = p 		end
-	when 23 then
-# line 13 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
-		begin
-		end
-# line 52 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
-		begin
- 
-    if attribute.nil?
-      raise Mail::Field::ParseError.new(Mail::ContentTypeElement, data, "no attribute for value")
-    end
-
-    if quoted_string
-      value = quoted_string
-    else
-      value = data[mark..(p-1)]
-    end
-
-    content_type.parameters <<  { attribute => value }
-    attribute = nil
-    quoted_string = nil
-  		end
-	when 11 then
-# line 13 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
-		begin
-		end
-# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
-		begin
- 	begin
-		stack[top] = cs
-		top+= 1
-		cs = 92
-		_goto_level = _again
-		next
-	end
- 		end
-	when 6 then
-# line 37 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
-		begin
- mark = p 		end
-# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
-		begin
- 	begin
-		stack[top] = cs
-		top+= 1
-		cs = 92
-		_goto_level = _again
-		next
-	end
- 		end
 	when 20 then
-# line 48 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- 
-    content_type.sub_type = data[mark_sub_type..(p-1)].downcase 
-  		end
-# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+ actions << [:comment_e, p] 		end
+# line 27 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- 	begin
-		stack[top] = cs
-		top+= 1
-		cs = 92
-		_goto_level = _again
-		next
-	end
- 		end
-	when 25 then
-# line 52 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+ actions << [:parameter_value_e, p] 		end
+	when 10 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- 
-    if attribute.nil?
-      raise Mail::Field::ParseError.new(Mail::ContentTypeElement, data, "no attribute for value")
-    end
-
-    if quoted_string
-      value = quoted_string
-    else
-      value = data[mark..(p-1)]
-    end
-
-    content_type.parameters <<  { attribute => value }
-    attribute = nil
-    quoted_string = nil
-  		end
+ actions << [:comment_e, p] 		end
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:mark, p] 		end
+	when 11 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:comment_e, p] 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -1022,6 +896,9 @@ begin
 	end
  		end
 	when 22 then
+# line 27 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:parameter_value_e, p] 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -1032,43 +909,10 @@ begin
 		next
 	end
  		end
-# line 52 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+	when 6 then
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- 
-    if attribute.nil?
-      raise Mail::Field::ParseError.new(Mail::ContentTypeElement, data, "no attribute for value")
-    end
-
-    if quoted_string
-      value = quoted_string
-    else
-      value = data[mark..(p-1)]
-    end
-
-    content_type.parameters <<  { attribute => value }
-    attribute = nil
-    quoted_string = nil
-  		end
-	when 15 then
-# line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
-		begin
-		end
-# line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
-		begin
-		end
-# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
-		begin
- 	begin
-		top -= 1
-		cs = stack[top]
-		_goto_level = _again
-		next
-	end
- 		end
-	when 24 then
-# line 13 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
-		begin
-		end
+ actions << [:mark, p] 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -1079,24 +923,52 @@ begin
 		next
 	end
  		end
-# line 52 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+	when 17 then
+# line 39 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- 
-    if attribute.nil?
-      raise Mail::Field::ParseError.new(Mail::ContentTypeElement, data, "no attribute for value")
-    end
-
-    if quoted_string
-      value = quoted_string
-    else
-      value = data[mark..(p-1)]
-    end
-
-    content_type.parameters <<  { attribute => value }
-    attribute = nil
-    quoted_string = nil
-  		end
-# line 1100 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
+ actions << [:sub_type_e, p] 		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 92
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 19 then
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 92
+		_goto_level = _again
+		next
+	end
+ 		end
+# line 27 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:parameter_value_e, p] 		end
+	when 21 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:comment_e, p] 		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 92
+		_goto_level = _again
+		next
+	end
+ 		end
+# line 27 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:parameter_value_e, p] 		end
+# line 972 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
 	end
 	end
 	end
@@ -1115,55 +987,25 @@ begin
 	if p == eof
 	  case _content_type_eof_actions[cs]
 	when 9 then
-# line 13 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-	when 19 then
-# line 48 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+ actions << [:comment_e, p] 		end
+	when 18 then
+# line 27 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- 
-    content_type.sub_type = data[mark_sub_type..(p-1)].downcase 
-  		end
-	when 21 then
-# line 52 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+ actions << [:parameter_value_e, p] 		end
+	when 16 then
+# line 39 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- 
-    if attribute.nil?
-      raise Mail::Field::ParseError.new(Mail::ContentTypeElement, data, "no attribute for value")
-    end
-
-    if quoted_string
-      value = quoted_string
-    else
-      value = data[mark..(p-1)]
-    end
-
-    content_type.parameters <<  { attribute => value }
-    attribute = nil
-    quoted_string = nil
-  		end
-	when 23 then
-# line 13 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+ actions << [:sub_type_e, p] 		end
+	when 20 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-# line 52 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+ actions << [:comment_e, p] 		end
+# line 27 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- 
-    if attribute.nil?
-      raise Mail::Field::ParseError.new(Mail::ContentTypeElement, data, "no attribute for value")
-    end
-
-    if quoted_string
-      value = quoted_string
-    else
-      value = data[mark..(p-1)]
-    end
-
-    content_type.parameters <<  { attribute => value }
-    attribute = nil
-    quoted_string = nil
-  		end
-# line 1167 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
+ actions << [:parameter_value_e, p] 		end
+# line 1009 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
 	  end
 	end
 
@@ -1174,17 +1016,16 @@ begin
 end
 	end
 
-# line 92 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 25 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
 
           if p == eof && cs >= 
-# line 1181 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
-98
-# line 93 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
+# line 1023 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rb"
+97
+# line 26 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_type.rl"
 
-            content_type
+            return actions, nil
           else
-            content_type.error = "Only able to parse up to #{data[0..p]}"
-            content_type
+            return [], "Only able to parse up to #{data[0..p]}"
           end
         end
       end

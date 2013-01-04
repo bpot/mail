@@ -3,7 +3,6 @@
   machine common;
 
   action comment_begin { fcall comment_tail; }
-
   action comment_exit { fret; }
 
   getkey data_unpacked[p];
@@ -27,8 +26,8 @@
   
   # Handle recursive comments
   ccontent = ctext | quoted_pair | "(" @comment_begin;
-  comment_tail := ((FWS? ccontent)* >s_ccontent %e_ccontent) FWS? ")" @comment_exit;
-  comment = "(" @comment_begin %e_comment;
+  comment_tail := ((FWS? ccontent)* >comment_s) FWS? ")" @comment_exit;
+  comment = "(" @comment_begin %comment_e;
 
   atext = ALPHA | DIGIT | "!" | "#" | "$" | "%" | "&" | "'" | "*" | "+" | "-" | "/" | "=" | "?" | "^" | "_" | "`" | "{" | "|" | "}" | "~";
   qtext = 0x21 | 0x23..0x5b | 0x5d..0x7e | obs_qtext;
@@ -37,41 +36,27 @@
 
   CFWS = ((FWS? comment)+ FWS?) | FWS;
 
-  # Address
-  # Common
   domain_text = (DQUOTE (FWS? qcontent)+ FWS? DQUOTE) | atext+;
-
-  # XXX can this be simplified
-  # local_part can take three different forms:
-  #
-  # local_dot_atom: we take content between comments
-  # quoted_string: we take the qouted content between comments
-  # obs_local_part: a bunch of "." words that can contain quoted strings
-  #                 we have to concatenate these
   local_dot_atom_text = ("."* domain_text "."*)+;
   local_dot_atom = (CFWS? 
-                   local_dot_atom_text %e_local_part_dot_atom_pre_comment
+                   local_dot_atom_text %local_dot_atom_pre_comment_e
                    CFWS?);
   quoted_string = CFWS? 
                   (DQUOTE 
-                    (((FWS? qcontent)+ FWS?) >mark_quoted %e_quoted)
+                    (((FWS? qcontent)+ FWS?) >quoted_s %quoted_e)
                   DQUOTE)
                   CFWS?;
-  atom = CFWS? (atext+ >mark_atom %e_atom) CFWS?;
+  atom = CFWS? (atext+ >atom_s %atom_e) CFWS?;
   word = atom | quoted_string;
   obs_local_part = word ("." word)*;
-  local_part = (local_dot_atom >mark_local_dot_atom %e_local_part_dot_atom |
-                (quoted_string %e_local_quoted_string) |
+  local_part = (local_dot_atom >local_dot_atom_s %local_dot_atom_e |
+                (quoted_string %local_quoted_string_e) |
                 obs_local_part);
 
   local_part_no_capture = (local_dot_atom |
                 (quoted_string) |
                 obs_local_part);
 
-  # modified from:
-  #   dot_atom_text = atext+ ("." atext+)*;
-  # to support consecutive dots in local part
-  #dot_atom_text = ("."+)? atext+ (("."+)? atext+)*;
   dot_atom_text = ("."+)? domain_text (("."+)? domain_text)*;
   dtext = 0x21..0x5a | 0x5e..0x7e | obs_dtext;
   dot_atom = CFWS? dot_atom_text (CFWS? >(comment_after_address,1));
@@ -80,18 +65,21 @@
   domain = dot_atom | domain_literal | obs_domain;
   obs_domain_list = (CFWS | ",")* "@" domain ("," CFWS? ("@" domain)?)*;
   obs_phrase = (word | "." | "@")+;
-  obs_route = (obs_domain_list ":") >mark %e_obs_domain_list;
+  obs_route = (obs_domain_list ":") >mark %obs_domain_list_e;
+
   # the end_addr priority solves uncertainty when whitespace
   # after an addr_spec could cause it to be interpreted as a 
   # display name "bar@example.com ,..."
-  addr_spec = (local_part >mark "@" (domain >mark_domain %e_domain)) %(end_addr,1) | local_part_no_capture %(end_addr,0);
-  addr_spec_allow_local_only = (local_part >mark "@" (domain >mark_domain %e_domain)) %(end_addr,1) | local_part %(end_addr,0);
-  phrase = (obs_phrase | word+) >mark %e_phrase;
+  addr_spec = (local_part >mark "@" (domain >domain_s %domain_e)) %(end_addr,1) | 
+                local_part_no_capture %(end_addr,0);
+  addr_spec_allow_local_only = (local_part >mark "@" (domain >domain_s %domain_e)) %(end_addr,1) |
+                                local_part %(end_addr,0);
+  phrase = (obs_phrase | word+) >mark %phrase_e;
   obs_angle_addr = CFWS? "<" obs_route? addr_spec ">" CFWS?;
   display_name = phrase;
-  angle_addr = CFWS? ("<" >s_angle_addr) addr_spec ">" CFWS? | obs_angle_addr;
-  name_addr = display_name? %e_name_addr_display_name %(end_addr,2) angle_addr;
-  mailbox = (name_addr | addr_spec_allow_local_only) >s_address %e_address;
+  angle_addr = CFWS? ("<" >angle_addr_s) addr_spec ">" CFWS? | obs_angle_addr;
+  name_addr = display_name? %name_addr_display_name_e %(end_addr,2) angle_addr;
+  mailbox = (name_addr | addr_spec_allow_local_only) >address_s %address_e;
   obs_mbox_list = (CFWS? ",")* mailbox ("," (mailbox | CFWS)?)*;
   token = 0x21..0x27 | 0x2a..0x2b | 0x2c..0x2e | 0x30..0x39 | 0x41..0x5a | 0x5e..0x7e;
   mailbox_list = (mailbox (("," | ";") mailbox)*) | obs_mbox_list;
@@ -103,7 +91,7 @@
   obs_id_left = local_part;
   no_fold_literal = "[" (dtext)* "]";
   obs_id_right = domain;
-  group = (display_name %e_group_name) ":" (group_list? >start_group_list) ";" CFWS?;
+  group = (display_name %group_name_e) ":" (group_list? >group_list_s) ";" CFWS?;
   discrete_type = 'text'i | 'image'i | 'audio'i | 'video'i | 
                   'application'i | extension_token;
   composite_type = 'message'i | 'multipart'i | extension_token;
@@ -111,22 +99,22 @@
   attribute = token+;
   value = quoted_string | (token -- '"' | 0x3d)+;
   id_left = dot_atom_text | obs_id_left;
+
   # id_right modifications to support multiple '@' in msg_id.
   msg_id_atext = ALPHA | DIGIT | "!" | "#" | "$" | "%" | "&" | "'" | "*" | "+" | "-" | "/" | "=" | "?" | "^" | "_" | "`" | "{" | "|" | "}" | "~" | "@";
-  #msg_id_domain_text = (DQUOTE (FWS? quoted_domain)+ FWS? DQUOTE) | msg_id_atext+;
   msg_id_dot_atom_text = (msg_id_atext+ "."?)+;
   id_right = msg_id_dot_atom_text | no_fold_literal | obs_id_right;
   address = group | mailbox;
   main_type = discrete_type | composite_type;
   sub_type = extension_token | iana_token;
-  parameter = CFWS? (attribute >mark %e_parameter_attribute) "=" (value >mark %e_parameter_value) CFWS?;
+  parameter = CFWS? (attribute >mark %parameter_attribute_e) "=" (value >mark %parameter_value_e) CFWS?;
   msg_id = (CFWS)? 
-           (("<" id_left "@" id_right ">") >mark %e_msg_id)
+           (("<" id_left "@" id_right ">") >mark %msg_id_e)
            (CFWS)?;
   address_list = address? %(comment_after_address,0) (FWS* ("," | ";") FWS* address?)*;
   obs_addr_list = (CFWS? ",")* address ("," (address | CFWS)?)*;
-  location = quoted_string | ((token | 0x3d)+ >mark %e_token_string);
-  content_type = (main_type >mark %e_main_type) "/" (sub_type >mark_sub_type %e_sub_type) (((CFWS? ";") | CFWS) parameter CFWS?)*;
+  location = quoted_string | ((token | 0x3d)+ >mark %token_string_e);
+  content_type = (main_type >mark %main_type_e) "/" (sub_type >sub_type_s %sub_type_e) (((CFWS? ";") | CFWS) parameter CFWS?)*;
   message_ids = msg_id (CFWS? msg_id)*;
   phrase_list = phrase ("," FWS* phrase)*;
   received_token = word | angle_addr | addr_spec | domain;
@@ -149,19 +137,21 @@
   day_of_week = (FWS? day_name) | obs_day_of_week;
   date = day month year;
   time = time_of_day zone;
-  date_time = (day_of_week ",")? (date >mark %e_date) <: (time >mark %e_time) CFWS?;
+  date_time = (day_of_week ",")? (date >mark %date_e) <: (time >mark %time_e) CFWS?;
   version = CFWS?
-            (DIGIT+ >mark %e_major_digits)
+            (DIGIT+ >mark %major_digits_e)
             comment? "." comment? 
-            (DIGIT+ >mark %e_minor_digits)
+            (DIGIT+ >mark %minor_digits_e)
             CFWS?;
   ctime_date = day_name " "+ month " "+ day " " time_of_day " " year;
-  envelope_from = addr_spec >s_address %e_address " " (ctime_date >mark %e_ctime_date);
+  envelope_from = addr_spec >address_s %address_e " " (ctime_date >mark %ctime_date_e);
   encoding = ietf_token "s"? | custom_x_token;
-  content_transfer_encoding = CFWS? (encoding >mark %e_encoding) CFWS? ";"? CFWS?;
+  content_transfer_encoding = CFWS? (encoding >mark %encoding_e) CFWS? ";"? CFWS?;
 
   disposition_type = 'inline'i | 'attachment'i | extension_token | '';
-  content_disposition = (disposition_type >mark %e_disposition_type) (CFWS? ";" parameter CFWS?)*;
+  content_disposition = (disposition_type >mark %disposition_type_e) (CFWS? ";" parameter CFWS?)*;
 
+  # Added CFWS? to increase robustness (qmail like to include a comment style string...)
+  received = CFWS? (received_token* >received_s %received_tokens_e) ";" date_time;
 
 }%%

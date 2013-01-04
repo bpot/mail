@@ -3,21 +3,27 @@ module Mail::Parsers
     include Mail::Utilities
 
     def parse(string)
+      content_transfer_encoding = Data::ContentTransferEncodingData.new("")
       if string.blank?
-        return Data::ContentTransferEncodingData.new("")
+        return content_transfer_encoding
       end
       
-      data = ragel(string.downcase)
-      if data.error
-        raise Mail::Field::ParseError.new(Mail::ContentTransferEncodingElement, string, data.error)
+      actions, error = Ragel::ContentTransferEncodingParser.parse(string)
+      if error
+        raise Mail::Field::ParseError.new(Mail::ContentTransferEncodingElement, string, error)
       end
-      data
-    end
 
-    private
-    def ragel(string)
-      @@parser ||= Ragel::ContentTransferEncodingParser.new
-      @@parser.parse(string)
+      mark = nil
+      actions.each do |event, p|
+        case event
+        when :mark
+          mark = p
+        when :encoding_e
+          content_transfer_encoding.encoding = string[mark..(p-1)].downcase.gsub(/s$/,'')
+        end
+      end
+
+      content_transfer_encoding
     end
   end
 end

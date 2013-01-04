@@ -3,17 +3,26 @@ module Mail::Parsers
     include Mail::Utilities
 
     def parse(string)
-      data = ragel(string)
-      if data.error
-        raise Mail::Field::ParseError.new(Mail::DateTimeElement, string, data.error)
-      end
-      data
-    end
+      date_time = Data::DateTimeData.new([])
 
-    private
-    def ragel(string)
-      @@parser ||= Ragel::DateTimeParser.new
-      @@parser.parse(string)
+      actions, error = Ragel::DateTimeParser.parse(string)
+      if error
+        raise Mail::Field::ParseError.new(Mail::DateTimeElement, string, error)
+      end
+
+      mark = nil
+      actions.each do |event, p|
+        case event
+        when :mark
+          mark = p
+        when :date_e
+          date_time.date_string = string[mark..(p-1)]
+        when :time_e
+          date_time.time_string = string[mark..(p-1)]
+        end
+      end
+
+      date_time
     end
   end
 end

@@ -7,17 +7,25 @@ module Mail::Parsers
         return Data::MimeVersionData.new("", nil)
       end
 
-      data = ragel(string)
-      if data.error
-        raise Mail::Field::ParseError.new(Mail::MimeVersionElement, string, data.error)
-      end
-      data
-    end
+      mime_version = Data::MimeVersionData.new
 
-    private
-    def ragel(string)
-      @@parser ||= Ragel::MimeVersionParser.new
-      @@parser.parse(string)
+      actions, error = Ragel::MimeVersionParser.parse(string)
+      if error
+        raise Mail::Field::ParseError.new(Mail::MimeVersionElement, string, error)
+      end
+
+      mark = nil
+      actions.each do |event, p|
+        case event
+        when :major_digits_e
+          mime_version.major = string[mark..(p-1)]
+        when :minor_digits_e
+          mime_version.minor = string[mark..(p-1)]
+        when :mark
+          mark = p
+        end
+      end
+      mime_version
     end
   end
 end

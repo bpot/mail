@@ -7,17 +7,26 @@ module Mail::Parsers
         return Data::MessageIdsData.new
       end
 
-      data = ragel(string)
-      if data.error
-        raise Mail::Field::ParseError.new(Mail::MessageIdsElement, string, data.error)
-      end
-      data
-    end
+      message_ids = Data::MessageIdsData.new([])
 
-    private
-    def ragel(string)
-      @@parser ||= Ragel::MessageIdsParser.new
-      @@parser.parse(string)
+      actions, error = Ragel::MessageIdsParser.parse(string)
+      if error
+        raise Mail::Field::ParseError.new(Mail::MessageIdsElement, string, error)
+      end
+
+      mark = nil
+      attribute = nil
+      quoted_string = nil
+
+      actions.each do |event, p|
+        case event
+        when :mark
+          mark = p
+        when :msg_id_e
+          message_ids.message_ids << string[mark..(p-1)].rstrip
+        end
+      end
+      message_ids
     end
   end
 end

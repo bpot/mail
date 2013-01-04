@@ -1,16 +1,15 @@
 
 # line 1 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 
-# line 69 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 8 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 
 
 module Mail
   module Parsers
     module Ragel
-      class ContentDispositionParser
-        def initialize
-          
-# line 14 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rb"
+      module ContentDispositionParser
+        
+# line 13 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rb"
 class << self
 	attr_accessor :_content_disposition_trans_keys
 	private :_content_disposition_trans_keys, :_content_disposition_trans_keys=
@@ -43,11 +42,11 @@ self._content_disposition_trans_keys = [
 	110, 110, 116, 116, 97, 97, 
 	98, 98, 108, 108, 101, 
 	101, 1, 127, 1, 127, 
-	1, 127, 10, 10, 9, 32, 
-	0, 127, 9, 120, 9, 
-	59, 9, 59, 9, 126, 
-	9, 59, 9, 59, 9, 59, 
-	9, 126, 0, 0, 0
+	10, 10, 9, 32, 0, 127, 
+	9, 120, 9, 59, 9, 
+	59, 9, 126, 9, 59, 
+	9, 59, 9, 59, 9, 126, 
+	0, 0, 0
 ]
 
 class << self
@@ -64,8 +63,8 @@ self._content_disposition_key_spans = [
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 127, 127, 
-	127, 1, 24, 128, 112, 51, 51, 118, 
-	51, 51, 51, 118, 0
+	1, 24, 128, 112, 51, 51, 118, 51, 
+	51, 51, 118, 0
 ]
 
 class << self
@@ -82,8 +81,8 @@ self._content_disposition_index_offsets = [
 	1915, 1917, 1919, 1921, 1923, 1925, 1927, 1929, 
 	1931, 1933, 1935, 1937, 1939, 1941, 1943, 1945, 
 	1947, 1949, 1951, 1953, 1955, 1957, 1959, 2087, 
-	2215, 2343, 2345, 2370, 2499, 2612, 2664, 2716, 
-	2835, 2887, 2939, 2991, 3110
+	2215, 2217, 2242, 2371, 2484, 2536, 2588, 2707, 
+	2759, 2811, 2863, 2982
 ]
 
 class << self
@@ -336,142 +335,126 @@ self._content_disposition_indicies = [
 	1, 78, 1, 79, 1, 80, 1, 81, 
 	1, 82, 1, 83, 1, 84, 1, 85, 
 	1, 86, 1, 87, 1, 51, 1, 88, 
-	88, 88, 88, 88, 88, 88, 88, 89, 
-	1, 88, 88, 90, 88, 88, 88, 88, 
 	88, 88, 88, 88, 88, 88, 88, 88, 
-	88, 88, 88, 88, 88, 88, 89, 88, 
-	88, 88, 88, 88, 88, 88, 91, 92, 
+	1, 88, 88, 89, 88, 88, 88, 88, 
 	88, 88, 88, 88, 88, 88, 88, 88, 
 	88, 88, 88, 88, 88, 88, 88, 88, 
+	88, 88, 88, 88, 88, 88, 90, 91, 
 	88, 88, 88, 88, 88, 88, 88, 88, 
 	88, 88, 88, 88, 88, 88, 88, 88, 
 	88, 88, 88, 88, 88, 88, 88, 88, 
 	88, 88, 88, 88, 88, 88, 88, 88, 
-	88, 88, 93, 88, 88, 88, 88, 88, 
+	88, 88, 88, 88, 88, 88, 88, 88, 
+	88, 88, 88, 88, 88, 88, 88, 88, 
+	88, 88, 92, 88, 88, 88, 88, 88, 
 	88, 88, 88, 88, 88, 88, 88, 88, 
 	88, 88, 88, 88, 88, 88, 88, 88, 
 	88, 88, 88, 88, 88, 88, 88, 88, 
-	88, 88, 88, 88, 88, 88, 1, 94, 
-	94, 94, 94, 94, 94, 94, 94, 95, 
-	1, 94, 94, 96, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 95, 94, 
-	94, 94, 94, 94, 94, 94, 97, 98, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 99, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 1, 94, 
-	94, 94, 94, 94, 94, 94, 94, 100, 
-	1, 94, 94, 101, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 100, 94, 
-	94, 94, 94, 94, 94, 94, 97, 102, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 99, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 1, 103, 
-	1, 100, 1, 1, 1, 1, 1, 1, 
+	88, 88, 88, 88, 88, 88, 1, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	1, 93, 93, 94, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 95, 96, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 97, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 1, 98, 
+	1, 93, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	100, 1, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 94, 94, 94, 94, 94, 94, 
-	94, 94, 1, 104, 1, 1, 1, 105, 
+	93, 1, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 93, 93, 93, 93, 93, 93, 
+	93, 93, 1, 99, 1, 1, 1, 100, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 104, 1, 1, 1, 1, 1, 
+	1, 1, 99, 1, 1, 1, 1, 1, 
+	1, 1, 101, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 102, 102, 1, 1, 103, 1, 1, 
+	1, 1, 1, 104, 1, 1, 1, 1, 
+	1, 1, 1, 105, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 106, 1, 1, 1, 1, 1, 
+	1, 1, 1, 104, 107, 1, 1, 1, 
+	1, 1, 1, 105, 1, 1, 1, 1, 
+	1, 1, 1, 108, 1, 1, 1, 1, 
+	1, 1, 106, 1, 109, 1, 1, 1, 
+	110, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 107, 107, 1, 1, 108, 1, 1, 
 	1, 1, 1, 109, 1, 1, 1, 1, 
-	1, 1, 1, 110, 1, 1, 1, 1, 
+	1, 1, 1, 111, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 111, 1, 1, 1, 1, 1, 
-	1, 1, 1, 109, 112, 1, 1, 1, 
-	1, 1, 1, 110, 1, 1, 1, 1, 
-	1, 1, 1, 113, 1, 1, 1, 1, 
-	1, 1, 111, 1, 114, 1, 1, 1, 
-	115, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 112, 1, 
+	113, 1, 1, 1, 114, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 114, 1, 1, 1, 1, 
-	1, 1, 1, 116, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 117, 1, 
-	118, 1, 1, 1, 119, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 118, 
-	1, 1, 1, 1, 1, 1, 1, 120, 
+	1, 1, 1, 1, 1, 1, 1, 113, 
+	1, 1, 1, 1, 1, 1, 1, 115, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 121, 1, 122, 1, 1, 1, 
-	123, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 116, 1, 117, 1, 1, 1, 
+	118, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 122, 124, 1, 124, 124, 
-	124, 124, 124, 125, 1, 124, 124, 124, 
-	124, 124, 1, 124, 124, 124, 124, 124, 
-	124, 124, 124, 124, 124, 1, 117, 1, 
-	124, 1, 1, 1, 124, 124, 124, 124, 
-	124, 124, 124, 124, 124, 124, 124, 124, 
-	124, 124, 124, 124, 124, 124, 124, 124, 
-	124, 124, 124, 124, 124, 124, 1, 1, 
-	1, 124, 124, 124, 124, 124, 124, 124, 
-	124, 124, 124, 124, 124, 124, 124, 124, 
-	124, 124, 124, 124, 124, 124, 124, 124, 
-	124, 124, 124, 124, 124, 124, 124, 124, 
-	124, 124, 1, 45, 1, 1, 1, 126, 
+	1, 1, 1, 117, 119, 1, 119, 119, 
+	119, 119, 119, 120, 1, 119, 119, 119, 
+	119, 119, 1, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 1, 112, 1, 
+	119, 1, 1, 1, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 1, 1, 
+	1, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 119, 119, 119, 119, 119, 119, 
+	119, 119, 1, 45, 1, 1, 1, 121, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 45, 1, 1, 1, 1, 1, 
-	1, 1, 127, 1, 1, 1, 1, 1, 
+	1, 1, 122, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 4, 1, 128, 
-	1, 1, 1, 129, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 4, 1, 123, 
+	1, 1, 1, 124, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 128, 1, 
-	1, 1, 1, 1, 1, 1, 130, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 9, 1, 131, 1, 1, 1, 132, 
+	1, 1, 1, 1, 1, 1, 123, 1, 
+	1, 1, 1, 1, 1, 1, 125, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 131, 1, 1, 1, 1, 1, 
-	1, 1, 133, 1, 1, 1, 1, 1, 
+	1, 9, 1, 126, 1, 1, 1, 127, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 134, 1, 131, 
-	1, 1, 1, 132, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 131, 65, 
-	65, 65, 65, 65, 65, 65, 133, 1, 
+	1, 1, 126, 1, 1, 1, 1, 1, 
+	1, 1, 128, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 129, 1, 126, 
+	1, 1, 1, 127, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 126, 65, 
+	65, 65, 65, 65, 65, 65, 128, 1, 
 	65, 65, 65, 65, 65, 1, 65, 65, 
 	65, 65, 65, 65, 65, 65, 65, 65, 
-	1, 134, 1, 1, 1, 1, 1, 65, 
+	1, 129, 1, 1, 1, 1, 1, 65, 
 	65, 65, 65, 65, 65, 65, 65, 65, 
 	65, 65, 65, 65, 65, 65, 65, 65, 
 	65, 65, 65, 65, 65, 65, 65, 65, 
@@ -489,21 +472,21 @@ end
 self._content_disposition_trans_targs = [
 	1, 0, 2, 4, 5, 3, 1, 2, 
 	4, 5, 6, 8, 26, 7, 8, 9, 
-	10, 11, 79, 13, 23, 10, 11, 13, 
+	10, 11, 78, 13, 23, 10, 11, 13, 
 	23, 12, 14, 20, 21, 19, 14, 15, 
-	77, 19, 16, 18, 77, 20, 21, 22, 
-	10, 11, 13, 23, 25, 80, 6, 8, 
-	26, 28, 29, 82, 31, 32, 33, 34, 
+	76, 19, 16, 18, 76, 20, 21, 22, 
+	10, 11, 13, 23, 25, 79, 6, 8, 
+	26, 28, 29, 81, 31, 32, 33, 34, 
 	35, 36, 37, 38, 40, 41, 42, 43, 
-	45, 83, 47, 51, 48, 49, 50, 52, 
+	45, 82, 47, 51, 48, 49, 50, 52, 
 	53, 54, 56, 57, 58, 59, 60, 61, 
 	62, 63, 64, 65, 66, 67, 68, 69, 
-	71, 72, 73, 71, 84, 75, 71, 72, 
-	73, 71, 84, 75, 72, 73, 84, 74, 
-	1, 2, 4, 27, 5, 30, 39, 44, 
-	46, 55, 77, 17, 78, 5, 77, 17, 
-	78, 5, 80, 24, 79, 81, 24, 81, 
-	80, 24, 81, 1, 2, 4, 5
+	71, 72, 71, 83, 74, 71, 72, 71, 
+	83, 74, 73, 1, 2, 4, 27, 5, 
+	30, 39, 44, 46, 55, 76, 17, 77, 
+	5, 76, 17, 77, 5, 79, 24, 78, 
+	80, 24, 80, 79, 24, 80, 1, 2, 
+	4, 5
 ]
 
 class << self
@@ -522,12 +505,12 @@ self._content_disposition_trans_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	10, 11, 11, 12, 13, 10, 0, 14, 
-	14, 1, 15, 0, 0, 0, 16, 0, 
-	17, 17, 18, 4, 17, 4, 4, 4, 
-	4, 4, 19, 19, 20, 19, 21, 21, 
-	22, 21, 19, 19, 0, 23, 0, 1, 
-	2, 2, 3, 24, 24, 25, 24
+	10, 10, 11, 12, 10, 0, 0, 1, 
+	13, 0, 0, 14, 14, 15, 4, 14, 
+	4, 4, 4, 4, 4, 16, 16, 17, 
+	16, 18, 18, 19, 18, 16, 16, 0, 
+	20, 0, 1, 2, 2, 3, 21, 21, 
+	22, 21
 ]
 
 class << self
@@ -544,18 +527,18 @@ self._content_disposition_eof_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 17, 19, 21, 19, 
-	0, 2, 24, 24, 0
+	0, 0, 0, 14, 16, 18, 16, 0, 
+	2, 21, 21, 0
 ]
 
 class << self
 	attr_accessor :content_disposition_start
 end
-self.content_disposition_start = 76;
+self.content_disposition_start = 75;
 class << self
 	attr_accessor :content_disposition_first_final
 end
-self.content_disposition_first_final = 76;
+self.content_disposition_first_final = 75;
 class << self
 	attr_accessor :content_disposition_error
 end
@@ -568,22 +551,20 @@ self.content_disposition_en_comment_tail = 70;
 class << self
 	attr_accessor :content_disposition_en_main
 end
-self.content_disposition_en_main = 76;
+self.content_disposition_en_main = 75;
 
 
-# line 77 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
-        end
-        
-        def parse(data)
-          content_disposition = Data::ContentDispositionData.new(nil, [])
-          data_unpacked = data.bytes.to_a
+# line 15 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 
+        def self.parse(data)
           p = 0
           eof = data.length
           stack = []
 
+          actions = []
+          data_unpacked = data.bytes.to_a
           
-# line 587 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rb"
+# line 568 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rb"
 begin
 	p ||= 0
 	pe ||= data.length
@@ -591,12 +572,9 @@ begin
 	top = 0
 end
 
-# line 88 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
-
-          attribute = nil
-          quoted_string = nil
+# line 24 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
           
-# line 600 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rb"
+# line 578 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rb"
 begin
 	testEof = false
 	_slen, _trans, _keys, _inds, _acts, _nacts = nil
@@ -633,61 +611,37 @@ begin
 	if _content_disposition_trans_actions[_trans] != 0
 	case _content_disposition_trans_actions[_trans]
 	when 10 then
-# line 14 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-	when 14 then
-# line 15 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
-		begin
-		end
+ actions << [:comment_s, p] 		end
 	when 2 then
-# line 16 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-	when 4 then
-# line 40 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+ actions << [:comment_e, p] 		end
+	when 21 then
+# line 13 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- mark = p 		end
-	when 7 then
-# line 41 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
-		begin
-
-    mark_quoted = p
-  		end
-	when 8 then
-# line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
-		begin
- 
-    quoted_string = data[mark_quoted..(p-1)] 
-  		end
-	when 24 then
-# line 47 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
-		begin
- 
-    content_disposition.disposition_type = data[mark..(p-1)].downcase
-  		end
+ actions << [:disposition_type_e, p] 		end
 	when 5 then
-# line 50 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 26 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- attribute = data[mark..(p-1)] 		end
-	when 19 then
-# line 51 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+ actions << [:parameter_attribute_e, p] 		end
+	when 16 then
+# line 27 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- 
-    if attribute.nil?
-      raise Mail::Field::ParseError.new(Mail::ContentDispositionElement, data, "no attribute for value")
-    end
-
-    if quoted_string
-      value = quoted_string
-    else
-      value = data[mark..(p-1)]
-    end
-
-    content_disposition.parameters <<  { attribute => value }
-    attribute = nil
-    quoted_string = nil
-  		end
+ actions << [:parameter_value_e, p] 		end
+	when 7 then
+# line 30 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:quoted_s, p] 		end
+	when 8 then
+# line 31 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:quoted_e, p] 		end
+	when 4 then
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:mark, p] 		end
 	when 1 then
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
@@ -699,8 +653,8 @@ begin
 		next
 	end
  		end
-	when 16 then
-# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+	when 13 then
+# line 6 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
 		top -= 1
@@ -710,16 +664,9 @@ begin
 	end
  		end
 	when 11 then
-# line 14 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-# line 15 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
-		begin
-		end
-	when 12 then
-# line 14 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
-		begin
-		end
+ actions << [:comment_s, p] 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -730,11 +677,11 @@ begin
 		next
 	end
  		end
-	when 15 then
-# line 15 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+	when 12 then
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+ actions << [:comment_s, p] 		end
+# line 6 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
 		top -= 1
@@ -743,38 +690,24 @@ begin
 		next
 	end
  		end
+	when 18 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:comment_e, p] 		end
+# line 27 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:parameter_value_e, p] 		end
 	when 9 then
-# line 16 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-# line 40 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+ actions << [:comment_e, p] 		end
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- mark = p 		end
-	when 21 then
-# line 16 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
-		begin
-		end
-# line 51 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
-		begin
- 
-    if attribute.nil?
-      raise Mail::Field::ParseError.new(Mail::ContentDispositionElement, data, "no attribute for value")
-    end
-
-    if quoted_string
-      value = quoted_string
-    else
-      value = data[mark..(p-1)]
-    end
-
-    content_disposition.parameters <<  { attribute => value }
-    attribute = nil
-    quoted_string = nil
-  		end
+ actions << [:mark, p] 		end
 	when 3 then
-# line 16 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
+ actions << [:comment_e, p] 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -785,63 +718,10 @@ begin
 		next
 	end
  		end
-	when 17 then
-# line 40 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+	when 22 then
+# line 13 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- mark = p 		end
-# line 47 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
-		begin
- 
-    content_disposition.disposition_type = data[mark..(p-1)].downcase
-  		end
-	when 6 then
-# line 40 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
-		begin
- mark = p 		end
-# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
-		begin
- 	begin
-		stack[top] = cs
-		top+= 1
-		cs = 70
-		_goto_level = _again
-		next
-	end
- 		end
-	when 25 then
-# line 47 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
-		begin
- 
-    content_disposition.disposition_type = data[mark..(p-1)].downcase
-  		end
-# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
-		begin
- 	begin
-		stack[top] = cs
-		top+= 1
-		cs = 70
-		_goto_level = _again
-		next
-	end
- 		end
-	when 23 then
-# line 51 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
-		begin
- 
-    if attribute.nil?
-      raise Mail::Field::ParseError.new(Mail::ContentDispositionElement, data, "no attribute for value")
-    end
-
-    if quoted_string
-      value = quoted_string
-    else
-      value = data[mark..(p-1)]
-    end
-
-    content_disposition.parameters <<  { attribute => value }
-    attribute = nil
-    quoted_string = nil
-  		end
+ actions << [:disposition_type_e, p] 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -853,6 +733,9 @@ begin
 	end
  		end
 	when 20 then
+# line 27 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:parameter_value_e, p] 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -863,43 +746,17 @@ begin
 		next
 	end
  		end
-# line 51 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+	when 14 then
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- 
-    if attribute.nil?
-      raise Mail::Field::ParseError.new(Mail::ContentDispositionElement, data, "no attribute for value")
-    end
-
-    if quoted_string
-      value = quoted_string
-    else
-      value = data[mark..(p-1)]
-    end
-
-    content_disposition.parameters <<  { attribute => value }
-    attribute = nil
-    quoted_string = nil
-  		end
-	when 13 then
-# line 14 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+ actions << [:mark, p] 		end
+# line 13 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-# line 15 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+ actions << [:disposition_type_e, p] 		end
+	when 6 then
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
-		begin
- 	begin
-		top -= 1
-		cs = stack[top]
-		_goto_level = _again
-		next
-	end
- 		end
-	when 22 then
-# line 16 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
-		begin
-		end
+ actions << [:mark, p] 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -910,32 +767,7 @@ begin
 		next
 	end
  		end
-# line 51 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
-		begin
- 
-    if attribute.nil?
-      raise Mail::Field::ParseError.new(Mail::ContentDispositionElement, data, "no attribute for value")
-    end
-
-    if quoted_string
-      value = quoted_string
-    else
-      value = data[mark..(p-1)]
-    end
-
-    content_disposition.parameters <<  { attribute => value }
-    attribute = nil
-    quoted_string = nil
-  		end
-	when 18 then
-# line 40 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
-		begin
- mark = p 		end
-# line 47 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
-		begin
- 
-    content_disposition.disposition_type = data[mark..(p-1)].downcase
-  		end
+	when 17 then
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -946,7 +778,44 @@ begin
 		next
 	end
  		end
-# line 950 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rb"
+# line 27 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:parameter_value_e, p] 		end
+	when 19 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:comment_e, p] 		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 70
+		_goto_level = _again
+		next
+	end
+ 		end
+# line 27 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:parameter_value_e, p] 		end
+	when 15 then
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:mark, p] 		end
+# line 13 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:disposition_type_e, p] 		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 70
+		_goto_level = _again
+		next
+	end
+ 		end
+# line 819 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rb"
 	end
 	end
 	end
@@ -965,64 +834,32 @@ begin
 	if p == eof
 	  case _content_disposition_eof_actions[cs]
 	when 2 then
-# line 16 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-	when 24 then
-# line 47 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
-		begin
- 
-    content_disposition.disposition_type = data[mark..(p-1)].downcase
-  		end
-	when 19 then
-# line 51 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
-		begin
- 
-    if attribute.nil?
-      raise Mail::Field::ParseError.new(Mail::ContentDispositionElement, data, "no attribute for value")
-    end
-
-    if quoted_string
-      value = quoted_string
-    else
-      value = data[mark..(p-1)]
-    end
-
-    content_disposition.parameters <<  { attribute => value }
-    attribute = nil
-    quoted_string = nil
-  		end
+ actions << [:comment_e, p] 		end
 	when 21 then
-# line 16 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 13 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-# line 51 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+ actions << [:disposition_type_e, p] 		end
+	when 16 then
+# line 27 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- 
-    if attribute.nil?
-      raise Mail::Field::ParseError.new(Mail::ContentDispositionElement, data, "no attribute for value")
-    end
-
-    if quoted_string
-      value = quoted_string
-    else
-      value = data[mark..(p-1)]
-    end
-
-    content_disposition.parameters <<  { attribute => value }
-    attribute = nil
-    quoted_string = nil
-  		end
-	when 17 then
-# line 40 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+ actions << [:parameter_value_e, p] 		end
+	when 18 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- mark = p 		end
-# line 47 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+ actions << [:comment_e, p] 		end
+# line 27 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- 
-    content_disposition.disposition_type = data[mark..(p-1)].downcase
-  		end
-# line 1026 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rb"
+ actions << [:parameter_value_e, p] 		end
+	when 14 then
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:mark, p] 		end
+# line 13 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:disposition_type_e, p] 		end
+# line 863 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rb"
 	  end
 	end
 
@@ -1033,20 +870,17 @@ begin
 end
 	end
 
-# line 92 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 25 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 
           if p == eof && cs >= 
-# line 1040 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rb"
-76
-# line 93 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
+# line 877 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rb"
+75
+# line 26 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_disposition.rl"
 
-            content_disposition
+            return actions, nil
           else
-            content_disposition.error = "Only able to parse up to #{data[0..p]}"
-            content_disposition
+            return [], "Only able to parse up to #{data[0..p]}"
           end
-
-          content_disposition
         end
       end
     end

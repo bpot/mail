@@ -1,16 +1,15 @@
 
 # line 1 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
 
-# line 49 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+# line 8 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
 
 
 module Mail
   module Parsers
     module Ragel
-      class DateTimeParser
-        def initialize
-          
-# line 14 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
+      module DateTimeParser
+        
+# line 13 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
 class << self
 	attr_accessor :_date_time_trans_keys
 	private :_date_time_trans_keys, :_date_time_trans_keys=
@@ -50,12 +49,11 @@ self._date_time_trans_keys = [
 	110, 110, 97, 117, 116, 
 	116, 104, 117, 117, 117, 
 	101, 101, 101, 101, 100, 100, 
-	1, 127, 1, 127, 1, 
-	127, 10, 10, 9, 32, 
-	0, 127, 9, 40, 9, 40, 
-	9, 40, 9, 83, 9, 
-	77, 9, 84, 0, 0, 
-	0
+	1, 127, 1, 127, 10, 
+	10, 9, 32, 0, 127, 
+	9, 40, 9, 40, 9, 40, 
+	9, 83, 9, 77, 9, 
+	84, 0, 0, 0
 ]
 
 class << self
@@ -74,8 +72,8 @@ self._date_time_key_spans = [
 	8, 1, 1, 1, 1, 1, 1, 1, 
 	1, 36, 1, 24, 36, 49, 49, 1, 
 	24, 49, 1, 1, 21, 1, 14, 1, 
-	1, 1, 1, 127, 127, 127, 1, 24, 
-	128, 32, 32, 32, 75, 69, 76, 0
+	1, 1, 1, 127, 127, 1, 24, 128, 
+	32, 32, 32, 75, 69, 76, 0
 ]
 
 class << self
@@ -94,8 +92,8 @@ self._date_time_index_offsets = [
 	1827, 1836, 1838, 1840, 1842, 1844, 1846, 1848, 
 	1850, 1852, 1889, 1891, 1916, 1953, 2003, 2053, 
 	2055, 2080, 2130, 2132, 2134, 2156, 2158, 2173, 
-	2175, 2177, 2179, 2181, 2309, 2437, 2565, 2567, 
-	2592, 2721, 2754, 2787, 2820, 2896, 2966, 3043
+	2175, 2177, 2179, 2181, 2309, 2437, 2439, 2464, 
+	2593, 2626, 2659, 2692, 2768, 2838, 2915
 ]
 
 class << self
@@ -376,108 +374,92 @@ self._date_time_indicies = [
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 150, 1, 128, 1, 128, 
 	1, 151, 1, 128, 1, 152, 152, 152, 
-	152, 152, 152, 152, 152, 153, 1, 152, 
-	152, 154, 152, 152, 152, 152, 152, 152, 
-	152, 152, 152, 152, 152, 152, 152, 152, 
-	152, 152, 152, 152, 153, 152, 152, 152, 
-	152, 152, 152, 152, 155, 156, 152, 152, 
+	152, 152, 152, 152, 152, 152, 1, 152, 
+	152, 153, 152, 152, 152, 152, 152, 152, 
 	152, 152, 152, 152, 152, 152, 152, 152, 
 	152, 152, 152, 152, 152, 152, 152, 152, 
+	152, 152, 152, 152, 154, 155, 152, 152, 
 	152, 152, 152, 152, 152, 152, 152, 152, 
 	152, 152, 152, 152, 152, 152, 152, 152, 
 	152, 152, 152, 152, 152, 152, 152, 152, 
 	152, 152, 152, 152, 152, 152, 152, 152, 
-	157, 152, 152, 152, 152, 152, 152, 152, 
+	152, 152, 152, 152, 152, 152, 152, 152, 
+	152, 152, 152, 152, 152, 152, 152, 152, 
+	156, 152, 152, 152, 152, 152, 152, 152, 
 	152, 152, 152, 152, 152, 152, 152, 152, 
 	152, 152, 152, 152, 152, 152, 152, 152, 
 	152, 152, 152, 152, 152, 152, 152, 152, 
-	152, 152, 152, 152, 1, 158, 158, 158, 
-	158, 158, 158, 158, 158, 159, 1, 158, 
-	158, 160, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 159, 158, 158, 158, 
-	158, 158, 158, 158, 161, 162, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	163, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 1, 158, 158, 158, 
-	158, 158, 158, 158, 158, 164, 1, 158, 
-	158, 165, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 164, 158, 158, 158, 
-	158, 158, 158, 158, 161, 166, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	163, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 1, 167, 1, 164, 
+	152, 152, 152, 152, 1, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 1, 157, 
+	157, 158, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 159, 160, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	161, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 1, 162, 1, 157, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 164, 1, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	158, 158, 158, 158, 158, 158, 158, 158, 
-	1, 168, 1, 1, 1, 169, 1, 1, 
+	1, 1, 1, 1, 1, 1, 157, 1, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	157, 157, 157, 157, 157, 157, 157, 157, 
+	1, 163, 1, 1, 1, 164, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	168, 1, 1, 1, 1, 1, 1, 1, 
-	170, 1, 118, 1, 1, 1, 171, 1, 
+	163, 1, 1, 1, 1, 1, 1, 1, 
+	165, 1, 118, 1, 1, 1, 166, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 118, 1, 1, 1, 1, 1, 1, 
-	1, 172, 1, 173, 1, 1, 1, 174, 
+	1, 167, 1, 168, 1, 1, 1, 169, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 173, 1, 1, 1, 1, 1, 
-	1, 1, 175, 1, 168, 1, 1, 1, 
-	169, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 168, 1, 1, 1, 1, 1, 
+	1, 1, 170, 1, 163, 1, 1, 1, 
+	164, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 168, 1, 1, 1, 1, 
-	1, 1, 1, 170, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 176, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 176, 1, 
-	168, 1, 1, 1, 169, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 168, 
-	1, 1, 1, 1, 1, 1, 1, 170, 
+	1, 1, 1, 163, 1, 1, 1, 1, 
+	1, 1, 1, 165, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 171, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 171, 1, 
+	163, 1, 1, 1, 164, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 163, 
+	1, 1, 1, 1, 1, 1, 1, 165, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 176, 1, 168, 1, 
-	1, 1, 169, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 168, 1, 1, 
-	1, 1, 1, 1, 1, 170, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 171, 1, 163, 1, 
+	1, 1, 164, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 163, 1, 1, 
+	1, 1, 1, 1, 1, 165, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
@@ -502,18 +484,17 @@ self._date_time_trans_targs = [
 	19, 20, 22, 23, 24, 25, 27, 28, 
 	26, 24, 25, 27, 28, 29, 31, 32, 
 	30, 29, 31, 32, 33, 34, 35, 37, 
-	38, 48, 97, 100, 101, 102, 36, 34, 
+	38, 48, 96, 99, 100, 101, 36, 34, 
 	35, 37, 38, 39, 41, 42, 40, 39, 
 	41, 42, 43, 44, 45, 47, 46, 44, 
-	45, 47, 49, 50, 51, 53, 98, 57, 
+	45, 47, 49, 50, 51, 53, 97, 57, 
 	59, 61, 62, 64, 66, 68, 70, 72, 
 	73, 74, 76, 77, 75, 73, 74, 76, 
 	77, 78, 79, 81, 78, 79, 81, 80, 
 	78, 79, 81, 83, 85, 87, 88, 90, 
-	92, 93, 94, 92, 103, 96, 92, 93, 
-	94, 92, 103, 96, 93, 94, 103, 95, 
-	98, 52, 99, 52, 99, 98, 52, 99, 
-	54
+	92, 93, 92, 102, 95, 92, 93, 92, 
+	102, 95, 94, 97, 52, 98, 52, 98, 
+	97, 52, 98, 54
 ]
 
 class << self
@@ -540,10 +521,9 @@ self._date_time_trans_actions = [
 	0, 0, 3, 0, 0, 4, 4, 5, 
 	4, 1, 1, 8, 0, 0, 3, 0, 
 	4, 4, 5, 0, 0, 0, 0, 0, 
-	9, 10, 10, 11, 12, 9, 0, 13, 
-	13, 3, 14, 0, 0, 0, 15, 0, 
-	16, 16, 17, 0, 3, 4, 4, 5, 
-	0
+	9, 9, 10, 11, 9, 0, 0, 3, 
+	12, 0, 0, 13, 13, 14, 0, 3, 
+	4, 4, 5, 0
 ]
 
 class << self
@@ -563,7 +543,7 @@ self._date_time_eof_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 16, 0, 4, 16, 16, 16, 0
+	13, 0, 4, 13, 13, 13, 0
 ]
 
 class << self
@@ -573,7 +553,7 @@ self.date_time_start = 1;
 class << self
 	attr_accessor :date_time_first_final
 end
-self.date_time_first_final = 97;
+self.date_time_first_final = 96;
 class << self
 	attr_accessor :date_time_error
 end
@@ -589,19 +569,17 @@ end
 self.date_time_en_main = 1;
 
 
-# line 57 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
-        end
-        
-        def parse(data)
-          data_unpacked = data.bytes.to_a
-          date_time = Data::DateTimeData.new([])
+# line 15 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
 
+        def self.parse(data)
           p = 0
           eof = data.length
           stack = []
 
+          actions = []
+          data_unpacked = data.bytes.to_a
           
-# line 605 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
+# line 583 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
 begin
 	p ||= 0
 	pe ||= data.length
@@ -609,9 +587,9 @@ begin
 	top = 0
 end
 
-# line 68 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+# line 24 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
           
-# line 615 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
+# line 593 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
 begin
 	testEof = false
 	_slen, _trans, _keys, _inds, _acts, _nacts = nil
@@ -648,25 +626,21 @@ begin
 	if _date_time_trans_actions[_trans] != 0
 	case _date_time_trans_actions[_trans]
 	when 9 then
-# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-	when 13 then
-# line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
-		begin
-		end
+ actions << [:comment_s, p] 		end
 	when 4 then
-# line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
+ actions << [:comment_e, p] 		end
 	when 1 then
-# line 43 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- mark = p 		end
-	when 16 then
-# line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+ actions << [:mark, p] 		end
+	when 13 then
+# line 40 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- date_time.time_string = data[mark..(p-1)] 		end
+ actions << [:time_e, p] 		end
 	when 3 then
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
@@ -678,8 +652,8 @@ begin
 		next
 	end
  		end
-	when 15 then
-# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+	when 12 then
+# line 6 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
 		top -= 1
@@ -689,16 +663,9 @@ begin
 	end
  		end
 	when 10 then
-# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-# line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
-		begin
-		end
-	when 11 then
-# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
-		begin
-		end
+ actions << [:comment_s, p] 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -709,11 +676,11 @@ begin
 		next
 	end
  		end
-	when 14 then
-# line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+	when 11 then
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+ actions << [:comment_s, p] 		end
+# line 6 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
 		top -= 1
@@ -723,23 +690,9 @@ begin
 	end
  		end
 	when 5 then
-# line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
-		begin
- 	begin
-		stack[top] = cs
-		top+= 1
-		cs = 91
-		_goto_level = _again
-		next
-	end
- 		end
-	when 8 then
-# line 43 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
-		begin
- mark = p 		end
+ actions << [:comment_e, p] 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -751,16 +704,30 @@ begin
 	end
  		end
 	when 6 then
-# line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+# line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- date_time.date_string = data[mark..(p-1)].rstrip 		end
-# line 43 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+ actions << [:date_e, p] 		end
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- mark = p 		end
-	when 17 then
-# line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+ actions << [:mark, p] 		end
+	when 8 then
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- date_time.time_string = data[mark..(p-1)] 		end
+ actions << [:mark, p] 		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 91
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 14 then
+# line 40 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:time_e, p] 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -782,36 +749,20 @@ begin
 		next
 	end
  		end
-# line 43 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- mark = p 		end
-	when 12 then
-# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
-		begin
-		end
-# line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
-		begin
-		end
-# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
-		begin
- 	begin
-		top -= 1
-		cs = stack[top]
-		_goto_level = _again
-		next
-	end
- 		end
+ actions << [:mark, p] 		end
 	when 7 then
-# line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-# line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+ actions << [:comment_e, p] 		end
+# line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- date_time.date_string = data[mark..(p-1)].rstrip 		end
-# line 43 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+ actions << [:date_e, p] 		end
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- mark = p 		end
-# line 815 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
+ actions << [:mark, p] 		end
+# line 766 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
 	end
 	end
 	end
@@ -830,14 +781,14 @@ begin
 	if p == eof
 	  case _date_time_eof_actions[cs]
 	when 4 then
-# line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-	when 16 then
-# line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+ actions << [:comment_e, p] 		end
+	when 13 then
+# line 40 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- date_time.time_string = data[mark..(p-1)] 		end
-# line 841 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
+ actions << [:time_e, p] 		end
+# line 792 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
 	  end
 	end
 
@@ -848,20 +799,17 @@ begin
 end
 	end
 
-# line 69 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+# line 25 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
 
           if p == eof && cs >= 
-# line 855 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
-97
-# line 70 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
+# line 806 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rb"
+96
+# line 26 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/date_time.rl"
 
-            date_time
+            return actions, nil
           else
-            date_time.error = "Only able to parse up to #{data[0..p]}"
-            date_time
+            return [], "Only able to parse up to #{data[0..p]}"
           end
-
-          date_time
         end
       end
     end

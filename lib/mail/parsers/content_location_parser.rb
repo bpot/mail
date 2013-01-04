@@ -8,17 +8,26 @@ module Mail::Parsers
         return content_location
       end
 
-      data = ragel(string)
-      if data.error
-        raise Mail::Field::ParseError.new(Mail::ContentLocationElement, string, data.error)
+      actions, error = Ragel::ContentLocationParser.parse(string)
+      if error
+        raise Mail::Field::ParseError.new(Mail::ContentLocationElement, string, error)
       end
-      data
-    end
 
-    private
-    def ragel(string)
-      @@parser ||= Ragel::ContentLocationParser.new
-      @@parser.parse(string)
+      mark = nil
+      quoted_s = nil
+      actions.each do |event, p|
+        case event
+        when :mark
+          mark = p
+        when :quoted_e
+          content_location.location = string[quoted_s..(p-1)] 
+        when :quoted_s
+          quoted_s = p
+        when :token_string_e
+          content_location.location = string[mark..(p-1)]
+        end
+      end
+      content_location
     end
   end
 end

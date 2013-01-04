@@ -1,16 +1,15 @@
 
 # line 1 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 
-# line 49 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+# line 8 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 
 
 module Mail
   module Parsers
     module Ragel
-      class MimeVersionParser
-        def initialize
-          
-# line 14 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
+      module MimeVersionParser
+        
+# line 13 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
 class << self
 	attr_accessor :_mime_version_trans_keys
 	private :_mime_version_trans_keys, :_mime_version_trans_keys=
@@ -20,10 +19,10 @@ self._mime_version_trans_keys = [
 	9, 32, 9, 57, 40, 
 	57, 46, 46, 40, 57, 
 	48, 57, 10, 10, 9, 32, 
-	1, 127, 1, 127, 1, 
-	127, 10, 10, 9, 32, 
-	0, 127, 9, 57, 9, 40, 
-	9, 40, 0, 0, 0
+	1, 127, 1, 127, 10, 
+	10, 9, 32, 0, 127, 
+	9, 57, 9, 40, 9, 40, 
+	0, 0, 0
 ]
 
 class << self
@@ -32,8 +31,8 @@ class << self
 end
 self._mime_version_key_spans = [
 	0, 49, 1, 24, 49, 18, 1, 18, 
-	10, 1, 24, 127, 127, 127, 1, 24, 
-	128, 49, 32, 32, 0
+	10, 1, 24, 127, 127, 1, 24, 128, 
+	49, 32, 32, 0
 ]
 
 class << self
@@ -42,8 +41,8 @@ class << self
 end
 self._mime_version_index_offsets = [
 	0, 0, 50, 52, 77, 127, 146, 148, 
-	167, 178, 180, 205, 333, 461, 589, 591, 
-	616, 745, 795, 828, 861
+	167, 178, 180, 205, 333, 461, 463, 488, 
+	617, 667, 700, 733
 ]
 
 class << self
@@ -77,88 +76,72 @@ self._mime_version_indicies = [
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 18, 1, 19, 19, 19, 
-	19, 19, 19, 19, 19, 20, 1, 19, 
-	19, 21, 19, 19, 19, 19, 19, 19, 
-	19, 19, 19, 19, 19, 19, 19, 19, 
-	19, 19, 19, 19, 20, 19, 19, 19, 
-	19, 19, 19, 19, 22, 23, 19, 19, 
+	19, 19, 19, 19, 19, 19, 1, 19, 
+	19, 20, 19, 19, 19, 19, 19, 19, 
 	19, 19, 19, 19, 19, 19, 19, 19, 
 	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 21, 22, 19, 19, 
 	19, 19, 19, 19, 19, 19, 19, 19, 
 	19, 19, 19, 19, 19, 19, 19, 19, 
 	19, 19, 19, 19, 19, 19, 19, 19, 
 	19, 19, 19, 19, 19, 19, 19, 19, 
-	24, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	19, 19, 19, 19, 19, 19, 19, 19, 
+	23, 19, 19, 19, 19, 19, 19, 19, 
 	19, 19, 19, 19, 19, 19, 19, 19, 
 	19, 19, 19, 19, 19, 19, 19, 19, 
 	19, 19, 19, 19, 19, 19, 19, 19, 
-	19, 19, 19, 19, 1, 25, 25, 25, 
-	25, 25, 25, 25, 25, 26, 1, 25, 
-	25, 27, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 26, 25, 25, 25, 
-	25, 25, 25, 25, 28, 29, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	30, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 1, 25, 25, 25, 
-	25, 25, 25, 25, 25, 31, 1, 25, 
-	25, 32, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 31, 25, 25, 25, 
-	25, 25, 25, 25, 28, 33, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	30, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 1, 34, 1, 31, 
+	19, 19, 19, 19, 1, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 1, 24, 
+	24, 25, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 26, 27, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	28, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 1, 29, 1, 24, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 31, 1, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	25, 25, 25, 25, 25, 25, 25, 25, 
-	1, 35, 1, 1, 1, 36, 1, 1, 
+	1, 1, 1, 1, 1, 1, 24, 1, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	24, 24, 24, 24, 24, 24, 24, 24, 
+	1, 30, 1, 1, 1, 31, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	35, 1, 1, 1, 1, 1, 1, 1, 
-	37, 1, 1, 1, 1, 1, 1, 1, 
-	38, 38, 38, 38, 38, 38, 38, 38, 
-	38, 38, 1, 18, 1, 1, 1, 39, 
+	30, 1, 1, 1, 1, 1, 1, 1, 
+	32, 1, 1, 1, 1, 1, 1, 1, 
+	33, 33, 33, 33, 33, 33, 33, 33, 
+	33, 33, 1, 18, 1, 1, 1, 34, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 18, 1, 1, 1, 1, 1, 
-	1, 1, 40, 1, 41, 1, 1, 1, 
-	42, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 35, 1, 36, 1, 1, 1, 
+	37, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 41, 1, 1, 1, 1, 
-	1, 1, 1, 43, 1, 1, 0
+	1, 1, 1, 36, 1, 1, 1, 1, 
+	1, 1, 1, 38, 1, 1, 0
 ]
 
 class << self
@@ -167,11 +150,10 @@ class << self
 end
 self._mime_version_trans_targs = [
 	1, 0, 2, 4, 5, 3, 1, 2, 
-	4, 5, 6, 7, 5, 7, 8, 17, 
-	17, 10, 18, 12, 13, 14, 12, 20, 
-	16, 12, 13, 14, 12, 20, 16, 13, 
-	14, 20, 15, 18, 9, 19, 17, 9, 
-	19, 18, 9, 19
+	4, 5, 6, 7, 5, 7, 8, 16, 
+	16, 10, 17, 12, 13, 12, 19, 15, 
+	12, 13, 12, 19, 15, 14, 17, 9, 
+	18, 16, 9, 18, 17, 9, 18
 ]
 
 class << self
@@ -181,10 +163,9 @@ end
 self._mime_version_trans_actions = [
 	0, 0, 0, 1, 2, 0, 3, 3, 
 	4, 5, 6, 7, 0, 3, 1, 2, 
-	5, 0, 0, 8, 9, 9, 10, 11, 
-	8, 0, 12, 12, 1, 13, 0, 0, 
-	0, 14, 0, 15, 15, 16, 0, 0, 
-	1, 3, 3, 4
+	5, 0, 0, 8, 8, 9, 10, 8, 
+	0, 0, 1, 11, 0, 0, 12, 12, 
+	13, 0, 0, 1, 3, 3, 4
 ]
 
 class << self
@@ -194,7 +175,7 @@ end
 self._mime_version_eof_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 15, 0, 3, 0
+	12, 0, 3, 0
 ]
 
 class << self
@@ -204,7 +185,7 @@ self.mime_version_start = 1;
 class << self
 	attr_accessor :mime_version_first_final
 end
-self.mime_version_first_final = 17;
+self.mime_version_first_final = 16;
 class << self
 	attr_accessor :mime_version_error
 end
@@ -220,19 +201,17 @@ end
 self.mime_version_en_main = 1;
 
 
-# line 57 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
-        end
-        
-        def parse(data)
-          data_unpacked = data.bytes.to_a
-          mime_version = Data::MimeVersionData.new
+# line 15 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 
+        def self.parse(data)
           p = 0
           eof = data.length
           stack = []
 
+          actions = []
+          data_unpacked = data.bytes.to_a
           
-# line 236 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
+# line 215 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
 begin
 	p ||= 0
 	pe ||= data.length
@@ -240,9 +219,9 @@ begin
 	top = 0
 end
 
-# line 68 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+# line 24 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
           
-# line 246 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
+# line 225 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
 begin
 	testEof = false
 	_slen, _trans, _keys, _inds, _acts, _nacts = nil
@@ -279,29 +258,25 @@ begin
 	if _mime_version_trans_actions[_trans] != 0
 	case _mime_version_trans_actions[_trans]
 	when 8 then
-# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-	when 12 then
-# line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
-		begin
-		end
+ actions << [:comment_s, p] 		end
 	when 3 then
-# line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-	when 2 then
-# line 43 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
-		begin
- mark = p 		end
+ actions << [:comment_e, p] 		end
 	when 7 then
-# line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+# line 33 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- mime_version.major = data[mark..(p-1)] 		end
-	when 15 then
-# line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+ actions << [:major_digits_e, p] 		end
+	when 2 then
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- mime_version.minor = data[mark..(p-1)] 		end
+ actions << [:mark, p] 		end
+	when 12 then
+# line 35 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:minor_digits_e, p] 		end
 	when 1 then
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
@@ -313,8 +288,8 @@ begin
 		next
 	end
  		end
-	when 14 then
-# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+	when 11 then
+# line 6 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
 		top -= 1
@@ -324,16 +299,9 @@ begin
 	end
  		end
 	when 9 then
-# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-# line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
-		begin
-		end
-	when 10 then
-# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
-		begin
-		end
+ actions << [:comment_s, p] 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -344,11 +312,11 @@ begin
 		next
 	end
  		end
-	when 13 then
-# line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+	when 10 then
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+ actions << [:comment_s, p] 		end
+# line 6 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
 		top -= 1
@@ -358,16 +326,16 @@ begin
 	end
  		end
 	when 5 then
-# line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-# line 43 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+ actions << [:comment_e, p] 		end
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- mark = p 		end
+ actions << [:mark, p] 		end
 	when 4 then
-# line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
+ actions << [:comment_e, p] 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -379,9 +347,9 @@ begin
 	end
  		end
 	when 6 then
-# line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+# line 33 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- mime_version.major = data[mark..(p-1)] 		end
+ actions << [:major_digits_e, p] 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -392,10 +360,10 @@ begin
 		next
 	end
  		end
-	when 16 then
-# line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+	when 13 then
+# line 35 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- mime_version.minor = data[mark..(p-1)] 		end
+ actions << [:minor_digits_e, p] 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -406,23 +374,7 @@ begin
 		next
 	end
  		end
-	when 11 then
-# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
-		begin
-		end
-# line 11 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
-		begin
-		end
-# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
-		begin
- 	begin
-		top -= 1
-		cs = stack[top]
-		_goto_level = _again
-		next
-	end
- 		end
-# line 426 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
+# line 378 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
 	end
 	end
 	end
@@ -441,14 +393,14 @@ begin
 	if p == eof
 	  case _mime_version_eof_actions[cs]
 	when 3 then
-# line 12 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-	when 15 then
-# line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+ actions << [:comment_e, p] 		end
+	when 12 then
+# line 35 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- mime_version.minor = data[mark..(p-1)] 		end
-# line 452 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
+ actions << [:minor_digits_e, p] 		end
+# line 404 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
 	  end
 	end
 
@@ -459,20 +411,17 @@ begin
 end
 	end
 
-# line 69 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+# line 25 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 
           if p == eof && cs >= 
-# line 466 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
-17
-# line 70 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
+# line 418 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rb"
+16
+# line 26 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/mime_version.rl"
 
-            mime_version
+            return actions, nil
           else
-            mime_version.error = "Only able to parse up to #{data[0..p]}"
-            mime_version
+            return [], "Only able to parse up to #{data[0..p]}"
           end
-
-          mime_version
         end
       end
     end

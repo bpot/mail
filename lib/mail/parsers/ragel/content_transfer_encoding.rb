@@ -1,16 +1,15 @@
 
 # line 1 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 
-# line 53 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+# line 8 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 
 
 module Mail
   module Parsers
     module Ragel
-      class ContentTransferEncodingParser
-        def initialize
-          
-# line 14 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
+      module ContentTransferEncodingParser
+        
+# line 13 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
 class << self
 	attr_accessor :_content_transfer_encoding_trans_keys
 	private :_content_transfer_encoding_trans_keys, :_content_transfer_encoding_trans_keys=
@@ -31,11 +30,11 @@ self._content_transfer_encoding_trans_keys = [
 	110, 110, 116, 116, 97, 97, 
 	98, 98, 108, 108, 101, 
 	101, 1, 127, 1, 127, 
-	1, 127, 10, 10, 9, 32, 
-	0, 127, 9, 115, 9, 
-	59, 9, 59, 9, 40, 
-	9, 40, 9, 59, 9, 126, 
-	0, 0, 0
+	10, 10, 9, 32, 0, 127, 
+	9, 115, 9, 59, 9, 
+	59, 9, 40, 9, 40, 
+	9, 59, 9, 126, 0, 0, 
+	0
 ]
 
 class << self
@@ -48,8 +47,8 @@ self._content_transfer_encoding_key_spans = [
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 127, 127, 
-	127, 1, 24, 128, 107, 51, 51, 32, 
-	32, 51, 118, 0
+	1, 24, 128, 107, 51, 51, 32, 32, 
+	51, 118, 0
 ]
 
 class << self
@@ -62,8 +61,8 @@ self._content_transfer_encoding_index_offsets = [
 	422, 424, 426, 428, 430, 432, 434, 436, 
 	438, 440, 442, 444, 446, 448, 450, 452, 
 	454, 456, 458, 460, 462, 464, 466, 594, 
-	722, 850, 852, 877, 1006, 1114, 1166, 1218, 
-	1251, 1284, 1336, 1455
+	722, 724, 749, 878, 986, 1038, 1090, 1123, 
+	1156, 1208, 1327
 ]
 
 class << self
@@ -130,121 +129,105 @@ self._content_transfer_encoding_indicies = [
 	39, 1, 40, 1, 41, 1, 42, 1, 
 	43, 1, 44, 1, 45, 1, 46, 1, 
 	18, 1, 47, 47, 47, 47, 47, 47, 
-	47, 47, 48, 1, 47, 47, 49, 47, 
-	47, 47, 47, 47, 47, 47, 47, 47, 
-	47, 47, 47, 47, 47, 47, 47, 47, 
-	47, 48, 47, 47, 47, 47, 47, 47, 
-	47, 50, 51, 47, 47, 47, 47, 47, 
+	47, 47, 47, 1, 47, 47, 48, 47, 
 	47, 47, 47, 47, 47, 47, 47, 47, 
 	47, 47, 47, 47, 47, 47, 47, 47, 
 	47, 47, 47, 47, 47, 47, 47, 47, 
-	47, 47, 47, 47, 47, 47, 47, 47, 
-	47, 47, 47, 47, 47, 47, 47, 47, 
-	47, 47, 47, 47, 47, 52, 47, 47, 
+	47, 49, 50, 47, 47, 47, 47, 47, 
 	47, 47, 47, 47, 47, 47, 47, 47, 
 	47, 47, 47, 47, 47, 47, 47, 47, 
 	47, 47, 47, 47, 47, 47, 47, 47, 
 	47, 47, 47, 47, 47, 47, 47, 47, 
-	47, 1, 53, 53, 53, 53, 53, 53, 
-	53, 53, 54, 1, 53, 53, 55, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 54, 53, 53, 53, 53, 53, 53, 
-	53, 56, 57, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 58, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 1, 53, 53, 53, 53, 53, 53, 
-	53, 53, 59, 1, 53, 53, 60, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 59, 53, 53, 53, 53, 53, 53, 
-	53, 56, 61, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 58, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 1, 62, 1, 59, 1, 1, 1, 
+	47, 47, 47, 47, 47, 47, 47, 47, 
+	47, 47, 47, 47, 47, 51, 47, 47, 
+	47, 47, 47, 47, 47, 47, 47, 47, 
+	47, 47, 47, 47, 47, 47, 47, 47, 
+	47, 47, 47, 47, 47, 47, 47, 47, 
+	47, 47, 47, 47, 47, 47, 47, 47, 
+	47, 1, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 1, 52, 52, 53, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 54, 55, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 56, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 1, 57, 1, 52, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 59, 1, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 53, 53, 53, 
-	53, 53, 53, 53, 53, 1, 63, 1, 
-	1, 1, 64, 1, 1, 1, 1, 1, 
+	1, 1, 1, 52, 1, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 52, 52, 52, 
+	52, 52, 52, 52, 52, 1, 58, 1, 
+	1, 1, 59, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 63, 1, 1, 
-	1, 1, 1, 1, 1, 65, 1, 1, 
+	1, 1, 1, 1, 1, 58, 1, 1, 
+	1, 1, 1, 1, 1, 60, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	66, 1, 1, 1, 1, 1, 1, 1, 
+	61, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	67, 1, 20, 1, 1, 1, 68, 1, 
+	62, 1, 20, 1, 1, 1, 63, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 20, 1, 1, 1, 1, 1, 1, 
-	1, 69, 1, 1, 1, 1, 1, 1, 
+	1, 64, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 22, 1, 70, 1, 
-	1, 1, 71, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 22, 1, 65, 1, 
+	1, 1, 66, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 70, 1, 1, 
-	1, 1, 1, 1, 1, 72, 1, 1, 
+	1, 1, 1, 1, 1, 65, 1, 1, 
+	1, 1, 1, 1, 1, 67, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	73, 1, 22, 1, 1, 1, 74, 1, 
+	68, 1, 22, 1, 1, 1, 69, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 22, 1, 1, 1, 1, 1, 1, 
-	1, 75, 1, 73, 1, 1, 1, 76, 
+	1, 70, 1, 68, 1, 1, 1, 71, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 73, 1, 1, 1, 1, 1, 
-	1, 1, 77, 1, 63, 1, 1, 1, 
-	64, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 68, 1, 1, 1, 1, 1, 
+	1, 1, 72, 1, 58, 1, 1, 1, 
+	59, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 63, 1, 1, 1, 1, 
-	1, 1, 1, 65, 1, 1, 1, 1, 
+	1, 1, 1, 58, 1, 1, 1, 1, 
+	1, 1, 1, 60, 1, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 66, 1, 
-	63, 1, 1, 1, 64, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 61, 1, 
+	58, 1, 1, 1, 59, 1, 1, 1, 
 	1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 63, 
-	24, 24, 24, 24, 24, 24, 24, 65, 
+	1, 1, 1, 1, 1, 1, 1, 58, 
+	24, 24, 24, 24, 24, 24, 24, 60, 
 	1, 24, 24, 24, 24, 24, 1, 24, 
 	24, 24, 24, 24, 24, 24, 24, 24, 
-	24, 1, 66, 1, 1, 1, 1, 1, 
+	24, 1, 61, 1, 1, 1, 1, 1, 
 	24, 24, 24, 24, 24, 24, 24, 24, 
 	24, 24, 24, 24, 24, 24, 24, 24, 
 	24, 24, 24, 24, 24, 24, 24, 24, 
@@ -263,14 +246,14 @@ end
 self._content_transfer_encoding_trans_targs = [
 	1, 0, 2, 4, 5, 12, 14, 23, 
 	3, 1, 2, 4, 5, 12, 14, 23, 
-	6, 7, 44, 9, 45, 11, 47, 13, 
-	50, 15, 19, 16, 17, 18, 20, 21, 
+	6, 7, 43, 9, 44, 11, 46, 13, 
+	49, 15, 19, 16, 17, 18, 20, 21, 
 	22, 24, 25, 26, 27, 28, 29, 30, 
 	31, 32, 33, 34, 35, 36, 37, 39, 
-	40, 41, 39, 51, 43, 39, 40, 41, 
-	39, 51, 43, 40, 41, 51, 42, 45, 
-	8, 46, 47, 49, 8, 46, 45, 8, 
-	46, 47, 10, 48, 10, 48
+	40, 39, 50, 42, 39, 40, 39, 50, 
+	42, 41, 44, 8, 45, 46, 48, 8, 
+	45, 44, 8, 45, 46, 10, 47, 10, 
+	47
 ]
 
 class << self
@@ -284,10 +267,10 @@ self._content_transfer_encoding_trans_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 6, 
-	7, 7, 8, 9, 6, 0, 10, 10, 
-	1, 11, 0, 0, 0, 12, 0, 13, 
-	13, 14, 13, 0, 0, 1, 3, 3, 
-	4, 3, 0, 1, 3, 4
+	6, 7, 8, 6, 0, 0, 1, 9, 
+	0, 0, 10, 10, 11, 10, 0, 0, 
+	1, 3, 3, 4, 3, 0, 1, 3, 
+	4
 ]
 
 class << self
@@ -300,8 +283,8 @@ self._content_transfer_encoding_eof_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 13, 0, 3, 0, 
-	3, 13, 13, 0
+	0, 0, 0, 10, 0, 3, 0, 3, 
+	10, 10, 0
 ]
 
 class << self
@@ -311,7 +294,7 @@ self.content_transfer_encoding_start = 1;
 class << self
 	attr_accessor :content_transfer_encoding_first_final
 end
-self.content_transfer_encoding_first_final = 44;
+self.content_transfer_encoding_first_final = 43;
 class << self
 	attr_accessor :content_transfer_encoding_error
 end
@@ -327,19 +310,17 @@ end
 self.content_transfer_encoding_en_main = 1;
 
 
-# line 61 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
-        end
+# line 15 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
         
-        def parse(data)
-          data_unpacked = data.bytes.to_a
-          content_transfer_encoding = Data::ContentTransferEncodingData.new("")
-
+        def self.parse(data)
           p = 0
           eof = data.length
           stack = []
 
+          actions = []
+          data_unpacked = data.bytes.to_a
           
-# line 343 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
+# line 324 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
 begin
 	p ||= 0
 	pe ||= data.length
@@ -347,9 +328,9 @@ begin
 	top = 0
 end
 
-# line 72 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+# line 24 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
           
-# line 353 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
+# line 334 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
 begin
 	testEof = false
 	_slen, _trans, _keys, _inds, _acts, _nacts = nil
@@ -386,27 +367,21 @@ begin
 	if _content_transfer_encoding_trans_actions[_trans] != 0
 	case _content_transfer_encoding_trans_actions[_trans]
 	when 6 then
-# line 17 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-	when 10 then
-# line 18 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
-		begin
-		end
+ actions << [:comment_s, p] 		end
 	when 3 then
-# line 19 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
+ actions << [:comment_e, p] 		end
+	when 10 then
+# line 16 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:encoding_e, p] 		end
 	when 2 then
-# line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
- mark = p 		end
-	when 13 then
-# line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
-		begin
-
-    content_transfer_encoding.encoding = data[mark..(p-1)].downcase.gsub(/s$/,'')
-  		end
+ actions << [:mark, p] 		end
 	when 1 then
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
@@ -418,8 +393,8 @@ begin
 		next
 	end
  		end
-	when 12 then
-# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+	when 9 then
+# line 6 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
 		top -= 1
@@ -429,16 +404,43 @@ begin
 	end
  		end
 	when 7 then
-# line 17 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-# line 18 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+ actions << [:comment_s, p] 		end
+# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
-		end
+ 	begin
+		stack[top] = cs
+		top+= 1
+		cs = 38
+		_goto_level = _again
+		next
+	end
+ 		end
 	when 8 then
-# line 17 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+# line 9 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
+ actions << [:comment_s, p] 		end
+# line 6 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
+		begin
+ 	begin
+		top -= 1
+		cs = stack[top]
+		_goto_level = _again
+		next
+	end
+ 		end
+	when 5 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:comment_e, p] 		end
+# line 34 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:mark, p] 		end
+	when 4 then
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
+		begin
+ actions << [:comment_e, p] 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -450,29 +452,9 @@ begin
 	end
  		end
 	when 11 then
-# line 18 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+# line 16 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
-		begin
- 	begin
-		top -= 1
-		cs = stack[top]
-		_goto_level = _again
-		next
-	end
- 		end
-	when 5 then
-# line 19 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
-		begin
-		end
-# line 44 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
-		begin
- mark = p 		end
-	when 4 then
-# line 19 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
-		begin
-		end
+ actions << [:encoding_e, p] 		end
 # line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
 		begin
  	begin
@@ -483,39 +465,7 @@ begin
 		next
 	end
  		end
-	when 14 then
-# line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
-		begin
-
-    content_transfer_encoding.encoding = data[mark..(p-1)].downcase.gsub(/s$/,'')
-  		end
-# line 5 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
-		begin
- 	begin
-		stack[top] = cs
-		top+= 1
-		cs = 38
-		_goto_level = _again
-		next
-	end
- 		end
-	when 9 then
-# line 17 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
-		begin
-		end
-# line 18 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
-		begin
-		end
-# line 7 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/common.rl"
-		begin
- 	begin
-		top -= 1
-		cs = stack[top]
-		_goto_level = _again
-		next
-	end
- 		end
-# line 519 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
+# line 469 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
 	end
 	end
 	end
@@ -534,16 +484,14 @@ begin
 	if p == eof
 	  case _content_transfer_encoding_eof_actions[cs]
 	when 3 then
-# line 19 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+# line 10 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-		end
-	when 13 then
-# line 45 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+ actions << [:comment_e, p] 		end
+	when 10 then
+# line 16 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ruby_actions.rl"
 		begin
-
-    content_transfer_encoding.encoding = data[mark..(p-1)].downcase.gsub(/s$/,'')
-  		end
-# line 547 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
+ actions << [:encoding_e, p] 		end
+# line 495 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
 	  end
 	end
 
@@ -554,20 +502,17 @@ begin
 end
 	end
 
-# line 73 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+# line 25 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 
           if p == eof && cs >= 
-# line 561 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
-44
-# line 74 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
+# line 509 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rb"
+43
+# line 26 "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/content_transfer_encoding.rl"
 
-            content_transfer_encoding
+            return actions, nil
           else
-            content_transfer_encoding.error = "Only able to parse up to #{data[0..p]}"
-            content_transfer_encoding
+            return [], "Only able to parse up to #{data[0..p]}"
           end
-
-          content_transfer_encoding
         end
       end
     end
