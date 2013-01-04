@@ -14,7 +14,7 @@
 
 #define RECORD_ACTION(I, FPC) res->actions[action_idx++] = I; res->actions[action_idx++] = (FPC)-s;
 
-struct results *<%= parser_name %>_parse(char *s, int len, struct results *res) {
+int <%= parser_name %>_parse(char *s, int len, struct results *res) {
   int cs;
   int top;
   int stack[16];
@@ -28,5 +28,9 @@ struct results *<%= parser_name %>_parse(char *s, int len, struct results *res) 
 
   res->actions_emitted = action_idx;
 
-  return res;
+  if(cs < %%{ write first_final; }%%) {
+    return 0;
+  } else {
+    return 1;
+  }
 }

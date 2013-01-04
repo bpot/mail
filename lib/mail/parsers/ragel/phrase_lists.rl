@@ -4,7 +4,7 @@
   include ruby_actions "ruby_actions.rl";
   include common "common.rl";
 
-  main := phrase_list;
+  main := phrase_lists;
 }%%
 
 module Mail

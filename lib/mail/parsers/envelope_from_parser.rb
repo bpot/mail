@@ -8,7 +8,7 @@ module Mail::Parsers
         return envelope_from
       end
 
-      actions, error = Ragel::EnvelopeFromParser.parse(string)
+      actions, error = Ragel.parse(:envelope_from, string)
       if error
         raise Mail::Field::ParseError.new(Mail::EnvelopeFromElement, string, error)
       end

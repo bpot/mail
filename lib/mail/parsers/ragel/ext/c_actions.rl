@@ -2,11 +2,11 @@
 
 machine c_actions;
 
-action address_e { }
-action address_s { }
+action address_e { RECORD_ACTION(0,fpc) }
+action address_s { RECORD_ACTION(1,fpc) }
 action angle_addr_s { RECORD_ACTION(2,fpc) }
-action atom_e { }
-action atom_s { }
+action atom_e { RECORD_ACTION(3,fpc) }
+action atom_s { RECORD_ACTION(4,fpc) }
 action comment_e { RECORD_ACTION(5,fpc) }
 action comment_s { RECORD_ACTION(6,fpc) }
 action ctime_date_e { RECORD_ACTION(7,fpc) }
@@ -16,9 +16,9 @@ action domain_e { RECORD_ACTION(10,fpc) }
 action domain_s { RECORD_ACTION(11,fpc) }
 action encoding_e { RECORD_ACTION(12,fpc) }
 action group_name_e { RECORD_ACTION(13,fpc) }
-action local_dot_atom_e { }
-action local_dot_atom_pre_comment_e { }
-action local_dot_atom_s { }
+action local_dot_atom_e { RECORD_ACTION(14,fpc) }
+action local_dot_atom_pre_comment_e { RECORD_ACTION(15,fpc) }
+action local_dot_atom_s { RECORD_ACTION(16,fpc) }
 action local_quoted_string_e { RECORD_ACTION(17,fpc) }
 action main_type_e { RECORD_ACTION(18,fpc) }
 action major_digits_e { RECORD_ACTION(19,fpc) }

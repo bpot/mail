@@ -9,7 +9,7 @@ module Mail::Parsers
         return address_list
       end
 
-      actions, error = Ragel::AddressListsParser.parse(string)
+      actions, error = Ragel.parse(:address_lists, string)
       if error
         raise Mail::Field::ParseError.new(Mail::AddressList, string, error)
       end
@@ -121,7 +121,7 @@ module Mail::Parsers
       end
 
       if address_list.addresses.empty? && address_list.group_names.empty?
-        raise Mail::Field::ParseError.new(Mail::AddressListElement, string, "Didn't find any addresses or groups")
+        raise Mail::Field::ParseError.new(Mail::AddressList, string, "Didn't find any addresses or groups")
       end
 
       address_list

@@ -8,7 +8,7 @@ module Mail::Parsers
         return content_transfer_encoding
       end
       
-      actions, error = Ragel::ContentTransferEncodingParser.parse(string)
+      actions, error = Ragel.parse(:content_transfer_encoding, string)
       if error
         raise Mail::Field::ParseError.new(Mail::ContentTransferEncodingElement, string, error)
       end

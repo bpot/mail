@@ -5,7 +5,7 @@ module Mail::Parsers
     def parse(string)
       date_time = Data::DateTimeData.new([])
 
-      actions, error = Ragel::DateTimeParser.parse(string)
+      actions, error = Ragel.parse(:date_time, string)
       if error
         raise Mail::Field::ParseError.new(Mail::DateTimeElement, string, error)
       end

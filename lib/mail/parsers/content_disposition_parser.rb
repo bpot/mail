@@ -8,7 +8,7 @@ module Mail::Parsers
         return content_disposition
       end
 
-      actions, error = Ragel::ContentDispositionParser.parse(string)
+      actions, error = Ragel.parse(:content_disposition, string)
       if error
         raise Mail::Field::ParseError.new(Mail::ContentDispositionElement, string, error)
       end

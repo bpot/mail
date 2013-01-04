@@ -1,13 +1,19 @@
 module Mail
   module Parsers
-    field_parsers = %w[ address_lists phrase_lists
+
+    FIELD_PARSERS = %w[ address_lists phrase_lists
                         date_time received message_ids envelope_from
                         mime_version content_type content_disposition
                         content_transfer_encoding content_location ]
-    field_parsers.each do |field_parser|
+    FIELD_PARSERS.each do |field_parser|
       require "mail/parsers/#{field_parser}_parser"
       require "mail/parsers/ragel/#{field_parser}"
     end
+
+    require 'mail/parsers/ragel'
+    require 'mail/parsers/ragel/ffi'
+
+    Mail::Parsers::Ragel.parser = Mail::Parsers::Ragel::FFIParser
 
     module Data
       AddressListData = Struct.new(:addresses, :group_names, :error)

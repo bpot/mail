@@ -1,15 +1,12 @@
 module Mail::Parsers
   class ReceivedParser
-    include Mail::Utilities
-
     def parse(string)
-      actions, error = Ragel::ReceivedParser.parse(string)
+      actions, error = Ragel.parse(:received, string)
       if error
         raise Mail::Field::ParseError.new(Mail::ReceivedElement, string, error)
       end
 
       received = Data::ReceivedData.new
-
       mark = nil
       received_s = nil
       actions.each_slice(2) do |action_id, p|

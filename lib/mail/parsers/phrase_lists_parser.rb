@@ -3,7 +3,7 @@ module Mail::Parsers
     include Mail::Utilities
 
     def parse(string)
-      actions, error = Ragel::PhraseListsParser.parse(string)
+      actions, error = Ragel.parse(:phrase_lists, string)
       if error
         raise Mail::Field::ParseError.new(Mail::PhraseListsElement, string, error)
       end

@@ -9,7 +9,7 @@ module Mail::Parsers
 
       message_ids = Data::MessageIdsData.new([])
 
-      actions, error = Ragel::MessageIdsParser.parse(string)
+      actions, error = Ragel.parse(:message_ids, string)
       if error
         raise Mail::Field::ParseError.new(Mail::MessageIdsElement, string, error)
       end

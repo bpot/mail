@@ -8,7 +8,7 @@ module Mail::Parsers
         return content_location
       end
 
-      actions, error = Ragel::ContentLocationParser.parse(string)
+      actions, error = Ragel.parse(:content_location, string)
       if error
         raise Mail::Field::ParseError.new(Mail::ContentLocationElement, string, error)
       end

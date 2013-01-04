@@ -7,5 +7,5 @@ void free_results(struct results *res) {
 }
 
 void init_results(struct results *res) {
-  res->actions = malloc(sizeof(int) * 1024);
+  res->actions = malloc(sizeof(int) * 4096);
 }

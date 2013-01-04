@@ -3,7 +3,7 @@ module Mail::Parsers
     include Mail::Utilities
 
     def parse(string)
-      actions, error = Ragel::ContentTypeParser.parse(string)
+      actions, error = Ragel.parse(:content_type, string)
       if error
         raise Mail::Field::ParseError.new(Mail::ContentTypeElement, string, error)
       end

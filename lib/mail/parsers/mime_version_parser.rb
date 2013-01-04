@@ -9,7 +9,7 @@ module Mail::Parsers
 
       mime_version = Data::MimeVersionData.new
 
-      actions, error = Ragel::MimeVersionParser.parse(string)
+      actions, error = Ragel.parse(:mime_version, string)
       if error
         raise Mail::Field::ParseError.new(Mail::MimeVersionElement, string, error)
       end

@@ -1,6 +1,35 @@
 module Mail
   module Parsers
     module Ragel
+      def self.parse(parser, string)
+        @parser_module ||= PureRuby
+        @parser_module.parse(parser, string)
+      end
+
+      def self.parser=(m)
+        @parser_module = m
+      end
+
+      PARSER_LIST = {
+        :address_lists => AddressListsParser,
+        :phrase_lists => PhraseListsParser,
+        :date_time => DateTimeParser,
+        :received => ReceivedParser,
+        :message_ids => MessageIdsParser,
+        :envelope_from => EnvelopeFromParser,
+        :mime_version => MimeVersionParser,
+        :content_type => ContentTypeParser,
+        :content_disposition => ContentDispositionParser,
+        :content_transfer_encoding => ContentTransferEncodingParser,
+        :content_location => ContentLocationParser
+      }
+
+      module PureRuby
+        def self.parse(parser,string)
+          PARSER_LIST[parser].parse(string)
+        end
+      end
+
       ACTIONS = [
         :address_e,
         :address_s,
@@ -41,7 +70,7 @@ module Mail
 
       def self.ruby_actions_rl
         ACTIONS.each_with_index.map do |action,idx|
-          "action #{action} { actions.push(#{idx},p) }"
+          "action #{action} { actions.push(:#{action},p) }"
         end.join("\n")
       end
 
@@ -50,6 +79,7 @@ module Mail
           "action #{action} { RECORD_ACTION(#{idx},fpc) }"
         end.join("\n")
       end
+
     end
   end
 end
