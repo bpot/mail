@@ -6,19 +6,8 @@ module Mail
                         content_transfer_encoding content_location ]
     field_parsers.each do |field_parser|
       require "mail/parsers/#{field_parser}_parser"
+      require "mail/parsers/ragel/#{field_parser}"
     end
-
-    require 'mail/parsers/ragel/address_lists'
-    require 'mail/parsers/ragel/content_disposition'
-    require 'mail/parsers/ragel/content_location'
-    require 'mail/parsers/ragel/content_transfer_encoding'
-    require 'mail/parsers/ragel/content_type'
-    require 'mail/parsers/ragel/date_time'
-    require 'mail/parsers/ragel/envelope_from'
-    require 'mail/parsers/ragel/message_ids'
-    require 'mail/parsers/ragel/mime_version'
-    require 'mail/parsers/ragel/phrase_lists'
-    require 'mail/parsers/ragel/received'
 
     module Data
       AddressListData = Struct.new(:addresses, :group_names, :error)
