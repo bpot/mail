@@ -3,7 +3,7 @@ module Mail::Parsers
     include Mail::Utilities
 
     def parse(string)
-      content_transfer_encoding = Data::ContentTransferEncodingData.new("")
+      content_transfer_encoding = ContentTransferEncodingStruct.new("")
       if string.blank?
         return content_transfer_encoding
       end

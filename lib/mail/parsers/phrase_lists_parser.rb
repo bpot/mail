@@ -8,7 +8,7 @@ module Mail::Parsers
         raise Mail::Field::ParseError.new(Mail::PhraseListsElement, string, error)
       end
 
-      phrase_lists = Data::PhraseListsData.new([])
+      phrase_lists = PhraseListsStruct.new([])
 
       # XXX a quoted string can also be interpreted as a word+ / obsolete_phrase?
       mark = nil

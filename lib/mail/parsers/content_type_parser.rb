@@ -8,7 +8,7 @@ module Mail::Parsers
         raise Mail::Field::ParseError.new(Mail::ContentTypeElement, string, error)
       end
 
-      content_type = Data::ContentTypeData.new(nil,nil,[])
+      content_type = ContentTypeStruct.new(nil,nil,[])
 
       mark = nil
       sub_type_s = nil

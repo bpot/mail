@@ -3,7 +3,7 @@ module Mail::Parsers
     include Mail::Utilities
 
     def parse(string)
-      content_disposition = Data::ContentDispositionData.new("", nil)
+      content_disposition = ContentDispositionStruct.new("", nil)
       if string.blank?
         return content_disposition
       end

@@ -1,9 +1,7 @@
 module Mail::Parsers
   class EnvelopeFromParser
-    include Mail::Utilities
-
     def parse(string)
-      envelope_from = Data::EnvelopeFromData.new
+      envelope_from = EnvelopeFromStruct.new
       if string.blank?
         return envelope_from
       end
@@ -17,7 +15,7 @@ module Mail::Parsers
       address_s = nil
       mark = nil
 
-      envelope_from = Data::EnvelopeFromData.new
+      envelope_from = EnvelopeFromStruct.new
       actions.each_slice(2) do |action_id, p|
         case Mail::Parsers::Ragel::ACTIONS[action_id]
         when :address_s

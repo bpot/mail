@@ -173,7 +173,7 @@ module Mail
       when NilClass
         @data = nil
         nil
-      when Mail::Parsers::Data::AddressData
+      when Mail::Parsers::AddressStruct
         @data = value
       when String
         @raw_text = value

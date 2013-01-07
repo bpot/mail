@@ -5,7 +5,8 @@ module Mail
       module FFIParser
         module Interface
           extend FFI::Library
-          ffi_lib "/home/bpot/src/Dist/GH/mikel/mail/lib/mail/parsers/ragel/ext/mail_parsers.so"
+          support_lib = File.expand_path(File.join(File.dirname(__FILE__),'../../../','libmailparser.so'))
+          ffi_lib [support_lib]
 
           class ResultsStruct < ::FFI::Struct
             layout :actions, :pointer,
@@ -15,8 +16,8 @@ module Mail
           attach_function :free_results, [:pointer], :void
           attach_function :init_results, [:pointer], :void
 
-          Mail::Parsers::FIELD_PARSERS.each do |field_parser|
-            attach_function "#{field_parser}_parse", [:string, :int, :buffer_in], :int
+          Mail::Parsers::Ragel::FIELD_PARSERS.each do |field_parser|
+            attach_function "#{field_parser}_parse", [:string, :int, :pointer], :int
           end
         end
 

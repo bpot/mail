@@ -3,7 +3,7 @@ module Mail::Parsers
     include Mail::Utilities
 
     def parse(string)
-      content_location = Data::ContentLocationData.new(nil)
+      content_location = ContentLocationStruct.new(nil)
       if string.blank?
         return content_location
       end

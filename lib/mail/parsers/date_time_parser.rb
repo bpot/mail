@@ -3,7 +3,7 @@ module Mail::Parsers
     include Mail::Utilities
 
     def parse(string)
-      date_time = Data::DateTimeData.new([])
+      date_time = DateTimeStruct.new([])
 
       actions, error = Ragel.parse(:date_time, string)
       if error

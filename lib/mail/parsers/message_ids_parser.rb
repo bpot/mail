@@ -1,13 +1,11 @@
 module Mail::Parsers
   class MessageIdsParser
-    include Mail::Utilities
-
     def parse(string)
       if string.blank?
-        return Data::MessageIdsData.new
+        return MessageIdsStruct.new
       end
 
-      message_ids = Data::MessageIdsData.new([])
+      message_ids = MessageIdsStruct.new([])
 
       actions, error = Ragel.parse(:message_ids, string)
       if error

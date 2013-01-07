@@ -4,10 +4,10 @@ module Mail::Parsers
 
     def parse(string)
       if string.blank?
-        return Data::MimeVersionData.new("", nil)
+        return MimeVersionStruct.new("", nil)
       end
 
-      mime_version = Data::MimeVersionData.new
+      mime_version = MimeVersionStruct.new
 
       actions, error = Ragel.parse(:mime_version, string)
       if error

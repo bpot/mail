@@ -3,7 +3,7 @@ module Mail::Parsers
     include Mail::Utilities
 
     def parse(string)
-      address_list = Data::AddressListData.new([],[])
+      address_list = AddressListStruct.new([],[])
 
       if string.blank?
         return address_list
@@ -14,7 +14,7 @@ module Mail::Parsers
         raise Mail::Field::ParseError.new(Mail::AddressList, string, error)
       end
 
-      address = Data::AddressData.new(nil, nil, [], nil, nil, nil, nil)
+      address = AddressStruct.new(nil, nil, [], nil, nil, nil, nil)
 
       mark = nil
 
@@ -51,7 +51,7 @@ module Mail::Parsers
           address_list.addresses << address if address
 
           # Start next address
-          address = Data::AddressData.new(nil, nil, [], nil, nil, nil, nil)
+          address = AddressStruct.new(nil, nil, [], nil, nil, nil, nil)
           address.group = group_name
         when :angle_addr_s
           # Don't set the display name until the
@@ -96,7 +96,7 @@ module Mail::Parsers
           group_name = group
 
           # Start next address
-          address = Data::AddressData.new(nil, nil, [], nil, nil, nil, nil)
+          address = AddressStruct.new(nil, nil, [], nil, nil, nil, nil)
           address_s = p
           address.group = group_name
         when :local_dot_atom_e

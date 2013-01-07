@@ -6,7 +6,7 @@ module Mail::Parsers
         raise Mail::Field::ParseError.new(Mail::ReceivedElement, string, error)
       end
 
-      received = Data::ReceivedData.new
+      received = ReceivedStruct.new
       mark = nil
       received_s = nil
       actions.each_slice(2) do |action_id, p|
