@@ -1,0 +1,29 @@
+FIELD_PARSERS = %w[ address_lists phrase_lists
+                    date_time received message_ids envelope_from
+                    mime_version content_type content_disposition
+                    content_transfer_encoding content_location ]
+OUTPUT_DIR = "../../lib/"
+SHARED_LIB = "#{OUTPUT_DIR}/libmailparser.so"
+
+OBJS = []
+FIELD_PARSERS.each do |parser|
+  obj = "generated/#{parser}_parser.o"
+  OBJS << obj
+  file obj do
+    `gcc -o #{obj} -c #{obj.gsub('.o','.c')} -fPIC`
+  end
+end
+
+OBJS << "results.o"
+file "results.o" do
+  `gcc -o results.o -c results.c -fPIC`
+end
+
+task :default => [:build]
+
+desc "Build mail parser shared library"
+task :build => [SHARED_LIB]
+
+file SHARED_LIB => OBJS do
+  `gcc #{OBJS.join(' ')} -fPIC -shared -o #{SHARED_LIB}`
+end
