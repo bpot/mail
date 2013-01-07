@@ -90,64 +90,6 @@ namespace :ragel do
     end
   end
   task :generate_c_parsers => [:generate_ragel_files] + C_PARSERS
+
+  task :generate => [:generate_ragel_files, :generate_ruby_parsers, :generate_ragel_files]
 end
-
-=begin
-    File.open("#{MAIL_ROOT}/lib/mail/parsers/ragel/ruby/ruby_actions.rl", "w+") {|f| f.write }
-    
-    # Generate ruby parsers
-    Dir.glob("#{MAIL_ROOT}/lib/mail/parsers/ragel/ruby/*.rl").each do |filename|
-      next if filename.match("common.rl") || filename.match("ruby_actions.rl")
-      `ragel -sR -F1 #{filename}`
-    end
-  end
-
-
-  desc "Generate c sources for ffi parser"
-  task :generate_ffi do
-    ragel_c_source_template = ERB.new(IO.read(File.expand_path('../../mail/parsers/ragel/ext/parser.c.rl.erb', __FILE__)))
-    field_parsers.each do |parser_name|
-      rl_content = ragel_c_source_template.result(binding)
-      rl_path = File.expand_path("../../mail/parsers/ragel/ext/generated/#{parser_name}.c.rl", __FILE__)
-      c_path = File.expand_path("../../mail/parsers/ragel/ext/generated/#{parser_name}_parser.c", __FILE__)
-      File.open(rl_path,"w+") { |f| f.write rl_content }
-      `ragel -s -o #{c_path} -G2 #{rl_path}`
-    end
-
-    # actions file
-    actions = Mail::Parsers::Ragel::ACTIONS.each_with_index.map do |action,idx|
-      "action #{action} { RECORD_ACTION(#{idx},fpc) }"
-    end.join("\n")
-    actions_rl =<<-EOF
-    
-%%{
-
-machine c_actions;
-
-#{actions}
-
-}%%
-EOF
-    File.open(
-  end
-
-  desc "Build .so for ffi parsers"
-  task :build_ffi_parser_objects do
-    objects = []
-		field_parsers.each do |parser_name|
-      c_path = File.expand_path("../../mail/parsers/ragel/ext/generated/#{parser_name}_parser.c", __FILE__)
-      o_path = File.expand_path("../../mail/parsers/ragel/ext/generated/#{parser_name}_parser.o", __FILE__)
-      `gcc -c #{c_path} -o #{o_path} -fPIC`
-      objects << o_path
-    end
-    common_c_path = File.expand_path("../../mail/parsers/ragel/ext/results.c", __FILE__)
-    common_o_path = File.expand_path("../../mail/parsers/ragel/ext/generated/results.o", __FILE__)
-    `gcc -fPIC -c #{common_c_path} -o #{common_o_path}`
-    objects << common_o_path
-
-    so_path = File.expand_path("../../mail/parsers/ragel/ext/mail_parsers.so", __FILE__)
-    `gcc -fPIC #{objects.join(" ")} -shared -o #{so_path}` 
-  end
-end
-require "#{MAIL_ROOT}/lib/mail/parsers/ragel/actions"
-=end
