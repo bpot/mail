@@ -9,7 +9,7 @@ describe Mail::ToField do
   describe "initialization" do
 
     it "should initialize" do
-      doing { Mail::ToField.new("Mikel") }.should_not raise_error
+      doing { Mail::ToField.new("Mikel@example.com") }.should_not raise_error
     end
 
     it "should mix in the CommonAddress module" do

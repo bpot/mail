@@ -77,7 +77,7 @@ module Mail # :doc:
 
   require 'mail/envelope'
 
-  require 'load_parsers'
+  require 'mail/parsers'
 
   # Autoload header field elements and transfer encodings.
   require 'mail/elements'

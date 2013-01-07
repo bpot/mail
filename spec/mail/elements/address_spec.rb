@@ -43,7 +43,6 @@ describe Mail::Address do
       end
     end
 
-
     it "should give it's address back on :to_s if there is no display name" do
       parse_text = 'test@lindsaar.net'
       result     = 'test@lindsaar.net'
@@ -116,6 +115,13 @@ describe Mail::Address do
       parse_text = "Mikel (first name) Lindsaar (author) <test@lindsaar.net>"
       result     = ['first name', 'author']
       a          = Mail::Address.new(parse_text)
+      a.comments.should eq result
+    end
+
+    it "should handle nested comments" do
+      parse_text  = "bob@example.com (hello   (nested) yeah)"
+      result      = ["hello \(nested\) yeah"]
+      a           = Mail::Address.new(parse_text)
       a.comments.should eq result
     end
 

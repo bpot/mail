@@ -289,8 +289,8 @@ describe Mail::Message do
     end
 
     it "should allow for whitespace at the start of the email" do
-      mail = Mail.new("\r\n\r\nFrom: mikel\r\n\r\nThis is the body")
-      mail.from.should eq ['mikel']
+      mail = Mail.new("\r\n\r\nFrom: mikel@example.com\r\n\r\nThis is the body")
+      mail.from.should eq ['mikel@example.com']
       mail.body.to_s.should eq 'This is the body'
     end
 
@@ -347,13 +347,13 @@ describe Mail::Message do
       end
 
       it "should return the to field" do
-        @mail.to = "mikel"
-        @mail.to.should eq ["mikel"]
+        @mail.to = "mikel@example.com"
+        @mail.to.should eq ["mikel@example.com"]
       end
 
       it "should return the from field" do
-        @mail.from = "bob"
-        @mail.from.should eq ["bob"]
+        @mail.from = "bob@example.com"
+        @mail.from.should eq ["bob@example.com"]
       end
 
       it "should return the subject" do
@@ -384,13 +384,13 @@ describe Mail::Message do
       end
 
       it "should return the to field" do
-        @mail.to "mikel"
-        @mail.to.should eq ["mikel"]
+        @mail.to "mikel@example.com"
+        @mail.to.should eq ["mikel@example.com"]
       end
 
       it "should return the from field" do
-        @mail.from "bob"
-        @mail.from.should eq ["bob"]
+        @mail.from "bob@example.com"
+        @mail.from.should eq ["bob@example.com"]
       end
 
       it "should return the subject" do
