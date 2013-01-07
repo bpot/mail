@@ -5,8 +5,9 @@ module Mail
     include Mail::Utilities
     
     def initialize( string )
-      @received = Mail::Parsers::ReceivedParser.new.parse(string)
+      received = Mail::Parsers::ReceivedParser.new.parse(string)
       @date_time = ::DateTime.parse("#{@received.date} #{@received.time}")
+      @info = received.info
     end
     
     def date_time
@@ -14,7 +15,7 @@ module Mail
     end
     
     def info
-      @received.info
+      @info
     end
     
     def to_s(*args)

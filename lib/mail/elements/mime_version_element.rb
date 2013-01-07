@@ -5,15 +5,17 @@ module Mail
     include Mail::Utilities
     
     def initialize( string )
-      @mime_version = Mail::Parsers::MimeVersionParser.new.parse(string)
+      mime_version = Mail::Parsers::MimeVersionParser.new.parse(string)
+      @major = mime_version.major
+      @minor = mime_version.minor
     end
     
     def major
-      @mime_version.major
+      @major
     end
     
     def minor
-      @mime_version.minor
+      @minor
     end
     
   end
