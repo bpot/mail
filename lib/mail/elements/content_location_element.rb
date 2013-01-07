@@ -5,11 +5,12 @@ module Mail
     include Mail::Utilities
     
     def initialize( string )
-      @content_location = Mail::Parsers::ContentLocationParser.new.parse(string)
+      content_location = Mail::Parsers::ContentLocationParser.new.parse(string)
+      @location = content_location.location
     end
     
     def location
-      @content_location.location
+      @location
     end
     
     def to_s(*args)

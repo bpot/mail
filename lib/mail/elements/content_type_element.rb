@@ -5,19 +5,22 @@ module Mail
     include Mail::Utilities
     
     def initialize( string )
-      @content_type = Mail::Parsers::ContentTypeParser.new.parse(cleaned(string))
+      content_type = Mail::Parsers::ContentTypeParser.new.parse(cleaned(string))
+      @main_type = content_type.main_type
+      @sub_type = content_type.sub_type
+      @parameters = content_type.parameters
     end
     
     def main_type
-      @content_type.main_type
+      @main_type
     end
     
     def sub_type
-      @content_type.sub_type
+      @sub_type
     end
     
     def parameters
-      @content_type.parameters
+      @parameters
     end
     
     def cleaned(string)

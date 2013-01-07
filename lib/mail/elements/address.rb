@@ -183,8 +183,6 @@ module Mail
           address_list = Mail::Parsers::AddressListsParser.new.parse(value)
           @data = address_list.addresses.first
         end
-      else
-        raise "Unable to parse unknown type: #{value.class}"
       end
     end
     
