@@ -3,9 +3,10 @@ module Mail
     module Ragel
       require 'mail/parsers/ragel/parser_info'
       require "mail/parsers/ragel/ruby"
+      require "mail/parsers/ragel/ffi"
 
       def self.parse(machine, string)
-        @machine_module ||= Ruby
+        @machine_module ||= FFIParser
         @machine_module.parse(machine, string)
       end
 

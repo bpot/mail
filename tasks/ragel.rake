@@ -91,5 +91,5 @@ namespace :ragel do
   end
   task :generate_c_parsers => [:generate_ragel_files] + C_PARSERS
 
-  task :generate => [:generate_ragel_files, :generate_ruby_parsers, :generate_ragel_files]
+  task :generate => [:generate_ragel_files, :generate_ruby_parsers, :generate_ragel_files, :generate_c_parsers]
 end
