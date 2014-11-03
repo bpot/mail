@@ -7,6 +7,7 @@ module Mail
 
       def self.parse(machine, string)
         @machine_module ||= FFIParser
+        #@machine_module ||= Ruby
         @machine_module.parse(machine, string)
       end
 
