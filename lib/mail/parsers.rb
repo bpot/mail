@@ -3,6 +3,7 @@ module Mail
 
     # Low-level ragel based parsers
     require 'mail/parsers/ragel'
+    Mail::Parsers::Ragel.parser = Mail::Parsers::Ragel::FFIParser
 
     AddressListStruct = Struct.new(:addresses, :group_names, :error)
     AddressStruct = Struct.new(:raw, :domain, :comments, :local,
